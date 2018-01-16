@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	Class="bg-transparent"
+	ID="_Layout.Error"
+	>
+	<StyleSheet
+		StyleSheet="_Themes/NTrust/Theme.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.Layout.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.AppStyles.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.CustomStyles.css"
+	/>
+	<Body>
+		<ResponsiveRow
+			Class="add-padding-top"
+			CollisionBehavior="Overlap"
+			>
+			<ResponsiveColumn/>
+			<ResponsiveColumn
+				Class="text-center"
+				>
+				<Label
+					Class="fa fa-warning supersized-error-icon"
+					HtmlTag="h1"
+					ID="icon-error"
+				/>
+				<LineBreak/>
+				<Label
+					Caption="Error"
+					Class="text-center"
+					HtmlTag="h1"
+				/>
+				<LineBreak/>
+				<Label
+					Caption="Unfortunately we&apos;re having trouble loading the page you are looking for. Please wait a moment and try again or use action below."
+					Class="text-center"
+					HtmlTag="h4"
+				/>
+				<LineBreak/>
+				<Division
+					Class="card bg-light"
+					HtmlDiv="True"
+					ID="ErrorMessage"
+					>
+					<Label
+						Caption="@Session.rdLastErrorMessage~"
+						Format="Preserve Line Feeds"
+					/>
+				</Division>
+				<Remark>
+					<LineBreak/>
+				</Remark>
+				<Remark>
+					<ResponsiveRow
+						CollisionBehavior="Overlap"
+						>
+						<ResponsiveColumn
+							ColspanLargeScreen="6"
+							ColspanMediumScreen="6"
+							ColspanSmallScreen="6"
+							>
+							<Label
+								Caption="Home"
+								Class="btn btn-default btn-block"
+								>
+								<EventHandler
+									DhtmlEvent="onclick"
+									>
+									<Action
+										ID="RedirectHome"
+										Type="Link"
+										>
+										<Target
+											ID="tgtLink"
+											Link="rdPage.aspx"
+											Type="Link"
+										/>
+									</Action>
+								</EventHandler>
+							</Label>
+						</ResponsiveColumn>
+						<ResponsiveColumn
+							ColspanLargeScreen="6"
+							ColspanMediumScreen="6"
+							ColspanSmallScreen="6"
+							>
+							<Label
+								Caption="Previous Page"
+								Class="btn btn-default btn-block"
+								>
+								<EventHandler
+									DhtmlEvent="onclick"
+									>
+									<Action
+										ID="redirectBack"
+										Javascript="history.back();"
+										Type="Javascript"
+									/>
+								</EventHandler>
+							</Label>
+						</ResponsiveColumn>
+					</ResponsiveRow>
+				</Remark>
+			</ResponsiveColumn>
+			<ResponsiveColumn/>
+		</ResponsiveRow>
+	</Body>
+	<ideTestParams/>
+</Report>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DashboardDrill.OccupancyMetrics"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<LocalData>
+		<DataLayer
+			ConnectionID="con_DemoAnalytics"
+			ID="SQLDataLayer1"
+			Source="Select Occupancy_Metrics.BUSINESS_UNIT,
+  Occupancy_Metrics.BUSINESS_UNIT_NAME,
+  Occupancy_Metrics.UNIT_NUMBER,
+  Occupancy_Metrics.UNIT_TYPE,
+  Occupancy_Metrics.SQUARE_FEET,
+  Occupancy_Metrics.TOTAL_AREA,
+  Occupancy_Metrics.TOTAL_UNITS,
+  Cast(Cast((Cast(Occupancy_Metrics.SQUARE_FEET /
+  Cast(Occupancy_Metrics.TOTAL_AREA As NUMERIC(18,2)) As NUMERIC(18,2)) *
+  100.00) As NUMERIC(18,2)) As VARCHAR(10)) + &apos;%&apos; OCC_PER
+From Occupancy_Metrics
+Where (Occupancy_Metrics.BUSINESS_UNIT = &apos;&apos;) Or
+  (Occupancy_Metrics.BUSINESS_UNIT = &apos;@Request.BUSINESS_UNIT~&apos;)"
+			Type="SQL"
+			>
+			<DataLayerLink
+				ID="linkedDLOpacityMetrics"
+			/>
+			<AggregateColumn
+				AggregateColumn="BUSINESS_UNIT"
+				AggregateFunction="Count"
+				ID="cntRows"
+			/>
+		</DataLayer>
+	</LocalData>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+			>
+			<Label
+				Caption="KPIs"
+				Class="breadcrumb-item"
+				HtmlTag="a"
+				>
+				<EventHandler
+					DhtmlEvent="href"
+					>
+					<Action
+						Javascript="void(0)"
+						Type="Javascript"
+					/>
+				</EventHandler>
+				<EventHandler
+					DhtmlEvent="onclick"
+					>
+					<Action
+						ID="arBackToTransaction"
+						Type="Report"
+						>
+						<Target
+							Report="Dashboard"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</EventHandler>
+			</Label>
+			<Division
+				Class="breadcrumb-item active"
+				>
+				<Label
+					Caption="Vacancy Metrics - "
+				/>
+				<Label
+					Caption="@Local.BUSINESS_UNIT_NAME~"
+				/>
+			</Division>
+		</Division>
+		<Division
+			Class="container pt-2"
+			HtmlDiv="True"
+			>
+			<Division
+				Class="GridTopRow"
+				HtmlDiv="True"
+				ID="dvExport"
+				>
+				<Label
+					Caption="Vacant Units - @Local.cntRows~ of @Local.TOTAL_UNITS~"
+					Class="GridTitle float-left"
+					ID="GridTitlelabel"
+				/>
+				<Image
+					AltText="Export to Excel"
+					Caption="Images.Excel_Multi.png"
+					ID="ExportImage"
+					Tooltip="Export to Excel"
+					>
+					<Remark>
+						<Action
+							ID="ExportNativeExcel"
+							Type="NativeExcel"
+							>
+							<Target
+								ExportDataTableID="tenantTable"
+								ExportFilename="@Request.ddlUserName~ -Tenant"
+								Type="NativeExcel"
+								>
+								<WaitPage/>
+							</Target>
+							<LinkParams
+								DBAName="@Request.DBAName~"
+								ddlUserName="@Request.ddlUserName~"
+								txtFromDate="@Request.txtFromDate~"
+								txtToDate="@Request.txtToDate~"
+							/>
+						</Action>
+					</Remark>
+				</Image>
+			</Division>
+			<DataTable
+				AjaxPaging="True"
+				Class="table table-striped table-bordered"
+				ID="DataTable1"
+				RememberSort="True"
+				SortArrows="True"
+				>
+				<DataLayer
+					ID="lnkDlOpacityMetrics"
+					LinkedDataLayerID="linkedDLOpacityMetrics"
+					Type="Linked"
+				/>
+				<Remark>
+					<DataTableColumn
+						ColumnHeaderClass="rdThemeDataTableHeader "
+						Header="Business Unit"
+						ID="colBUSINESS_UNIT"
+						>
+						<Label
+							Caption="@Data.BUSINESS_UNIT~"
+							ID="lblBUSINESS_UNIT"
+							rdForWizardSet="true"
+						/>
+						<DataColumnSort
+							DataColumn="BUSINESS_UNIT"
+							DataType="Number"
+						/>
+					</DataTableColumn>
+				</Remark>
+				<Remark>
+					<DataTableColumn
+						Header="Business Unit Name"
+						ID="colBUSINESS_UNIT_NAME"
+						>
+						<Label
+							Caption="@Data.BUSINESS_UNIT_NAME~"
+							ID="lblBUSINESS_UNIT_NAME"
+							rdForWizardSet="true"
+						/>
+						<DataColumnSort
+							DataColumn="BUSINESS_UNIT_NAME"
+							DataType="Text"
+						/>
+					</DataTableColumn>
+				</Remark>
+				<DataTableColumn
+					Header="Unit #"
+					ID="colUNIT_NUMBER"
+					>
+					<Label
+						Caption="@Data.UNIT_NUMBER~"
+						ID="lblUNIT_NUMBER"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="UNIT_NUMBER"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Type"
+					ID="colUNIT_TYPE"
+					>
+					<Label
+						Caption="@Data.UNIT_TYPE~"
+						ID="lblUNIT_TYPE"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="UNIT_TYPE"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Unit Area"
+					ID="colSQUARE_FEET"
+					>
+					<Label
+						Caption="@Data.SQUARE_FEET~"
+						ID="lblSQUARE_FEET"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="SQUARE_FEET"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Total Building Area"
+					ID="colTOTAL_AREA"
+					>
+					<Label
+						Caption="@Data.TOTAL_AREA~"
+						ID="lblTOTAL_AREA"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="TOTAL_AREA"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Total Units"
+					ID="colTOTAL_UNITS"
+					>
+					<Label
+						Caption="@Data.TOTAL_UNITS~"
+						ID="lblTOTAL_UNITS"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="TOTAL_UNITS"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Vacant Area %"
+					ID="colOCC_PER"
+					>
+					<Label
+						Caption="@Data.OCC_PER~"
+						ID="lblOCC_PER"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="OCC_PER"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<InteractivePaging
+					CaptionType="Text"
+					HideShowPrevNextCaptions="True"
+					HideWhenOnePage="True"
+					Location="Bottom"
+					PageRowCount="15"
+					ShowPageNumber="Numbered"
+				/>
+			</DataTable>
+		</Division>
+	</Body>
+	<ideTestParams
+		BUSINESS_UNIT=""
+	/>
+</Report>

@@ -1,0 +1,12 @@
+<rdSavedDashboard>
+  <Panel ID="pnlAmount" InstanceID="14f45e3a4177417091fb19d6e0f19502" TabID="b352f3d085b0468a89a8eb8980fc636a" />
+  <Panel ID="pnlReconcilation" InstanceID="1d37a53854da4dcf82ec7aed7427e0ae" TabID="b352f3d085b0468a89a8eb8980fc636a" />
+  <Tabs ID="rdDashboardTabs" ActiveTabID="7e1e9f1c02ce409882be29bbe7cb7c4d" DashboardColumnCount="2">
+    <Tab ID="7e1e9f1c02ce409882be29bbe7cb7c4d" Caption="New Tab" ColumnCount="2" rdFreeformLayoutStyle="Width:1423px;" />
+    <Tab ID="b352f3d085b0468a89a8eb8980fc636a" Caption="New Tab" ColumnCount="2" rdFreeformLayoutStyle="Width:1423px;" />
+  </Tabs>
+  <Panel ID="pnlShopOnePropertyCombineChart" InstanceID="591ad6726fe849f2bffc43188c8298c6" TabID="7e1e9f1c02ce409882be29bbe7cb7c4d" DashboardColumn="0">
+    <ElementSize ElementID="BarChartCanvas2" ChartHeight="384" />
+  </Panel>
+  <Panel ID="pnlExpirationMetrics_ShopOne" InstanceID="3c6c59b0fb5a447487865a5adfa3d891" TabID="7e1e9f1c02ce409882be29bbe7cb7c4d" DashboardColumn="1" />
+</rdSavedDashboard>

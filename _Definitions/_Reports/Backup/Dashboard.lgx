@@ -1,0 +1,1641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="Dashboard"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<StyleSheet
+		StyleSheet="css.dashboard.css"
+	/>
+	<Body>
+		<Remark>
+			<ResponsiveRow
+				CollisionBehavior="Overlap"
+				>
+				<ResponsiveColumn>
+					<Division
+						Class="card border border-dark"
+						HtmlDiv="True"
+						>
+						<Division
+							Class="card-header"
+							HtmlDiv="True"
+							>
+							<Label
+								Caption="Workflow Status Metrics"
+								HtmlTag="Strong"
+							/>
+						</Division>
+						<Division
+							Class="card-body"
+							HtmlDiv="True"
+							>
+							<ChartCanvas
+								ChartOrientation="SwapAxes"
+								ID="barWorkflowStatusMetrics"
+								rdAutoSortingSeries="True"
+								>
+								<Series
+									BarStacking="Stacked"
+									ChartYDataColumn="rdCrosstabValue"
+									Color="#4373AD,#c0504d,#9bbb59,#8064a2"
+									LinkedToYAxisID="y-Axix"
+									PointPadding="0"
+									Type="Bar"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Middle"
+										Format="###,###"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.StatusMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											Category="@Chart.colCategoryFilter~"
+											WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
+										/>
+									</Action>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="dlWorkflowStatusMetrics"
+									Source="SELECT Workflow_Description
+      ,sum(No_Of_Days) as &apos;SumNumberOfDays&apos;
+	  , count(1) as &apos;COUNT&apos;
+	  , BUSINESS_UNIT_NAME
+  FROM Status_Metrics
+  Group By Workflow_Description, BUSINESS_UNIT_NAME"
+									Type="SQL"
+									>
+									<CalculatedColumn
+										Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+	&apos;0-30&apos;;
+else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
+	&apos;31-50&apos;;
+else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 95)
+	&apos;51-95&apos;;
+else 
+	&apos;&gt;95&apos;;"
+										ID="colCategory"
+									/>
+									<CalculatedColumn
+										Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+	1;
+else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
+	2;
+else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 95)
+	3;
+else 
+	4;"
+										ID="colSortBy"
+									/>
+									<SortFilter
+										SortColumn="colSortBy,Workflow_Description"
+									/>
+									<CrosstabFilter
+										CrosstabColumn="colCategory"
+										CrosstabLabelColumn="Workflow_Description"
+										CrosstabValueColumn="COUNT"
+										CrosstabValueFunction="Sum"
+										>
+										<ExtraCrosstabLabelColumn
+											CrosstabLabelColumn="colSortBy"
+											ID="colCategoryFilter"
+										/>
+									</CrosstabFilter>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ReversedItemOrder="True"
+									ShowAllThreshold="99999"
+								/>
+								<ChartYAxis
+									ID="y-Axix"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartYAxis>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontSize="10"
+									/>
+								</ChartXAxis>
+							</ChartCanvas>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+				<ResponsiveColumn>
+					<Division
+						Class="card border border-dark"
+						HtmlDiv="True"
+						>
+						<Division
+							Class="card-header"
+							HtmlDiv="True"
+							>
+							<Label
+								Caption="Error Metrics"
+								HtmlTag="Strong"
+							/>
+						</Division>
+						<Division
+							Class="card-body"
+							HtmlDiv="True"
+							>
+							<ChartCanvas
+								ID="barErrorMetrics"
+								rdAutoSortingSeries="True"
+								>
+								<Series
+									BarStacking="Stacked"
+									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="No_Of_Errors"
+									Color="#4373AD"
+									LinkedToYAxisID="y-Axix"
+									PointPadding="0"
+									Type="Bar"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
+										Format="###,###"
+										OffsetY="-20"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ErrorMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+										/>
+									</Action>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="dlErrorMetrics"
+									Source="SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,Unit_Number
+      ,Lease_Number*/
+      /*,Processed_By
+      ,Processed_Date*/
+      ,sum(No_Of_Transactions) as No_Of_Transactions
+      ,sum(No_Of_Errors) as No_Of_Errors
+  FROM Error_Metrics
+  group by  Business_Unit
+      ,BUSINESS_UNIT_NAME
+order by BUSINESS_UNIT_NAME"
+									Type="SQL"
+								/>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
+								/>
+								<ChartYAxis
+									ID="y-Axix"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartYAxis>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartXAxis>
+								<Series
+									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="No_Of_Transactions"
+									Color="#c0504d"
+									Type="Spline"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
+										Format="###,###"
+										OffsetY="-20"
+									/>
+									<MarkerPoints/>
+								</Series>
+							</ChartCanvas>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+			</ResponsiveRow>
+		</Remark>
+		<Remark>
+			<ResponsiveRow
+				CollisionBehavior="Overlap"
+				>
+				<ResponsiveColumn>
+					<Division
+						Class="card border border-dark"
+						HtmlDiv="True"
+						>
+						<Division
+							Class="card-header"
+							HtmlDiv="True"
+							>
+							<Label
+								Caption="Lease Expiration Metrics"
+								HtmlTag="Strong"
+							/>
+						</Division>
+						<Division
+							Class="card-body p-0 bg-gradent-light"
+							HtmlDiv="True"
+							>
+							<ChartCanvas
+								ID="barLeaseExpirationMetrics"
+								rdAutoSortingSeries="True"
+								>
+								<Series
+									ChartXDataColumn="colCategory"
+									ChartYDataColumn="aggColCntExires"
+									Color="#4373AD"
+									LinkedToYAxisID="y-Axix"
+									Type="Bar"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
+										FontColor="#ffffff"
+										FontSize="10"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.LeaseExpireMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											EndDate="@Chart.colExpiresIn~"
+										/>
+									</Action>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="dlLeaseExpirationMetrics"
+									Source="SELECT count(1) as cntRows
+	, END_DATE
+  FROM Lease_Expiration_Metrics
+  group by END_DATE
+UNION 
+	SELECT count(1) as cntRows 
+	, CONVERT(DATETIME,&apos;01/01/2050&apos;) as &apos;END_DATE&apos;
+  FROM Lease_Expiration_Metrics
+ORDER BY END_DATE"
+									Type="SQL"
+									>
+									<TimePeriodColumn
+										DataColumn="END_DATE"
+										ID="colExpiresIn"
+										TimePeriod="FirstDayOfMonth"
+									/>
+									<CalculatedColumn
+										Formula="if (Year(&apos;@Data.colExpiresIn~&apos;) &lt; 2030)
+	MonthName(Month(&apos;@Data.colExpiresIn~&apos;), true) + &apos;, &apos; + Year(&apos;@Data.colExpiresIn~&apos;);
+else 
+	&apos;Total&apos;;"
+										ID="colCategory"
+									/>
+									<GroupFilter
+										GroupColumn="colCategory"
+										ID="grpLeaseExpiration"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="cntRows"
+											AggregateFunction="Sum"
+											ID="aggColCntExires"
+										/>
+									</GroupFilter>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
+								/>
+								<ChartYAxis
+									HideAxis="True"
+									ID="y-Axix"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartYAxis>
+								<ChartXAxis
+									AxisLineColorTransparency="15"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+									<ChartTicksAndGrid
+										AlternateGridColor="Transparent"
+										AlternateGridColorTransparency="15"
+										GridLineColor="Transparent"
+										GridLineColorTransparency="15"
+										GridLineThickness="0"
+										TickLineColor="Transparent"
+										TickLineColorTransparency="15"
+										TickLineLength="0"
+										TickLineThickness="0"
+									/>
+								</ChartXAxis>
+							</ChartCanvas>
+							<Remark>
+								<ChartCanvas
+									ID="barLeaseExpirationMetrics"
+									rdAutoSortingSeries="True"
+									>
+									<Series
+										ChartXDataColumn="XAxis"
+										ChartYDataColumn="YAxis"
+										Color="#4f81bd"
+										LinkedToYAxisID="y-Axix"
+										Type="Bar"
+										>
+										<DataLabels
+											AlignmentHorizontal="Center"
+											AlignmentVertical="Bottom"
+										/>
+										<Action
+											Type="Report"
+											>
+											<Target
+												FrameID="Self"
+												Report="DashboardDrill.LeaseExpireMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												EndDate="@Chart.colExpiresIn~"
+											/>
+										</Action>
+									</Series>
+									<DataLayer
+										ConnectionID="NTDEVTEST_DemoClient"
+										ID="dlLeaseExpirationMetrics"
+										Source="SELECT count(1) as &apos;YAxis&apos;
+      , convert(char(3), END_DATE, 0) + &apos;, &apos; + datename(year, END_DATE) as &apos;XAxis&apos;
+      , DATEADD(month, DATEDIFF(month, 0, END_DATE), 0) as sortBy
+  FROM Lease_Expiration_Metrics
+  GROUP BY convert(char(3), END_DATE, 0), datename(year, END_DATE), DATEADD(month, DATEDIFF(month, 0, END_DATE), 0) 
+UNION 
+	SELECT count(1) as &apos;YAxis&apos;
+      , &apos;TOTAL&apos; as &apos;XAxis&apos;
+	  , DATEADD(year, 10, getdate()) as sortBy
+  FROM Lease_Expiration_Metrics
+order by sortBy"
+										Type="SQL"
+										>
+										<Remark>
+											<TimePeriodColumn
+												DataColumn="END_DATE"
+												ID="colExpiresIn"
+												TimePeriod="FirstDayOfMonth"
+											/>
+										</Remark>
+										<Remark>
+											<TimePeriodColumn
+												ID="colExpiresSort"
+												TimePeriod="Date"
+											/>
+										</Remark>
+										<Remark>
+											<AggregateColumn
+												AggregateColumn="BUSINESS_UNIT"
+												AggregateFunction="Count"
+												ID="total"
+											/>
+										</Remark>
+										<Remark>
+											<GroupFilter
+												GroupColumn="colExpiresIn"
+												ID="grpLeaseExpiration"
+												>
+												<GroupAggregateColumn
+													AggregateColumn="colExpiresIn"
+													AggregateFunction="Count"
+													ID="aggColCntExires"
+												/>
+											</GroupFilter>
+										</Remark>
+										<Join
+											ID="unionTotal"
+											JoinType="Union"
+											>
+											<DataLayer
+												ConnectionID="NTDEVTEST_DemoClient"
+												Source="SELECT count(1) as &apos;YAxis&apos;
+      , &apos;TOTAL&apos; as &apos;XAxis&apos;
+  FROM Lease_Expiration_Metrics"
+												Type="SQL"
+											/>
+										</Join>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Right"
+										AlignmentVertical="Middle"
+										LegendOrientation="Vertical"
+										LegendSpacing=" "
+										ShowAllCaption=" "
+									/>
+									<ChartYAxis
+										ID="y-Axix"
+									/>
+									<ChartXAxis>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+									</ChartXAxis>
+								</ChartCanvas>
+							</Remark>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+				<ResponsiveColumn>
+					<Division
+						Class="card border border-dark"
+						HtmlDiv="True"
+						>
+						<Division
+							Class="card-header"
+							HtmlDiv="True"
+							>
+							<Label
+								Caption="Vacant %"
+								HtmlTag="Strong"
+							/>
+						</Division>
+						<Division
+							Class="card-body p-0 bg-gradent-light"
+							HtmlDiv="True"
+							>
+							<ChartCanvas
+								ID="barVacantPercent"
+								rdAutoSortingSeries="True"
+								SpacingLeft="20"
+								>
+								<Series
+									BarStacking="Stacked"
+									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="colPercentVacant"
+									Color="#4373AD"
+									LinkedToYAxisID="y-Axix"
+									PointPadding="0"
+									Type="Bar"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
+										FontColor="#ffffff"
+										Format="##\%"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.OccupancyMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+										/>
+									</Action>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="dlVacantPercent"
+									Source="SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+ORDER BY BUSINESS_UNIT_NAME"
+									Type="SQL"
+									>
+									<CalculatedColumn
+										Formula="(@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100"
+										ID="colPercentVacant"
+									/>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
+								/>
+								<ChartYAxis
+									HideAxis="True"
+									ID="y-Axix"
+								/>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartXAxis>
+							</ChartCanvas>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+			</ResponsiveRow>
+		</Remark>
+		<Division
+			Class="dashboard-responsive"
+			HtmlDiv="True"
+			ID="divDashboard"
+			>
+			<Dashboard2
+				AllowFreeformLayout="False"
+				DashboardColumns="2"
+				ID="VisualizationsDashboard"
+				SaveFile="@Function.AppPhysicalPath~\SavedDashboards\Visualizations_User_@Function.UserName~.xml"
+				TemplateModifierFile="DashDMF.xml"
+				>
+				<Panel
+					Caption="Workflow Status Metrics"
+					ID="pnlWorkflowStatusMetrics"
+					Image="dash.Workflow.png"
+					>
+					<PanelContent>
+						<ChartCanvas
+							ChartOrientation="SwapAxes"
+							ID="barWorkflowStatusMetrics"
+							rdAutoSortingSeries="True"
+							>
+							<Series
+								BarStacking="Stacked"
+								ChartYDataColumn="rdCrosstabValue"
+								Color="#4373AD,#c0504d,#9bbb59,#8064a2"
+								LinkedToYAxisID="y-Axix"
+								PointPadding="0"
+								Type="Bar"
+								>
+								<Quicktip
+									ID="qtWorkFlow"
+									Title="@Chart.Workflow_Description~"
+									>
+									<Remark>
+										<QuicktipRow
+											Caption="Workflow"
+											Value="@Chart.Workflow_Description~"
+										/>
+									</Remark>
+									<QuicktipRow
+										Caption="Category"
+										Value="@Chart.rdCrosstabColumn~"
+									/>
+									<QuicktipRow
+										Caption="Count:"
+										Value="@Chart.rdCrosstabValue~"
+									/>
+									<Remark>
+										<QuicktipRow
+											Caption="# of Days:"
+											Value="@Chart.colCategoryFilter~"
+										/>
+									</Remark>
+								</Quicktip>
+								<DataLabels
+									AlignmentHorizontal="Center"
+									AlignmentVertical="Middle"
+									FontColor="#ffffff"
+									FontSize="10px"
+									Format="###,###"
+								/>
+								<Action
+									Type="Report"
+									>
+									<Target
+										FrameID="Self"
+										Report="DashboardDrill.StatusMetrics"
+										Type="Report"
+									/>
+									<LinkParams
+										WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
+									/>
+									<Remark>
+										<LinkParams
+											Category="@Chart.colCategoryFilter~"
+											WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
+										/>
+									</Remark>
+								</Action>
+							</Series>
+							<DataLayer
+								ConnectionID="NTDEVTEST_DemoClient"
+								ID="dlWorkflowStatusMetrics"
+								Source="SELECT ID,SM.Workflow_Description
+      ,sum(No_Of_Days) as &apos;SumNumberOfDays&apos;
+	  , count(1) as &apos;COUNT&apos;
+	  , BUSINESS_UNIT_NAME
+  FROM Status_Metrics SM
+  inner join Status_Metrics_Sort S on S.Workflow_Description=SM.Workflow_Description
+
+  Group By SM.Workflow_Description, BUSINESS_UNIT_NAME,ID
+    order by ID desc"
+								Type="SQL"
+								>
+								<CalculatedColumn
+									Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+	&apos;0-30&apos;;
+else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
+	&apos;31-50&apos;;
+else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 95)
+	&apos;51-95&apos;;
+else 
+	&apos;&gt;95&apos;;"
+									ID="colCategory"
+								/>
+								<CalculatedColumn
+									Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+	1;
+else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
+	2;
+else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 95)
+	3;
+else 
+	4;"
+									ID="colSortBy"
+								/>
+								<Remark>
+									<SortFilter
+										SortColumn="rdCrosstabColumn"
+										SortSequence="Descending"
+									/>
+								</Remark>
+								<CrosstabFilter
+									CrosstabColumn="colCategory"
+									CrosstabLabelColumn="Workflow_Description"
+									CrosstabValueColumn="COUNT"
+									CrosstabValueFunction="Sum"
+									>
+									<ExtraCrosstabLabelColumn
+										CrosstabLabelColumn="SumNumberOfDays"
+										ID="colSumNumberOfDays"
+									/>
+									<ExtraCrosstabLabelColumn
+										CrosstabLabelColumn="colSortBy"
+										ID="colCategoryFilter"
+									/>
+								</CrosstabFilter>
+							</DataLayer>
+							<ChartCanvasLegend
+								AlignmentHorizontal="Right"
+								AlignmentVertical="Middle"
+								LegendOrientation="Vertical"
+								LegendSpacing=" "
+								ReversedItemOrder="True"
+								ShowAllThreshold="99999"
+							/>
+							<ChartYAxis
+								ID="y-Axix"
+								>
+								<AxisLabelStyle
+									FontAngle="45"
+									FontColor="transparent"
+									FontSize="10"
+								/>
+							</ChartYAxis>
+							<ChartXAxis>
+								<AxisLabelStyle
+									FontSize="10"
+								/>
+							</ChartXAxis>
+						</ChartCanvas>
+					</PanelContent>
+					<PanelParameters>
+						<Label
+							Caption="MyParameter:"
+							ID="lblMyParameter"
+						/>
+						<InputText
+							DefaultValue="@Request.MyParameter~"
+							ID="MyParameter"
+						/>
+					</PanelParameters>
+				</Panel>
+				<Panel
+					Caption="Error Metrics"
+					ID="pnlErrorMetrics"
+					Image="dash.ErrorMetrics.PNG"
+					>
+					<PanelContent>
+						<ChartCanvas
+							ID="barErrorMetrics"
+							rdAutoSortingSeries="True"
+							>
+							<Remark>
+								<Series
+									BarStacking="Stacked"
+									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="No_Of_Errors"
+									Color="#4373AD"
+									LinkedToYAxisID="y-Axix"
+									PointPadding="0"
+									Type="Bar"
+									>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
+										Format="###,###"
+										OffsetY="-20"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ErrorMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+										/>
+									</Action>
+									<Quicktip
+										Title="@Chart.BUSINESS_UNIT_NAME~"
+										>
+										<Remark>
+											<QuicktipRow
+												Caption="Name: "
+											/>
+										</Remark>
+										<QuicktipRow
+											Caption="Errors:"
+											Format="###,###,##0"
+											Value="@Chart.No_Of_Errors~"
+										/>
+										<QuicktipRow
+											Caption="Transactions:"
+											Format="###,###,##0"
+											Value="@Chart.No_Of_Transactions~"
+										/>
+									</Quicktip>
+								</Series>
+							</Remark>
+							<DataLayer
+								ConnectionID="NTDEVTEST_DemoClient"
+								ID="dlErrorMetrics"
+								Source="
+select User_Name Processed_By
+,sum(case when TransType=&apos;Transacation&apos; then 1 else 0 end) as No_Of_Transactions
+,sum(case when TransType=&apos;Error&apos; then 1 else 0 end) as No_Of_Errors
+from 
+(
+select User_Name,&apos;Transacation&apos; as TransType from error_Metrics_Header
+union all 
+select User_Name,&apos;Error&apos; as TransType from error_Metrics_Detail)t
+
+group by User_Name
+"
+								Type="SQL"
+							/>
+							<ChartCanvasLegend
+								AlignmentHorizontal="Right"
+								AlignmentVertical="Middle"
+								LegendOrientation="Vertical"
+								LegendSpacing=" "
+								ShowAllCaption=" "
+							/>
+							<ChartYAxis
+								ID="y-Axix"
+								>
+								<AxisLabelStyle
+									FontAngle="45"
+									FontSize="10"
+								/>
+							</ChartYAxis>
+							<ChartXAxis>
+								<AxisLabelStyle
+									FontAngle="45"
+									FontSize="10"
+								/>
+							</ChartXAxis>
+							<Remark>
+								<Series
+									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="No_Of_Transactions"
+									Color="#c0504d"
+									Type="Spline"
+									>
+									<DataLabels
+										Format="###,###"
+									/>
+									<MarkerPoints/>
+									<Quicktip
+										Title="Error Metrics"
+										>
+										<QuicktipRow
+											Caption="Name: "
+											Value="@Chart.BUSINESS_UNIT_NAME~"
+										/>
+										<QuicktipRow
+											Caption="Errors:"
+											Format="###,###,##0"
+											Value="@Chart.No_Of_Errors~"
+										/>
+										<QuicktipRow
+											Caption="Transactions:"
+											Format="###,###,##0"
+											Value="@Chart.No_Of_Transactions~"
+										/>
+									</Quicktip>
+								</Series>
+							</Remark>
+							<Series
+								ChartXDataColumn="Processed_By"
+								ChartXDataColumnType="Text"
+								ChartYDataColumn="No_Of_Transactions"
+								Color="#4373AD"
+								LinkedToYAxisID="y-Axix"
+								Type="Area"
+								>
+								<DataLabels
+									AlignmentHorizontal="Center"
+									AlignmentVertical="Bottom"
+									Format="###,###"
+									OffsetY="-20"
+								/>
+								<Action
+									Type="Report"
+									>
+									<Target
+										FrameID="Self"
+										Report="DashboardDrill.TransactionMetrics"
+										Type="Report"
+									/>
+									<LinkParams
+										BUSINESS_UNIT="@Chart.Processed_By~"
+									/>
+								</Action>
+								<Quicktip
+									Title="@Chart.Processed_by~"
+									>
+									<Remark>
+										<QuicktipRow
+											Caption="Name: "
+										/>
+									</Remark>
+									<QuicktipRow
+										Caption="Errors:"
+										Format="###,###,##0"
+										Value="@Chart.No_Of_Errors~"
+									/>
+									<QuicktipRow
+										Caption="Transactions:"
+										Format="###,###,##0"
+										Value="@Chart.No_Of_Transactions~"
+									/>
+								</Quicktip>
+							</Series>
+							<Series
+								ChartXDataColumn="Processed_By"
+								ChartXDataColumnType="Text"
+								ChartYDataColumn="No_Of_Errors"
+								Color="#FE0000"
+								LinkedToYAxisID="y-Axix"
+								Type="Area"
+								>
+								<DataLabels
+									AlignmentHorizontal="Center"
+									AlignmentVertical="Bottom"
+									Format="###,###"
+									OffsetY="-20"
+								/>
+								<Action
+									Type="Report"
+									>
+									<Target
+										FrameID="Self"
+										Report="DashboardDrill.ErrorMetrics"
+										Type="Report"
+									/>
+									<LinkParams
+										BUSINESS_UNIT="@Chart.Processed_By~"
+									/>
+								</Action>
+								<Quicktip
+									Title="@Chart.Processed_By~"
+									>
+									<Remark>
+										<QuicktipRow
+											Caption="Name: "
+										/>
+									</Remark>
+									<QuicktipRow
+										Caption="Errors:"
+										Format="###,###,##0"
+										Value="@Chart.No_Of_Errors~"
+									/>
+									<QuicktipRow
+										Caption="Transactions:"
+										Format="###,###,##0"
+										Value="@Chart.No_Of_Transactions~"
+									/>
+								</Quicktip>
+							</Series>
+						</ChartCanvas>
+					</PanelContent>
+				</Panel>
+				<Panel
+					Caption="Vacancy Metrics"
+					ID="pnlVacantPercent"
+					Image="dash.VacantPercent.PNG"
+					>
+					<PanelContent>
+						<Division
+							Class="bg-gradent-light p-0"
+							HtmlDiv="True"
+							>
+							<Remark>
+								<ChartCanvas
+									ID="PieChartCanvas1"
+									>
+									<Series
+										ChartLabelColumn="BUSINESS_UNIT_NAME"
+										ChartYDataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+										Type="Pie"
+										>
+										<Quicktip>
+											<QuicktipRow
+												Caption="BUSINESS_UNIT_NAME: "
+												Value="@Chart.BUSINESS_UNIT_NAME~"
+											/>
+											<QuicktipRow
+												Caption="BUSINESS_UNIT: "
+												Format="mps9"
+												Value="@Chart.rdGrgrBUSINESS-BUSINESS_UNIT-sum~"
+											/>
+										</Quicktip>
+									</Series>
+									<DataLayer
+										ConnectionID="NTDEVTEST_DemoClient"
+										ID="SQLDataLayer1"
+										Source="
+SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+
+	UNION ALL 
+	SELECT 188329
+      ,&apos;Others&apos;
+      /*,UNIT_NUMBER*/
+	  , 4
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,188329
+      ,38
+"
+										Type="SQL"
+										>
+										<GroupFilter
+											DataType="Text"
+											GroupColumn="BUSINESS_UNIT_NAME"
+											KeepGroupedRows="False"
+											>
+											<GroupAggregateColumn
+												AggregateColumn="BUSINESS_UNIT"
+												AggregateFunction="SUM"
+												DataType="Number"
+												ID="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+											/>
+										</GroupFilter>
+										<SortFilter
+											DataType="Number"
+											SortColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+											SortSequence="Descending"
+										/>
+										<RelevanceFilter
+											DataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+											IrrelevanceLabel="Other"
+											LabelColumn="BUSINESS_UNIT_NAME"
+											RelevanceType="NumberOfRows"
+											RelevanceValue="0"
+										/>
+										<CalculatedColumn
+											Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+											ID="colPercentVacant"
+										/>
+									</DataLayer>
+									<Remark>
+										<DataLayer
+											ConnectionID="NTDEVTEST_DemoClient"
+											ID="dlVacantPercent"
+											Source="
+SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+
+	UNION ALL 
+	SELECT 188329
+      ,&apos;Others&apos;
+      /*,UNIT_NUMBER*/
+	  , 4
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,188329
+      ,38
+  "
+											Type="SQL"
+											>
+											<CalculatedColumn
+												Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+												ID="colPercentVacant"
+											/>
+										</DataLayer>
+									</Remark>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Right"
+										AlignmentVertical="Middle"
+										LegendOrientation="Vertical"
+										LegendSpacing=" "
+										ShowAllCaption=" "
+									/>
+									<ChartYAxis
+										HideAxis="True"
+										ID="y-Axix"
+									/>
+									<ChartXAxis>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+										<ChartTicksAndGrid
+											AlternateGridColor="Transparent"
+											AlternateGridColorTransparency="15"
+											GridLineColor="Transparent"
+											GridLineColorTransparency="15"
+											GridLineThickness="0"
+											TickLineColor="Transparent"
+											TickLineColorTransparency="15"
+											TickLineLength="0"
+											TickLineThickness="0"
+										/>
+									</ChartXAxis>
+								</ChartCanvas>
+							</Remark>
+							<Remark>
+								<ChartCanvas
+									ID="barVacantPercent"
+									rdAutoSortingSeries="True"
+									SpacingLeft="20"
+									>
+									<Remark>
+										<Series
+											BarStacking="Stacked"
+											ChartXDataColumn="BUSINESS_UNIT_NAME"
+											ChartXDataColumnType="Text"
+											ChartYDataColumn="colPercentVacant"
+											Color="#4373AD"
+											LinkedToYAxisID="y-Axix"
+											PointPadding="0"
+											Type="Bar"
+											>
+											<DataLabels
+												AlignmentHorizontal="Center"
+												AlignmentVertical="Bottom"
+												FontColor="#ffffff"
+												Format="##\%"
+											/>
+											<Action
+												Type="Report"
+												>
+												<Target
+													FrameID="Self"
+													Report="DashboardDrill.OccupancyMetrics"
+													Type="Report"
+												/>
+												<LinkParams
+													BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+												/>
+											</Action>
+											<Quicktip
+												Title="@Chart.BUSINESS_UNIT_NAME~"
+												>
+												<QuicktipRow
+													Caption="Occupied:"
+													Format="###,##0"
+													Value="@Chart.cntOccupied~"
+												/>
+												<QuicktipRow
+													Caption="Total:"
+													Format="###,##0"
+													Value="@Chart.TOTAL_UNITS~"
+												/>
+												<QuicktipRow
+													Caption="Vacant:"
+													Format="##\%"
+													Value="@Chart.colPercentVacant~"
+												/>
+											</Quicktip>
+										</Series>
+									</Remark>
+									<DataLayer
+										ConnectionID="NTDEVTEST_DemoClient"
+										ID="dlVacantPercent"
+										Source="
+SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+
+	UNION ALL 
+	SELECT 188329
+      ,&apos;Others&apos;
+      /*,UNIT_NUMBER*/
+	  , 4
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,188329
+      ,38
+  "
+										Type="SQL"
+										>
+										<CalculatedColumn
+											Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+											ID="colPercentVacant"
+										/>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Right"
+										AlignmentVertical="Middle"
+										LegendOrientation="Vertical"
+										LegendSpacing=" "
+										ShowAllCaption=" "
+									/>
+									<ChartYAxis
+										HideAxis="True"
+										ID="y-Axix"
+									/>
+									<ChartXAxis>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+										<ChartTicksAndGrid
+											AlternateGridColor="Transparent"
+											AlternateGridColorTransparency="15"
+											GridLineColor="Transparent"
+											GridLineColorTransparency="15"
+											GridLineThickness="0"
+											TickLineColor="Transparent"
+											TickLineColorTransparency="15"
+											TickLineLength="0"
+											TickLineThickness="0"
+										/>
+									</ChartXAxis>
+								</ChartCanvas>
+							</Remark>
+							<ChartCanvas
+								ID="PieChartCanvas2"
+								>
+								<Series
+									ChartLabelColumn="BUSINESS_UNIT_NAME"
+									ChartYDataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+									ShowDataValues="True"
+									ShowDataValuesFormat="#%"
+									Type="Pie"
+									>
+									<Remark>
+										<Quicktip>
+											<QuicktipRow
+												Caption="BUSINESS_UNIT_NAME: "
+												Value="@Chart.BUSINESS_UNIT_NAME~"
+											/>
+											<QuicktipRow
+												Caption="TOTAL_UNITS: "
+												Format="mps9"
+												Value="@Chart.rdGrgrTOTAL-TOTAL_UNITS-sum~"
+											/>
+										</Quicktip>
+									</Remark>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.OccupancyMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+										/>
+									</Action>
+									<Quicktip
+										Title="@Chart.BUSINESS_UNIT_NAME~"
+										>
+										<QuicktipRow
+											Caption="Occupied:"
+											Format="###,##0"
+											Value="@Chart.cntOccupied~"
+										/>
+										<QuicktipRow
+											Caption="Total:"
+											Format="###,##0"
+											Value="@Chart.TOTAL_UNITS~"
+										/>
+										<QuicktipRow
+											Caption="Vacant:"
+											Format="##\%"
+											Value="@Chart.colPercentVacant~"
+										/>
+									</Quicktip>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="SQLDataLayer2"
+									Source="
+SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+
+	UNION ALL 
+	SELECT 188329
+      ,&apos;Others&apos;
+      /*,UNIT_NUMBER*/
+	  , 95
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,188329
+      ,110
+"
+									Type="SQL"
+									>
+									<GroupFilter
+										DataType="Text"
+										GroupColumn="BUSINESS_UNIT_NAME"
+										KeepGroupedRows="False"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="TOTAL_UNITS"
+											AggregateFunction="SUM"
+											DataType="Number"
+											ID="rdGrgrTOTAL-TOTAL_UNITS-sum"
+										/>
+									</GroupFilter>
+									<SortFilter
+										DataType="Number"
+										SortColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+										SortSequence="Descending"
+									/>
+									<RelevanceFilter
+										DataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+										IrrelevanceLabel="Other"
+										LabelColumn="BUSINESS_UNIT_NAME"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="0"
+									/>
+									<CalculatedColumn
+										Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+										ID="colPercentVacant"
+									/>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
+								/>
+								<ChartYAxis
+									HideAxis="True"
+									ID="y-Axix"
+								/>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+									<ChartTicksAndGrid
+										AlternateGridColor="Transparent"
+										AlternateGridColorTransparency="15"
+										GridLineColor="Transparent"
+										GridLineColorTransparency="15"
+										GridLineThickness="0"
+										TickLineColor="Transparent"
+										TickLineColorTransparency="15"
+										TickLineLength="0"
+										TickLineThickness="0"
+									/>
+								</ChartXAxis>
+							</ChartCanvas>
+						</Division>
+					</PanelContent>
+				</Panel>
+				<Panel
+					Caption="Lease Expiration Metrics"
+					ID="pnlLeaseExpirationMetrics"
+					Image="dash.LeaseExpiration.PNG"
+					>
+					<PanelContent>
+						<Division
+							Class="bg-gradent-light p-0"
+							HtmlDiv="True"
+							>
+							<ChartCanvas
+								ID="barLeaseExpirationMetrics"
+								rdAutoSortingSeries="True"
+								>
+								<Series
+									ChartXDataColumn="colCategory"
+									ChartYDataColumn="aggColCntExires"
+									Color="#4373AD"
+									LinkedToYAxisID="y-Axix"
+									Type="Bar"
+									>
+									<DataLabels
+										FontSize="10"
+									/>
+									<Action
+										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.LeaseExpireMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											EndDate="@Chart.colExpiresIn~"
+										/>
+									</Action>
+									<Quicktip
+										Title="@Chart.colCategory~"
+										>
+										<QuicktipRow
+											Caption="Count Expires:"
+											Format="###,###,##0"
+											Value="@Chart.aggColCntExires~"
+										/>
+									</Quicktip>
+								</Series>
+								<DataLayer
+									ConnectionID="NTDEVTEST_DemoClient"
+									ID="dlLeaseExpirationMetrics"
+									Source="SELECT count(1) as cntRows
+	, END_DATE
+  FROM Lease_Expiration_Metrics
+  group by END_DATE
+
+ORDER BY END_DATE"
+									Type="SQL"
+									>
+									<TimePeriodColumn
+										DataColumn="END_DATE"
+										ID="colExpiresIn"
+										TimePeriod="FirstDayOfMonth"
+									/>
+									<CalculatedColumn
+										Formula="if (Year(&apos;@Data.colExpiresIn~&apos;) &lt; 2030)
+	MonthName(Month(&apos;@Data.colExpiresIn~&apos;), true) + &apos;, &apos; + Year(&apos;@Data.colExpiresIn~&apos;);
+else 
+	&apos;Total&apos;;"
+										ID="colCategory"
+									/>
+									<GroupFilter
+										GroupColumn="colCategory"
+										ID="grpLeaseExpiration"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="cntRows"
+											AggregateFunction="Sum"
+											ID="aggColCntExires"
+										/>
+									</GroupFilter>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
+								/>
+								<ChartYAxis
+									HideAxis="True"
+									ID="y-Axix"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartYAxis>
+								<ChartXAxis
+									AxisLineColorTransparency="15"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+									<ChartTicksAndGrid
+										AlternateGridColor="Transparent"
+										AlternateGridColorTransparency="15"
+										GridLineColor="Transparent"
+										GridLineColorTransparency="15"
+										GridLineThickness="0"
+										TickLineColor="Transparent"
+										TickLineColorTransparency="15"
+										TickLineLength="0"
+										TickLineThickness="0"
+									/>
+								</ChartXAxis>
+							</ChartCanvas>
+							<Remark>
+								<ChartCanvas
+									ID="barLeaseExpirationMetrics"
+									rdAutoSortingSeries="True"
+									>
+									<Series
+										ChartXDataColumn="XAxis"
+										ChartYDataColumn="YAxis"
+										Color="#4f81bd"
+										LinkedToYAxisID="y-Axix"
+										Type="Bar"
+										>
+										<DataLabels
+											AlignmentHorizontal="Center"
+											AlignmentVertical="Bottom"
+										/>
+										<Action
+											Type="Report"
+											>
+											<Target
+												FrameID="Self"
+												Report="DashboardDrill.LeaseExpireMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												EndDate="@Chart.colExpiresIn~"
+											/>
+										</Action>
+									</Series>
+									<DataLayer
+										ConnectionID="NTDEVTEST_DemoClient"
+										ID="dlLeaseExpirationMetrics"
+										Source="SELECT count(1) as &apos;YAxis&apos;
+      , convert(char(3), END_DATE, 0) + &apos;, &apos; + datename(year, END_DATE) as &apos;XAxis&apos;
+      , DATEADD(month, DATEDIFF(month, 0, END_DATE), 0) as sortBy
+  FROM Lease_Expiration_Metrics
+  GROUP BY convert(char(3), END_DATE, 0), datename(year, END_DATE), DATEADD(month, DATEDIFF(month, 0, END_DATE), 0) 
+UNION 
+	SELECT count(1) as &apos;YAxis&apos;
+      , &apos;TOTAL&apos; as &apos;XAxis&apos;
+	  , DATEADD(year, 10, getdate()) as sortBy
+  FROM Lease_Expiration_Metrics
+order by sortBy"
+										Type="SQL"
+										>
+										<Remark>
+											<TimePeriodColumn
+												DataColumn="END_DATE"
+												ID="colExpiresIn"
+												TimePeriod="FirstDayOfMonth"
+											/>
+										</Remark>
+										<Remark>
+											<TimePeriodColumn
+												ID="colExpiresSort"
+												TimePeriod="Date"
+											/>
+										</Remark>
+										<Remark>
+											<AggregateColumn
+												AggregateColumn="BUSINESS_UNIT"
+												AggregateFunction="Count"
+												ID="total"
+											/>
+										</Remark>
+										<Remark>
+											<GroupFilter
+												GroupColumn="colExpiresIn"
+												ID="grpLeaseExpiration"
+												>
+												<GroupAggregateColumn
+													AggregateColumn="colExpiresIn"
+													AggregateFunction="Count"
+													ID="aggColCntExires"
+												/>
+											</GroupFilter>
+										</Remark>
+										<Join
+											ID="unionTotal"
+											JoinType="Union"
+											>
+											<DataLayer
+												ConnectionID="NTDEVTEST_DemoClient"
+												Source="SELECT count(1) as &apos;YAxis&apos;
+      , &apos;TOTAL&apos; as &apos;XAxis&apos;
+  FROM Lease_Expiration_Metrics"
+												Type="SQL"
+											/>
+										</Join>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Right"
+										AlignmentVertical="Middle"
+										LegendOrientation="Vertical"
+										LegendSpacing=" "
+										ShowAllCaption=" "
+									/>
+									<ChartYAxis
+										ID="y-Axix"
+									/>
+									<ChartXAxis>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+									</ChartXAxis>
+								</ChartCanvas>
+							</Remark>
+						</Division>
+					</PanelContent>
+				</Panel>
+			</Dashboard2>
+		</Division>
+	</Body>
+	<ideTestParams
+		MyParameter=""
+	/>
+</Report>

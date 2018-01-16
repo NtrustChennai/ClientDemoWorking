@@ -1,0 +1,185 @@
+﻿<Metadata
+	BuilderVersion="12.2.237.976"
+	MetadataBuilder="Logi Info Server Metadata Builder"
+	>
+	<Table
+		FriendlyName="DataSecurity"
+		HideTable="False"
+		SecurityRightID=""
+		SqlSource="SELECT * FROM (
+SELECT 	Pri.Fld_Field_4 AS Lease_Number,
+			Pri.Fld_Field_21 AS Business_Unit,
+			Pri.Fld_Field_30 AS Unit_Number,
+			Pri.Fld_Field_34 AS DBA_Name,
+			Trans.Fld_Field_26 AS Tenant_Number,
+			Trans.Fld_Field_27 AS Tenant_Name
+			,LUA.FKey_User ,
+			Usermas.USER_NAME,
+			Usermas.pkey as UserId
+	
+FROM tbl_section_1 AS Pri
+	INNER JOIN tbl_section_14 AS trans ON trans.Fkey_Parent = Pri.Pkey
+	INNER JOIN Lease_user_Association LUA ON LUA.FKEY_Parent= Pri.Pkey
+	
+	INNER JOIN remaap_mvc_master_1014.users_master Usermas on Usermas.Pkey=LUA.FKey_User
+	)t 
+   where t.UserId = &apos;@Session.UserName~&apos;
+group by Lease_Number,Business_Unit,Unit_Number,DBA_Name,Tenant_Number,Tenant_Name,FKey_User,USER_NAME,UserId"
+		TableName="DataSecurity"
+		TableType="U"
+		>
+		<Column
+			Alignment=""
+			ColumnName="Lease_Number"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Lease Number"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Business_Unit"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Business Unit"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Unit_Number"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Unit Number"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="DBA_Name"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Dba Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Tenant_Number"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Tenant Number"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Tenant_Name"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Tenant Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="FKey_User"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="F Key User"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="USER_NAME"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="User Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="UserId"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="User Id"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+	</Table>
+</Metadata>

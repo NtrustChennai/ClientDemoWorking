@@ -1,0 +1,6 @@
+<Report>
+  <StyleSheet Theme="NTrust" />
+  <Body>
+    <ThemeEditor ID="WizardThemeEditor" AutosaveTheme="True" Theme="NTrust" />
+  </Body>
+</Report>

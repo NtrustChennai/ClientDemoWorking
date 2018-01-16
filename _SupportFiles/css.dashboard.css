@@ -1,0 +1,187 @@
+/*Dashboard Styles*/
+#rdSettingsCog {
+	display:none;
+}
+#rdDashboardPanels > .rdDashboard {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.ThemeContainerBordered {
+    border-color: #dddddd;
+    border-width: 1px;
+}
+.rdDashboardTitle {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.rdDashboardTitle,
+.panelInnerTable th,
+.panelInnerTable th td {
+    text-align: left;
+	background-color: #626161 !important;
+}
+.rdDashboardContent > td > .panelBody {
+    /*height: 440px;*/
+    overflow: visible !important;
+    border-top: 1px solid #dddddd;
+    margin: 0;
+    padding: 0px 5px 0 5px;
+}
+
+.rdDashboardContent > td > .panelBody > .p-0 {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.panelBody #rdMainBody {
+    padding-top: 10px;
+}
+.panelInnerTable table {
+    margin-top: 5px;
+}
+.panelInnerTable {
+    padding-left: 0;
+}
+.rdDashboardHidden, table.rdDashboardTitle > tbody > tr > td.rdDashboardControl> a > img {
+    display: none;
+}
+
+table.rdDashboardTitle > tbody > tr > td.rdDashboardControl > a {
+    height: 20px;
+    width: 20px;
+    font: normal normal normal 18px/1 FontAwesome;
+    color: #cfde55 !important;
+	opacity: .7;
+}
+table.rdDashboardTitle > tbody > tr > td.rdDashboardControl > a:hover {
+	opacity: 1;
+}
+table.rdDashboardTitle > tbody > tr > td.rdDashboardControl > a:before {
+    content: "\f013";
+}
+.popupPanelContainer td.rdDashboardControl>a:before {
+    content: "";
+}
+.panel-title {
+    font-size: 16px;
+    font-weight: 500 !important;
+}
+.rdDashboardTitleCaption {
+    color: #c0de4b !important;
+    padding: 5px 15px 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.rdDashboardPanel,
+.rdDashboardPanel > table {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #ffffff;
+}
+.panelInnerTable {} .rdDashboardPanel {
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+.panel-default, .panel-default > .panel-heading {
+    border-color: #dddddd;
+}
+.dash-panel-kpi {
+    background-color: #4d4f53;
+    padding: 8px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    margin: 5px;
+    background: #4d4f53 url('../_SupportFiles/bgArch.png') no-repeat center top;
+    -webkit-background-size: 100% 40px;
+    -moz-background-size: 100% 40px;
+    -o-background-size: 100% 40px;
+    background-size: 100% 40px;
+}
+.dash-panel-kpi > div {
+    border: 2px solid #dadbdd;
+    border-radius: 4px;
+    color: #ffffff!important;
+    padding-top: 30px;
+}
+.dash-panel-kpi-input {
+    text-decoration: none;
+    color: #b7c205 !important;
+    border: 1px solid #7b7b7d;
+    background-color: #5b5b5b;
+    width: 100%;
+    padding: 2px 4px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    height: 34px;
+    display: block;
+    border-radius: 2px;
+    -moz-box-shadow: inset 1px 4px 9px -6px #000000;
+    -webkit-box-shadow: inset 1px 4px 9px -6px #000000;
+    box-shadow: inset 1px 4px 9px -6px #000000;
+    text-align: right;
+}
+.dash-panel-kpi label:not(.dash-panel-kpi-input) {
+    margin-top: 8px;
+    display: block;
+    text-align: right;
+    font-weight: 500;
+}
+.dash-panel-kpi > div > .container-fluid {
+    margin-bottom: 12px;
+}
+/*End Dashboard Styles*/
+
+/*Start responsive dashboards*/
+@media (max-width: 1000px){
+	.dashboard-responsive #rdDashboardPanelTable,
+	.dashboard-responsive #rdDashboardPanelTable > tbody	
+	{
+		display: block;
+		border-collapse: collapse !important;
+		border: none !important;
+		position: relative;
+		width: 100% !important;
+		min-width: 100% !important;	
+	}
+	.dashboard-responsive #rdDashboardPanelTable > tbody > tr, 
+	.dashboard-responsive #rdDashboardPanelTable > tbody > tr > td
+	{
+		display: block;
+		border-collapse: collapse !important;
+		border: none !important;
+		position: relative;
+		width: 100% !important;
+		min-width: 100% !important;	
+		max-width: 100% !important;
+		padding: 0px 0px 0px 0px;
+	}
+	.dashboard-responsive .rdDashboardDropZone 
+	{
+		background-color: Transparent;
+	}
+	.dashboard-responsive iframe 
+	{
+		width: 1px;
+		min-width: 100%;
+		*width: 100%;
+	}
+}
+/*End responsive dashboards*/
+
+.close {
+    font-size: 2rem;
+	margin-top: -8px;
+	margin-right: 2px;
+	opacity: .9;
+    text-shadow: none; 
+}
+.add-panels {
+    padding-left: 1.5rem!important;
+    padding-top: 0.5rem!important;
+    float: left!important;
+	margin-bottom: -8px;
+}

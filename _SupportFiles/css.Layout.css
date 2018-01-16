@@ -1,0 +1,378 @@
+
+/* layout.css - Logi Analytics, 2017
+******************************************************************************************/
+html, body, form[name="rdForm"] {
+    height: 100%;
+    min-height: 100%;
+}
+body {
+    /*background: #fefefe;*/
+    color: #292E3C;
+    font-family: 'Open Sans', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal !important;
+}
+/*MAIN STYLES*/
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+}
+a, .btn-link, a:link, a:visited, .link {
+    color: #337ab7;
+    text-decoration: none;
+	cursor: pointer;
+}
+a:hover, a:focus, .link:hover, .link:focus {
+    color: #23527c;
+    text-decoration: underline;
+}
+/*Header + Navbar*/
+#navigation {
+    background: #1D2733;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+/*Sidebar color*/
+#Sidebar {
+    background: #1D2733;
+    color: #F7F7F7;
+}
+
+/*Header Text Color*/
+.sidebar-toggle, #navbar-brand, #navbar-brand:hover, #navbar-brand:focus, #navigation .nav-item>a, #navigation .navbar-text {
+    color: #fff;
+}
+/*Border Color*/
+#navigation .navbar-brand, #navigation .nav-item>a, #navigation .navbar-toggler, .sidebar-toggle {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+/*END MAIN STYLES*/
+#navigation .navbar-brand {
+    padding: .1em 1.6em .4em;
+    margin-left: 0 !important;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    height: 50px;
+    margin-right: 0;
+    font-size: 18px;
+}
+#navigation .nav-item>a {
+    white-space: nowrap;
+    border-left-width: 1px;
+    border-left-style: solid;
+    font-size: 14px;
+	font-weight: 400;
+    text-align: center;
+    vertical-align: center;
+}
+#navigation.navbar {
+	padding: 0;
+}
+#navigation .nav-link {
+    padding: 0.9rem 1rem;
+}
+#navigation .nav-item > a:hover,
+#navigation .nav-item > a:focus,
+#navigation .navbar-toggler:focus,
+#navigation .navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+#navigation .navbar-text {
+    padding-left: 1em;
+	padding-right: 1em;
+	padding-top: .3rem;
+	padding-bottom: .3rem;
+	white-space: nowrap;
+    border-right-width: 0;
+	font-size: 14px;
+}
+#navigation .navbar-brand>img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul.navbar-right {
+    margin-right: 0;
+}
+a.dropdown-toggle:hover {
+	text-decoration: none;
+}
+
+/*Footer*/
+#FooterWrap {
+    position: relative;
+    left: 0;
+    z-index: 1;
+    -moz-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -webkit-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -o-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -ms-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -webkit-transform: translateZ(0);
+}
+#Footer {
+    background: #1D2733;
+    color: #fff;
+    max-height: 3em;
+    height: 3em;
+    padding: .5em 1em;
+    margin-top: 2em;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .25);
+}
+
+/*Body*/
+#rdMainBody,
+#masterContent {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height: 100%;
+}
+#masterContent #mainContent {
+    /*padding: 15px;*/
+    min-height: calc(100% - 5em);
+     /*position: relative;
+    top: 4.1em;
+    left: 0;*/
+    -moz-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -webkit-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -o-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -ms-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+}
+
+/*Sidebar toggle*/
+#ToggleIcon {
+    font-family: themify;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+#Sidebar.Closed ~ #Header #ToggleIcon:before  {
+    content: "\e679";
+}
+#Sidebar.Open ~ #Header #ToggleIcon:before {
+    content: "\e67a";
+}
+
+/*Sidebar + Sidebar Animation*/
+#Sidebar {
+    width: 18em;
+    left: -18em;
+    height: 100%;
+    position: fixed;
+    padding: 0 0 4.5em;
+    z-index: 999;
+    top: 4em;
+    -moz-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -webkit-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -o-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -ms-transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    transition: left 350ms cubic-bezier(0.25, 0.81, 0.36, 1.00);
+    -webkit-transform: translateZ(0);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+	border-top: 0px;
+}
+
+.sidebar-toggle {
+    cursor: pointer;
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 11px 20px;
+    text-align: center;
+    font-size: 19px;
+    border-radius: 0;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+#Sidebar.Open {
+    left: 0;
+}
+#Sidebar.Open ~ #Header,
+#Sidebar.Open ~ #mainContent {
+    left: 18em;
+}
+#Sidebar.Open ~ #mainContent {
+    width: calc(100% - 18em);
+}
+#Sidebar.Open ~ #FooterWrap {
+    left: 18em;
+    width: calc(100% - 18em);
+}
+#Sidebar:hover {
+    overflow-y: auto;
+}
+#SidebarMenu>div#MenuWrapper,
+#SidebarMenu div#MenuWrapper,
+#SidebarMenu div#MenuWrapper ul,
+#SidebarMenu div#MenuWrapper div {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
+#SidebarMenu div#MenuWrapper>div {
+    display: block;
+    border-color: #2f3c43;
+}
+#SidebarMenu div#MenuWrapper>div>a {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: #b0bec5;
+    border-color: #2f3c43;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    padding: 16px 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.report-caption > .fa {
+    font-size: 17px;
+    margin-right: 8px;
+}
+#SidebarMenu div#MenuWrapper>div:hover>a,
+#SidebarMenu div#MenuWrapper>div>a:focus {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    background: rgba(255,255,255,.15);
+    -webkit-transition: all .1s ease .1s, color .1s;
+    transition: all .1s ease 0.1s, color 0.1s;
+    transition-timing-function: cubic-bezier(.1, .1, .1, .1);
+}
+/* Submenu items */
+#SidebarMenu div#MenuWrapper>div.dropdown>a .expand-sub {
+    position: absolute;
+    right: -.4em;
+    padding: 1em .5em;
+    width: 1.8em;
+    margin-top: -.96em;
+}
+#SidebarMenu div#MenuWrapper>div ul {
+    margin-left: 1.5em;
+    margin-bottom: .5em;
+    max-height: 0;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms;
+    overflow: hidden;
+}
+#SidebarMenu div#MenuWrapper>div.open ul {
+    display: block;
+    max-height: 900px;
+    padding: .5em;
+}
+#SidebarMenu div#MenuWrapper>div>ul {
+    background: rgba(255, 255, 255, .1);
+    margin: 0!important;
+    border-left: 4px solid rgba(255, 255, 255, .6);
+}
+#SidebarMenu div#MenuWrapper>div ul a {
+    outline: none;
+    color: #b0bec5;
+    padding: .5em;
+    display: block;
+    -webkit-transition: all .1s ease .1s, color .1s;
+    transition: all .1s ease 0.1s, color 0.1s;
+    transition-timing-function: cubic-bezier(.1, .1, .1, .1);
+}
+#SidebarMenu div#MenuWrapper>div ul a:hover,
+#SidebarMenu div#MenuWrapper>div ul li.active>a,
+#SidebarMenu div#MenuWrapper>div ul a:focus,
+#SidebarMenu div#MenuWrapper>div ul > li.active a {
+    padding-left: .65em;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Sidebar Scrollbar*/
+#Sidebar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, .1);
+}
+#Sidebar::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(255, 255, 255, .1);
+}
+#Sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+/* Sidebar Scrollbar*/
+/*body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+    background-color: #d9dbdd;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #d9dbdd;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #1D2733;
+}*/
+
+/* iFrame Report helper classes */
+.transparent-bg, .iframe-report {
+    background: transparent!important;
+}
+.iframe-report #Header,
+.iframe-report #Sidebar,
+.iframe-report #Footer,
+.iframe-report div.Content-Overlay,
+.iframe-report #divScrollToTop {
+    display: none!important;
+}
+.iframe-report #mainContent {
+    padding: 0;
+    top: 0;
+}
+.iframe-report div[class*='rd-gridsystem'].row,
+.iframe-report div.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+/*Mobile*/
+@media (max-width: 767px) {
+    #navigation {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #navbar-collapse {
+        padding-right: 0;
+    }
+    .nav-item>a {
+        text-align: left !important;
+    }
+    #Sidebar,
+    #Sidebar.Closed {
+        left: -18em;
+    }
+    #Sidebar,
+    #Sidebar.Closed.Open {
+        left: 0;
+    }
+	Sidebar {
+    	width: 100%;
+	}
+	#Sidebar.Closed {
+    	width: 100%;
+		display: none;
+    	opacity: 0;
+	}
+	#Sidebar.Open {
+    	width: 100%;
+		display: block;
+    	opacity: 1;
+	}
+}
+/*End layout*/

@@ -1,0 +1,97 @@
+<rdSavedDashboard>
+  <Panel ID="rdCustomDashboardPanel_2458bf4e278241f3a4ab980d6e9ee335" InstanceID="8d93bfe0fd0e42afa492ec8327b51fa3" TabID="3b2eb249a75c482fb43b7be4486033b6" />
+  <Panel ID="rdCustomDashboardPanel_a8fe8c13e7b947b6b9be11aa5280afec" InstanceID="eb58e513deaf42c4aa6324d879017bea" TabID="2bd66bf767544f748ae04bfcbb365a68" />
+  <Tabs ID="rdDashboardTabs" ActiveTabID="3b2eb249a75c482fb43b7be4486033b6" DashboardColumnCount="1">
+    <Tab ID="2bd66bf767544f748ae04bfcbb365a68" Caption="Tab 1" ColumnCount="3" WideColumn="0" rdFreeformLayoutStyle="Width:1287px;" />
+    <Tab ID="3b2eb249a75c482fb43b7be4486033b6" Caption="Tab 2" ColumnCount="3" WideColumn="0" rdFreeformLayoutStyle="Width:1287px;" />
+  </Tabs>
+  <ExtraPanelDefinition>
+    <Panel Caption="Lease Number" PanelDescription="" SaveTime="2017-12-27T15:02:39+05:30" ID="rdCustomDashboardPanel_a8fe8c13e7b947b6b9be11aa5280afec" rdUniqueIdentifier="a8fe8c13e7b947b6b9be11aa5280afec" rdCustomDashboardPanel="True" MultipleInstances="False" Image="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\rdThumbnails\rdThumb-6607e4ccce6c42f1a7d2e0e5339aa650.png" rdMakeIdsUnique="True" rdCopyFromGallery="True" InstanceID="eb58e513deaf42c4aa6324d879017bea">
+      <PanelContent Height="">
+        <ChartCanvas CaptionDated="{AggrName} of {DataColumnName} by {LabelColumnName}" ChartHeight="300" ChartWidth="500" BorderColor="#7A7A7A" BorderRadius="4" ID="rdAcChart_AnalChart_1_96e4b59b-d547-4349-b9a4-cac4232b0bf7" rdUnderSuperElement="True" rdAcSavedFile="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\AdmingoCollection_e4cdc0c7-29c6-4679-9879-068e0477520b.xml" rdAcIsAnalysisChart="True" rdOriginalChartLabelColumn="Lease_Data_Lease Number" rdOriginalChartValueColumn="Lease_Data_Lease Number" AltText="Count of Lease Number by Lease Number" PlotBackgroundColor="RGBA(255,255,255,0)" BackgroundColor="RGBA(255,255,255,0)" BorderColorTransparency="15" rdThumbnailPath="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\rdThumbnails\rdThumb-6607e4ccce6c42f1a7d2e0e5339aa650.png">
+          <Series Type="Pie" ChartLabelColumn="Lease_Data_Lease Number" ChartYDataColumn="rdAggrLease_Data_Lease Number" ChartSymbolEdgeColor="Transparent" Transparency="3" Color="" Colors="#8D99A6, #4F81BD, #E1DA61, #C0504D, #9BBB59, #644775, #65C0BD, #0C5066" PieBorderColor="Transparent" PieBorderColorTransparency="0" PieBorderThickness="0">
+            <SideLabelStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+            <Quicktip ID="rdAcPieChartQuicktip">
+              <QuicktipRow Caption="Lease Number: " Value="@Chart.Lease_Data_Lease Number~" />
+              <QuicktipRow Caption="Lease Number: " Value="@Chart.rdAggrLease_Data_Lease Number~" Format="#,##0." />
+            </Quicktip>
+            <DataLabels FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+          </Series>
+          <Resizer ID="rdChartResizerTemplate" MinWidth="250" MinHeight="150" />
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT P.pkey AS 'PKEY', PMKEY.PROPKEY AS 'FKEY_PARENT', IFNULL(Fld_Field_4,'') AS 'Lease Number', &#xA;IFNULL(Fld_Field_33,'') AS 'Tenant Number',IFNULL(Fld_Field_32,'') AS 'Tenant Name',&#xA;IFNULL(Fld_Field_34,'') AS 'DBA Name',LT.Commencement,LT.`Expiration Date`&#xA;FROM V_XL_TBL_SECTION_1  P&#xA;INNER JOIN (SELECT pkey, Fld_Field_21 AS 'PropKey' FROM TBL_SECTION_1) PMKEY ON PMKEY.pkey = P.pkey&#xA;INNER JOIN (SELECT FKEY_PARENT AS 'FKEY_PARENT',IFNULL(CONVERT(DATE_FORMAT(MIN(STR_TO_DATE(Fld_Field_3,'%m/%d/%Y')),'%m/%d/%Y') USING utf8),'') AS 'Commencement',IFNULL(CONVERT(DATE_FORMAT(MAX(STR_TO_DATE(Fld_Field_12,'%m/%d/%Y')),'%m/%d/%Y') USING utf8),'')  AS 'Expiration Date'   FROM V_XL_TBL_SECTION_14&#xA;&#xA;WHERE Fld_Field_3 IS NOT NULL AND Fld_Field_12 IS NOT NULL&#xA;GROUP BY FKEY_PARENT) LT ON P.PKEY = LT.FKEY_PARENT&#xA;WHERE IFNULL(P.Fld_FKey_Field_36,'') &lt;&gt; ''" QueryBuilderTableID="Lease_Data" ErrorSessionVar="rdActiveSqlErrorMsg" ID="dlAnalChart_1">
+            <SqlColumn ID="Lease_Data_Lease Number" DataColumn="Lease Number" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Lease_Data_Tenant Number" DataColumn="Tenant Number" DataType="Text" Caption="Tenant Number" />
+            <SqlColumn ID="Lease_Data_Tenant Name" DataColumn="Tenant Name" DataType="Text" Caption="Tenant Name" />
+            <ConditionFilter ID="rdAfConditionFilter_rdAgAnalysisFilter" Condition="@Compare.Filter_636499835625900889~ Or @Compare.Filter_636499835717800078~" IncludeCondition="False">
+              <CompareFilter CaseSensitive="True" ID="Filter_636499835625900889" DataColumn="Lease_Data_Lease Number" DataType="Text" CompareType="InList" CompareValue="" />
+              <CompareFilter CaseSensitive="True" ID="Filter_636499835717800078" DataColumn="Lease_Data_Tenant Name" DataType="Text" Format="" CompareType="InList" CompareValue="" />
+            </ConditionFilter>
+            <SqlConditionFilter ID="rdAfSqlConditionFilter_rdAgAnalysisFilter" SqlExpression="@Compare.Filter_636499835625900889~ Or @Compare.Filter_636499835717800078~" IncludeSqlExpression="False">
+              <SqlCompareFilter CaseSensitive="True" ID="Filter_636499835625900889" DataColumn="Lease_Data_Lease Number" DataType="Text" CompareType="InList" CompareValue="" />
+              <SqlCompareFilter CaseSensitive="True" ID="Filter_636499835717800078" DataColumn="Lease_Data_Tenant Name" DataType="Text" Format="" CompareType="InList" CompareValue="" />
+            </SqlConditionFilter>
+            <SqlGroup GroupColumn="Lease_Data_Lease Number" DataType="Text" KeepGroupedRows="False">
+              <SqlAggregateColumn ID="rdAggrLease_Data_Lease Number" AggregateColumn="Lease_Data_Lease Number" AggregateFunction="COUNT" DataType="Text" />
+            </SqlGroup>
+            <SortFilter SortColumn="rdAggrLease_Data_Lease Number" DataType="Number" SortSequence="Descending" />
+            <RelevanceFilter ID="rdAcPieChartRelevanceFilter" RelevanceValue="0" RelevanceType="NumberOfRows" IrrelevanceLabel="Other" DataColumn="rdAggrLease_Data_Lease Number" LabelColumn="Lease_Data_Lease Number" />
+          </DataLayer>
+          <ChartXAxis>
+            <AxisLabelStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+          </ChartXAxis>
+          <ChartYAxis>
+            <AxisLabelStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+          </ChartYAxis>
+        </ChartCanvas>
+      </PanelContent>
+    </Panel>
+    <Panel Caption=" # of Leases by Type " PanelDescription="" SaveTime="2017-12-20T19:27:33+05:30" ID="rdCustomDashboardPanel_2458bf4e278241f3a4ab980d6e9ee335" rdUniqueIdentifier="2458bf4e278241f3a4ab980d6e9ee335" rdCustomDashboardPanel="True" MultipleInstances="False" Image="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\rdThumbnails\rdThumb-b7a47847b0a44a02a6cf8f907dd4cc61.png" BookmarksCollection="AdmingoCollection" BookmarkId="d1d20e56-8293-4d3d-9481-4a6b08e0cf29" rdMakeIdsUnique="True" rdCopyFromGallery="True" InstanceID="8d93bfe0fd0e42afa492ec8327b51fa3">
+      <PanelContent Height="">
+        <ChartCanvas ID="rdAcChart_AnalChart_1_30158223-b51b-4817-9135-ec5d85c01529" ChartHeight="300" ChartWidth="500" BorderColor="#7A7A7A" BorderRadius="4" rdUnderSuperElement="True" rdAcSavedFile="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\AdmingoCollection_d1d20e56-8293-4d3d-9481-4a6b08e0cf29.xml" rdAcIsAnalysisChart="True" rdOriginalChartLabelColumn="Lease_Transactions_Type" rdOriginalChartValueColumn="Lease_Transactions_Lease Number" ChartOrientation="SwapAxes" AltText="Count of Lease Number by Type " PlotBackgroundColor="RGBA(255,255,255,0)" BackgroundColor="RGBA(255,255,255,0)" BorderColorTransparency="15" rdThumbnailPath="C:\inetpub\wwwroot\NtrustPOC\goBookmarks\UserNameAdmin\rdThumbnails\rdThumb-b7a47847b0a44a02a6cf8f907dd4cc61.png">
+          <Series Type="Bar" ForecastColor="#86B840" ChartXDataColumn="Lease_Transactions_Type" ChartYDataColumn="rdAggrLease_Transactions_Lease Number" ChartXDataColumnType="Text" ChartSymbolEdgeColor="Transparent" Transparency="3" Color="#8D99A6" BarBorderThickness="0">
+            <Quicktip ID="rdAcBarChartQuicktip">
+              <QuicktipRow Caption="Type: " Value="@Chart.Lease_Transactions_Type~" />
+              <QuicktipRow Caption="Lease Number: " Value="@Chart.rdAggrLease_Transactions_Lease Number~" Format="#,##0." />
+            </Quicktip>
+          </Series>
+          <ChartXAxis AxisCaption="Type" AxisType="Category">
+            <AxisLabelStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+            <AxisCaptionStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+          </ChartXAxis>
+          <ChartYAxis AxisCaption="Lease Number">
+            <AxisLabelStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+            <AxisCaptionStyle FontFamily="'GloberRegular','Helvetica Neue',Helvetica,Arial,sans-serif" FontWeight="Normal" FontColor="#363B42" FontSize="14" />
+          </ChartYAxis>
+          <Resizer ID="rdChartResizerTemplate" MinWidth="250" MinHeight="150" />
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT  `Lease Number`, `Unit Number`, Fld_Field_22 AS `Actual Out`, 	Fld_Field_3 AS `Commencement`, 	Fld_Field_30 AS `Delete Status`, 	Fld_Field_9 AS `Delivery or Effective`, 	Fld_Field_12 AS `End`, 	Fld_Field_5 AS `Execution`, 	Fld_Field_29 AS `Is Processed?`, 	Fld_Field_23 AS `NNN From Delivery`, 	Fld_Field_13 AS `Original End`, 	Fld_Field_4 AS `Override Commencement`, 	Fld_Field_11 AS `Plan Out`, 	Fld_Field_18 AS `Prior Version #`, 	&#xA;&#xA;cast(DATE_FORMAT(STR_TO_DATE(Fld_Field_6,'%m/%d/%Y'),'%Y-%m-%d') as date) AS `ProcessingDate` ,&#xA;&#xA;Fld_FKey_Field_19 AS `PV Lease Status`, 	Fld_Field_20 AS `PV Plan Out Date`, 	Fld_Field_21 AS `PV Version End Date`, 	Fld_Field_14 AS `RCD Days`, 	Fld_Field_28 AS `RCD Language`, 	Fld_Field_31 AS `Record Sent to JDE?`, 	Fld_Field_10 AS `Rent Start`, 	Fld_Field_15 AS `Round Up`, 	Fld_Field_27 AS `Tenant Name`, 	Fld_Field_26 AS `Tenant Number`, 	Fld_Field_8 AS `Term (Months)`, 	FLD_FIELD_25 AS `TI / FASB Ind Description`, 	Fld_FKey_Field_24 AS `TI / FASB Indicator`, 	Fld_FKey_Field_7 AS `Transaction Type`, 	Fld_FKey_Field_1 AS `Type`, 	Fld_Field_2 AS `Version #`, 	Fld_Field_16 AS `Version Effective`, 	Fld_Field_17 AS `Version End` &#xA;FROM v_xl_tbl_section_14&#xA;WHERE CAST(DATE_FORMAT(STR_TO_DATE(Fld_Field_6,'%m/%d/%Y'),'%Y-%m-%d') AS DATE) BETWEEN DATE_ADD(NOW(),INTERVAL - 11 MONTH) AND NOW()&#xA; limit 1000" QueryBuilderTableID="Lease Transactions" ErrorSessionVar="rdActiveSqlErrorMsg" ID="dlAnalChart_1">
+            <SqlColumn ID="Lease_Transactions_Lease Number" DataColumn="Lease Number" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Lease_Transactions_Unit Number" DataColumn="Unit Number" DataType="Text" Caption="Unit Number" />
+            <SqlColumn ID="Lease_Transactions_Delivery or Effective" DataColumn="Delivery or Effective" DataType="Text" Caption="Delivery Or Effective" />
+            <SqlColumn ID="Lease_Transactions_End" DataColumn="End" DataType="Text" Caption="End" />
+            <SqlColumn ID="Lease_Transactions_Execution" DataColumn="Execution" DataType="Text" Caption="Execution" />
+            <SqlColumn ID="Lease_Transactions_Is Processed?" DataColumn="Is Processed?" DataType="Text" Caption="Is Processed " />
+            <SqlColumn ID="Lease_Transactions_Original End" DataColumn="Original End" DataType="Text" Caption="Original End" />
+            <SqlColumn ID="Lease_Transactions_Plan Out" DataColumn="Plan Out" DataType="Text" Caption="Plan Out" />
+            <SqlColumn ID="Lease_Transactions_Tenant Name" DataColumn="Tenant Name" DataType="Text" Caption="Tenant Name" />
+            <SqlColumn ID="Lease_Transactions_Tenant Number" DataColumn="Tenant Number" DataType="Text" Caption="Tenant Number" />
+            <SqlColumn ID="Lease_Transactions_Transaction Type" DataColumn="Transaction Type" DataType="Text" Caption="Transaction Type" />
+            <SqlColumn ID="Lease_Transactions_Type" DataColumn="Type" DataType="Text" Caption="Type" />
+            <SqlGroup GroupColumn="Lease_Transactions_Type" DataType="Text" KeepGroupedRows="False">
+              <SqlAggregateColumn ID="rdAggrLease_Transactions_Lease Number" AggregateColumn="Lease_Transactions_Lease Number" AggregateFunction="COUNT" DataType="Text" />
+            </SqlGroup>
+            <SortFilter SortColumn="rdAggrLease_Transactions_Lease Number" DataType="Number" SortSequence="Ascending" />
+            <RelevanceFilter ID="rdAcBarChartRelevanceFilter" RelevanceValue="0" RelevanceType="NumberOfRows" IrrelevanceLabel="Other" DataColumn="rdAggrLease_Transactions_Lease Number" LabelColumn="Lease_Transactions_Type" />
+          </DataLayer>
+        </ChartCanvas>
+        <Division ShowModes="rdBrowser" Class="rdBookmarkLinkbackContainer">
+          <LineBreak LineCount="2" />
+          <Label Caption="">
+            <Action ID="actRunBookmark" Type="RunBookmark" Report="" BookmarkID="d1d20e56-8293-4d3d-9481-4a6b08e0cf29" BookmarkCollection="AdmingoCollection">
+              <Target Type="RunBookmark" FrameID="" />
+            </Action>
+          </Label>
+        </Division>
+      </PanelContent>
+    </Panel>
+  </ExtraPanelDefinition>
+</rdSavedDashboard>

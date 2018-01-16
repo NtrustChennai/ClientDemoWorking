@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="_Layout.Denied"
+	>
+	<StyleSheet
+		StyleSheet="_Themes/NTrust/Theme.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.Layout.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.AppStyles.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.CustomStyles.css"
+	/>
+	<Body>
+		<Division
+			Class="content-wrapper main-content clearfix text-center"
+			HtmlDiv="True"
+			>
+			<Label
+				Class="fa fa-warning supersized-error-icon"
+				HtmlTag="h1"
+				ID="icon-error"
+			/>
+			<LineBreak/>
+			<Label
+				Caption="Error"
+				Class="text-center"
+				HtmlTag="h1"
+			/>
+			<LineBreak/>
+			<Label
+				Caption="Unfortunately we&apos;re having trouble loading the page you are looking for. Please wait a moment and try again or use action below."
+				Class="text-center"
+				HtmlTag="h4"
+			/>
+			<LineBreak/>
+			<Remark>
+				<Division
+					Class="well well-sm"
+					HtmlDiv="True"
+					ID="ErrorMessage"
+					>
+					<Label
+						Caption="@Session.rdLastErrorMessage~"
+						Format="Preserve Line Feeds"
+						HtmlTag="P"
+					/>
+					<Label
+						Caption="HTTP 403 - Access Denied!"
+						Format="Preserve Line Feeds"
+						HtmlTag="P"
+					/>
+				</Division>
+			</Remark>
+			<LineBreak/>
+			<Remark>
+				<ResponsiveRow
+					CollisionBehavior="Overlap"
+					>
+					<ResponsiveColumn
+						Class="col-xs-offset-4"
+						ColspanExtraSmallScreen="4"
+						ColspanLargeScreen="4"
+						ColspanMediumScreen="4"
+						ColspanSmallScreen="4"
+						>
+						<Label
+							Caption="Reload"
+							Class="btn btn-default btn-block"
+							>
+							<EventHandler
+								DhtmlEvent="onclick"
+								>
+								<Action
+									Javascript="top.location.reload();"
+									Type="Javascript"
+								/>
+							</EventHandler>
+						</Label>
+					</ResponsiveColumn>
+				</ResponsiveRow>
+			</Remark>
+			<Label
+				Caption="@Function.HostAddress~"
+			/>
+		</Division>
+	</Body>
+	<ideTestParams/>
+</Report>

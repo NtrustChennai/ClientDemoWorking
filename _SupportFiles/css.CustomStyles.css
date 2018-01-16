@@ -1,0 +1,752 @@
+@font-face {
+    font-family: 'GloberRegular';
+    src: url('Glober_Regular-webfont.eot');
+    src: url('Glober_Regular-webfont.eot?#iefix') format('embedded-opentype'), url('Glober_Regular-webfont.woff') format('woff'), url('Glober_Regular-webfont.ttf') format('truetype'), url('Glober_Regular-webfont.svg#GloberRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GloberSemiBold';
+    src: url('Glober_SemiBold-webfont.eot');
+    src: url('Glober_SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('Glober_SemiBold-webfont.woff') format('woff'), url('Glober_SemiBold-webfont.ttf') format('truetype'), url('Glober_SemiBold-webfont.svg#GloberSemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GloberBold';
+    src: url('Glober_Bold-webfont.eot');
+    src: url('Glober_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('Glober_Bold-webfont.woff') format('woff'), url('Glober_Bold-webfont.ttf') format('truetype'), url('Glober_Bold-webfont.svg#GloberBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GloberHeavy';
+    src: url('Glober_Heavy-webfont.eot');
+    src: url('Glober_Heavy-webfont.eot?#iefix') format('embedded-opentype'), url('Glober_Heavy-webfont.woff') format('woff'), url('Glober_Heavy-webfont.ttf') format('truetype'), url('Glober_Heavy-webfont.svg#GloberHeavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* --- Typography --- */
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-family: 'GloberSemiBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    font-weight: normal;
+}
+h1 {
+    font-size: 34px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 16px;
+}
+/* Reset margins on headings inside header */
+
+header a,
+header a:link,
+header a:visited {
+    color: #555;
+}
+header a:hover {
+    color: #454545;
+}
+strong {
+    font-family: 'GloberBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+p.large {
+    font-size: 20px;
+}
+/* Links */
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #007bb9;
+    outline: none;
+}
+img {
+    max-width: 100%;
+}
+hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+    background: transparent;
+}
+sup {
+    top: -12rem;
+    font-size: 50%;
+}
+/* --- Global Styles --- */
+
+html {
+    font-size: 16px;
+    /* Base font size */
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+body {
+    font-family: Calibri;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+/*Imported from customstyles.css*/
+
+.hideelement {
+    visibility: hidden;
+    display: none;
+}
+.LinkLabel {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #4D4C4C;
+}
+.customLinkButton {
+    color: Blue !important;
+    text-decoration: underline;
+    background-image: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-color: RGBA(255, 255, 255, 0) !important;
+    border: 1px solid;
+    font-size: 100%;
+    padding: 3px 7px 4px;
+    margin: 3px 6px;
+    margin-top: 3px !important;
+}
+.CustomContainerBorder {
+    width: 100% !important;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    border-color: #3FB0AC !important;
+    padding: 6px;
+}
+.CustomDtOverflow {
+    border: solid 2px !important;
+    border-color: #3FB0AC !important;
+    padding: 6px;
+    border-radius: 0px;
+    height: 90%;
+    overflow: auto;
+}
+.CustomOuterElement {
+    margin: 1% 2% !important;
+    width: 96% !important;
+    max-height: 90% !important;
+    box-shadow: 1px 3px 12px #888 !important;
+    border-color: #DCDCDC;
+    background-color: WhiteSmoke;
+    border-radius: 4px;
+    min-height: 80% !important;
+    height: 80%;
+    line-height: 1.42857;
+    color: #333;
+}
+.whitebackground {
+    background-color: white;
+}
+.customTableHeader {
+    background-color: #172C42 !important;
+    background-color: #4D4C4C !important;
+    padding: 4px 10px 4px 10px;
+    font-size: 100%;
+    border: 0px;
+}
+.customColumnHeader {
+    color: White ! important;
+    background-color: #4D4C4C !important;
+    padding: 4px 10px 4px 10px;
+    font-size: 100%;
+    border: 0px;
+}
+.customColumnHeaderTrans {
+    color: White ! important;
+    background-color: WhiteSmoke !important;
+    padding: 4px 10px 4px 10px;
+    font-size: 100%;
+}
+.scroll-500 {
+    max-height: 600px;
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+    position: static;
+}
+/*#rdDataTableDiv-tenantTable {
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+}
+#rdDataTableDiv-CrosstabTable1 {
+    max-height: 225px;
+    overflow: auto;
+    width: 100%;
+    
+    width: 100%;
+}*/
+#rowBack {
+    background-color: white;
+}
+#tenantTable {
+    width: 100%;
+    border: 0px solid #C5C5C5;
+}
+#labelBack {
+    padding-left: 456px;
+    font-size: larger;
+    padding-top: 5px;
+    position: absolute;
+    z-index: 999;
+}
+a > span, a:link> span, a:visited > span,
+a, .btn-link, a:link, a:visited, .link {
+    /*color: #A7C240;
+    color: #4D4C4C;*/
+    text-decoration: none;
+	cursor: pointer;
+}
+a:hover, a:focus, .link:hover, .link:focus {
+    /*color: #A7C240;
+    color: #4D4C4C;*/
+    text-decoration: underline;
+}
+a:hover > span {
+/*
+    color: #A7C240;
+    color: #4D4C4C;
+*/
+}
+.yuimenu ul li a {
+  /* background: #626161 !important; */
+  color: #FFFFFF !important;
+}
+.yuimenu ul li a:hover {
+  /* background: #626161 !important; */
+  color: #FFFFFF !important;
+}
+.textLargeLink, a>span.textLargeLink {
+    font-size: 12pt;
+}
+.textLarge {
+    font-size: 13pt;
+    font-family: Calibri;
+}
+th.rdAgDataTable td {
+    background-image: none;
+    color: #3FB0AC !important;
+    font-size: 11pt;
+    font-weight: bold;    
+    color: white!important;
+    height: 27px;
+}
+th a {
+    color: #F1f6f6 !important;
+}
+th a:hover {
+    text-decoration: underline;
+}
+table.rdAgDataTable th {
+    background-color: #172C42 !important;
+    background-color: #4D4C4C !important;
+    height: 27px;
+}
+.contentRight {
+    float: right;
+    z-index: 999;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+.contentLeft {
+    z-index: 96;
+}
+#dvBack {
+    background-color: #626161 !important;
+    padding: .3rem .4rem;
+    color: #FFF;
+    margin-left: -9px;
+    margin-right: -9px;
+}
+.HeaderLink {
+    font-size: 12pt;
+    font-family: Calibri;
+    text-decoration: underline;
+    color: #CFDE53;
+}
+.Invisible {
+    display: none;
+}
+.customDivLeft30 {
+    width: 30% ! important;
+    float: left;
+}
+.BackIcon {
+    margin-top: 7px;
+    float: left;
+    margin-left: 370px;
+}
+.RightFloat {
+    float: right;
+}
+.customDivRight70 {
+    width: 70% ! important;
+    float: right;
+}
+.customDiv100 {
+    margin: 10px 10px 2px 10px;
+    border: 1px solid #C5C5C5;
+}
+.customDiv85 {
+    width: 78%;
+    margin: 15px 15px 2px 15px;
+    border: 1px solid #C5C5C5;
+}
+.tdRow1 {
+    padding: 0px 20px 0px 16px;
+}
+.AxSummaryHeaderRow {
+    background-color: #C5C5C5 !important;
+}
+.Customfont12 {
+    font-size: 12pt;
+}
+.rdPopupMenu A:link {
+    color: #FFFFFF ! important;
+    font-weight: bold;
+}
+.ThemeMasterReportLeftFrame {
+    position: absolute;
+    width: 250px;
+    bottom: 10px;
+    top: 40px;
+    z-index: 99;
+}
+.mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+/*End Imported from customstyles.css*/
+/*Header + Navbar*/
+
+#navigation {
+    background: #fff;
+    /*box-shadow: 0 2px 5px rgba(41, 44, 15, .3);*/
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+#navigation .dropdown-menu.float-right {
+  right: 0 !important;
+  left: auto !important;
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/*Sidebar color*/
+#masterContent #mainContent {
+	position: relative;
+	top: 3.7em;
+}
+#Sidebar {
+    background: #4d4c4c;
+    color: #fff;
+}
+/*Header Text Color*/
+
+#navigation .navbar-brand,
+#navigation .nav-item>a,
+#navigation .navbar-toggler,
+.sidebar-toggle {
+    /*border-color: rgba(207, 222, 85, 0.5);*/
+	border-color: transparent;
+}
+.sidebar-toggle,
+#navbar-brand,
+#navbar-brand:hover,
+#navbar-brand:focus,
+#navigation .navbar-text {
+    color: #cfde55;
+}
+#navigation .navbar-text {
+	font-size: 18px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+#navigation .nav-link, #navigation .nav-link > span {
+	color: #fff;
+}
+#navigation .nav-link {
+    padding-top: .7rem;
+    padding-bottom: .6rem;
+    border-bottom: 2px solid transparent;
+}
+#navigation .nav-link.active, #navigation .nav-link.active>span {
+    color: #cfde55;
+}
+#navigation .nav-link.active {
+    border-bottom-color: #cfde55;
+}
+.bg-dark {
+    background-color: #4d4c4c!important;
+}
+#navigation.navbar {
+    border-top: 2px solid #cfde55;
+}
+#navigation .nav-item>a:hover > span {
+
+}
+#navigation .nav-item>a:hover > span,
+#navigation .nav-item > a:hover {
+    color: #e4802f;
+}
+.nav-item.open > a, #navigation .nav-item > a:hover {
+	border-bottom-color:#e4802f !important;
+}
+/*Border Color*/
+
+#SidebarMenu div#MenuWrapper>div>a {
+    color: #fff;
+}
+#SidebarMenu div#MenuWrapper>div.active {
+    background: rgba(255, 255, 255, .1);
+}
+#SidebarMenu div#MenuWrapper>div.active>a {
+    color: #cfde4f;
+}
+.card-header {
+    background-color: #626161;
+    color: #c0de4b;
+}
+.nav-item.open > a, .sidebar-toggle:hover, #navigation .nav-item > a:hover, #navigation .nav-item > a:focus, #navigation .navbar-toggler:focus, #navigation .navbar-toggler:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #e4802f;
+}
+#SidebarMenu div#MenuWrapper>div:not(.active):hover>a, #SidebarMenu div#MenuWrapper>div:not(.active)>a:focus {
+    color: #e4802f;
+}
+
+#Footer {
+    background: #2F383D;
+    color: #fff;
+}
+#navigation .navbar-brand {
+    padding: .2em 1em 0;
+    margin-left: 0 !important;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    height: 50px;
+    margin-right: 0;
+    font-size: 18px;
+}
+.table-resizable {
+    border-top: 1px solid #e9ecef;
+}
+.table-resizable th td {
+    border-top: 0 solid transparent !important;
+	border-top-color: transparent !important;
+}
+.table, rdinteractivepaging>table.rdThemePaging {
+    margin-bottom: .5rem;
+}
+.GridTopRow {
+	background-color: #626161;
+    padding: .4rem;
+	text-align: right;
+}
+.shadow-b-1 {
+    box-shadow: 0px 2px 14px 0px rgba(50, 50, 50, 0.31);
+}
+
+.GridTitle {
+	color: #C0DE4B;
+	font-size: 120%;
+	font-weight: bold;
+}
+.bg-white {
+	background-color: #ffffff;
+}
+.table-bordered thead th td {
+    border-width: 0 0 0 0 !important;
+    border-bottom-width: 0 !important;
+    border-top-width: 0 !important;
+    border-left-width: 0 !important;
+    border-right-width: 0 !important;
+}
+.border .table-bordered {
+    border-left-width: 0 !important;
+    border-right-width: 0 !important;
+}
+.border .table-bordered td:first-child, .border .table-bordered th:first-child {
+    border-left-width: 0 !important;
+}
+.border .table-bordered td:last-child, .border .table-bordered th:last-child {
+    border-right-width: 0 !important;
+}
+input, input.rdThemeInput, textarea, textarea.rdThemeInput, select.rdThemeInput, select.rdDataCalendarDropdown {
+    border-radius: 3px;
+	margin: 0;
+}
+input[type="button"].btn, .ThemeLinkButton, .ThemeLinkButtonSmall, .rdAgCommand, .rdOgCommand, .rdAcCommand, span.rdCgCommand, .rdDashboardCommand, input[type="button"] {
+    border-radius: 2px;
+}
+.bg-light, tr.ThemeAlternatingRow td, .rdAg tr.ThemeAlternatingRow td, .rdAgDataTable tr.ThemeAlternatingRow td, .rdThemeDataTable tr.ThemeAlternatingRow > td {
+    background-color: #f2f2f2!important;
+}
+.dropdown-menu {
+    min-width: 8.5rem;
+}
+.dropdown-item {
+    padding: .25rem 1rem;
+}
+.rdDataCalendarCaption {
+	background-color: transparent !important;
+}
+.rdDataCalendarDayLabelHighlight, .rdTimePickerTableHeaderCaption, .rdTimePickerLabelHighlight, .rdPopupContent .rdDataCalendarDayLabelHighlight span, .rdPopupContent .rdTimePickerLabelHighlight span {
+    background-color: #4D4C4C !important;
+}
+.table-crosstab>thead>tr>th:not(:first-child) {
+	text-align: right;
+}
+.table-resizable>thead>tr>th>table>tbody>tr>td:nth-child(2) {
+	width: calc(100% - 26px) !important;
+}
+.table-resizable>thead>tr>th>table>tbody>tr>td:first-child, .table-resizable>thead>tr>th>table>tbody>tr>td:last-child {
+	width: 13px !important;
+}
+td.rdDashboardPanelImageColumn {
+    text-align: center;
+}
+td.rdDashboardPanelImageColumn img {
+    text-align: center;
+    border-radius: .25rem;
+    transition: all .2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+.supersized-error-icon {
+    font-size: 16em;
+    color: #FF2C2D
+}
+
+h1, h2, h3, h4, h5, h6, .ThemeHeaderLargest, .ThemeHeaderLarger, .ThemeHeaderLarge, .ThemeHeader, .ThemeHeaderSmall, .ThemeHeaderSmaller, .ThemeHeaderSmallest {
+    min-height: auto;
+}
+/* InfoGo Overrides
+******************************************************************************************/	
+.rdPreviewHoverState, .rdPreviewHoverState:hover, .ThemeLinkButton:hover, .ThemeLinkButtonSmall:hover, span:hover.rdAgCommand, span:hover.rdAcCommand, span:hover.rdOgCommand, span:hover.rdCgCommand, span:hover.rdDashboardCommand, #rowChangeTab span:hover.rdDashboardCommand, span:hover.rdPopupPanelCommand, .rdAgUnselectedTab:hover, .rdOgUnselectedTab:hover, input[type="button"]:hover {
+    background-color: #5e686e !important;
+}
+.InfoGo #rdMainBody {
+    padding: 0;
+}
+.InfoGo #divGoContainer {
+    min-height: calc(100% - 60px) !important;
+}
+.ThemeMasterReportTopFrame {
+    background-color: #1C1C1C !important;
+}
+.go-button-label { 
+	color: #eee !important;
+}
+.InfoGo #rdMainBody > table, .InfoGo #divMainContent {
+    min-height: 100%;
+    height: 100%;
+   	margin-top: 0; 
+    margin-bottom: 0; 
+}
+.InfoGo #divMainContent > iframe {
+    width: 100% !important;
+}
+.InfoGo #FooterWrap {
+	position: absolute;
+	width: 100%;
+}
+.InfoGo #FooterWrap #Footer {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.InfoGo #rdMainBody > table > tbody > tr > td  {
+	padding-top: 45px;
+	padding-bottom: 21px;
+}
+
+.go-intro {
+    margin-bottom: 0 !important;
+}
+#rdReportFooter, #rdReportHeader {
+	display: none !important;
+}
+.dvFilter
+{
+  border: 2px solid #E5E5E5;  
+}
+#popUPPanelFilter
+{
+left: 952px;
+top: 35px;
+
+}
+#LaunchBar {
+	background-color: rgba(0,0,0,.08); 
+}
+.LaunchPanel, #LeftFrame .ThemeMenuItemLink:hover {
+    background-color: rgba(0,0,0,.3) !important;
+}
+#rowsAnalysisGrid >tbody>tr>td>table {
+	margin: 0 auto;
+}
+#ppAction_BarChartCanvas1_1_rdPopup
+{
+  left: 170px !important;
+  top: 0px;
+  width: 150px;
+/*  top: 2%;*/
+  position: absolute !important;
+
+display: block;
+position: fixed;
+overflow: hidden;
+
+}
+div.rd-checkboxlist > table {
+	width: 600px;
+	margin-left: 15px;
+}
+#rowsAnalysisGrid>tbody>tr:not(:first-child) {
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,0.2);
+}
+img.titleMenuIcon, .InfoGo img  {
+	max-width: inherit;
+}
+.rdThemeDataTable, .rdAgDataTable, .rdOgOlapTable, .rdDgOlapTable {
+	background-color: #fff;
+}
+.rdAgDataTable, .rdAgDataTable > tbody > tr > td, .rdAgDataTable > thead > tr > th {
+   border: 1px solid #e9ecef;
+}
+/*
+#rowsAnalysisGrid .rdAgContentRow, #rowsAnalysisGrid #rowMenu>table>table, .rdAgSelectedTab, .rdAgSelectedTabOn,
+th.rdAgDataTable td, table.rdAgDataTable th, table.rdAgDataTable th a, tr.rdAgHeaderRow th, 
+table.rdAgDataTable th, table.rdAgDataTable > th a, table.rdAgDataTable th a {
+    background-color: #eeeeee;
+}
+.rdAg .rdThemeDataTableHeader td, th.rdThemeDataTableHeader, .rdAgSelectedTab span {
+	background-color: transparent !important;
+  	color: #363b42;
+}
+#rowsAnalysisGrid {
+    display: table !important;
+}*/
+.rdAgPanel select {
+	margin: 0 3px;
+}
+#rowsTable.rdAgPanel {
+	margin-bottom: 20px;
+}
+.rdAgContentRow select.rdThemeInput, #rowsAxControls select.rdThemeInput, #cellAcControls select.rdThemeInput {
+    min-width: 160px;
+}
+.rdQueryRow .rdThemeInput {
+    font-size: 100% !important;
+	margin-left: 5px;
+}
+
+.breadcrumb > a + a>span.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #868e96;
+    content: "/";
+}
+
+.breadcrumb > a + span.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #868e96;
+    content: "/";
+}
+.breadcrumb {
+    padding: .5rem 1.5rem;
+    margin-bottom: .1rem;
+     background-color: #f2f2f2; 
+    border-radius: 0;
+	box-shadow: 0px 2px 14px 0px rgba(50, 50, 50, 0.31);
+	border: 1px solid #e9ecef!important;
+    /*margin-top: -10px;
+    margin-left: -12px;
+    margin-right: -12px;*/
+}
+.rdAgSelectedTab span, .rdAgSelectedTab, .rdOgSelectedTab, .rdOgSelectedTab span {
+    background-color: #4D4C4C /*TabContainerSelectedBackground*/;
+    color: #cfde55 /*TabContainerSelectedFont*/;
+}
+
+.dropdown-menu a, .dropdown-menu a:hover {
+	text-decoration: none !important
+}
+.bg-gradent-light {
+    background-image: linear-gradient(to bottom, #FDFDFD 0%, #D9D9D9 100%);
+}
+caption {
+    caption-side: top; 
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.btn-default {
+    color: #CFC65C !important;
+	background-color: #626161 ;
+    text-decoration: none;
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+}
+.btn-default:hover {
+    background-color: #5e686e !important;
+}
+.ThemeTopBorder {
+	border-top: solid 2px !important;
+	border-color: #DCDCDC /*ContainerBorder*/ !important;
+	border-radius: 0px;
+}

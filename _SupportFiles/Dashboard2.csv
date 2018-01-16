@@ -1,0 +1,287 @@
+BUSINESS UNIT,BUSINESS UNIT NAME,UNIT NUMBER,LEASE NUMBER,PROCESSED BY,PROCESSED DATE,# of Transactions,# of ERRORS
+175,Anastasia Plaza,0030,703,Luis Pascual,04/25/2017 09:41:55,4,2
+175,Anastasia Plaza,0037,710,Luis Pascual,04/25/2017 09:42:55,4,10
+175,Anastasia Plaza,0021,714,Jill Sterling,10/06/2017 07:36:00,4,13
+175,Anastasia Plaza,0007,748,Holden Kortus,04/04/2017 06:37:11,4,0
+175,Anastasia Plaza,0032,754,Luis Pascual,04/25/2017 09:46:55,5,7
+175,Anastasia Plaza,0020,761,Holden Kortus,10/16/2017 13:51:06,5,4
+175,Anastasia Plaza,0018,762,Luis Pascual,04/25/2017 09:48:55,3,20
+175,Anastasia Plaza,0019,764,Luis Pascual,04/25/2017 09:49:55,4,12
+175,Anastasia Plaza,0024,767,Luis Pascual,04/25/2017 09:50:55,3,8
+175,Anastasia Plaza,0013,768,Luis Pascual,04/25/2017 09:51:55,5,2
+175,Anastasia Plaza,0031,769,Luis Pascual,04/25/2017 09:52:55,4,10
+10,South Bay Village,100,1001,Luis Pascual,04/25/2017 09:53:55,1,13
+10,South Bay Village,300,1002,Luis Pascual,04/25/2017 09:54:55,1,8
+10,South Bay Village,PADA,1003,Nicole Panosian,04/25/2017 09:55:55,1,13
+10,South Bay Village,PARK,1004,Holden Kortus,05/25/2017 13:07:21,1,8
+53,Welleby Plaza,10155,5302,Nicole Panosian,04/25/2017 09:57:55,2,0
+53,Welleby Plaza,10109,5303,Nicole Panosian,04/25/2017 09:58:55,3,7
+53,Welleby Plaza,10091,5305,Nicole Panosian,04/25/2017 09:59:55,2,2
+53,Welleby Plaza,10077,5306,Nicole Panosian,04/25/2017 10:00:55,2,10
+53,Welleby Plaza,10135,5308,Holden Kortus,04/04/2017 06:53:11,6,13
+53,Welleby Plaza,10097B,5311,Nicole Panosian,04/25/2017 10:02:55,4,8
+53,Welleby Plaza,10105,5319,Nicole Panosian,04/25/2017 10:03:55,5,8
+53,Welleby Plaza,10087,5328,Nicole Panosian,04/25/2017 10:04:55,1,13
+53,Welleby Plaza,10131,5328,Holden Kortus,07/13/2017 10:39:54,4,8
+53,Welleby Plaza,10147A,5335,Nicole Panosian,04/25/2017 10:06:55,3,0
+53,Welleby Plaza,10129,5350,Holden Kortus,05/11/2017 12:43:09,3,0
+53,Welleby Plaza,10119B,5351,Holden Kortus,07/15/2017 13:06:25,5,13
+53,Welleby Plaza,10127,5354,Nicole Panosian,04/25/2017 10:10:55,5,8
+53,Welleby Plaza,10139,5355,Holden Kortus,05/12/2017 13:43:26,6,13
+53,Welleby Plaza,10123,5367,Nicole Panosian,04/25/2017 10:12:55,3,8
+53,Welleby Plaza,10107,5369,Nicole Panosian,04/25/2017 10:13:55,6,0
+53,Welleby Plaza,10137,5371,Holden Kortus,08/03/2017 08:19:31,4,7
+53,Welleby Plaza,10133,5372,Luis Pascual,04/25/2017 10:15:55,5,8
+53,Welleby Plaza,10079,5373,Luis Pascual,04/25/2017 10:16:55,1,0
+53,Welleby Plaza,10081,5377,Holden Kortus,10/20/2017 07:21:45,1,7
+53,Welleby Plaza,10101,5378,Luis Pascual,04/25/2017 10:18:55,1,4
+53,Welleby Plaza,10153,5379,Luis Pascual,04/25/2017 10:19:55,1,20
+53,Welleby Plaza,10145,5380,Luis Pascual,04/25/2017 10:20:55,1,12
+53,Welleby Plaza,10119C,5381,Luis Pascual,04/25/2017 10:21:55,1,8
+53,Welleby Plaza,10143,5382,Holden Kortus,06/05/2017 08:42:12,4,2
+71,Aventura Shopping Center,0001,7101,Holden Kortus,10/10/2017 13:58:29,3,10
+71,Aventura Shopping Center,0006,7106,Holden Kortus,06/20/2017 19:00:55,3,13
+71,Aventura Shopping Center,0021,7121,Jill Sterling,06/21/2017 12:46:23,2,8
+71,Aventura Shopping Center,6,7142,Nicole Panosian,04/25/2017 10:26:55,2,13
+71,Aventura Shopping Center,B4,7143,Holden Kortus,04/04/2017 07:19:11,1,8
+71,Aventura Shopping Center,1,7144,Holden Kortus,04/04/2017 07:20:11,1,0
+71,Aventura Shopping Center,B2,7145,Nicole Panosian,04/25/2017 10:29:55,1,7
+71,Aventura Shopping Center,A5,7146,Holden Kortus,04/04/2017 07:22:11,1,2
+71,Aventura Shopping Center,C1,7147,Cathy Medina,04/04/2017 07:23:11,1,10
+71,Aventura Shopping Center,B6,7148,Cathy Medina,09/26/2017 17:15:38,1,13
+93014,Hasley Canyon Village,B001,7501,Jonathan Mikailonis,05/10/2017 14:35:06,1,8
+76,Courtyard Shopping Center,0040,7668,Holden Kortus,05/17/2017 13:40:01,1,8
+82,Chasewood Plaza,0027,8203,Nicole Panosian,04/25/2017 10:35:55,3,13
+82,Chasewood Plaza,0023,8206,Brian Lord,05/10/2017 13:49:57,4,8
+82,Chasewood Plaza,0022,8212,Holden Kortus,08/08/2017 14:20:07,2,8
+82,Chasewood Plaza,0024,8212,Rebecca Bullard,04/25/2017 10:39:55,1,0
+82,Chasewood Plaza,0018,8218,Holden Kortus,07/21/2017 14:40:24,1,13
+82,Chasewood Plaza,0004,8223,Rebecca Bullard,04/25/2017 10:41:55,2,8
+82,Chasewood Plaza,0020,8236,Nira Bradfield,09/25/2017 12:07:29,2,13
+82,Chasewood Plaza,0030,8236,Holden Kortus,09/25/2017 08:28:00,2,8
+82,Chasewood Plaza,0044,8237,Holden Kortus,10/14/2017 08:46:46,2,0
+82,Chasewood Plaza,0045,8237,Rebecca Bullard,04/25/2017 10:45:55,4,7
+82,Chasewood Plaza,0034A,8251,Rebecca Bullard,04/25/2017 09:41:55,3,0
+82,Chasewood Plaza,0046,8259,Cathy Medina,08/08/2017 05:31:07,4,7
+82,Chasewood Plaza,0039B,8273,Luis Pascual,04/25/2017 09:43:55,1,2
+82,Chasewood Plaza,0040B,8273,Jill Sterling,08/24/2017 12:40:48,4,10
+82,Chasewood Plaza,0029,8276,Luis Pascual,04/25/2017 09:45:55,4,13
+82,Chasewood Plaza,0039A,8278,Luis Pascual,04/25/2017 09:46:55,3,0
+82,Chasewood Plaza,0038,8280,Holden Kortus,10/06/2017 08:03:45,5,7
+82,Chasewood Plaza,0043,8287,Luis Pascual,04/25/2017 09:48:55,4,2
+82,Chasewood Plaza,0019,8291,Luis Pascual,04/25/2017 09:49:55,2,10
+82,Chasewood Plaza,0015,8293,Luis Pascual,04/25/2017 09:50:55,2,13
+82,Chasewood Plaza,0008,8294,Luis Pascual,04/25/2017 09:51:55,3,2
+82,Chasewood Plaza,0010,8297,Rebecca Bullard,04/25/2017 09:52:55,2,10
+82,Chasewood Plaza,0037,8298,Rebecca Bullard,04/25/2017 09:53:55,2,13
+82,Chasewood Plaza,0042,8299,Rebecca Bullard,04/25/2017 09:54:55,2,0
+82,Chasewood Plaza,0007,8302,Rebecca Bullard,04/25/2017 09:55:55,2,20
+82,Chasewood Plaza,0039B,8303,Rebecca Bullard,04/25/2017 09:56:55,2,12
+82,Chasewood Plaza,0013,8306,Rebecca Bullard,04/25/2017 09:57:55,2,8
+82,Chasewood Plaza,0040A,8309,Nicole Panosian,04/25/2017 09:58:55,2,2
+82,Chasewood Plaza,0050,8310,Cathy Medina,10/13/2017 06:33:25,2,10
+82,Chasewood Plaza,0003,8311,Nicole Panosian,04/25/2017 10:00:55,1,13
+82,Chasewood Plaza,0041,8311,Nicole Panosian,04/25/2017 10:01:55,2,8
+82,Chasewood Plaza,0033,8312,Nicole Panosian,04/25/2017 10:02:55,1,13
+82,Chasewood Plaza,0048,8313,Nicole Panosian,04/25/2017 10:03:55,1,8
+82,Chasewood Plaza,0049,8314,Nicole Panosian,04/25/2017 10:04:55,1,0
+82,Chasewood Plaza,0026,8316,Luis Pascual,04/25/2017 10:06:55,1,2
+82,Chasewood Plaza,0031,8319,Holden Kortus,07/20/2017 05:44:25,1,8
+82,Chasewood Plaza,0032,8320,Luis Pascual,04/25/2017 10:10:55,2,8
+82,Chasewood Plaza,0035,8321,Luis Pascual,04/25/2017 10:11:55,1,13
+82,Chasewood Plaza,0041,8322,Holden Kortus,09/22/2017 13:47:07,1,8
+82,Chasewood Plaza,0005,8323,Luis Pascual,04/25/2017 10:13:55,1,0
+82,Chasewood Plaza,0022,8324,Luis Pascual,04/25/2017 10:14:55,1,8
+82,Chasewood Plaza,0002,8325,Luis Pascual,09/22/2017 13:50:07,1,0
+82,Chasewood Plaza,0041B,8326,Luis Pascual,09/22/2017 13:51:07,1,13
+132,Wellington Town Square,0008,13205,Holden Kortus,04/04/2017 07:09:11,5,8
+132,Wellington Town Square,0009,13206,Holden Kortus,10/24/2017 14:52:01,5,13
+132,Wellington Town Square,0013,13210,Luis Pascual,04/25/2017 10:19:55,4,8
+132,Wellington Town Square,0014,13211,Luis Pascual,04/25/2017 10:20:55,4,0
+132,Wellington Town Square,0010A,13218,Nicole Panosian,04/25/2017 10:22:55,1,0
+132,Wellington Town Square,0022,13218,Nicole Panosian,04/25/2017 10:23:55,1,7
+132,Wellington Town Square,0024-25,13220,Holden Kortus,04/04/2017 07:16:11,4,2
+132,Wellington Town Square,0030,13223,Rebecca Bullard,04/25/2017 10:25:55,3,20
+132,Wellington Town Square,0031,13224,Rebecca Bullard,04/25/2017 10:26:55,4,12
+132,Wellington Town Square,0032,13226,Rebecca Bullard,04/25/2017 10:27:55,4,8
+132,Wellington Town Square,0033,13227,Rebecca Bullard,04/25/2017 10:28:55,3,2
+132,Wellington Town Square,0014A,13232,Rebecca Bullard,04/25/2017 10:29:55,1,10
+132,Wellington Town Square,0037,13232,Rebecca Bullard,04/25/2017 10:30:55,2,13
+132,Wellington Town Square,0039-40,13232,Rebecca Bullard,04/25/2017 10:31:55,1,8
+132,Wellington Town Square,0021,13255,Jill Sterling,07/23/2017 08:15:38,5,13
+132,Wellington Town Square,0018,13259,Holden Kortus,06/21/2017 04:57:23,4,8
+132,Wellington Town Square,0007A,13263,Holden Kortus,06/21/2017 05:39:33,3,0
+132,Wellington Town Square,0028,13265,Rebecca Bullard,04/25/2017 10:35:55,3,7
+132,Wellington Town Square,0026,13266,Rebecca Bullard,04/25/2017 10:36:55,4,2
+132,Wellington Town Square,0023,13268,Holden Kortus,10/14/2017 08:42:42,3,10
+132,Wellington Town Square,0034,13269,Rebecca Bullard,04/25/2017 10:38:55,3,13
+132,Wellington Town Square,0036,13271,Rebecca Bullard,04/25/2017 10:39:55,2,8
+132,Wellington Town Square,0010B,13272,Holden Kortus,04/04/2017 07:32:11,2,8
+132,Wellington Town Square,0019,13275,Rebecca Bullard,04/25/2017 10:41:55,2,13
+132,Wellington Town Square,0029,13277,Rebecca Bullard,04/25/2017 10:42:55,2,8
+132,Wellington Town Square,0036A,13279,Rebecca Bullard,04/25/2017 10:43:55,2,0
+132,Wellington Town Square,0007,13282,Holden Kortus,05/08/2017 07:30:41,1,8
+132,Wellington Town Square,0011,13284,Rebecca Bullard,04/25/2017 10:45:55,2,0
+132,Wellington Town Square,0022,13287,Rebecca Bullard,04/25/2017 09:41:55,2,13
+132,Wellington Town Square,0001,13288,Rebecca Bullard,04/25/2017 09:42:55,2,8
+132,Wellington Town Square,0001A,13289,Rebecca Bullard,04/25/2017 09:43:55,3,13
+134,Old St Augustine Plaza,0104,13403,Rebecca Bullard,04/25/2017 09:44:55,1,8
+134,Old St Augustine Plaza,OUT,13418,Rebecca Bullard,04/25/2017 09:45:55,4,0
+134,Old St Augustine Plaza,0106A,13420,Rebecca Bullard,04/25/2017 09:46:55,1,7
+134,Old St Augustine Plaza,0119,13423,Rebecca Bullard,04/25/2017 09:48:55,4,7
+134,Old St Augustine Plaza,0117,13424,Luis Pascual,04/25/2017 09:49:55,3,2
+134,Old St Augustine Plaza,0120,13428,Luis Pascual,04/25/2017 09:50:55,1,20
+134,Old St Augustine Plaza,0105,13429,Luis Pascual,04/25/2017 09:51:55,1,12
+134,Old St Augustine Plaza,0106B,13430,Luis Pascual,04/25/2017 09:53:55,1,2
+134,Old St Augustine Plaza,0114,13430,Luis Pascual,04/25/2017 09:54:55,3,10
+134,Old St Augustine Plaza,0107,13431,Luis Pascual,04/25/2017 09:55:55,1,13
+134,Old St Augustine Plaza,0113,13431,Luis Pascual,04/25/2017 09:56:55,4,8
+134,Old St Augustine Plaza,0108,13435,Luis Pascual,04/25/2017 09:57:55,3,13
+134,Old St Augustine Plaza,0109,13437,Luis Pascual,04/25/2017 09:58:55,2,8
+136,Woodcroft Shopping Center,0011,13601,Luis Pascual,04/25/2017 09:59:55,3,0
+136,Woodcroft Shopping Center,0015,13603,Holden Kortus,05/18/2017 17:41:56,3,7
+136,Woodcroft Shopping Center,0022,13606,Luis Pascual,04/25/2017 10:01:55,6,2
+136,Woodcroft Shopping Center,0006,13611,Holden Kortus,08/17/2017 05:26:30,4,10
+136,Woodcroft Shopping Center,0008,13613,Rebecca Bullard,04/25/2017 10:03:55,4,13
+136,Woodcroft Shopping Center,0027,13616,Holden Kortus,08/21/2017 11:01:01,7,8
+136,Woodcroft Shopping Center,0023,13620,Rebecca Bullard,04/25/2017 10:06:55,5,13
+136,Woodcroft Shopping Center,0018,13621,Rebecca Bullard,04/25/2017 10:07:55,4,8
+136,Woodcroft Shopping Center,0028,13626,Holden Kortus,07/20/2017 11:34:19,4,0
+136,Woodcroft Shopping Center,0004,13631,Rebecca Bullard,04/25/2017 10:09:55,4,8
+136,Woodcroft Shopping Center,0010,13632,Rebecca Bullard,04/25/2017 10:10:55,5,0
+136,Woodcroft Shopping Center,0029,13637,Stephanie Cirwithen,10/12/2017 13:39:44,4,13
+136,Woodcroft Shopping Center,0005,13644,Holden Kortus,04/04/2017 07:04:11,3,8
+136,Woodcroft Shopping Center,0007,13646,Holden Kortus,04/04/2017 07:05:11,4,13
+136,Woodcroft Shopping Center,0017,13648,Holden Kortus,04/04/2017 07:06:11,2,8
+136,Woodcroft Shopping Center,1003,13649,Holden Kortus,04/04/2017 07:07:11,1,0
+136,Woodcroft Shopping Center,0013,13651,Jill Sterling,10/10/2017 08:48:38,3,7
+136,Woodcroft Shopping Center,0030,13653,Tanner Spakausky,04/04/2017 07:09:11,2,0
+136,Woodcroft Shopping Center,0021,13654,Tanner Spakausky,04/04/2017 07:10:11,2,7
+136,Woodcroft Shopping Center,0014,13656,Brian Lord,08/22/2017 11:43:20,2,2
+136,Woodcroft Shopping Center,0027A,13657,Tanner Spakausky,04/04/2017 07:12:11,2,2
+136,Woodcroft Shopping Center,0016,13658,Tanner Spakausky,04/04/2017 07:13:11,2,10
+136,Woodcroft Shopping Center,0026,13659,Tanner Spakausky,09/20/2017 08:20:04,2,13
+136,Woodcroft Shopping Center,0019,13660,Tanner Spakausky,04/04/2017 07:15:11,1,8
+136,Woodcroft Shopping Center,0020,13661,Tanner Spakausky,04/04/2017 07:16:11,1,0
+139,Carmel Commons,0003,13902,Holden Kortus,06/12/2017 11:49:52,3,7
+139,Carmel Commons,0010,13908,Holden Kortus,06/02/2017 06:00:58,4,4
+139,Carmel Commons,0012,13910,Rebecca Bullard,04/25/2017 10:27:55,4,20
+139,Carmel Commons,0016,13914,Rebecca Bullard,04/25/2017 10:28:55,2,12
+139,Carmel Commons,0020,13917,Rebecca Bullard,04/25/2017 10:29:55,4,8
+139,Carmel Commons,0022,13918,Nicole Panosian,04/25/2017 10:30:55,3,2
+139,Carmel Commons,0028,13924,Nicole Panosian,04/25/2017 10:31:55,5,10
+139,Carmel Commons,0030,13926,Nicole Panosian,04/25/2017 10:32:55,2,13
+139,Carmel Commons,0023,13929,Nicole Panosian,04/25/2017 10:33:55,1,8
+139,Carmel Commons,0033,13929,Nicole Panosian,04/25/2017 10:34:55,3,13
+139,Carmel Commons,0035,13931,Nicole Panosian,04/25/2017 10:35:55,4,8
+139,Carmel Commons,0037,13933,Holden Kortus,09/28/2017 16:01:49,3,0
+139,Carmel Commons,0001,13940,Nicole Panosian,04/25/2017 10:37:55,4,7
+139,Carmel Commons,0004,13941,Nicole Panosian,04/25/2017 10:38:55,3,2
+139,Carmel Commons,0017,13942,Nicole Panosian,04/25/2017 10:39:55,4,10
+139,Carmel Commons,0036,13944,Brian Lord,05/05/2017 11:32:11,1,13
+139,Carmel Commons,0024,13947,Holden Kortus,08/02/2017 14:55:28,5,8
+139,Carmel Commons,0029,13947,Nicole Panosian,04/25/2017 10:42:55,1,8
+139,Carmel Commons,0006,13949,Holden Kortus,06/21/2017 09:09:42,4,13
+139,Carmel Commons,0014A,13951,Nicole Panosian,04/25/2017 10:44:55,2,8
+139,Carmel Commons,0032,13952,Holden Kortus,05/12/2017 14:41:17,2,0
+139,Carmel Commons,0026,13968,Rebecca Bullard,04/25/2017 09:41:55,2,8
+139,Carmel Commons,0021,13969,Rebecca Bullard,04/25/2017 09:42:55,4,0
+139,Carmel Commons,0008,13970,Nira Bradfield,09/18/2017 10:46:06,1,13
+139,Carmel Commons,0014B,13971,Rebecca Bullard,04/25/2017 09:44:55,1,8
+139,Carmel Commons,0011,13973,Holden Kortus,09/06/2017 07:42:19,1,13
+139,Carmel Commons,0018,13974,Rebecca Bullard,04/25/2017 09:46:55,1,8
+139,Carmel Commons,0019,13975,Rebecca Bullard,04/25/2017 09:47:55,1,0
+139,Carmel Commons,PARK,13976,Rebecca Bullard,04/25/2017 09:48:55,1,7
+139,Carmel Commons,0034B,13977,Holden Kortus,09/06/2017 07:46:26,1,8
+139,Carmel Commons,0024,13978,Rebecca Bullard,04/25/2017 09:50:55,1,0
+139,Carmel Commons,0005,13980,Rebecca Bullard,04/25/2017 09:52:55,1,4
+139,Carmel Commons,0033,13981,Holden Kortus,09/05/2017 12:07:48,3,20
+145,Gardens Square,0A6A,14502,Holden Kortus,09/06/2017 07:52:06,3,8
+145,Gardens Square,00A6,14505,Rebecca Bullard,04/25/2017 09:56:55,5,2
+145,Gardens Square,0B10,14517,Luis Pascual,04/25/2017 09:57:55,4,10
+145,Gardens Square,0B11,14519,Luis Pascual,04/25/2017 09:58:55,3,13
+145,Gardens Square,0B15,14521,Luis Pascual,04/25/2017 10:00:55,5,13
+145,Gardens Square,0B18,14523,Luis Pascual,04/25/2017 10:01:55,3,8
+145,Gardens Square,0B16,14525,Luis Pascual,04/25/2017 10:02:55,5,0
+145,Gardens Square,00A9,14532,Luis Pascual,04/25/2017 10:04:55,4,2
+145,Gardens Square,00B4,14535,Luis Pascual,04/25/2017 10:05:55,4,10
+145,Gardens Square,0B17,14537,Luis Pascual,04/25/2017 10:06:55,4,13
+145,Gardens Square,0B19,14537,Luis Pascual,04/25/2017 10:07:55,3,8
+145,Gardens Square,00B5,14539,Luis Pascual,04/25/2017 10:08:55,3,8
+145,Gardens Square,00B1,14541,Amy Lyerly,08/31/2017 08:54:16,3,13
+145,Gardens Square,00A1,14542,Luis Pascual,04/25/2017 10:10:55,2,8
+145,Gardens Square,00B2,14545,Jill Sterling,05/23/2017 09:19:18,2,0
+145,Gardens Square,00A8,14549,Luis Pascual,04/25/2017 10:12:55,3,8
+145,Gardens Square,0B19,14550,Holden Kortus,10/20/2017 07:17:37,4,0
+145,Gardens Square,00B6,14552,Luis Pascual,04/25/2017 10:14:55,1,13
+145,Gardens Square,00A5,14553,Rebecca Bullard,04/25/2017 10:15:55,2,8
+145,Gardens Square,00A7,14554,Rebecca Bullard,04/25/2017 10:16:55,2,13
+145,Gardens Square,0B12,14555,Rebecca Bullard,04/25/2017 10:17:55,1,8
+145,Gardens Square,0B13,14556,Mariana Perez,08/08/2017 07:43:54,2,0
+145,Gardens Square,00B3,14557,Rebecca Bullard,04/25/2017 10:19:55,1,7
+145,Gardens Square,0B14,14558,Rebecca Bullard,04/25/2017 10:20:55,1,0
+145,Gardens Square,00B9,14559,Nicole Panosian,04/25/2017 10:21:55,1,7
+147,Boynton Lakes Plaza,0306,14705,Holden Kortus,07/17/2017 14:36:29,4,2
+147,Boynton Lakes Plaza,0600,14709,Nicole Panosian,04/25/2017 10:23:55,1,10
+147,Boynton Lakes Plaza,0303,14712,Nicole Panosian,04/25/2017 10:24:55,3,13
+147,Boynton Lakes Plaza,0307,14715,Nicole Panosian,04/25/2017 10:25:55,3,0
+147,Boynton Lakes Plaza,0400,14723,Nicole Panosian,04/25/2017 10:26:55,1,7
+147,Boynton Lakes Plaza,0104,14724,Holden Kortus,04/25/2017 11:06:46,5,2
+147,Boynton Lakes Plaza,0304,14728,Nicole Panosian,04/25/2017 10:28:55,5,10
+147,Boynton Lakes Plaza,0101B,14729,Nira Bradfield,09/18/2017 11:59:59,3,13
+147,Boynton Lakes Plaza,0101A,14738,Tanner Spakausky,04/04/2017 07:22:11,2,2
+147,Boynton Lakes Plaza,0106,14740,Cathy Medina,08/31/2017 12:39:09,2,10
+147,Boynton Lakes Plaza,0203,14741,Tanner Spakausky,04/04/2017 07:24:11,1,13
+147,Boynton Lakes Plaza,0500,14742,Holden Kortus,04/04/2017 07:25:11,1,0
+147,Boynton Lakes Plaza,0301,14743,Holden Kortus,04/04/2017 07:26:11,1,20
+147,Boynton Lakes Plaza,0202,14744,Holden Kortus,04/04/2017 07:27:11,2,12
+147,Boynton Lakes Plaza,0204,14745,Holden Kortus,04/04/2017 07:28:11,2,8
+147,Boynton Lakes Plaza,0201,14746,Nicole Panosian,04/25/2017 10:37:55,1,2
+147,Boynton Lakes Plaza,0302,14747,Nicole Panosian,04/25/2017 10:38:55,1,10
+147,Boynton Lakes Plaza,0305,14748,Nicole Panosian,04/25/2017 10:39:55,1,13
+147,Boynton Lakes Plaza,0103,14749,Nicole Panosian,04/25/2017 10:40:55,1,8
+147,Boynton Lakes Plaza,0102,14750,Nicole Panosian,04/25/2017 10:41:55,1,13
+147,Boynton Lakes Plaza,0105,14751,Rebecca Bullard,04/25/2017 10:42:55,1,8
+147,Boynton Lakes Plaza,0108,14752,Rebecca Bullard,04/25/2017 10:43:55,2,0
+148,Pine Tree Plaza,0005,14804,Holden Kortus,04/04/2017 07:36:11,4,7
+148,Pine Tree Plaza,0012,14809,Rebecca Bullard,04/25/2017 10:45:55,4,2
+148,Pine Tree Plaza,0001,14813,Rebecca Bullard,04/25/2017 09:41:55,1,10
+148,Pine Tree Plaza,0004A,14814,Rebecca Bullard,04/25/2017 09:42:55,4,13
+148,Pine Tree Plaza,0006,14816,Rebecca Bullard,04/25/2017 09:43:55,3,8
+148,Pine Tree Plaza,0004,14822,Rebecca Bullard,04/25/2017 09:44:55,4,8
+148,Pine Tree Plaza,0009,14826,Rebecca Bullard,04/25/2017 09:45:55,3,13
+148,Pine Tree Plaza,0010,14826,Rebecca Bullard,04/25/2017 09:46:55,2,8
+148,Pine Tree Plaza,0014,14828,Rebecca Bullard,04/25/2017 09:47:55,5,0
+148,Pine Tree Plaza,0011,14836,Rebecca Bullard,04/25/2017 09:48:55,2,8
+148,Pine Tree Plaza,0008,14838,Rebecca Bullard,04/25/2017 09:49:55,2,0
+148,Pine Tree Plaza,0009,14839,Rebecca Bullard,04/25/2017 09:50:55,2,13
+148,Pine Tree Plaza,0013,14840,Holden Kortus,04/04/2017 06:43:11,2,8
+148,Pine Tree Plaza,0007,14841,Rebecca Bullard,04/25/2017 09:52:55,1,13
+180,Shoppes @ 104,0004,15304,Holden Kortus,10/09/2017 14:37:04,3,8
+180,Shoppes @ 104,0008,15307,Mariana Perez,08/08/2017 07:19:54,2,0
+180,Shoppes @ 104,0011,15309,Holden Kortus,05/11/2017 07:21:09,3,7
+180,Shoppes @ 104,0014,15312,Rebecca Bullard,04/25/2017 09:56:55,4,0
+180,Shoppes @ 104,0015,15313,Rebecca Bullard,04/25/2017 09:57:55,4,7
+180,Shoppes @ 104,0017,15315,Rebecca Bullard,04/25/2017 09:58:55,5,2
+180,Shoppes @ 104,0020,15317,Tanner Spakausky,04/04/2017 06:51:11,6,20
+180,Shoppes @ 104,0021,15318,Rebecca Bullard,04/25/2017 10:00:55,4,12
+180,Shoppes @ 104,0028,15324,Rebecca Bullard,04/25/2017 10:01:55,3,8
+180,Shoppes @ 104,0003A,15328,Mariana Perez,08/08/2017 07:27:54,1,2
+180,Shoppes @ 104,0032,15328,Rebecca Bullard,04/25/2017 10:03:55,3,10
+180,Shoppes @ 104,0033,15329,Holden Kortus,07/17/2017 12:59:53,3,13
+180,Shoppes @ 104,0034,15330,Rebecca Bullard,04/25/2017 10:05:55,3,8
+180,Shoppes @ 104,0026,15332,Holden Kortus,10/13/2017 09:53:38,3,13
+180,Shoppes @ 104,0016,15337,Rebecca Bullard,04/25/2017 10:07:55,5,8
+180,Shoppes @ 104,0031,15338,Rebecca Bullard,04/25/2017 10:08:55,4,0
+180,Shoppes @ 104,0009,15340,Nicole Panosian,04/25/2017 10:09:55,2,7
+154,Fleming Island,0005,15403,Nicole Panosian,04/25/2017 10:10:55,5,2
+154,Fleming Island,0010,15406,Nicole Panosian,04/25/2017 10:11:55,4,10
+154,Fleming Island,0011,15407,Nicole Panosian,04/25/2017 10:12:55,2,13
+154,Fleming Island,0012,15408,Nicole Panosian,04/25/2017 10:13:55,5,8
+154,Fleming Island,0017,15411,Nicole Panosian,04/25/2017 10:14:55,4,8
+154,Fleming Island,0018,15412,Nicole Panosian,04/25/2017 10:15:55,3,13
+154,Fleming Island,0020,15414,Tanner Spakausky,04/04/2017 07:08:11,4,8
+154,Fleming Island,0004,15418,Nicole Panosian,04/25/2017 10:17:55,3,0
+154,Fleming Island,100,15421,Rebecca Bullard,04/25/2017 10:18:55,3,8
+154,Fleming Island,0021,15427,Rebecca Bullard,04/25/2017 10:19:55,4,0
+154,Fleming Island,A1,15428,Rebecca Bullard,04/25/2017 10:20:55,4,13

@@ -1,0 +1,94 @@
+<Report>
+  <Body>
+    <Division ID="bea34a63-cc14-451c-96f1-e2a1ce1f0bb1" HtmlDiv="True" rdReportAuthorElementType="Visualization" Class="rd-report-author-element" rdGalleryPanelID="rdCustomDashboardPanel_20f0cc33e7f941108c21b5fff4e1c522">
+      <Division ID="divTitle_bea34a63-cc14-451c-96f1-e2a1ce1f0bb1" HtmlDiv="True">
+        <Label ID="lblVisualizationTitle_bea34a63-cc14-451c-96f1-e2a1ce1f0bb1" Class="ThemeHeader" Caption="TL Report">
+        </Label>
+      </Division>
+      <Division ID="divContent_bea34a63-cc14-451c-96f1-e2a1ce1f0bb1" HtmlDiv="True" Class="rd-report-author-element-content rd-scrollable-x">
+        <DataTable ID="dtAnalysisGrid_636492230391527855" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True" Width="100" WidthScale="%">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Business Unit" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_BUSINESS_UNIT" DataColumn="Annotation_Details_BUSINESS_UNIT" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_BUSINESS_UNIT" Caption="@Data.Annotation_Details_BUSINESS_UNIT~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_BUSINESS_UNIT" />
+            <DataColumnSort DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" OriginalDataColumn="Annotation_Details_BUSINESS_UNIT" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Lease Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_LEASE_NUMBER" DataColumn="Annotation_Details_LEASE_NUMBER" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_LEASE_NUMBER" Caption="@Data.Annotation_Details_LEASE_NUMBER~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_LEASE_NUMBER" />
+            <DataColumnSort DataColumn="Annotation_Details_LEASE_NUMBER" DataType="Text" OriginalDataColumn="Annotation_Details_LEASE_NUMBER" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Unit Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_UNIT_NUMBER" DataColumn="Annotation_Details_UNIT_NUMBER" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_UNIT_NUMBER" Caption="@Data.Annotation_Details_UNIT_NUMBER~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_UNIT_NUMBER" />
+            <DataColumnSort DataColumn="Annotation_Details_UNIT_NUMBER" DataType="Text" OriginalDataColumn="Annotation_Details_UNIT_NUMBER" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="DBA Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DBA_NAME" DataColumn="Annotation_Details_DBA_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DBA_NAME" Caption="@Data.Annotation_Details_DBA_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DBA_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_DBA_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_DBA_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Section Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_SECTION_NAME" DataColumn="Annotation_Details_SECTION_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_SECTION_NAME" Caption="@Data.Annotation_Details_SECTION_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_SECTION_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_SECTION_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_SECTION_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Field Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_FIELD_NAME" DataColumn="Annotation_Details_FIELD_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_FIELD_NAME" Caption="@Data.Annotation_Details_FIELD_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_FIELD_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_FIELD_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_FIELD_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Picklist Value" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_PICKLIST_VALUE" DataColumn="Annotation_Details_PICKLIST_VALUE" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_PICKLIST_VALUE" Caption="@Data.Annotation_Details_PICKLIST_VALUE~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_PICKLIST_VALUE" />
+            <DataColumnSort DataColumn="Annotation_Details_PICKLIST_VALUE" DataType="Text" OriginalDataColumn="Annotation_Details_PICKLIST_VALUE" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Document Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DOCUMENT_NAME" DataColumn="Annotation_Details_DOCUMENT_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DOCUMENT_NAME" Caption="@Data.Annotation_Details_DOCUMENT_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DOCUMENT_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_DOCUMENT_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_DOCUMENT_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Page Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_PAGE_NUMBER" DataColumn="Annotation_Details_PAGE_NUMBER" Class="rdThemeDataTableCell ThemeAlignRight rdAgAlignRight ThemeAlignRight rdAgAlignRight" ColumnHeaderClass="rdAgQbColor1" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_PAGE_NUMBER" Caption="@Data.Annotation_Details_PAGE_NUMBER~" Format="General Number" />
+            <SpaceForBorders DataColumn="Annotation_Details_PAGE_NUMBER" />
+            <ExcelColumnFormat DataType="Number" />
+            <DataColumnSort DataColumn="Annotation_Details_PAGE_NUMBER" DataType="Number" OriginalDataColumn="Annotation_Details_PAGE_NUMBER" OriginalDataType="Number" />
+          </DataTableColumn>
+          <DataTableColumn Header="Document Reference" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DOCUMENT_REFERENCE" DataColumn="Annotation_Details_DOCUMENT_REFERENCE" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DOCUMENT_REFERENCE" Caption="@Data.Annotation_Details_DOCUMENT_REFERENCE~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DOCUMENT_REFERENCE" />
+            <DataColumnSort DataColumn="Annotation_Details_DOCUMENT_REFERENCE" DataType="Text" OriginalDataColumn="Annotation_Details_DOCUMENT_REFERENCE" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT P.Fld_Field_21 AS BUSINESS_UNIT,&#xA;P.Fld_Field_4 AS LEASE_NUMBER,&#xA;P.Fld_Field_30 AS UNIT_NUMBER ,&#xA;P.Fld_Field_34 AS DBA_NAME,&#xA;IFNULL(hdr.SECTION_NAME,'') AS SECTION_NAME,&#xA;IFNULL(dtl.Field_Description,'') AS FIELD_NAME,&#xA;IFNULL(ML.Description,'') AS PICKLIST_VALUE,&#xA;AD.`document_filename` AS DOCUMENT_NAME,&#xA;AD.`pageIndex` AS PAGE_NUMBER,&#xA;Fld_FKey_Field_4 AS DOCUMENT_REFERENCE,&#xA;AD.`note` AS ANNOTATION_NOTE&#xA;FROM `annotation_details` AD&#xA;LEFT JOIN `v_xl_tbl_section_1` P ON P.Pkey = AD.Leasekey&#xA;LEFT JOIN `tbl_section_hdr` hdr ON hdr.Pkey = AD.`SectionName`&#xA;LEFT JOIN `tbl_section_dtl` dtl ON dtl.Pkey = AD.`FieldName`&#xA;LEFT JOIN `masterlist` ML ON ML.pkey = AD.`PicklistValue`&#xA;LEFT JOIN `v_xl_tbl_section_16` DC ON DC.pkey = AD.`RecordKey`&#xA;WHERE IFNULL(hdr.SECTION_NAME,'') &lt;&gt;'' AND IFNULL(dtl.Field_Description,'') &lt;&gt;'' &#xA;ORDER BY AD.pkey DESC" QueryBuilderTableID="Annotation_Details" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="Annotation_Details_BUSINESS_UNIT" DataColumn="BUSINESS_UNIT" DataType="Text" Caption="Business Unit" />
+            <SqlColumn ID="Annotation_Details_LEASE_NUMBER" DataColumn="LEASE_NUMBER" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Annotation_Details_UNIT_NUMBER" DataColumn="UNIT_NUMBER" DataType="Text" Caption="Unit Number" />
+            <SqlColumn ID="Annotation_Details_DBA_NAME" DataColumn="DBA_NAME" DataType="Text" Caption="DBA Name" />
+            <SqlColumn ID="Annotation_Details_SECTION_NAME" DataColumn="SECTION_NAME" DataType="Text" Caption="Section Name" />
+            <SqlColumn ID="Annotation_Details_FIELD_NAME" DataColumn="FIELD_NAME" DataType="Text" Caption="Field Name" />
+            <SqlColumn ID="Annotation_Details_PICKLIST_VALUE" DataColumn="PICKLIST_VALUE" DataType="Text" Caption="Picklist Value" />
+            <SqlColumn ID="Annotation_Details_DOCUMENT_NAME" DataColumn="DOCUMENT_NAME" DataType="Text" Caption="Document Name" />
+            <SqlColumn ID="Annotation_Details_PAGE_NUMBER" DataColumn="PAGE_NUMBER" DataType="Number" Caption="Page Number" />
+            <SqlColumn ID="Annotation_Details_DOCUMENT_REFERENCE" DataColumn="DOCUMENT_REFERENCE" DataType="Text" Caption="Document Reference" />
+            <ConditionFilter ID="rdAfConditionFilter_rdAgAnalysisFilter" Condition="@Compare.Filter_636492228868595577~" IncludeCondition="False">
+              <CompareFilter CaseSensitive="True" ID="Filter_636492228868595577" DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" CompareType="=" CompareValue="691" />
+            </ConditionFilter>
+            <SqlConditionFilter ID="rdAfSqlConditionFilter_rdAgAnalysisFilter" SqlExpression="@Compare.Filter_636492228868595577~" IncludeSqlExpression="False">
+              <SqlCompareFilter CaseSensitive="True" ID="Filter_636492228868595577" DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" CompareType="=" CompareValue="691" />
+            </SqlConditionFilter>
+          </DataLayer>
+        </DataTable>
+        <Division ShowModes="rdBrowser" Class="rdBookmarkLinkbackContainer">
+          <LineBreak LineCount="2" />
+          <Label Caption="">
+            <Action ID="actRunBookmark" Type="RunBookmark" Report="" BookmarkID="81634359-dfa2-4f97-ab13-fe21aee7186b" BookmarkCollection="3049goCollection">
+              <Target Type="RunBookmark" FrameID="" />
+            </Action>
+          </Label>
+        </Division>
+      </Division>
+      <HtmlStyle border-style="none" />
+    </Division>
+  </Body>
+  <StyleSheet StyleSheet="rdTemplate/rdReportAuthor/reportAuthor.css" />
+</Report>

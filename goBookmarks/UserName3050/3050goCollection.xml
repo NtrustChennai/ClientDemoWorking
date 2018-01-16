@@ -1,0 +1,33 @@
+<rdBookmarks>
+  <Folders>
+    <Folder ID="" Name="My Items">
+    </Folder>
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <SharersCollection BookmarkCollection="211goCollection" BookmarkUserName="211" />
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Dashboard" SaveTime="2017-12-27T18:07:18+05:30" BookmarkID="b7df817c-702c-48d8-95f4-286e639610e5" ExtraFile="3050goCollection_b7df817c-702c-48d8-95f4-286e639610e5.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-27T18:07:25+05:30" BookmarkID="d3cda486-8281-403e-9950-8000b4b860ec" ExtraFile="3050goCollection_d3cda486-8281-403e-9950-8000b4b860ec.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDiscovery" Name="" CustomColumn1="" CustomColumn2="" Description="#of Expiring Leases" SaveTime="2017-12-27T14:50:18+05:30" BookmarkID="ee0cf356-5dcd-46f7-9bf8-e63c29ebf847" ExtraFile="3050goCollection_ee0cf356-5dcd-46f7-9bf8-e63c29ebf847.xml" FolderID="globalMenu">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDiscovery" Name="" CustomColumn1="" CustomColumn2="" Description="Leases Reviewed" SaveTime="2017-12-27T18:19:22+05:30" BookmarkID="2d75e1ea-8819-4b5c-b8c1-9d176915e4e8" ExtraFile="3050goCollection_2d75e1ea-8819-4b5c-b8c1-9d176915e4e8.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-27T18:19:56+05:30" BookmarkID="7f957935-0fb5-4e5e-af58-0adb915495e5" ExtraFile="3050goCollection_7f957935-0fb5-4e5e-af58-0adb915495e5.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Leases Pending for Peer Review -Read only" SaveTime="2017-12-27T18:22:06+05:30" BookmarkID="18ebc22e-bc8d-4536-914a-4697b49c9345" ExtraFile="3050goCollection_18ebc22e-bc8d-4536-914a-4697b49c9345.xml">
+    <RequestParameters />
+    <SessionParameters />
+    <SharedWith BookmarkCollection="3049goCollection" BookmarkUserName="3049" />
+  </Bookmark>
+</rdBookmarks>

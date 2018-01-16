@@ -1,0 +1,108 @@
+BUSINESS UNIT,BUSINESS UNIT NAME,UNIT NUMBER,UNIT TYPE, SQUARE FEET , TOTAL AREA ,TOTAL UNITS
+260,Shops at John's Creek,0102,LOCAL," 1,294 "," 22,507 ",9
+260,Shops at John's Creek,0104,LOCAL," 1,297 "," 22,507 ",9
+260,Shops at John's Creek,0108,LOCAL," 2,810 "," 22,507 ",9
+260,Shops at John's Creek,0111,LOCAL," 1,616 "," 22,507 ",9
+405,Crossroads Commons,2A,LOCAL," 1,591 "," 245,837 ",30
+405,Crossroads Commons,2B,LOCAL," 1,803 "," 245,837 ",30
+405,Crossroads Commons,3A,ANCHR," 27,838 "," 245,837 ",30
+405,Crossroads Commons,3B,ANCHR," 39,247 "," 245,837 ",30
+405,Crossroads Commons,4A,LOCAL," 2,265 "," 245,837 ",30
+405,Crossroads Commons,4F,LOCAL," 1,600 "," 245,837 ",30
+405,Crossroads Commons,5A,LOCAL," 2,375 "," 245,837 ",30
+405,Crossroads Commons,5B,LOCAL," 1,400 "," 245,837 ",30
+405,Crossroads Commons,5C,LOCAL," 1,599 "," 245,837 ",30
+405,Crossroads Commons,5D,LOCAL," 3,376 "," 245,837 ",30
+405,Crossroads Commons,6A,SUBAN," 20,152 "," 245,837 ",30
+416,Clinton Park,0001,LOCAL," 2,400 "," 206,050 ",24
+416,Clinton Park,0004,LOCAL," 1,120 "," 206,050 ",24
+416,Clinton Park,0005,LOCAL," 1,600 "," 206,050 ",24
+416,Clinton Park,0008,LOCAL," 2,500 "," 206,050 ",24
+416,Clinton Park,0009,LOCAL," 7,000 "," 206,050 ",24
+416,Clinton Park,0011,LOCAL," 1,500 "," 206,050 ",24
+416,Clinton Park,0016,ANCHR," 43,000 "," 206,050 ",24
+416,Clinton Park,0120,LOCAL," 2,660 "," 206,050 ",24
+545,Westridge Village,0200,LOCAL," 2,200 "," 92,287 ",24
+545,Westridge Village,0201,LOCAL," 1,700 "," 92,287 ",24
+545,Westridge Village,0202,LOCAL," 1,200 "," 92,287 ",24
+545,Westridge Village,0206,LOCAL," 1,750 "," 92,287 ",24
+545,Westridge Village,0207,LOCAL," 1,200 "," 92,287 ",24
+545,Westridge Village,0208,LOCAL," 1,000 "," 92,287 ",24
+545,Westridge Village,0209,LOCAL," 1,200 "," 92,287 ",24
+545,Westridge Village,0210,LOCAL," 2,123 "," 92,287 ",24
+545,Westridge Village,0211,LOCAL," 2,066 "," 92,287 ",24
+545,Westridge Village,0213,LOCAL," 1,400 "," 92,287 ",24
+545,Westridge Village,0214,LOCAL," 1,700 "," 92,287 ",24
+545,Westridge Village,0215,LOCAL," 2,400 "," 92,287 ",24
+545,Westridge Village,0500,LOCAL," 1,500 "," 92,287 ",24
+545,Westridge Village,0501,LOCAL," 1,000 "," 92,287 ",24
+545,Westridge Village,0502A,LOCAL," 1,000 "," 92,287 ",24
+545,Westridge Village,0503,LOCAL," 2,000 "," 92,287 ",24
+545,Westridge Village,0550,LOCAL," 10,000 "," 92,287 ",24
+60223,Fairfax Shopping Center,01,LOCAL," 1,262 "," 83,082 ",32
+60223,Fairfax Shopping Center,03,LOCAL," 2,041 "," 83,082 ",32
+60223,Fairfax Shopping Center,08,LOCAL," 4,059 "," 83,082 ",32
+60223,Fairfax Shopping Center,11,LOCAL," 3,500 "," 83,082 ",32
+60223,Fairfax Shopping Center,12,LOCAL," 1,600 "," 83,082 ",32
+60223,Fairfax Shopping Center,13,LOCAL, 800 ," 83,082 ",32
+60223,Fairfax Shopping Center,14,LOCAL, 800 ," 83,082 ",32
+60223,Fairfax Shopping Center,15,LOCAL," 1,521 "," 83,082 ",32
+60223,Fairfax Shopping Center,16,LOCAL," 2,050 "," 83,082 ",32
+60223,Fairfax Shopping Center,17,LOCAL," 4,400 "," 83,082 ",32
+60223,Fairfax Shopping Center,18,LOCAL," 2,200 "," 83,082 ",32
+60223,Fairfax Shopping Center,19,LOCAL, 350 ," 83,082 ",32
+60223,Fairfax Shopping Center,23,LOCAL, 75 ," 83,082 ",32
+60223,Fairfax Shopping Center,26,WRHSE, 600 ," 83,082 ",32
+60645,CityLine Market,B100,LOCAL," 3,000 "," 120,136 ",36
+60645,CityLine Market,B200,LOCAL," 3,000 "," 120,136 ",36
+60645,CityLine Market,B300,LOCAL," 1,200 "," 120,136 ",36
+60645,CityLine Market,B400,LOCAL," 1,000 "," 120,136 ",36
+60645,CityLine Market,B500,LOCAL," 1,308 "," 120,136 ",36
+60645,CityLine Market,B600,LOCAL," 2,000 "," 120,136 ",36
+60645,CityLine Market,B700,LOCAL," 2,400 "," 120,136 ",36
+60645,CityLine Market,C100,LOCAL," 3,677 "," 120,136 ",36
+60645,CityLine Market,C200,LOCAL," 2,800 "," 120,136 ",36
+60645,CityLine Market,C300,LOCAL," 1,584 "," 120,136 ",36
+60645,CityLine Market,C400,LOCAL," 1,700 "," 120,136 ",36
+60645,CityLine Market,C500,LOCAL," 2,349 "," 120,136 ",36
+60645,CityLine Market,D100,LOCAL," 1,935 "," 120,136 ",36
+60645,CityLine Market,D200,LOCAL," 3,035 "," 120,136 ",36
+60645,CityLine Market,E100,LOCAL," 2,633 "," 120,136 ",36
+60645,CityLine Market,E200,LOCAL," 2,320 "," 120,136 ",36
+60645,CityLine Market,F100,OUTPC," 3,500 "," 120,136 ",36
+60704,Brick Walk II - Bldg 6,44,LOCAL," 1,830 "," 24,599 ",11
+60704,Brick Walk II - Bldg 6,44A,LOCAL," 2,654 "," 24,599 ",11
+60704,Brick Walk II - Bldg 6,48,LOCAL," 2,516 "," 24,599 ",11
+60704,Brick Walk II - Bldg 6,48A,LOCAL," 1,456 "," 24,599 ",11
+615,Market at Round Rock,130,LOCAL, 658 ," 188,329 ",38
+615,Market at Round Rock,170,LOCAL, 583 ," 188,329 ",38
+615,Market at Round Rock,218,LOCAL," 1,000 "," 188,329 ",38
+615,Market at Round Rock,RFD,ANCHR," 63,800 "," 188,329 ",38
+622,Littleton Square,100A,LOCAL," 23,186 "," 151,118 ",29
+622,Littleton Square,101,LOCAL," 2,000 "," 151,118 ",29
+622,Littleton Square,102,LOCAL," 1,000 "," 151,118 ",29
+622,Littleton Square,103,LOCAL," 1,550 "," 151,118 ",29
+622,Littleton Square,103A,LOCAL, 850 ," 151,118 ",29
+622,Littleton Square,104,LOCAL, 850 ," 151,118 ",29
+622,Littleton Square,105,LOCAL," 1,440 "," 151,118 ",29
+622,Littleton Square,106,LOCAL, 960 ," 151,118 ",29
+622,Littleton Square,107D,LOCAL," 2,400 "," 151,118 ",29
+622,Littleton Square,203,LOCAL," 1,205 "," 151,118 ",29
+622,Littleton Square,207,LOCAL, 871 ," 151,118 ",29
+622,Littleton Square,213,LOCAL, 443 ," 151,118 ",29
+622,Littleton Square,70,SUBAN," 12,986 "," 151,118 ",29
+90007,Auburn Village,2136,LOCAL," 12,200 "," 133,944 ",43
+90007,Auburn Village,2176,LOCAL," 1,400 "," 133,944 ",43
+90007,Auburn Village,2240,LOCAL," 1,400 "," 133,944 ",43
+90007,Auburn Village,2260,LOCAL," 3,360 "," 133,944 ",43
+90007,Auburn Village,2268,LOCAL," 3,788 "," 133,944 ",43
+90007,Auburn Village,2284,LOCAL," 1,200 "," 133,944 ",43
+90007,Auburn Village,2288,LOCAL," 1,200 "," 133,944 ",43
+90007,Auburn Village,2330,LOCAL," 1,200 "," 133,944 ",43
+90007,Auburn Village,2334,LOCAL," 2,400 "," 133,944 ",43
+90007,Auburn Village,2370,LOCAL," 1,640 "," 133,944 ",43
+90007,Auburn Village,2380,LOCAL," 2,800 "," 133,944 ",43
+90007,Auburn Village,2384,LOCAL," 2,600 "," 133,944 ",43
+90007,Auburn Village,2396,LOCAL," 4,200 "," 133,944 ",43
+90007,Auburn Village,2420,LOCAL," 1,200 "," 133,944 ",43
+90007,Auburn Village,2602,LOCAL," 1,116 "," 133,944 ",43

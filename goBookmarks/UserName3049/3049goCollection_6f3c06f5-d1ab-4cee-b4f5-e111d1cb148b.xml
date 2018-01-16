@@ -1,0 +1,312 @@
+<rdSavedDashboard>
+  <Tabs ID="rdDashboardTabs" ActiveTabID="2bd66bf767544f748ae04bfcbb365a68" DashboardColumnCount="1">
+    <Tab ID="2bd66bf767544f748ae04bfcbb365a68" Caption="MyReport" ColumnCount="3" WideColumn="0" rdFreeformLayoutStyle="Width:1382px;">
+      <Column Width="53.34" />
+      <Column Width="11.05" />
+      <Column Width="34.81" />
+    </Tab>
+  </Tabs>
+  <ExtraPanelDefinition>
+    <Panel Caption="TL Report" PanelDescription="" SaveTime="2017-12-18T19:43:59+05:30" ID="rdCustomDashboardPanel_20f0cc33e7f941108c21b5fff4e1c522" rdUniqueIdentifier="20f0cc33e7f941108c21b5fff4e1c522" rdCustomDashboardPanel="True" MultipleInstances="False" Image="../rdTemplate/rdAnalysisGrid/rdAgDataTable.png" BookmarksCollection="3049goCollection" BookmarkId="81634359-dfa2-4f97-ab13-fe21aee7186b" rdMakeIdsUnique="True" rdCopyFromGallery="True" InstanceID="79d3e698c2d842498811096952cfbc58">
+      <PanelContent Height="">
+        <DataTable ID="dtAnalysisGrid_636492230391527855_0e8dfacb-026a-46c0-991e-6e5f9ae354aa" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Business Unit" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_BUSINESS_UNIT" DataColumn="Annotation_Details_BUSINESS_UNIT" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_BUSINESS_UNIT" Caption="@Data.Annotation_Details_BUSINESS_UNIT~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_BUSINESS_UNIT" />
+            <DataColumnSort DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" OriginalDataColumn="Annotation_Details_BUSINESS_UNIT" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Lease Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_LEASE_NUMBER" DataColumn="Annotation_Details_LEASE_NUMBER" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_LEASE_NUMBER" Caption="@Data.Annotation_Details_LEASE_NUMBER~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_LEASE_NUMBER" />
+            <DataColumnSort DataColumn="Annotation_Details_LEASE_NUMBER" DataType="Text" OriginalDataColumn="Annotation_Details_LEASE_NUMBER" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Unit Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_UNIT_NUMBER" DataColumn="Annotation_Details_UNIT_NUMBER" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_UNIT_NUMBER" Caption="@Data.Annotation_Details_UNIT_NUMBER~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_UNIT_NUMBER" />
+            <DataColumnSort DataColumn="Annotation_Details_UNIT_NUMBER" DataType="Text" OriginalDataColumn="Annotation_Details_UNIT_NUMBER" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="DBA Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DBA_NAME" DataColumn="Annotation_Details_DBA_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DBA_NAME" Caption="@Data.Annotation_Details_DBA_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DBA_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_DBA_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_DBA_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Section Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_SECTION_NAME" DataColumn="Annotation_Details_SECTION_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_SECTION_NAME" Caption="@Data.Annotation_Details_SECTION_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_SECTION_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_SECTION_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_SECTION_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Field Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_FIELD_NAME" DataColumn="Annotation_Details_FIELD_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_FIELD_NAME" Caption="@Data.Annotation_Details_FIELD_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_FIELD_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_FIELD_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_FIELD_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Picklist Value" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_PICKLIST_VALUE" DataColumn="Annotation_Details_PICKLIST_VALUE" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_PICKLIST_VALUE" Caption="@Data.Annotation_Details_PICKLIST_VALUE~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_PICKLIST_VALUE" />
+            <DataColumnSort DataColumn="Annotation_Details_PICKLIST_VALUE" DataType="Text" OriginalDataColumn="Annotation_Details_PICKLIST_VALUE" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Document Name" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DOCUMENT_NAME" DataColumn="Annotation_Details_DOCUMENT_NAME" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DOCUMENT_NAME" Caption="@Data.Annotation_Details_DOCUMENT_NAME~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DOCUMENT_NAME" />
+            <DataColumnSort DataColumn="Annotation_Details_DOCUMENT_NAME" DataType="Text" OriginalDataColumn="Annotation_Details_DOCUMENT_NAME" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Page Number" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_PAGE_NUMBER" DataColumn="Annotation_Details_PAGE_NUMBER" Class="rdThemeDataTableCell ThemeAlignRight rdAgAlignRight ThemeAlignRight rdAgAlignRight" ColumnHeaderClass="rdAgQbColor1" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_PAGE_NUMBER" Caption="@Data.Annotation_Details_PAGE_NUMBER~" Format="General Number" />
+            <SpaceForBorders DataColumn="Annotation_Details_PAGE_NUMBER" />
+            <ExcelColumnFormat DataType="Number" />
+            <DataColumnSort DataColumn="Annotation_Details_PAGE_NUMBER" DataType="Number" OriginalDataColumn="Annotation_Details_PAGE_NUMBER" OriginalDataType="Number" />
+          </DataTableColumn>
+          <DataTableColumn Header="Document Reference" rdAgGeneratedColumn="True" ID="agCol_Annotation_Details_DOCUMENT_REFERENCE" DataColumn="Annotation_Details_DOCUMENT_REFERENCE" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Annotation_Details_DOCUMENT_REFERENCE" Caption="@Data.Annotation_Details_DOCUMENT_REFERENCE~" Format="" />
+            <SpaceForBorders DataColumn="Annotation_Details_DOCUMENT_REFERENCE" />
+            <DataColumnSort DataColumn="Annotation_Details_DOCUMENT_REFERENCE" DataType="Text" OriginalDataColumn="Annotation_Details_DOCUMENT_REFERENCE" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT P.Fld_Field_21 AS BUSINESS_UNIT,&#xA;P.Fld_Field_4 AS LEASE_NUMBER,&#xA;P.Fld_Field_30 AS UNIT_NUMBER ,&#xA;P.Fld_Field_34 AS DBA_NAME,&#xA;IFNULL(hdr.SECTION_NAME,'') AS SECTION_NAME,&#xA;IFNULL(dtl.Field_Description,'') AS FIELD_NAME,&#xA;IFNULL(ML.Description,'') AS PICKLIST_VALUE,&#xA;AD.`document_filename` AS DOCUMENT_NAME,&#xA;AD.`pageIndex` AS PAGE_NUMBER,&#xA;Fld_FKey_Field_4 AS DOCUMENT_REFERENCE,&#xA;AD.`note` AS ANNOTATION_NOTE&#xA;FROM `annotation_details` AD&#xA;LEFT JOIN `v_xl_tbl_section_1` P ON P.Pkey = AD.Leasekey&#xA;LEFT JOIN `tbl_section_hdr` hdr ON hdr.Pkey = AD.`SectionName`&#xA;LEFT JOIN `tbl_section_dtl` dtl ON dtl.Pkey = AD.`FieldName`&#xA;LEFT JOIN `masterlist` ML ON ML.pkey = AD.`PicklistValue`&#xA;LEFT JOIN `v_xl_tbl_section_16` DC ON DC.pkey = AD.`RecordKey`&#xA;WHERE IFNULL(hdr.SECTION_NAME,'') &lt;&gt;'' AND IFNULL(dtl.Field_Description,'') &lt;&gt;'' &#xA;ORDER BY AD.pkey DESC" QueryBuilderTableID="Annotation_Details" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="Annotation_Details_BUSINESS_UNIT" DataColumn="BUSINESS_UNIT" DataType="Text" Caption="Business Unit" />
+            <SqlColumn ID="Annotation_Details_LEASE_NUMBER" DataColumn="LEASE_NUMBER" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Annotation_Details_UNIT_NUMBER" DataColumn="UNIT_NUMBER" DataType="Text" Caption="Unit Number" />
+            <SqlColumn ID="Annotation_Details_DBA_NAME" DataColumn="DBA_NAME" DataType="Text" Caption="DBA Name" />
+            <SqlColumn ID="Annotation_Details_SECTION_NAME" DataColumn="SECTION_NAME" DataType="Text" Caption="Section Name" />
+            <SqlColumn ID="Annotation_Details_FIELD_NAME" DataColumn="FIELD_NAME" DataType="Text" Caption="Field Name" />
+            <SqlColumn ID="Annotation_Details_PICKLIST_VALUE" DataColumn="PICKLIST_VALUE" DataType="Text" Caption="Picklist Value" />
+            <SqlColumn ID="Annotation_Details_DOCUMENT_NAME" DataColumn="DOCUMENT_NAME" DataType="Text" Caption="Document Name" />
+            <SqlColumn ID="Annotation_Details_PAGE_NUMBER" DataColumn="PAGE_NUMBER" DataType="Number" Caption="Page Number" />
+            <SqlColumn ID="Annotation_Details_DOCUMENT_REFERENCE" DataColumn="DOCUMENT_REFERENCE" DataType="Text" Caption="Document Reference" />
+            <ConditionFilter ID="rdAfConditionFilter_rdAgAnalysisFilter" Condition="@Compare.Filter_636492228868595577~" IncludeCondition="False">
+              <CompareFilter CaseSensitive="True" ID="Filter_636492228868595577" DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" CompareType="=" CompareValue="691" />
+            </ConditionFilter>
+            <SqlConditionFilter ID="rdAfSqlConditionFilter_rdAgAnalysisFilter" SqlExpression="@Compare.Filter_636492228868595577~" IncludeSqlExpression="False">
+              <SqlCompareFilter CaseSensitive="True" ID="Filter_636492228868595577" DataColumn="Annotation_Details_BUSINESS_UNIT" DataType="Text" CompareType="=" CompareValue="691" />
+            </SqlConditionFilter>
+          </DataLayer>
+        </DataTable>
+        <Division ShowModes="rdBrowser" Class="rdBookmarkLinkbackContainer">
+          <LineBreak LineCount="2" />
+          <Label Caption="">
+            <Action ID="actRunBookmark" Type="RunBookmark" Report="" BookmarkID="81634359-dfa2-4f97-ab13-fe21aee7186b" BookmarkCollection="3049goCollection">
+              <Target Type="RunBookmark" FrameID="" />
+            </Action>
+          </Label>
+        </Division>
+      </PanelContent>
+    </Panel>
+    <Panel Caption="Lease Transactions" PanelDescription="" SaveTime="2017-12-14T15:24:04+05:30" ID="rdCustomDashboardPanel_297962bae78f4f249ebc2781cbb0601a" rdUniqueIdentifier="297962bae78f4f249ebc2781cbb0601a" rdCustomDashboardPanel="True" MultipleInstances="False" Image="../rdTemplate/rdAnalysisGrid/rdAgDataTable.png" rdMakeIdsUnique="True" rdCopyFromGallery="True" InstanceID="fd31b06b5a614f8196a1a0b29fbbb21c">
+      <PanelContent Height="">
+        <DataTable ID="dtAnalysisGrid_636488618445111679_4a2d3e0c-9de9-47bb-ac66-a0ca40204f69" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Lease Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Lease_Number" DataColumn="Lease_Transactions_Lease Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Lease_Number" Caption="@Data.Lease_Transactions_Lease Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Lease Number" />
+            <DataColumnSort DataColumn="Lease_Transactions_Lease Number" DataType="Text" OriginalDataColumn="Lease_Transactions_Lease Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Unit Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Unit_Number" DataColumn="Lease_Transactions_Unit Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Unit_Number" Caption="@Data.Lease_Transactions_Unit Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Unit Number" />
+            <DataColumnSort DataColumn="Lease_Transactions_Unit Number" DataType="Text" OriginalDataColumn="Lease_Transactions_Unit Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Actual Out" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Actual_Out" DataColumn="Lease_Transactions_Actual Out" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Actual_Out" Caption="@Data.Lease_Transactions_Actual Out~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Actual Out" />
+            <DataColumnSort DataColumn="Lease_Transactions_Actual Out" DataType="Text" OriginalDataColumn="Lease_Transactions_Actual Out" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Commencement" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Commencement" DataColumn="Lease_Transactions_Commencement" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Commencement" Caption="@Data.Lease_Transactions_Commencement~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Commencement" />
+            <DataColumnSort DataColumn="Lease_Transactions_Commencement" DataType="Text" OriginalDataColumn="Lease_Transactions_Commencement" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Delete Status" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Delete_Status" DataColumn="Lease_Transactions_Delete Status" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Delete_Status" Caption="@Data.Lease_Transactions_Delete Status~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Delete Status" />
+            <DataColumnSort DataColumn="Lease_Transactions_Delete Status" DataType="Text" OriginalDataColumn="Lease_Transactions_Delete Status" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Delivery Or Effective" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Delivery_or_Effective" DataColumn="Lease_Transactions_Delivery or Effective" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Delivery_or_Effective" Caption="@Data.Lease_Transactions_Delivery or Effective~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Delivery or Effective" />
+            <DataColumnSort DataColumn="Lease_Transactions_Delivery or Effective" DataType="Text" OriginalDataColumn="Lease_Transactions_Delivery or Effective" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="End" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_End" DataColumn="Lease_Transactions_End" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_End" Caption="@Data.Lease_Transactions_End~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_End" />
+            <DataColumnSort DataColumn="Lease_Transactions_End" DataType="Text" OriginalDataColumn="Lease_Transactions_End" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Execution" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Execution" DataColumn="Lease_Transactions_Execution" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Execution" Caption="@Data.Lease_Transactions_Execution~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Execution" />
+            <DataColumnSort DataColumn="Lease_Transactions_Execution" DataType="Text" OriginalDataColumn="Lease_Transactions_Execution" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Is Processed" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Is_Processed?" DataColumn="Lease_Transactions_Is Processed?" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Is_Processed?" Caption="@Data.Lease_Transactions_Is Processed?~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Is Processed?" />
+            <DataColumnSort DataColumn="Lease_Transactions_Is Processed?" DataType="Text" OriginalDataColumn="Lease_Transactions_Is Processed?" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Nnn From Delivery" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_NNN_From_Delivery" DataColumn="Lease_Transactions_NNN From Delivery" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_NNN_From_Delivery" Caption="@Data.Lease_Transactions_NNN From Delivery~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_NNN From Delivery" />
+            <DataColumnSort DataColumn="Lease_Transactions_NNN From Delivery" DataType="Text" OriginalDataColumn="Lease_Transactions_NNN From Delivery" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Original End" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Original_End" DataColumn="Lease_Transactions_Original End" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Original_End" Caption="@Data.Lease_Transactions_Original End~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Original End" />
+            <DataColumnSort DataColumn="Lease_Transactions_Original End" DataType="Text" OriginalDataColumn="Lease_Transactions_Original End" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Override Commencement" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Override_Commencement" DataColumn="Lease_Transactions_Override Commencement" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Override_Commencement" Caption="@Data.Lease_Transactions_Override Commencement~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Override Commencement" />
+            <DataColumnSort DataColumn="Lease_Transactions_Override Commencement" DataType="Text" OriginalDataColumn="Lease_Transactions_Override Commencement" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Plan Out" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Plan_Out" DataColumn="Lease_Transactions_Plan Out" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Plan_Out" Caption="@Data.Lease_Transactions_Plan Out~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Plan Out" />
+            <DataColumnSort DataColumn="Lease_Transactions_Plan Out" DataType="Text" OriginalDataColumn="Lease_Transactions_Plan Out" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Prior Version" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Prior_Version_#" DataColumn="Lease_Transactions_Prior Version #" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Prior_Version_#" Caption="@Data.Lease_Transactions_Prior Version #~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Prior Version #" />
+            <DataColumnSort DataColumn="Lease_Transactions_Prior Version #" DataType="Text" OriginalDataColumn="Lease_Transactions_Prior Version #" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Processing Date" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_ProcessingDate" DataColumn="Lease_Transactions_ProcessingDate" Class="rdThemeDataTableCell" ColumnHeaderClass="rdAgQbColor1">
+            <Label ID="agCol_Lease_Transactions_ProcessingDate" Caption="@Data.Lease_Transactions_ProcessingDate~" Format="Short Date" />
+            <SpaceForBorders DataColumn="Lease_Transactions_ProcessingDate" />
+            <DataColumnSort DataColumn="Lease_Transactions_ProcessingDate" DataType="Date" OriginalDataColumn="Lease_Transactions_ProcessingDate" OriginalDataType="Date" />
+          </DataTableColumn>
+          <DataTableColumn Header="Pv Lease Status" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_PV_Lease_Status" DataColumn="Lease_Transactions_PV Lease Status" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_PV_Lease_Status" Caption="@Data.Lease_Transactions_PV Lease Status~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_PV Lease Status" />
+            <DataColumnSort DataColumn="Lease_Transactions_PV Lease Status" DataType="Text" OriginalDataColumn="Lease_Transactions_PV Lease Status" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Pv Plan Out Date" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_PV_Plan_Out_Date" DataColumn="Lease_Transactions_PV Plan Out Date" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_PV_Plan_Out_Date" Caption="@Data.Lease_Transactions_PV Plan Out Date~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_PV Plan Out Date" />
+            <DataColumnSort DataColumn="Lease_Transactions_PV Plan Out Date" DataType="Text" OriginalDataColumn="Lease_Transactions_PV Plan Out Date" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Pv Version End Date" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_PV_Version_End_Date" DataColumn="Lease_Transactions_PV Version End Date" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_PV_Version_End_Date" Caption="@Data.Lease_Transactions_PV Version End Date~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_PV Version End Date" />
+            <DataColumnSort DataColumn="Lease_Transactions_PV Version End Date" DataType="Text" OriginalDataColumn="Lease_Transactions_PV Version End Date" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Rcd Days" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_RCD_Days" DataColumn="Lease_Transactions_RCD Days" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_RCD_Days" Caption="@Data.Lease_Transactions_RCD Days~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_RCD Days" />
+            <DataColumnSort DataColumn="Lease_Transactions_RCD Days" DataType="Text" OriginalDataColumn="Lease_Transactions_RCD Days" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Rcd Language" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_RCD_Language" DataColumn="Lease_Transactions_RCD Language" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_RCD_Language" Caption="@Data.Lease_Transactions_RCD Language~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_RCD Language" />
+            <DataColumnSort DataColumn="Lease_Transactions_RCD Language" DataType="Text" OriginalDataColumn="Lease_Transactions_RCD Language" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Record Sent To Jde" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Record_Sent_to_JDE?" DataColumn="Lease_Transactions_Record Sent to JDE?" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Record_Sent_to_JDE?" Caption="@Data.Lease_Transactions_Record Sent to JDE?~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Record Sent to JDE?" />
+            <DataColumnSort DataColumn="Lease_Transactions_Record Sent to JDE?" DataType="Text" OriginalDataColumn="Lease_Transactions_Record Sent to JDE?" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Rent Start" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Rent_Start" DataColumn="Lease_Transactions_Rent Start" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Rent_Start" Caption="@Data.Lease_Transactions_Rent Start~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Rent Start" />
+            <DataColumnSort DataColumn="Lease_Transactions_Rent Start" DataType="Text" OriginalDataColumn="Lease_Transactions_Rent Start" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Round Up" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Round_Up" DataColumn="Lease_Transactions_Round Up" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Round_Up" Caption="@Data.Lease_Transactions_Round Up~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Round Up" />
+            <DataColumnSort DataColumn="Lease_Transactions_Round Up" DataType="Text" OriginalDataColumn="Lease_Transactions_Round Up" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Tenant Name" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Tenant_Name" DataColumn="Lease_Transactions_Tenant Name" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Tenant_Name" Caption="@Data.Lease_Transactions_Tenant Name~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Tenant Name" />
+            <DataColumnSort DataColumn="Lease_Transactions_Tenant Name" DataType="Text" OriginalDataColumn="Lease_Transactions_Tenant Name" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Tenant Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Tenant_Number" DataColumn="Lease_Transactions_Tenant Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Tenant_Number" Caption="@Data.Lease_Transactions_Tenant Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Tenant Number" />
+            <DataColumnSort DataColumn="Lease_Transactions_Tenant Number" DataType="Text" OriginalDataColumn="Lease_Transactions_Tenant Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Term   Months" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Term_(Months)" DataColumn="Lease_Transactions_Term (Months)" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Term_(Months)" Caption="@Data.Lease_Transactions_Term (Months)~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Term (Months)" />
+            <DataColumnSort DataColumn="Lease_Transactions_Term (Months)" DataType="Text" OriginalDataColumn="Lease_Transactions_Term (Months)" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Ti  fasb Ind Description" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_TI_/_FASB_Ind_Description" DataColumn="Lease_Transactions_TI / FASB Ind Description" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_TI_/_FASB_Ind_Description" Caption="@Data.Lease_Transactions_TI / FASB Ind Description~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_TI / FASB Ind Description" />
+            <DataColumnSort DataColumn="Lease_Transactions_TI / FASB Ind Description" DataType="Text" OriginalDataColumn="Lease_Transactions_TI / FASB Ind Description" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Ti  fasb Indicator" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_TI_/_FASB_Indicator" DataColumn="Lease_Transactions_TI / FASB Indicator" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_TI_/_FASB_Indicator" Caption="@Data.Lease_Transactions_TI / FASB Indicator~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_TI / FASB Indicator" />
+            <DataColumnSort DataColumn="Lease_Transactions_TI / FASB Indicator" DataType="Text" OriginalDataColumn="Lease_Transactions_TI / FASB Indicator" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Transaction Type" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Transaction_Type" DataColumn="Lease_Transactions_Transaction Type" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Transaction_Type" Caption="@Data.Lease_Transactions_Transaction Type~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Transaction Type" />
+            <DataColumnSort DataColumn="Lease_Transactions_Transaction Type" DataType="Text" OriginalDataColumn="Lease_Transactions_Transaction Type" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Type" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Type" DataColumn="Lease_Transactions_Type" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Type" Caption="@Data.Lease_Transactions_Type~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Type" />
+            <DataColumnSort DataColumn="Lease_Transactions_Type" DataType="Text" OriginalDataColumn="Lease_Transactions_Type" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Version" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Version_#" DataColumn="Lease_Transactions_Version #" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Version_#" Caption="@Data.Lease_Transactions_Version #~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Version #" />
+            <DataColumnSort DataColumn="Lease_Transactions_Version #" DataType="Text" OriginalDataColumn="Lease_Transactions_Version #" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Version Effective" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Version_Effective" DataColumn="Lease_Transactions_Version Effective" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Version_Effective" Caption="@Data.Lease_Transactions_Version Effective~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Version Effective" />
+            <DataColumnSort DataColumn="Lease_Transactions_Version Effective" DataType="Text" OriginalDataColumn="Lease_Transactions_Version Effective" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Version End" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Version_End" DataColumn="Lease_Transactions_Version End" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Transactions_Version_End" Caption="@Data.Lease_Transactions_Version End~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Version End" />
+            <DataColumnSort DataColumn="Lease_Transactions_Version End" DataType="Text" OriginalDataColumn="Lease_Transactions_Version End" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT `Lease Number`, `Unit Number`, Fld_Field_22 AS `Actual Out`, 	Fld_Field_3 AS `Commencement`, 	Fld_Field_30 AS `Delete Status`, 	Fld_Field_9 AS `Delivery or Effective`, 	Fld_Field_12 AS `End`, 	Fld_Field_5 AS `Execution`, 	Fld_Field_29 AS `Is Processed?`, 	Fld_Field_23 AS `NNN From Delivery`, 	Fld_Field_13 AS `Original End`, 	Fld_Field_4 AS `Override Commencement`, 	Fld_Field_11 AS `Plan Out`, 	Fld_Field_18 AS `Prior Version #`, 	&#xA;&#xA;cast(DATE_FORMAT(STR_TO_DATE(Fld_Field_6,'%m/%d/%Y'),'%Y-%m-%d') as date) AS `ProcessingDate` ,&#xA;&#xA;Fld_FKey_Field_19 AS `PV Lease Status`, 	Fld_Field_20 AS `PV Plan Out Date`, 	Fld_Field_21 AS `PV Version End Date`, 	Fld_Field_14 AS `RCD Days`, 	Fld_Field_28 AS `RCD Language`, 	Fld_Field_31 AS `Record Sent to JDE?`, 	Fld_Field_10 AS `Rent Start`, 	Fld_Field_15 AS `Round Up`, 	Fld_Field_27 AS `Tenant Name`, 	Fld_Field_26 AS `Tenant Number`, 	Fld_Field_8 AS `Term (Months)`, 	FLD_FIELD_25 AS `TI / FASB Ind Description`, 	Fld_FKey_Field_24 AS `TI / FASB Indicator`, 	Fld_FKey_Field_7 AS `Transaction Type`, 	Fld_FKey_Field_1 AS `Type`, 	Fld_Field_2 AS `Version #`, 	Fld_Field_16 AS `Version Effective`, 	Fld_Field_17 AS `Version End` &#xA;FROM v_xl_tbl_section_14" QueryBuilderTableID="Lease Transactions" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="Lease_Transactions_Lease Number" DataColumn="Lease Number" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Lease_Transactions_Unit Number" DataColumn="Unit Number" DataType="Text" Caption="Unit Number" />
+            <SqlColumn ID="Lease_Transactions_Actual Out" DataColumn="Actual Out" DataType="Text" Caption="Actual Out" />
+            <SqlColumn ID="Lease_Transactions_Commencement" DataColumn="Commencement" DataType="Text" Caption="Commencement" />
+            <SqlColumn ID="Lease_Transactions_Delete Status" DataColumn="Delete Status" DataType="Text" Caption="Delete Status" />
+            <SqlColumn ID="Lease_Transactions_Delivery or Effective" DataColumn="Delivery or Effective" DataType="Text" Caption="Delivery Or Effective" />
+            <SqlColumn ID="Lease_Transactions_End" DataColumn="End" DataType="Text" Caption="End" />
+            <SqlColumn ID="Lease_Transactions_Execution" DataColumn="Execution" DataType="Text" Caption="Execution" />
+            <SqlColumn ID="Lease_Transactions_Is Processed?" DataColumn="Is Processed?" DataType="Text" Caption="Is Processed " />
+            <SqlColumn ID="Lease_Transactions_NNN From Delivery" DataColumn="NNN From Delivery" DataType="Text" Caption="Nnn From Delivery" />
+            <SqlColumn ID="Lease_Transactions_Original End" DataColumn="Original End" DataType="Text" Caption="Original End" />
+            <SqlColumn ID="Lease_Transactions_Override Commencement" DataColumn="Override Commencement" DataType="Text" Caption="Override Commencement" />
+            <SqlColumn ID="Lease_Transactions_Plan Out" DataColumn="Plan Out" DataType="Text" Caption="Plan Out" />
+            <SqlColumn ID="Lease_Transactions_Prior Version #" DataColumn="Prior Version #" DataType="Text" Caption="Prior Version  " />
+            <SqlColumn ID="Lease_Transactions_ProcessingDate" DataColumn="ProcessingDate" DataType="Date" Caption="Processing Date" />
+            <SqlColumn ID="Lease_Transactions_PV Lease Status" DataColumn="PV Lease Status" DataType="Text" Caption="Pv Lease Status" />
+            <SqlColumn ID="Lease_Transactions_PV Plan Out Date" DataColumn="PV Plan Out Date" DataType="Text" Caption="Pv Plan Out Date" />
+            <SqlColumn ID="Lease_Transactions_PV Version End Date" DataColumn="PV Version End Date" DataType="Text" Caption="Pv Version End Date" />
+            <SqlColumn ID="Lease_Transactions_RCD Days" DataColumn="RCD Days" DataType="Text" Caption="Rcd Days" />
+            <SqlColumn ID="Lease_Transactions_RCD Language" DataColumn="RCD Language" DataType="Text" Caption="Rcd Language" />
+            <SqlColumn ID="Lease_Transactions_Record Sent to JDE?" DataColumn="Record Sent to JDE?" DataType="Text" Caption="Record Sent To Jde " />
+            <SqlColumn ID="Lease_Transactions_Rent Start" DataColumn="Rent Start" DataType="Text" Caption="Rent Start" />
+            <SqlColumn ID="Lease_Transactions_Round Up" DataColumn="Round Up" DataType="Text" Caption="Round Up" />
+            <SqlColumn ID="Lease_Transactions_Tenant Name" DataColumn="Tenant Name" DataType="Text" Caption="Tenant Name" />
+            <SqlColumn ID="Lease_Transactions_Tenant Number" DataColumn="Tenant Number" DataType="Text" Caption="Tenant Number" />
+            <SqlColumn ID="Lease_Transactions_Term (Months)" DataColumn="Term (Months)" DataType="Text" Caption="Term   Months " />
+            <SqlColumn ID="Lease_Transactions_TI / FASB Ind Description" DataColumn="TI / FASB Ind Description" DataType="Text" Caption="Ti  fasb Ind Description" />
+            <SqlColumn ID="Lease_Transactions_TI / FASB Indicator" DataColumn="TI / FASB Indicator" DataType="Text" Caption="Ti  fasb Indicator" />
+            <SqlColumn ID="Lease_Transactions_Transaction Type" DataColumn="Transaction Type" DataType="Text" Caption="Transaction Type" />
+            <SqlColumn ID="Lease_Transactions_Type" DataColumn="Type" DataType="Text" Caption="Type" />
+            <SqlColumn ID="Lease_Transactions_Version #" DataColumn="Version #" DataType="Text" Caption="Version  " />
+            <SqlColumn ID="Lease_Transactions_Version Effective" DataColumn="Version Effective" DataType="Text" Caption="Version Effective" />
+            <SqlColumn ID="Lease_Transactions_Version End" DataColumn="Version End" DataType="Text" Caption="Version End" />
+            <ConditionFilter ID="rdAfConditionFilter_rdAgAnalysisFilter" Condition="@Compare.Filter_636488617211248305~" IncludeCondition="False">
+              <CompareFilter CaseSensitive="True" ID="Filter_636488617211248305" DataColumn="Lease_Transactions_ProcessingDate" DataType="Date" CompareType="Between" CompareValue="2017-08-01,2017-12-31" />
+            </ConditionFilter>
+            <SqlConditionFilter ID="rdAfSqlConditionFilter_rdAgAnalysisFilter" SqlExpression="@Compare.Filter_636488617211248305~" IncludeSqlExpression="False">
+              <SqlCompareFilter CaseSensitive="True" ID="Filter_636488617211248305" DataColumn="Lease_Transactions_ProcessingDate" DataType="Date" CompareType="Between" CompareValue="2017-08-01,2017-12-31" />
+            </SqlConditionFilter>
+            <SortFilter SortColumn="Lease_Transactions_ProcessingDate" DataType="Date" SortSequence="Ascending" ID="rdAgSortFilter" IncludeCondition="False" />
+            <SqlSort ID="rdAgSortFilter" SortColumn="Lease_Transactions_ProcessingDate" SortSequence="Ascending" />
+          </DataLayer>
+        </DataTable>
+      </PanelContent>
+    </Panel>
+  </ExtraPanelDefinition>
+  <Panel ID="rdCustomDashboardPanel_297962bae78f4f249ebc2781cbb0601a" InstanceID="fd31b06b5a614f8196a1a0b29fbbb21c" TabID="2bd66bf767544f748ae04bfcbb365a68" DashboardColumn="0" />
+  <Panel ID="rdCustomDashboardPanel_20f0cc33e7f941108c21b5fff4e1c522" InstanceID="79d3e698c2d842498811096952cfbc58" TabID="2bd66bf767544f748ae04bfcbb365a68" DashboardColumn="2" />
+</rdSavedDashboard>

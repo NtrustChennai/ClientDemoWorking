@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	DefaultShowModes="All"
+	ID="DemoClient.DemoClientTransactionType"
+	>
+	<DefaultRequestParams
+		ChartData="_Type"
+		PopUpClass="hideelement"
+		txtFromDate="10/14/2017"
+		txtToDate="11/14/2017"
+	/>
+	<LocalData>
+		<DataLayer
+			ConnectionID="con_DemoRegency"
+			ID="SQLDataLayer4"
+			Source="SELECT *
+FROM (SELECT Pri.Fld_Field_4 AS Lease_Number,
+    Pri.Fld_Field_21 AS Business_Unit,
+    Pri.Fld_Field_30 AS Unit_Number,
+    Pri.Fld_Field_34 AS DBA_Name,
+    trans.Fld_Field_26 AS Tenant_Number,
+    trans.Fld_Field_27 AS Tenant_Name,
+    pick.Description AS _Type,
+    pick1.Description AS Transaction_Type,
+    IFNULL(CONVERT(DATE_FORMAT(STR_TO_DATE(Fld_Field_6, &apos;%m/%d/%Y&apos;), &apos;%m/%d/%Y&apos;)
+    USING utf8), &apos;&apos;) AS Processing_Date,
+    UM.User_Name AS User_Name,
+    CASE WHEN IFNULL(wrk.Fkey_Parent, &apos;&apos;) = &apos;&apos; THEN &apos;No&apos; ELSE &apos;Yes&apos;
+    END AS Review_Completed
+  FROM v_xl_tbl_section_1 AS Pri
+    INNER JOIN tbl_section_14 AS trans ON trans.Fkey_Parent = Pri.PKEY
+    INNER JOIN remaapmaster_mvc.Users_Master AS UM ON  
+    UM.Pkey= trans.FKEY_CHANGEUSER
+  -- UM.Pkey= Pri.CreatedUser
+ -- UM.Pkey = Pri.Fld_FKey_Field_36 And      UM.FKEY_PARENT = 275
+    INNER JOIN masterlist AS pick ON pick.Pkey = trans.Fld_FKey_Field_1
+    INNER JOIN masterlist AS pick1 ON pick1.Pkey = trans.Fld_FKey_Field_7
+    INNER JOIN (SELECT Fkey_Parent
+    FROM workflow_status_update
+    WHERE Fkey_Status IN (SELECT Pkey FROM workflow_stages
+      WHERE description LIKE &apos;%Review%&apos;)
+    GROUP BY Fkey_Parent) AS wrk ON wrk.Fkey_Parent = Pri.PKEY
+  WHERE IFNULL(UM.User_Name, &apos;&apos;) &lt;&gt; &apos;&apos;
+  		 AND STR_TO_DATE(Fld_Field_6,&apos;%m/%d/%Y&apos;) BETWEEN STR_TO_DATE(&apos;@Request.txtFromDate~&apos;, &apos;%m/%d/%Y&apos;) AND STR_TO_DATE(&apos;@Request.txtToDate~&apos;, &apos;%m/%d/%Y&apos;)
+  ) t	
+   WHERE (User_Name = &apos;@Request.ddlUserName~&apos; OR &apos;@Request.ddlUserName~&apos; = &apos;&apos;)
+and (&apos;@Request.Type~&apos;=&apos;&apos; OR _Type= &apos;@Request.Type~&apos;) "
+			Type="SQL"
+			>
+			<DataLayerLink
+				ID="dataLayerlink"
+			/>
+		</DataLayer>
+	</LocalData>
+	<Remark>
+		<LocalData>
+			<DataLayer
+				ConnectionID="con_DemoAnalytics"
+				ID="SQLDataLayer4"
+				Source="SELECT 
+  * 
+FROM ( SELECT 
+      Pri.Fld_Field_4 AS Lease_Number, 
+      Pri.Fld_Field_21 AS Business_Unit, 
+      Pri.Fld_Field_30 AS Unit_Number, 
+      Pri.Fld_Field_34 AS DBA_Name, 
+      Trans.Fld_Field_26 AS Tenant_Number, 
+      Trans.Fld_Field_27 AS Tenant_Name, 
+      pick.Description AS _Type, 
+      IFNULL(pick1.Description, &apos;NA&apos;) AS Transaction_Type, 
+      IFNULL(
+        CONVERT(
+          DATE_FORMAT(
+            STR_TO_DATE(Fld_Field_6, &apos;%m/%d/%Y&apos;), 
+            &apos;%m/%d/%Y&apos;
+          ) USING utf8
+        ), 
+        &apos;&apos;
+      ) AS Processing_Date, 
+      UM.DESCRIPTION AS User_Name, 
+      CASE WHEN IFNULL(wrk.Fkey_Parent, &apos;&apos;) = &apos;&apos; THEN &apos;No&apos; ELSE &apos;Yes&apos; END AS Review_Completed 
+    FROM tbl_section_1 AS Pri 
+      Inner Join tbl_section_14 AS trans ON trans.Fkey_Parent = Pri.Pkey 
+      Inner Join MASTERLIST AS UM ON UM.FKEY_PARENT = 275 
+      AND Um.Pkey = Pri.Fld_FKey_Field_36 
+      Inner Join masterlist AS pick ON pick.Pkey = Trans.Fld_FKey_Field_1 
+      Inner Join masterlist AS pick1 ON pick1.Pkey = Trans.Fld_FKey_Field_7 
+      Inner Join (
+        SELECT 
+          Fkey_Parent 
+        FROM 
+          workflow_status_update 
+        WHERE 
+          Fkey_Status IN (
+            SELECT 
+              Pkey 
+            FROM 
+              workflow_stages 
+            WHERE 
+              description LIKE &apos;%Review%&apos;
+          ) 
+        GROUP BY 
+          Fkey_Parent
+      ) AS wrk ON wrk.Fkey_Parent = Pri.Pkey 
+    WHERE 
+      IFNULL(UM.DESCRIPTION, &apos;&apos;) &lt;&gt; &apos;&apos;
+  ) t 
+WHERE 
+  (
+    _Type = &apos;@Request.Type~&apos; 
+    or &apos;@Request.Type~&apos; = &apos;&apos;
+  ) 
+  and (
+    User_Name = &apos;@Request.ddlUserName~&apos; 
+    OR &apos;@Request.ddlUserName~&apos; = &apos;&apos;
+  ) 
+  AND CASE WHEN &apos;@Request.txtFromDate~&apos; != &apos;&apos; 
+  AND &apos;@Request.txtToDate~&apos; != &apos;&apos; THEN STR_TO_DATE(Processing_Date, &apos;%m/%d/%Y&apos;) BETWEEN STR_TO_DATE(
+    &apos;@Request.txtFromDate~&apos;, &apos;%m/%d/%Y&apos;
+  ) 
+  AND STR_TO_DATE(
+    &apos;@Request.txtToDate~&apos;, &apos;%m/%d/%Y&apos;
+  ) ELSE 1 = 1 END
+"
+				Type="SQL"
+				>
+				<DataLayerLink
+					ID="dataLayerlink"
+				/>
+			</DataLayer>
+		</LocalData>
+	</Remark>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<Body>
+		<Division
+			HtmlDiv="True"
+			ID="divGridTitle"
+			ShowModes="rdExport"
+			>
+			<DataTable
+				ID="exportTable"
+				>
+				<DataTableColumn
+					Header="Transaction Type"
+					ID="colLease_Number"
+					>
+					<Label
+						Caption="@Data.Title~"
+						ID="lblLease_Number"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Lease_Number"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataLayer
+					ID="StaticDataLayer1"
+					Type="Static"
+					>
+					<StaticDataRow
+						Title="Processed By : @Request.ddlUserName~ , From @Request.txtFromDate~ to @Request.txtToDate~"
+					/>
+				</DataLayer>
+			</DataTable>
+		</Division>
+		<Division
+			HtmlDiv="True"
+			ID="Div_Pie"
+			ShowModes="All"
+			>
+			<Division
+				Class="breadcrumb"
+				HtmlDiv="True"
+				ID="dvBreadcrumb"
+				>
+				<Label
+					Caption="Transaction Status History"
+					Class="breadcrumb-item"
+					HtmlTag="a"
+					>
+					<EventHandler
+						DhtmlEvent="href"
+						>
+						<Action
+							Javascript="void(0)"
+							Type="Javascript"
+						/>
+					</EventHandler>
+					<EventHandler
+						DhtmlEvent="onclick"
+						>
+						<Action
+							ID="arBackToTransaction"
+							Type="Report"
+							>
+							<Target
+								Report="DemoClient.DemoClientLeaseAbstractionTransAndTenatType"
+								RequestForwarding="True"
+								Type="Report"
+							/>
+							<LinkParams
+								ddlUserName=""
+							/>
+						</Action>
+					</EventHandler>
+				</Label>
+				<Division
+					Class="breadcrumb-item active"
+					Condition="&apos;@Request.Type~&apos; == &apos;&apos;"
+					>
+					<Label
+						Caption="@Request.ddlUserName~"
+					/>
+				</Division>
+				<Division
+					Class="breadcrumb-item"
+					Condition="&apos;@Request.Type~&apos; != &apos;&apos;"
+					>
+					<Action
+						ElementID="dvTenant,labelRefresh,dvTransactionTable,dvBreadcrumb,DataTable1"
+						ID="refreshElementType"
+						PopupMenuCaption="Drill to : Type"
+						RequestForwarding="True"
+						Type="RefreshElement"
+						>
+						<LinkParams
+							ChartData="_Type"
+							PopUpClass="hideelement"
+							Type=""
+						/>
+						<WaitPage/>
+					</Action>
+					<Label
+						Caption="@Request.ddlUserName~"
+					/>
+				</Division>
+				<Division
+					Class="breadcrumb-item active"
+					Condition="&apos;@Request.Type~&apos; != &apos;&apos;"
+					>
+					<Label
+						Caption="@Request.Type~"
+					/>
+				</Division>
+			</Division>
+			<ResponsiveRow
+				Class="divChart mt-2"
+				CollisionBehavior="Overlap"
+				ID="divChart1"
+				>
+				<ResponsiveColumn
+					Class="divChartLeft px-0"
+					ColspanLargeScreen="4"
+					ColspanMediumScreen="4"
+					ColspanSmallScreen="4"
+					>
+					<Division
+						Class="border bg-light h-100 px-2"
+						HtmlDiv="True"
+						ID="dvBar"
+						>
+						<Division
+							HtmlDiv="True"
+							ID="dvTenant"
+							>
+							<Division
+								Class="contentLeft"
+								Condition="&apos;@Request.ChartData~&apos; != &apos;_Type&apos;"
+								HtmlDiv="True"
+								ID="dvBack"
+								>
+								<Label
+									Caption="&lt; Back to Transaction Type"
+									Class="HeaderLink"
+									>
+									<Action
+										ElementID="dvTenant,labelRefresh,dvTransactionTable,dvBreadcrumb,DataTable1"
+										ID="refreshElementType"
+										PopupMenuCaption="Drill to : Type"
+										RequestForwarding="True"
+										Type="RefreshElement"
+										>
+										<LinkParams
+											ChartData="_Type"
+											PopUpClass="hideelement"
+											Type=""
+										/>
+										<WaitPage/>
+									</Action>
+								</Label>
+								<Remark>
+									<Label
+										Caption="@Request.ddlUserName~ - Transaction Type wise Count"
+										Class="GridTitle float-left"
+										ID="labelTitle"
+									/>
+								</Remark>
+							</Division>
+							<ChartCanvas
+								BackgroundColor="Transparent"
+								BorderColor="#CCCCCC"
+								ChartHeight="420"
+								ChartWidth="100%"
+								ID="tenantPie"
+								>
+								<DataLayer
+									LinkedDataLayerID="dataLayerlink"
+									Type="Linked"
+									>
+									<GroupFilter
+										DataType="Text"
+										GroupColumn="@Request.ChartData~"
+										KeepGroupedRows="False"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="_Type"
+											AggregateFunction="COUNT"
+											DataType="Text"
+											ID="rdGrgrTransaction-Transaction_Type-count"
+										/>
+									</GroupFilter>
+									<SortFilter
+										DataType="Text"
+										SortColumn="@Request.ChartData~"
+										SortSequence="Ascending"
+									/>
+									<RelevanceFilter
+										DataColumn="rdGrgrTransaction-Transaction_Type-count"
+										IrrelevanceLabel="Other"
+										LabelColumn="Transaction_Type"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="0"
+									/>
+								</DataLayer>
+								<Series
+									ChartLabelColumn="@Request.ChartData~"
+									ChartYDataColumn="rdGrgrTransaction-Transaction_Type-count"
+									ShowDataValues="True"
+									ShowDataValuesFormat=" "
+									Type="Pie"
+									>
+									<Quicktip>
+										<QuicktipRow
+											Caption="@Chart.@Request.ChartData~~ :"
+											Value="@Chart.rdGrgrTransaction-Transaction_Type-count~"
+										/>
+									</Quicktip>
+									<Remark>
+										<ChartDrillTo>
+											<DrillToColumn
+												DataColumn="_Type"
+												DataType="Text"
+												Header="Transaction Type"
+												ID="ChartDrillToTransaction"
+											/>
+											<DrillToColumn
+												DataColumn="Tenant_Name"
+												DataType="Text"
+												Header="Tenant type"
+												ID="ChartDrillToTenant"
+											/>
+										</ChartDrillTo>
+									</Remark>
+									<SideLabelStyle
+										FontSize="11px"
+										MaxLabelLength="10"
+									/>
+									<Remark>
+										<Action
+											ID="popUpId"
+											PopupLocation="Right"
+											Type="Popup"
+											>
+											<PopupOption
+												Caption="Drill To Tenant"
+												ID="popUpOption"
+												>
+												<Action
+													ElementID="dvTenant,dvTransactionTable,dvBreadcrumb,popUpId"
+													ID="refreshElementTenant"
+													PopupMenuCaption="Drill To :Tenaant Name"
+													RequestForwarding="True"
+													Type="RefreshElement"
+													>
+													<LinkParams
+														ChartData="Tenant_Name"
+														PopUpClass=""
+														Type="@Chart._Type~"
+													/>
+													<WaitPage/>
+												</Action>
+											</PopupOption>
+										</Action>
+									</Remark>
+									<Remark>
+										<Action
+											ElementID="PopUP"
+											ID="test"
+											Type="ShowElement"
+										/>
+									</Remark>
+									<Action
+										ElementID="dvTenant,dvTransactionTable,dvBreadcrumb,popUpId"
+										ID="refreshElementTenant"
+										PopupMenuCaption="Drill To :Tenaant Name"
+										RequestForwarding="True"
+										Type="RefreshElement"
+										>
+										<LinkParams
+											ChartData="Tenant_Name"
+											PopUpClass=""
+											Type="@Chart._Type~"
+										/>
+										<WaitPage/>
+									</Action>
+								</Series>
+								<ChartCaptionStyle
+									FontColor="MediumBlue"
+									FontWeight="Bold"
+								/>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Top"
+									LegendCaption="Test"
+								/>
+							</ChartCanvas>
+							<Remark>
+								<PopupPanel
+									Caption="Check"
+									ID="PopUP"
+									PopupModal="True"
+									PopupPanelLocation="Mouse"
+									ShowOnPageLoad="False"
+									>
+									<Label
+										Caption="Drill to Tenant"
+										>
+										<Action
+											ElementID="tenantPie,dvTransactionTable,dvBreadcrumb,popUpId"
+											ID="refreshElementTenant"
+											PopupMenuCaption="Drill To :Tenaant Name"
+											RequestForwarding="True"
+											Type="RefreshElement"
+											>
+											<LinkParams
+												ChartData="Tenant_Name"
+												PopUpClass=""
+												Type="@Chart._Type~"
+											/>
+										</Action>
+									</Label>
+								</PopupPanel>
+							</Remark>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+				<ResponsiveColumn
+					Class="divChartRight px-1"
+					ColspanLargeScreen="8"
+					ColspanMediumScreen="8"
+					ColspanSmallScreen="8"
+					>
+					<Division
+						Class="bg-light pb-2 border h-100"
+						HtmlDiv="True"
+						ID="dvTransactionTable"
+						>
+						<Division
+							Class="GridTopRow"
+							HtmlDiv="True"
+							ID="dvExport"
+							>
+							<Remark>
+								<Image
+									Caption="Images.Back.png"
+									Class="float-left"
+									>
+									<Action
+										ElementID="tenantPie,dvTransactionTable,dvBreadcrumb,popUpId"
+										ID="refreshElementTenant"
+										PopupMenuCaption="Drill To :Tenaant Name"
+										RequestForwarding="True"
+										Type="RefreshElement"
+										>
+										<LinkParams
+											ChartData="Tenant_Name"
+											PopUpClass=""
+											Type="@Request.Type~"
+										/>
+									</Action>
+								</Image>
+							</Remark>
+							<Remark>
+								<Label
+									Caption="Transaction Type wise Count"
+									Class="GridTitle float-left"
+									ID="labelTitle"
+								/>
+							</Remark>
+							<Remark>
+								<Label
+									Caption="@Request.ddlUserName~ - Transaction Type wise Count"
+									Class="GridTitle float-left"
+									ID="labelTitle"
+								/>
+							</Remark>
+							<Label
+								Caption="Processed Date : @Request.txtFromDate~ - @Request.txtToDate~"
+								Class="GridTitle float-left"
+								ID="GridTitlelabel"
+							/>
+							<Image
+								AltText="Export to Excel"
+								Caption="Images.Excel_Multi.png"
+								ID="ExportImage"
+								Tooltip="Export to Excel"
+								>
+								<Action
+									ID="ExportNativeExcel"
+									Type="NativeExcel"
+									>
+									<Target
+										ExportDataTableID="exportTable,transactionTable"
+										ExportFilename="@Request.ddlUserName~ -Transaction"
+										Type="NativeExcel"
+										>
+										<WaitPage/>
+									</Target>
+									<LinkParams
+										ddlUserName="@Request.ddlUserName~"
+										txtFromDate="@Request.txtFromDate~"
+										txtToDate="@Request.txtToDate~"
+										Type="@Request.Type~"
+									/>
+								</Action>
+							</Image>
+						</Division>
+						<Division
+							Class="scroll-500"
+							HtmlDiv="True"
+							>
+							<DataTable
+								AccessibleHeaders="True"
+								AccessibleSummary="DataTable"
+								AjaxPaging="True"
+								AltRowClass="ThemeAlternatingRow"
+								Class="table table-resizable table-bordered bg-white table-sm"
+								ColumnHeaderClass="customTableHeader text-nowrap"
+								ID="transactionTable"
+								KeepScrollPosition="True"
+								RememberSort="True"
+								ResizableColumns="True"
+								SortArrows="True"
+								TableBorder="0"
+								Width="100"
+								WidthScale="%"
+								>
+								<DataLayer
+									LinkedDataLayerID="dataLayerlink"
+									Type="Linked"
+									>
+									<SortFilter
+										DataType="Date"
+										SortColumn="Processing_Date,Lease_Number"
+										SortSequence="Ascending"
+									/>
+								</DataLayer>
+								<InteractivePaging
+									CaptionType="Text"
+									HideShowPrevNextCaptions="True"
+									HideWhenOnePage="True"
+									Location="Bottom"
+									PageRowCount="1000"
+									ShowPageNumber="Numbered"
+								/>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Lease #"
+									ID="colLease_Number"
+									>
+									<Label
+										Caption="@Data.Lease_Number~"
+										ID="lblLease_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Lease_Number"
+										DataType="Text"
+										FirstSortSequence="Ascending"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Business Unit"
+									ID="colBusiness_Unit"
+									>
+									<Label
+										Caption="@Data.Business_Unit~"
+										ID="lblBusiness_Unit"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Business_Unit"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Unit #"
+									ID="colUnit_Number"
+									>
+									<Label
+										Caption="@Data.Unit_Number~"
+										ID="lblUnit_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Unit_Number"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Tenant #"
+									ID="colTenant_Number"
+									>
+									<Label
+										Caption="@Data.Tenant_Number~"
+										ID="lblTenant_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Tenant_Number"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Tenant Name"
+									ID="colTenant_Name"
+									>
+									<Label
+										Caption="@Data.Tenant_Name~"
+										ID="lblTenant_Name"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Tenant_Name"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Type"
+									ID="col_Type"
+									>
+									<Label
+										Caption="@Data._Type~"
+										ID="lbl_Type"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="_Type"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										ColumnHeaderClass="customTableHeader"
+										Header="Processed By"
+										ID="colUser_Name"
+										>
+										<Label
+											Caption="@Data.User_Name~"
+											ID="lblUser_Name"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="User_Name"
+											DataType="Text"
+										/>
+									</DataTableColumn>
+								</Remark>
+								<DataTableColumn
+									ColumnHeaderClass="customTableHeader"
+									Header="Proc. Date"
+									ID="colProcessing_Date"
+									>
+									<Label
+										Caption="@Data.Processing_Date~"
+										Format="Short Date"
+										ID="lblProcessing_Date"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Processing_Date"
+										DataType="Text"
+										FirstSortSequence="Ascending"
+									/>
+								</DataTableColumn>
+							</DataTable>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+			</ResponsiveRow>
+		</Division>
+	</Body>
+	<ideTestParams
+		ChartData=""
+		ddlUserName=""
+		txtFromDate=""
+		txtToDate=""
+		Type=""
+	/>
+</Report>

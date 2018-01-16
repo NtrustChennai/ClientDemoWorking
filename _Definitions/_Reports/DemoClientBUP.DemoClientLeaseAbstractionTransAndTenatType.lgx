@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DemoClient.DemoClientLeaseAbstractionTransAndTenatType"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<DefaultRequestParams
+		txtFromDate="10/14/2017"
+		txtToDate="11/14/2017"
+	/>
+	<Remark>
+		<LocalData>
+			<DataLayer
+				ConnectionID="con_DemoAnalytics"
+				HandleQuotesInTokens="True"
+				ID="SQLDataLayer4"
+				Source="SELECT * FROM (
+	SELECT 	Pri.Fld_Field_4 AS Lease_Number
+		,Pri.Fld_Field_21 AS Business_Unit
+		,Pri.Fld_Field_30 AS Unit_Number
+		,Pri.Fld_Field_34 AS DBA_Name,Trans.Fld_Field_26 AS Tenant_Number
+		,Trans.Fld_Field_27 AS Tenant_Name
+		,pick.Description AS _Type
+		, pick1.Description AS Transaction_Type
+		, IFNULL(CONVERT(DATE_FORMAT(STR_TO_DATE(Fld_Field_6,&apos;%m/%d/%Y&apos;),&apos;%m/%d/%Y&apos;)USING utf8),&apos;&apos;) AS Processing_Date
+		, UM.DESCRIPTION AS User_Name
+		, CASE WHEN IFNULL(wrk.Fkey_Parent,&apos;&apos;) = &apos;&apos; THEN &apos;No&apos; ELSE &apos;Yes&apos; END AS Review_Completed
+	FROM tbl_section_1 AS Pri
+	Inner JOIN tbl_section_14 AS trans ON trans.Fkey_Parent = Pri.Pkey
+	Inner JOIN MASTERLIST AS UM ON UM.FKEY_PARENT = 275 AND Um.Pkey = Pri.Fld_FKey_Field_36
+	Inner JOIN masterlist AS pick ON pick.Pkey = Trans.Fld_FKey_Field_1 
+	Inner JOIN masterlist AS pick1 ON pick1.Pkey = Trans.Fld_FKey_Field_7
+	Inner JOIN ( SELECT Fkey_Parent
+			FROM workflow_status_update WHERE Fkey_Status IN (SELECT Pkey 
+			FROM workflow_stages WHERE description LIKE &apos;%Review%&apos;)
+			GROUP BY Fkey_Parent
+		   ) AS wrk ON wrk.Fkey_Parent = Pri.Pkey 
+	WHERE IFNULL(UM.DESCRIPTION,&apos;&apos;) &lt;&gt; &apos;&apos;
+)t  
+WHERE (User_Name = &apos;@Request.ddlUserName~&apos; OR &apos;@Request.ddlUserName~&apos; = &apos;&apos;) AND 
+CASE WHEN &apos;@Request.txtFromDate~&apos; != &apos;&apos; AND &apos;@Request.txtToDate~&apos; != &apos;&apos; THEN 
+		STR_TO_DATE(Processing_Date, &apos;%m/%d/%Y&apos;)  BETWEEN STR_TO_DATE(&apos;@Request.txtFromDate~&apos;, &apos;%m/%d/%Y&apos;)
+		AND STR_TO_DATE(&apos;@Request.txtToDate~&apos;, &apos;%m/%d/%Y&apos;)
+	 ELSE  1=1
+ END "
+				Type="SQL"
+				>
+				<DataLayerLink
+					ID="LinkLayer"
+				/>
+			</DataLayer>
+		</LocalData>
+	</Remark>
+	<LocalData>
+		<DataLayer
+			ConnectionID="con_DemoAnalytics"
+			HandleQuotesInTokens="True"
+			ID="SQLDataLayer4"
+			Source="SELECT Lease_Number
+      ,Business_Unit
+      ,Unit_Number
+      ,DBA_Name
+      ,Tenant_Number
+      ,Tenant_Name
+      ,Tenant_Type as &apos;_Type&apos;
+      ,Transaction_Type
+      ,Processing_Date
+      ,User_Name
+      ,Review_Completed
+  FROM DemoClientTransactionType
+  WHERE (User_Name = &apos;@Request.ddlUserName~&apos; OR &apos;@Request.ddlUserName~&apos; = &apos;&apos;)
+  AND  1 = (CASE WHEN &apos;@Request.txtFromDate~&apos; != &apos;&apos; AND &apos;@Request.txtToDate~&apos; != &apos;&apos; AND Processing_Date BETWEEN &apos;@Request.txtFromDate~&apos; AND &apos;@Request.txtToDate~&apos; THEN  1 ELSE 0 END)"
+			Type="SQL"
+			>
+			<DataLayerLink
+				ID="LinkLayer"
+			/>
+		</DataLayer>
+	</LocalData>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+		/>
+		<Remark>
+			<Division
+				Class="ThemePanel"
+				HtmlDiv="True"
+				ID="divHeader"
+				>
+				<Rows
+					CaptionClass="Test"
+					CellSpacing="0"
+					Class="divFilterRow"
+					ID="FilterRowOld"
+					Width="80"
+					WidthScale="%"
+					>
+					<Row
+						Class="full_flds"
+						>
+						<Column
+							ID="colReportTitle"
+							>
+							<Label
+								Caption="DemoClient Center - Lease Abstraction"
+								Class="ThemeTextLargest"
+							/>
+						</Column>
+						<Column
+							Class="ThemeAlignRight"
+							ID="colDate"
+							>
+							<Label
+								Class="ThemeHeaderLarger"
+							/>
+						</Column>
+					</Row>
+				</Rows>
+			</Division>
+		</Remark>
+		<Remark>
+			<HR/>
+		</Remark>
+		<ResponsiveRow
+			CollisionBehavior="Overlap"
+			ID="divFilterRow"
+			>
+			<ResponsiveColumn
+				Class="text-nowrap"
+				ColspanExtraSmallScreen="12"
+				ColspanLargeScreen="5"
+				ColspanMediumScreen="5"
+				ColspanSmallScreen="6"
+				>
+				<InputDate
+					Caption="Processing Date From :"
+					Class="form-control-sm"
+					DefaultValue="@Request.txtFromDate~"
+					Format="MM/dd/yyyy"
+					ID="txtFromDate"
+				/>
+				<Spaces
+					Size="3"
+				/>
+				<InputDate
+					Caption="To : "
+					DefaultValue="@Request.txtToDate~"
+					Format="MM/dd/yyyy"
+					ID="txtToDate"
+				/>
+			</ResponsiveColumn>
+			<Remark>
+				<ResponsiveColumn
+					Class="text-nowrap"
+					ColspanExtraSmallScreen="12"
+					ColspanLargeScreen="2"
+					ColspanMediumScreen="2"
+					ColspanSmallScreen="6"
+				/>
+			</Remark>
+			<ResponsiveColumn
+				ColspanExtraSmallScreen="6"
+				ColspanLargeScreen="2"
+				ColspanMediumScreen="2"
+				ColspanSmallScreen="6"
+				>
+				<Button
+					Caption="Submit"
+					Class="btn btn-sm"
+					ID="btnsubmit"
+					>
+					<Action
+						ID="actMainRpt"
+						Type="Report"
+						>
+						<Target
+							Report="DemoClient.DemoClientLeaseAbstractionTransAndTenatType"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</Button>
+			</ResponsiveColumn>
+			<ResponsiveColumn
+				Class="text-right "
+				ColspanExtraSmallScreen="5"
+				ColspanLargeScreen="5"
+				ColspanMediumScreen="5"
+				ColspanSmallScreen="6"
+				>
+				<Remark>
+					<Division
+						Class="pt-1"
+						HtmlDiv="True"
+						ID="dvLabel"
+						>
+						<Division
+							ID="dvlblChart"
+							ShowModes="None"
+							>
+							<Label
+								Caption="View Chart"
+								Class="textLargeLink"
+								>
+								<Action
+									ElementID="dvBar,dvGrid,dvlblChart,dvlblDetail"
+									ID="ShowElementChart"
+									Type="ShowElement"
+								/>
+							</Label>
+						</Division>
+						<Division
+							ID="dvlblDetail"
+							>
+							<Label
+								Caption="View Detail"
+								Class="textLargeLink"
+								>
+								<Action
+									ElementID="dvBar,dvGrid,dvlblChart,dvlblDetail"
+									ID="ShowElementDetail"
+									Type="ShowElement"
+								/>
+							</Label>
+						</Division>
+					</Division>
+				</Remark>
+			</ResponsiveColumn>
+		</ResponsiveRow>
+		<Division
+			Class="container-fluid pt-2"
+			HtmlDiv="True"
+			>
+			<ResponsiveRow
+				Class="divChart"
+				CollisionBehavior="Overlap"
+				ID="divChart1"
+				>
+				<ResponsiveColumn
+					Class="divChartLeft px-0"
+					ColspanLargeScreen="4"
+					ColspanMediumScreen="4"
+					ColspanSmallScreen="4"
+					>
+					<Division
+						Class="border bg-light pt-2 h-100 px-2"
+						HtmlDiv="True"
+						ID="dvBar"
+						>
+						<ChartCanvas
+							BackgroundColor="#ffffff"
+							BackgroundColorTransparency="0"
+							ChartHeight="500"
+							ChartOrientation="SwapAxes"
+							ID="BarChartCanvas1"
+							>
+							<Series
+								BarBorderColor="CadetBlue"
+								BarBorderColorTransparency="7"
+								ChartXDataColumn="User_Name"
+								ChartXDataColumnType="Text"
+								ChartYDataColumn="rdGrgrUser-User_Name-count"
+								Color="SlateGray"
+								HoverBrightness="7"
+								Type="Bar"
+								>
+								<Quicktip>
+									<QuicktipRow
+										Caption="Processed By:"
+										Value="@Chart.User_Name~"
+									/>
+									<QuicktipRow
+										Caption="Count:"
+										Format="#,##0."
+										Value="@Chart.rdGrgrUser-User_Name-count~"
+									/>
+								</Quicktip>
+								<DataLabels
+									BackgroundColor="Transparent"
+									BackgroundColorTransparency="0"
+									FontColor="DarkOliveGreen"
+								/>
+								<Action
+									ID="arTransactionType"
+									PopupMenuCaption="Transaction Type"
+									Type="Report"
+									>
+									<LinkParams
+										ddlUserName="@Chart.User_Name~"
+									/>
+									<Target
+										LinkDataLayers="True"
+										Report="DemoClient.DemoClientTransactionType"
+										RequestForwarding="True"
+										Type="Report"
+									/>
+								</Action>
+								<Action
+									ID="arTentantType"
+									PopupMenuCaption="Tenant"
+									Type="Report"
+									>
+									<LinkParams
+										ddlUserName="@Chart.User_Name~"
+									/>
+									<Target
+										Report="DemoClient.DemoClientTenant"
+										RequestForwarding="True"
+										Type="Report"
+									/>
+								</Action>
+							</Series>
+							<ChartXAxis
+								AxisCaption="Processed By"
+								AxisType="Category"
+								>
+								<AxisCaptionStyle
+									AlignmentHorizontal="Left"
+									FontColor="Red"
+									FontSize="13px"
+								/>
+								<AxisLabelStyle
+									FontAngle="0"
+									FontSize="12"
+								/>
+							</ChartXAxis>
+							<ChartYAxis
+								AxisCaption="Transaction Count"
+								>
+								<AxisCaptionStyle
+									AlignmentHorizontal="Left"
+								/>
+							</ChartYAxis>
+							<DataLayer
+								LinkedDataLayerID="LinkLayer"
+								Type="Linked"
+								>
+								<GroupFilter
+									DataType="Text"
+									GroupColumn="User_Name"
+									KeepGroupedRows="False"
+									>
+									<GroupAggregateColumn
+										AggregateColumn="User_Name"
+										AggregateFunction="COUNT"
+										DataType="Text"
+										ID="rdGrgrUser-User_Name-count"
+									/>
+								</GroupFilter>
+								<SortFilter
+									DataType="Text"
+									SortColumn="User_Name"
+									SortSequence="Ascending"
+								/>
+								<RelevanceFilter
+									DataColumn="rdGrgrUser-User_Name-count"
+									IrrelevanceLabel="Other"
+									LabelColumn="User_Name"
+									RelevanceType="NumberOfRows"
+									RelevanceValue="0"
+								/>
+							</DataLayer>
+							<ChartCaptionStyle
+								AlignmentHorizontal="Left"
+								AlignmentVertical="Top"
+								FontSize="12pt"
+							/>
+						</ChartCanvas>
+					</Division>
+				</ResponsiveColumn>
+				<ResponsiveColumn
+					Class="divChartRight px-1"
+					ColspanLargeScreen="8"
+					ColspanMediumScreen="8"
+					ColspanSmallScreen="8"
+					>
+					<Division
+						Class="bg-light pb-2 border"
+						HtmlDiv="True"
+						ID="dvGrid"
+						>
+						<Division
+							Class="GridTopRow"
+							HtmlDiv="True"
+							ID="divGridTopRow"
+							>
+							<Label
+								Caption="@Request.ddlUserName~"
+								Class="GridTitle float-left"
+							/>
+							<Image
+								Caption="Images.Filter.png"
+								Class="ThemeAlignBottomLeftx"
+							/>
+							<Spaces
+								Size="3"
+							/>
+							<Image
+								AltText="Export to Excel"
+								Caption="Images.Excel_Multi.png"
+								Class="ThemeAlignBottomLeft"
+								ID="ExportImage"
+								Tooltip="Export to Excel"
+								>
+								<Action
+									ID="ExportNativeExcel"
+									Type="NativeExcel"
+									>
+									<Target
+										ExportDataTableID="dtDetail"
+										ExportFilename="TransactionHistory"
+										Type="NativeExcel"
+										>
+										<WaitPage/>
+									</Target>
+									<LinkParams
+										txtFromDate="@Request.txtFromDate~"
+										txtToDate="@Request.txtToDate~"
+									/>
+								</Action>
+							</Image>
+							<Spaces
+								Size="3"
+							/>
+						</Division>
+						<Division
+							Class="scroll-500"
+							HtmlDiv="True"
+							>
+							<DataTable
+								AccessibleHeaders="True"
+								AccessibleSummary="DataTable"
+								AjaxPaging="True"
+								AltRowClass="ThemeAlternatingRow"
+								Class="table table-resizable table-bordered bg-white table-sm"
+								ColumnHeaderClass="customTableHeader text-nowrap"
+								ID="dtDetail"
+								KeepScrollPosition="True"
+								RememberSort="True"
+								ResizableColumns="True"
+								SortArrows="True"
+								TableBorder="0"
+								Width="100"
+								WidthScale="%"
+								>
+								<DataLayer
+									LinkedDataLayerID="LinkLayer"
+									Type="Linked"
+									>
+									<SortFilter
+										SortColumn="User_Name,Processing_Date,Lease_Number"
+									/>
+								</DataLayer>
+								<DataTableColumn
+									Header="Lease #"
+									ID="colLease_Number"
+									>
+									<Label
+										Caption="@Data.Lease_Number~"
+										ID="lblLease_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Lease_Number"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Class="text-right"
+									ColumnHeaderClass="rdThemeDataTableHeader customTableHeader text-nowrap text-right"
+									Header="Business Unit"
+									ID="colBusiness_Unit"
+									>
+									<Label
+										Caption="@Data.Business_Unit~"
+										ID="lblBusiness_Unit"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Business_Unit"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Header="Unit #"
+									ID="colUnit_Number"
+									>
+									<Label
+										Caption="@Data.Unit_Number~"
+										ID="lblUnit_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Unit_Number"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Class="text-right"
+									ColumnHeaderClass="rdThemeDataTableHeader customTableHeader text-nowrap text-right"
+									Header="Tenant #"
+									ID="colTenant_Number"
+									>
+									<Label
+										Caption="@Data.Tenant_Number~"
+										ID="lblTenant_Number"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Tenant_Number"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Header="Tenant Name"
+									ID="colTenant_Name"
+									>
+									<Label
+										Caption="@Data.Tenant_Name~"
+										ID="lblTenant_Name"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Tenant_Name"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Header="Type"
+									ID="col_Type"
+									>
+									<Label
+										Caption="@Data._Type~"
+										ID="lbl_Type"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="_Type"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Class="text-right"
+									ColumnHeaderClass="rdThemeDataTableHeader customTableHeader text-nowrap text-right"
+									Header="Proc. Date"
+									ID="colProcessing_Date"
+									>
+									<Label
+										Caption="@Data.Processing_Date~"
+										Format="Short Date"
+										ID="lblProcessing_Date"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="Processing_Date"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<DataTableColumn
+									Header="Processed By"
+									ID="colUser_Name"
+									>
+									<Label
+										Caption="@Data.User_Name~"
+										ID="lblUser_Name"
+										rdForWizardSet="true"
+									/>
+									<DataColumnSort
+										DataColumn="User_Name"
+										DataType="Text"
+									/>
+								</DataTableColumn>
+								<InteractivePaging
+									CaptionType="Text"
+									HideShowPrevNextCaptions="True"
+									HideWhenOnePage="True"
+									Location="Bottom"
+									PageRowCount="15"
+									ShowPageNumber="Numbered"
+								/>
+							</DataTable>
+						</Division>
+					</Division>
+				</ResponsiveColumn>
+			</ResponsiveRow>
+		</Division>
+	</Body>
+	<ideTestParams
+		ddlUserName=""
+		txtFromDate=""
+		txtToDate=""
+	/>
+</Report>

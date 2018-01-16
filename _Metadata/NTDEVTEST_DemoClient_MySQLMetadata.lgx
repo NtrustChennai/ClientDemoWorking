@@ -1,0 +1,2866 @@
+﻿<Metadata
+	BuilderVersion="12.2.237.976"
+	MetadataBuilder="Logi Info Server Metadata Builder"
+	>
+	<Table
+		FriendlyName="Annotation Details"
+		HideTable="False"
+		Schema=""
+		TableName="annotation_details"
+		TableType="U"
+		>
+		<Column
+			Alignment="Right"
+			ColumnName="pkey"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Pkey"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="id"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Id"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="document_filename"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Document Filename"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="document_relative_path"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Document Relative Path"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="selection_text"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Selection Text"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="has_selection"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Has Selection"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="color"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Color"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="selection_info"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Selection Info"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="readonly"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Readonly"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="type"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Type"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="displayFormat"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Display Format"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="note"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Note"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="pageIndex"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Page Index"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="positionX"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Position X"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="positionY"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Position Y"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="width"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Width"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="height"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Height"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="collapsed"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Collapsed"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="points"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Points"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="datecreated"
+			DataType="DateTime"
+			Format="General Date"
+			FrameID=""
+			FriendlyName="Datecreated"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="CREATEDBY"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Createdby"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="datechanged"
+			DataType="DateTime"
+			Format="General Date"
+			FrameID=""
+			FriendlyName="Datechanged"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="SectionName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Section Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="FieldName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Field Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="PicklistValue"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Picklist Value"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="UserName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="User Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="LeaseKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Lease Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="ProjectKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Project Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="RecordKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Record Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="ModelKey"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Model Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="IS_DISPLAY"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Is Display"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Annotation_Type"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Annotation Type"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="NLP_Category"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Nlp Category"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+	</Table>
+	<Table
+		FriendlyName="Annotation Details Copy"
+		HideTable="False"
+		Schema=""
+		TableName="annotation_details_copy"
+		TableType="U"
+		>
+		<Column
+			Alignment="Right"
+			ColumnName="pkey"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Pkey"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="id"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Id"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="document_filename"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Document Filename"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="document_relative_path"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Document Relative Path"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="selection_text"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Selection Text"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="has_selection"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Has Selection"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="color"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Color"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="selection_info"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Selection Info"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="readonly"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Readonly"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="type"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Type"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="displayFormat"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Display Format"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="note"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Note"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="pageIndex"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Page Index"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="positionX"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Position X"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="positionY"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Position Y"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="width"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Width"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="height"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Height"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="collapsed"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Collapsed"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="points"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Points"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="datecreated"
+			DataType="DateTime"
+			Format="General Date"
+			FrameID=""
+			FriendlyName="Datecreated"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="CREATEDBY"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Createdby"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="datechanged"
+			DataType="DateTime"
+			Format="General Date"
+			FrameID=""
+			FriendlyName="Datechanged"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="SectionName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Section Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="FieldName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Field Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="PicklistValue"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Picklist Value"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="UserName"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="User Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="LeaseKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Lease Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="ProjectKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Project Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="RecordKey"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Record Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment="Right"
+			ColumnName="ModelKey"
+			DataType="Number"
+			Format="General Number"
+			FrameID=""
+			FriendlyName="Model Key"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="True"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="IS_DISPLAY"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Is Display"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Annotation_Type"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Annotation Type"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="NLP_Category"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Nlp Category"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+	</Table>
+	<Table
+		FriendlyName="Audit Trail Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="audit_trail_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Audit Trail Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="audit_trail_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Audit Trail Trans"
+		HideTable="True"
+		Schema=""
+		TableName="audit_trail_trans"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Change Log Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="change_log_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Change Log Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="change_log_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Detail Leasestatus"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_detail_leasestatus"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Detail Leasestatus Ot"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_detail_leasestatus_ot"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Detail Leasetype Ct"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_detail_leasetype_ct"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Detail Leasetype Wh"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_detail_leasetype_wh"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Detail Status Leasetransaction"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_detail_status_leasetransaction"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Tranaction Move"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_tranaction_move"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Lease Transaction Type New Test"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_lease_transaction_type_new_test"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Leasedetail Cpi Indicator"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_leasedetail_cpi_indicator"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Leasedetail Lease Status"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_leasedetail_lease_status"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Leasetransaction Transtype"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_leasetransaction_transtype"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Leasetransaction Trantype Rl"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_leasetransaction_trantype_rl"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Options Optiontypedetail"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_options_optiontypedetail"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Ore Red Leseq Ops Ed"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_ore_red_leseq_ops_ed"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Ore Rsd Grteq Ops Sd"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_ore_rsd_grteq_ops_sd"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Rb Bd Gteql Lt Sd"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_rb_bd_gteql_lt_sd"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Bv Sales Overage"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_bv_sales_overage"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Dbatest"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_dbatest"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 14 Addrule"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_14_addrule"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 14 Addrule Lt Delete"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_14_addrule_lt_delete"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 14 Deleterule"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_14_deleterule"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 3 Addrule"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_3_addrule"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 3 Allowedit"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_3_allowedit"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 3 Allowversionnumber"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_3_allowversionnumber"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 3 Allowversionnumber 1"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_3_allowversionnumber_1"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Cv Xl Tbl Section 3 Allowversionnumber Recurring"
+		HideTable="True"
+		Schema=""
+		TableName="cv_xl_tbl_section_3_allowversionnumber_recurring"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Datasecurity Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="datasecurity_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Datasecurity Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="datasecurity_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Display Grid Order"
+		HideTable="True"
+		Schema=""
+		TableName="display_grid_order"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Email Attachments"
+		HideTable="True"
+		Schema=""
+		TableName="email_attachments"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Email Content"
+		HideTable="True"
+		Schema=""
+		TableName="email_content"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Lease Clone History"
+		HideTable="True"
+		Schema=""
+		TableName="lease_clone_history"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Lease Transaction Latest Maxversion Key"
+		HideTable="True"
+		Schema=""
+		TableName="lease_transaction_latest_maxversion_key"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Lease User Association"
+		HideTable="True"
+		Schema=""
+		TableName="lease_user_association"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Lease User Association History"
+		HideTable="True"
+		Schema=""
+		TableName="lease_user_association_history"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Leasetransaction Type"
+		HideTable="True"
+		Schema=""
+		TableName="leasetransaction_type"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Leasetransaction Typegroupby"
+		HideTable="True"
+		Schema=""
+		TableName="leasetransaction_typegroupby"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Masterlist"
+		HideTable="True"
+		Schema=""
+		TableName="masterlist"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Masterlist Generic"
+		HideTable="True"
+		Schema=""
+		TableName="masterlist_generic"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Masterlist Generic Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="masterlist_generic_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Masterlist Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="masterlist_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Masterlist Multicolumn"
+		HideTable="True"
+		Schema=""
+		TableName="masterlist_multicolumn"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Nlp Mappings"
+		HideTable="True"
+		Schema=""
+		TableName="nlp_mappings"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Overridden Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="overridden_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Portfolio Details"
+		HideTable="True"
+		Schema=""
+		TableName="portfolio_details"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Portfolio Master"
+		HideTable="True"
+		Schema=""
+		TableName="portfolio_master"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Portfolio Picklist"
+		HideTable="True"
+		Schema=""
+		TableName="portfolio_picklist"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Report Template Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="report_template_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Report Template Fieldorder Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="report_template_fieldorder_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Report Template Filter Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="report_template_filter_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Report Template Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="report_template_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Section Security Settings"
+		HideTable="True"
+		Schema=""
+		TableName="section_security_settings"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Section Security Types"
+		HideTable="True"
+		Schema=""
+		TableName="section_security_types"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Bookmark References"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_bookmark_references"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Custom Queries"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_custom_queries"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Etl Masterheader"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_etl_masterheader"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 1"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_1"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 10"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_10"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 10 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_10_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 11"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_11"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 11 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_11_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 12"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_12"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 12 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_12_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 13"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_13"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 13 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_13_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 14"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_14"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 14 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_14_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 15"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_15"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 15 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_15_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 16"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_16"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 16 Copy"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_16_copy"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 16 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_16_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 17"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_17"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 17 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_17_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 18"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_18"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 18 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_18_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 19"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_19"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 19 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_19_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 1 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_1_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 2"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_2"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 20"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_20"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 20 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_20_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 21"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_21"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 21 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_21_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 22"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_22"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 22 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_22_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 26"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_26"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 26 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_26_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 28"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_28"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 28 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_28_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 29"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_29"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 29 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_29_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 2 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_2_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 3"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_3"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 30"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_30"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 30 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_30_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 31"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_31"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 31 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_31_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 32"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_32"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 32 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_32_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 33"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_33"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 33 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_33_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 34"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_34"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 34 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_34_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 35"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_35"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 35 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_35_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 36"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_36"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 36 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_36_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 37"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_37"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 37 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_37_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 38"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_38"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 38 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_38_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 39"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_39"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 39 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_39_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 3 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_3_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 40"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_40"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 40 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_40_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 41"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_41"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 41 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_41_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 42"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_42"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 42 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_42_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 43"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_43"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 43 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_43_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 44"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_44"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 44 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_44_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 45"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_45"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 45 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_45_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 46"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_46"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 46 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_46_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 47"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_47"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 47 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_47_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 48"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_48"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 48 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_48_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 49"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_49"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 49 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_49_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 5"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_5"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 50"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_50"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 50 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_50_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 53"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_53"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 53 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_53_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 54"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_54"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 54 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_54_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 56"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_56"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 56 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_56_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 57"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_57"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 57 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_57_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 58"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_58"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 58 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_58_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 59"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_59"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 59 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_59_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 5 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_5_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 6"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_6"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 60"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_60"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 60 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_60_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 61"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_61"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 61 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_61_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 6 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_6_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 7"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_7"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 7 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_7_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 8"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_8"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 8 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_8_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 9"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_9"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section 9 V"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_9_v"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_dtl"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Section Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_section_hdr"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Service Sync Details"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_service_sync_details"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Service Sync History"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_service_sync_history"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Servicereference Fields"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_servicereference_fields"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Servicereference Sections"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_servicereference_sections"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Tbl Spellcheck Details"
+		HideTable="True"
+		Schema=""
+		TableName="tbl_spellcheck_details"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Userlogin"
+		HideTable="True"
+		Schema=""
+		TableName="userlogin"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="V Audit Trail Trans"
+		HideTable="True"
+		Schema=""
+		TableName="v_audit_trail_trans"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Tbl Section Dtl"
+		HideTable="True"
+		Schema=""
+		TableName="v_tbl_section_dtl"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Tbl Section Hdr"
+		HideTable="True"
+		Schema=""
+		TableName="v_tbl_section_hdr"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 1"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_1"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 10"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_10"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 11"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_11"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 12"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_12"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 13"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_13"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 14"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_14"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 14 Workflowbv"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_14_workflowbv"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 15"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_15"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 16"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_16"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 17"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_17"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 18"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_18"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 19"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_19"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 1 Grid"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_1_grid"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 2"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_2"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 20"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_20"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 21"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_21"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 22"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_22"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 26"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_26"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 28"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_28"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 29"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_29"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 3"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_3"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 30"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_30"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 31"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_31"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 32"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_32"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 33"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_33"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 34"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_34"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 35"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_35"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 36"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_36"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 37"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_37"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 38"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_38"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 39"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_39"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 40"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_40"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 41"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_41"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 42"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_42"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 43"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_43"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 44"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_44"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 45"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_45"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 46"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_46"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 47"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_47"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 48"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_48"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 49"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_49"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 5"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_5"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 50"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_50"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 53"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_53"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 54"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_54"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 56"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_56"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 57"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_57"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 58"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_58"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 59"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_59"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 6"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_6"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 60"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_60"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 61"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_61"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 7"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_7"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 8"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_8"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="V Xl Tbl Section 9"
+		HideTable="True"
+		Schema=""
+		TableName="v_xl_tbl_section_9"
+		TableType="V"
+	/>
+	<Table
+		FriendlyName="Validation Errors"
+		HideTable="True"
+		Schema=""
+		TableName="validation_errors"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Viewonly Security"
+		HideTable="True"
+		Schema=""
+		TableName="viewonly_security"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Lease Exceptions"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_lease_exceptions"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Snapshot History"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_snapshot_history"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Stages"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_stages"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Stages Accessibleroles"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_stages_accessibleroles"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Status Update"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_status_update"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Status Update Parallel"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_status_update_parallel"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Transition"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_transition"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Transition Accessibleroles"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_transition_accessibleroles"
+		TableType="U"
+	/>
+	<Table
+		FriendlyName="Workflow Transition Mailcontent"
+		HideTable="True"
+		Schema=""
+		TableName="workflow_transition_mailcontent"
+		TableType="U"
+	/>
+	<JoinRelation
+		Explanation=""
+		FriendlyName="Annotation Details -&gt; Annotation Details Copy"
+		FromTableName="annotation_details"
+		HideJoin="False"
+		JoinRelationID="9732f461-77b3-4462-833b-fd873d93cceb"
+		Relation="Left Outer Join"
+		SecurityRightID=""
+		ToTableName="annotation_details_copy"
+		>
+		<JoinRelationDetails
+			FromColumnName="pkey"
+			ToColumnName="pkey"
+		/>
+	</JoinRelation>
+</Metadata>

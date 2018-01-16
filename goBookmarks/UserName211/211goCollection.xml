@@ -1,0 +1,43 @@
+<rdBookmarks>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-07T17:09:44+05:30" BookmarkID="ec4b23ff-d2ed-4154-a780-252f4464e923" ExtraFile="211goCollection_ec4b23ff-d2ed-4154-a780-252f4464e923.xml">
+    <RequestParameters rdAgLoadSaved="211goCollection_ec4b23ff-d2ed-4154-a780-252f4464e923.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Folders>
+    <Folder ID="" Name="My Items" />
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True">
+      <Folder ID="132dae31-d0ab-43b2-a33a-8202fca732bb" Name="Share With PM" SaveTime="2017-12-18T15:04:29+05:30" IsGlobalMenuFolder="True">
+        <SharedWith BookmarkCollection="2836goCollection" BookmarkUserName="2836" />
+      </Folder>
+      <Folder ID="8667419c-0f93-42ae-af03-d175c3ac9e0f" Name="Share Folder-TL" SaveTime="2017-12-18T15:04:53+05:30" IsGlobalMenuFolder="True">
+        <SharedWith BookmarkCollection="2839goCollection" BookmarkUserName="2839" />
+      </Folder>
+    </Folder>
+  </Folders>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Data Security" SaveTime="2017-12-07T17:24:58+05:30" BookmarkID="45e3a16e-6120-4bdb-a31e-c0b4b7673c7d" ExtraFile="211goCollection_45e3a16e-6120-4bdb-a31e-c0b4b7673c7d.xml">
+    <RequestParameters rdAgLoadSaved="211goCollection_45e3a16e-6120-4bdb-a31e-c0b4b7673c7d.xml" />
+    <SessionParameters />
+    <Exclude BookmarkUserName="2838" />
+    <Exclude BookmarkUserName="2941" />
+    <Exclude BookmarkUserName="2941" />
+    <Exclude BookmarkUserName="2968" />
+    <SharedWith BookmarkCollection="3050goCollection" BookmarkUserName="3050" />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-18T15:09:36+05:30" BookmarkID="0006f5e6-0843-4385-8f75-01b9d4acfa1f" ExtraFile="211goCollection_0006f5e6-0843-4385-8f75-01b9d4acfa1f.xml" FolderID="8667419c-0f93-42ae-af03-d175c3ac9e0f">
+    <RequestParameters rdAgLoadSaved="3049goCollection_0006f5e6-0843-4385-8f75-01b9d4acfa1f.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-18T15:16:49+05:30" BookmarkID="f3940734-c74d-4601-8b53-9e15a1644752" ExtraFile="211goCollection_f3940734-c74d-4601-8b53-9e15a1644752.xml" FolderID="132dae31-d0ab-43b2-a33a-8202fca732bb">
+    <RequestParameters />
+    <SessionParameters />
+    <SharedWith BookmarkCollection="2839goCollection" BookmarkUserName="2839" />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="View only Report" SaveTime="2017-12-15T17:20:16+05:30" BookmarkID="efb109fe-74bd-4bda-b398-d1e4f1af2cc4" ExtraFile="211goCollection_efb109fe-74bd-4bda-b398-d1e4f1af2cc4.xml" FolderID="8667419c-0f93-42ae-af03-d175c3ac9e0f">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-16T01:04:48+05:30" BookmarkID="238e775b-d203-46d5-adc5-4a5257051462" ExtraFile="211goCollection_238e775b-d203-46d5-adc5-4a5257051462.xml" FolderID="132dae31-d0ab-43b2-a33a-8202fca732bb">
+    <RequestParameters rdAgLoadSaved="3049goCollection_238e775b-d203-46d5-adc5-4a5257051462.xml" />
+    <SessionParameters />
+  </Bookmark>
+</rdBookmarks>

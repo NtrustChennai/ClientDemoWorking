@@ -1,0 +1,39 @@
+<rdBookmarks>
+  <Folders>
+    <Folder ID="" Name="My Items" />
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <SharersCollection BookmarkCollection="3049goCollection" BookmarkUserName="3049" />
+  <Bookmark Report="InfoGo.goDiscovery" Name="" CustomColumn1="" CustomColumn2="" Description="State Wise Property Count V1" SaveTime="2018-01-02T13:13:16+05:30" BookmarkID="fac36e12-0092-4bf8-9f00-a8c518819bd8" ExtraFile="3051goCollection_fac36e12-0092-4bf8-9f00-a8c518819bd8.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Data V1" SaveTime="2018-01-02T13:16:12+05:30" BookmarkID="5ef3557b-793c-4128-bed1-994213c7698d" ExtraFile="3051goCollection_5ef3557b-793c-4128-bed1-994213c7698d.xml" BookmarkUserName="3051">
+    <RequestParameters rdAgLoadSaved="3051goCollection_5ef3557b-793c-4128-bed1-994213c7698d.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Recent Lease Transactions" SaveTime="2018-01-02T13:16:28+05:30" BookmarkID="970fabdd-8fee-4486-bb2a-89210056592f" ExtraFile="3051goCollection_970fabdd-8fee-4486-bb2a-89210056592f.xml" BookmarkUserName="3051">
+    <RequestParameters rdAgLoadSaved="3051goCollection_970fabdd-8fee-4486-bb2a-89210056592f.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Property Information" SaveTime="2018-01-02T13:16:44+05:30" BookmarkID="bd607315-8748-4767-b4c0-87a67c6b3488" ExtraFile="3051goCollection_bd607315-8748-4767-b4c0-87a67c6b3488.xml" BookmarkUserName="3051">
+    <RequestParameters rdAgLoadSaved="3051goCollection_bd607315-8748-4767-b4c0-87a67c6b3488.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Annotation Details" SaveTime="2018-01-02T13:17:09+05:30" BookmarkID="c5144678-75ca-431b-9c2b-0e5511a306c9" ExtraFile="3051goCollection_c5144678-75ca-431b-9c2b-0e5511a306c9.xml" BookmarkUserName="3051">
+    <RequestParameters rdAgLoadSaved="3051goCollection_c5144678-75ca-431b-9c2b-0e5511a306c9.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Information" SaveTime="2018-01-02T13:16:59+05:30" BookmarkID="89d8714d-479b-4e9e-96af-4e5563948e3e" ExtraFile="3051goCollection_89d8714d-479b-4e9e-96af-4e5563948e3e.xml" BookmarkUserName="3051">
+    <RequestParameters rdAgLoadSaved="3051goCollection_89d8714d-479b-4e9e-96af-4e5563948e3e.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDiscovery" Name="" CustomColumn1="" CustomColumn2="" Description="#of Expiring Leases" SaveTime="2017-12-27T14:50:18+05:30" BookmarkID="ee0cf356-5dcd-46f7-9bf8-e63c29ebf847" ExtraFile="3051goCollection_ee0cf356-5dcd-46f7-9bf8-e63c29ebf847.xml" FolderID="globalMenu">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Dashboard" SaveTime="2017-12-27T21:13:48+05:30" BookmarkID="c0b51bc5-4280-4237-9953-539f753b6b66" ExtraFile="3051goCollection_c0b51bc5-4280-4237-9953-539f753b6b66.xml" FolderID="globalMenu">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+</rdBookmarks>

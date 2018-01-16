@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DashboardDrill.ShopOne.LeaseExpirationMetrics"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+			>
+			<Label
+				Caption="KPIs"
+				Class="breadcrumb-item"
+				HtmlTag="a"
+				>
+				<EventHandler
+					DhtmlEvent="href"
+					>
+					<Action
+						Javascript="void(0)"
+						Type="Javascript"
+					/>
+				</EventHandler>
+				<EventHandler
+					DhtmlEvent="onclick"
+					>
+					<Action
+						ID="arBackToTransaction"
+						Type="Report"
+						>
+						<Target
+							Report="Dashboard"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</EventHandler>
+			</Label>
+			<Division
+				Class="breadcrumb-item active"
+				>
+				<Label
+					Caption="Lease Expiration - "
+				/>
+				<Label
+					Caption="@Request.LeaseExpiration_Lead~-"
+				/>
+				<Label
+					Caption="@Request.LeaseExpiration_Month~"
+				/>
+			</Division>
+		</Division>
+		<Division
+			Class="container pt-2"
+			HtmlDiv="True"
+			>
+			<Division
+				Class="GridTopRow"
+				HtmlDiv="True"
+				ID="dvExport"
+				>
+				<Image
+					AltText="Export to Excel"
+					Caption="Images.Excel_Multi.png"
+					ID="ExportImage"
+					Tooltip="Export to Excel"
+					>
+					<Remark>
+						<Action
+							ID="ExportNativeExcel"
+							Type="NativeExcel"
+							>
+							<Target
+								ExportDataTableID="tenantTable"
+								ExportFilename="@Request.ddlUserName~ -Tenant"
+								Type="NativeExcel"
+								>
+								<WaitPage/>
+							</Target>
+							<LinkParams
+								DBAName="@Request.DBAName~"
+								ddlUserName="@Request.ddlUserName~"
+								txtFromDate="@Request.txtFromDate~"
+								txtToDate="@Request.txtToDate~"
+							/>
+						</Action>
+					</Remark>
+				</Image>
+			</Division>
+			<Remark>
+				<DataTable
+					AjaxPaging="True"
+					Class="table table-striped table-bordered"
+					ID="dtDrill"
+					>
+					<DataLayer
+						ConnectionID="con_DemoAnalytics"
+						ID="dlDrillInfo"
+						Source="SELECT Business_Unit
+      ,Business_Unit_Name
+      ,Unit_Number
+      ,Lease_Number
+      ,Tenant_Name
+      ,Workflow_Description
+      ,No_Of_Days
+  FROM Status_Metrics
+  WHERE (WORKFLOW_DESCRIPTION = &apos;&apos; OR WORKFLOW_DESCRIPTION = &apos;@Request.WORKFLOW_DESCRIPTION~&apos;)
+  "
+						Type="SQL"
+					/>
+					<InteractivePaging
+						CaptionType="Text"
+						HideShowPrevNextCaptions="True"
+						HideWhenOnePage="True"
+						Location="Bottom"
+						PageRowCount="15"
+						ShowPageNumber="Numbered"
+					/>
+					<DataTableColumn
+						ColumnHeaderClass="rdThemeDataTableHeader"
+						Header="Business Unit"
+						ID="colBusiness_Unit"
+						>
+						<Label
+							Caption="@Data.Business_Unit~"
+							ID="lblBusiness_Unit"
+						/>
+						<DataColumnSort
+							DataColumn="Business_Unit"
+							DataType="Number"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						Header="Name"
+						ID="colBusiness_Unit_Name"
+						>
+						<Label
+							Caption="@Data.Business_Unit_Name~"
+							ID="lblBusiness_Unit_Name"
+						/>
+						<DataColumnSort
+							DataColumn="Business_Unit_Name"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						Header="Unit #"
+						ID="colUnit_Number"
+						>
+						<Label
+							Caption="@Data.Unit_Number~"
+							ID="lblUnit_Number"
+						/>
+						<DataColumnSort
+							DataColumn="Unit_Number"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						ColumnHeaderClass="rdThemeDataTableHeader"
+						Header="Lease  #"
+						ID="colLease_Number"
+						>
+						<Label
+							Caption="@Data.Lease_Number~"
+							ID="lblLease_Number"
+						/>
+						<DataColumnSort
+							DataColumn="Lease_Number"
+							DataType="Number"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						Header="Tenant Name"
+						ID="colTenant_Name"
+						>
+						<Label
+							Caption="@Data.Tenant_Name~"
+							ID="lblTenant_Name"
+						/>
+						<DataColumnSort
+							DataColumn="Tenant_Name"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						Condition="&apos;@Request.Workflow_Description~&apos; = &apos;&apos;"
+						Header="Workflow"
+						ID="colWorkflow_Description"
+						>
+						<Label
+							Caption="@Data.Workflow_Description~"
+							ID="lblWorkflow_Description"
+						/>
+						<DataColumnSort
+							DataColumn="Workflow_Description"
+						/>
+					</DataTableColumn>
+					<DataTableColumn
+						ColumnHeaderClass="rdThemeDataTableHeader"
+						Header="# of Days"
+						ID="colNo_Of_Days"
+						>
+						<Label
+							Caption="@Data.No_Of_Days~"
+							ID="lblNo_Of_Days"
+						/>
+						<DataColumnSort
+							DataColumn="No_Of_Days"
+							DataType="Number"
+						/>
+					</DataTableColumn>
+					<Remark>
+						<DataLayer
+							ConnectionID="con_DemoAnalytics"
+							ID="dlDrillInfo"
+							Source="SELECT Business_Unit
+      ,Business_Unit_Name
+      ,Unit_Number
+      ,Lease_Number
+      ,Tenant_Name
+      ,Workflow_Description
+      ,No_Of_Days
+  FROM Status_Metrics
+  WHERE (WORKFLOW_DESCRIPTION = &apos;&apos; OR WORKFLOW_DESCRIPTION = &apos;@Request.WORKFLOW_DESCRIPTION~&apos;)
+  AND (&apos;@Request.Category~&apos; = &apos;&apos; 
+  		OR 1=(CASE WHEN &apos;@Request.Category~&apos; = 1 AND No_Of_Days &lt; 30 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 2 AND No_Of_Days BETWEEN 31 AND 50 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 3 AND No_Of_Days BETWEEN 51 AND 95 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 4 AND No_Of_Days &gt; 95 THEN 1 
+  				ELSE 0 END)
+		)"
+							Type="SQL"
+						/>
+					</Remark>
+				</DataTable>
+			</Remark>
+			<DataTable
+				AccessibleHeaders="True"
+				AccessibleSummary="DataTable"
+				AjaxPaging="True"
+				Class="table table-striped table-bordered"
+				ID="DataTable1"
+				KeepScrollPosition="True"
+				RememberSort="True"
+				ResizableColumns="True"
+				SortArrows="True"
+				TableBorder="0"
+				>
+				<Remark>
+					<DataLayer
+						ConnectionID="con_DemoShopOne_LeaseTracker"
+						ID="SQLDataLayer1"
+						Source="SELECT  *  FROM (
+SELECT pkey
+,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
+,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,STR_TO_DATE(Fld_Field_12,&apos;%m/%d/%Y&apos;) AS NoticeDate
+,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
+FROM v_xl_tbl_section_1 ps 
+)t
+WHERE ExpireDate  BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
+and DATE_FORMAT(ExpireDate,&apos;%M-%Y&apos;) = &apos;@Request.LeaseExpiration_Month~&apos; 
+and Lead = &apos;@Request.LeaseExpiration_Lead~&apos; 
+and SuiteStatus &lt;&gt; &apos;VACANT&apos;
+ORDER BY LL,ExpireDate
+"
+						Type="SQL"
+					/>
+				</Remark>
+				<InteractivePaging
+					CaptionType="Image"
+					HideShowPrevNextCaptions="False"
+					HideWhenOnePage="True"
+					IDnotSupportedHere="pagingTableNumbered"
+					Location="Top"
+					PageRowCount="20"
+					ShowPageNumber="Numbered"
+				/>
+				<Remark>
+					<DataTableColumn
+						Header="PKey"
+						ID="colPKey"
+						>
+						<Label
+							Caption="@Data.PKey~"
+							ID="lblPKey"
+							rdForWizardSet="true"
+						/>
+						<DataColumnSort
+							DataColumn="PKey"
+							DataType="Number"
+						/>
+					</DataTableColumn>
+				</Remark>
+				<DataTableColumn
+					Header="Lead"
+					ID="colLead"
+					>
+					<Label
+						Caption="@Data.Lead~"
+						ID="lblLead"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Lead"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Building Name"
+					ID="colBuildingName"
+					>
+					<Label
+						Caption="@Data.BuildingName~"
+						ID="lblBuildingName"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="BuildingName"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Class="ThemeAlignRight"
+					Header="Suit SqFt"
+					ID="colSuitSqFt"
+					>
+					<Label
+						Caption="@Data.SuitSqFt~"
+						ID="lblSuitSqFt"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="SuitSqFt"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="LL"
+					ID="colLL"
+					>
+					<Label
+						Caption="@Data.LL~"
+						ID="lblLL"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="LL"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Suite Status"
+					ID="colSuiteStatus"
+					>
+					<Label
+						Caption="@Data.SuiteStatus~"
+						ID="lblSuiteStatus"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="SuiteStatus"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Occupant"
+					ID="colOccupant"
+					>
+					<Label
+						Caption="@Data.Occupant~"
+						ID="lblOccupant"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Occupant"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Lease Status"
+					ID="colLeaseStatus"
+					>
+					<Label
+						Caption="@Data.LeaseStatus~"
+						ID="lblLeaseStatus"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="LeaseStatus"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Commencement Date"
+					ID="colcommencement"
+					>
+					<Label
+						Caption="@Data.commencement~"
+						ID="lblcommencement"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="commencement"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Expire Date"
+					ID="colExpireDate"
+					>
+					<Label
+						Caption="@Data.ExpireDate~"
+						Format="Short Date"
+						ID="lblExpireDate"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="ExpireDate"
+						DataType="Date"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Notice Date"
+					ID="colNoticeDate"
+					>
+					<Label
+						Caption="@Data.NoticeDate~"
+						ID="lblNoticeDate"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="NoticeDate"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="R_Status"
+					ID="colR_Status"
+					>
+					<Label
+						Caption="@Data.R_Status~"
+						ID="lblR_Status"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="R_Status"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Completion Date"
+					ID="colCompletionDate"
+					>
+					<Label
+						Caption="@Data.CompletionDate~"
+						ID="lblCompletionDate"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="CompletionDate"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Current Condition"
+					ID="colCurrentCondition"
+					>
+					<Label
+						Caption="@Data.CurrentCondition~"
+						ID="lblCurrentCondition"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="CurrentCondition"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataLayer
+					ConnectionID="con_DemoShopOne_LeaseTracker"
+					ID="SQLDataLayer1"
+					Source="SELECT  *  FROM (
+SELECT pkey
+,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
+,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,STR_TO_DATE(Fld_Field_12,&apos;%m/%d/%Y&apos;) AS NoticeDate
+,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
+FROM v_xl_tbl_section_1 ps 
+)t
+WHERE ExpireDate  BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
+and DATE_FORMAT(ExpireDate,&apos;%M-%Y&apos;) = &apos;@Request.LeaseExpiration_Month~&apos; 
+and (Lead = &apos;@Request.LeaseExpiration_Lead~&apos;  or &apos;@Request.LeaseExpiration_Lead~&apos;=&apos;&apos;)
+ORDER BY LL,ExpireDate
+"
+					Type="SQL"
+				/>
+			</DataTable>
+		</Division>
+	</Body>
+	<ideTestParams
+		LeaseExpiration_Lead=""
+		LeaseExpiration_Month=""
+	/>
+</Report>

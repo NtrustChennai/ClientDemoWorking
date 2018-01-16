@@ -1,0 +1,15 @@
+<DefinitionModifier>
+	<SetAttribute XPath=".//IncludeHtml" NoWrap="True" />
+	<SetAttribute XPath="/Report" Class="@Session.Theme~" />
+	
+	<AppendChildElement XPath="/Report[@Class='Material'] | /MobileReport[@Class='Material']">
+		<NewElement>
+			<StyleSheet ShowModes="rdBrowser" StyleSheet="Material.mdb.css" />
+		</NewElement>
+    </AppendChildElement>
+	<AppendChildElement XPath="/Report[@Class='Material'] | /Report[@Class='Material']">
+		<NewElement>
+			<IncludeScriptFile IncludedScriptFile="Material.mdb.js" />
+		</NewElement>
+    </AppendChildElement>
+</DefinitionModifier>

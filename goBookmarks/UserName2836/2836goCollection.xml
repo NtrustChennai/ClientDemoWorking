@@ -1,0 +1,16 @@
+<rdBookmarks>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-14T15:00:43+05:30" BookmarkID="70b41726-8d49-4a50-a102-76fdf49e6281" ExtraFile="2836goCollection_70b41726-8d49-4a50-a102-76fdf49e6281.xml">
+    <RequestParameters rdAgLoadSaved="2836goCollection_70b41726-8d49-4a50-a102-76fdf49e6281.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Folders>
+    <Folder ID="" Name="My Items" />
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Dashboard" SaveTime="2017-12-14T15:00:56+05:30" BookmarkID="97629db7-54ad-418d-869b-5771614d7b6d" ExtraFile="2836goCollection_97629db7-54ad-418d-869b-5771614d7b6d.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <SharersCollection BookmarkCollection="211goCollection" BookmarkUserName="211" />
+  <SharersCollection BookmarkCollection="3049goCollection" BookmarkUserName="3049" />
+</rdBookmarks>

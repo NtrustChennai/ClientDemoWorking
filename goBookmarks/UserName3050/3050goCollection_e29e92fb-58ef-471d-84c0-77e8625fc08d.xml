@@ -1,0 +1,63 @@
+<Report>
+  <Body>
+    <Division ID="058db0c2-cad1-4862-83b0-9499ea8cc0cf" HtmlDiv="True" rdReportAuthorElementType="Visualization" Class="rd-report-author-element" rdGalleryPanelID="rdCustomDashboardPanel_ede668547b3241eb865eeab154638f41">
+      <Division ID="divTitle_058db0c2-cad1-4862-83b0-9499ea8cc0cf" HtmlDiv="True">
+        <Label ID="lblVisualizationTitle_058db0c2-cad1-4862-83b0-9499ea8cc0cf" Class="ThemeHeader" Caption="testGalleryReport">
+        </Label>
+      </Division>
+      <Division ID="divContent_058db0c2-cad1-4862-83b0-9499ea8cc0cf" HtmlDiv="True" Class="rd-report-author-element-content rd-scrollable-x">
+        <DataTable ID="dtAnalysisGrid_636488833437262274" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True" Width="100" WidthScale="%">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Lease Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Lease_Number" DataColumn="Lease_Transactions_Lease Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Lease_Transactions_Lease_Number" Caption="@Data.Lease_Transactions_Lease Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Lease Number" />
+            <DataColumnSort DataColumn="Lease_Transactions_Lease Number" DataType="Text" OriginalDataColumn="Lease_Transactions_Lease Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Processing Date" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_ProcessingDate" DataColumn="Lease_Transactions_ProcessingDate" Class="rdThemeDataTableCell" ColumnHeaderClass="rdAgQbColor1">
+            <Label ID="agCol_Lease_Transactions_ProcessingDate" Caption="@Data.Lease_Transactions_ProcessingDate~" Format="Short Date" />
+            <SpaceForBorders DataColumn="Lease_Transactions_ProcessingDate" />
+            <DataColumnSort DataColumn="Lease_Transactions_ProcessingDate" DataType="Date" OriginalDataColumn="Lease_Transactions_ProcessingDate" OriginalDataType="Date" />
+          </DataTableColumn>
+          <DataTableColumn Header="Type" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Type" DataColumn="Lease_Transactions_Type" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Lease_Transactions_Type" Caption="@Data.Lease_Transactions_Type~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Type" />
+            <DataColumnSort DataColumn="Lease_Transactions_Type" DataType="Text" OriginalDataColumn="Lease_Transactions_Type" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Version Effective" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Version_Effective" DataColumn="Lease_Transactions_Version Effective" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Lease_Transactions_Version_Effective" Caption="@Data.Lease_Transactions_Version Effective~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Version Effective" />
+            <DataColumnSort DataColumn="Lease_Transactions_Version Effective" DataType="Text" OriginalDataColumn="Lease_Transactions_Version Effective" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Tenant Name" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Tenant_Name" DataColumn="Lease_Transactions_Tenant Name" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Lease_Transactions_Tenant_Name" Caption="@Data.Lease_Transactions_Tenant Name~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Tenant Name" />
+            <DataColumnSort DataColumn="Lease_Transactions_Tenant Name" DataType="Text" OriginalDataColumn="Lease_Transactions_Tenant Name" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Tenant Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Transactions_Tenant_Number" DataColumn="Lease_Transactions_Tenant Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell" Width="" WidthScale="">
+            <Label ID="agCol_Lease_Transactions_Tenant_Number" Caption="@Data.Lease_Transactions_Tenant Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Transactions_Tenant Number" />
+            <DataColumnSort DataColumn="Lease_Transactions_Tenant Number" DataType="Text" OriginalDataColumn="Lease_Transactions_Tenant Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT `Lease Number`, `Unit Number`, Fld_Field_22 AS `Actual Out`, 	Fld_Field_3 AS `Commencement`, 	Fld_Field_30 AS `Delete Status`, 	Fld_Field_9 AS `Delivery or Effective`, 	Fld_Field_12 AS `End`, 	Fld_Field_5 AS `Execution`, 	Fld_Field_29 AS `Is Processed?`, 	Fld_Field_23 AS `NNN From Delivery`, 	Fld_Field_13 AS `Original End`, 	Fld_Field_4 AS `Override Commencement`, 	Fld_Field_11 AS `Plan Out`, 	Fld_Field_18 AS `Prior Version #`, 	&#xA;&#xA;cast(DATE_FORMAT(STR_TO_DATE(Fld_Field_6,'%m/%d/%Y'),'%Y-%m-%d') as date) AS `ProcessingDate` ,&#xA;&#xA;Fld_FKey_Field_19 AS `PV Lease Status`, 	Fld_Field_20 AS `PV Plan Out Date`, 	Fld_Field_21 AS `PV Version End Date`, 	Fld_Field_14 AS `RCD Days`, 	Fld_Field_28 AS `RCD Language`, 	Fld_Field_31 AS `Record Sent to JDE?`, 	Fld_Field_10 AS `Rent Start`, 	Fld_Field_15 AS `Round Up`, 	Fld_Field_27 AS `Tenant Name`, 	Fld_Field_26 AS `Tenant Number`, 	Fld_Field_8 AS `Term (Months)`, 	FLD_FIELD_25 AS `TI / FASB Ind Description`, 	Fld_FKey_Field_24 AS `TI / FASB Indicator`, 	Fld_FKey_Field_7 AS `Transaction Type`, 	Fld_FKey_Field_1 AS `Type`, 	Fld_Field_2 AS `Version #`, 	Fld_Field_16 AS `Version Effective`, 	Fld_Field_17 AS `Version End` &#xA;FROM v_xl_tbl_section_14" QueryBuilderTableID="Lease Transactions" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="Lease_Transactions_Lease Number" DataColumn="Lease Number" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Lease_Transactions_ProcessingDate" DataColumn="ProcessingDate" DataType="Date" Caption="Processing Date" />
+            <SqlColumn ID="Lease_Transactions_Tenant Name" DataColumn="Tenant Name" DataType="Text" Caption="Tenant Name" />
+            <SqlColumn ID="Lease_Transactions_Tenant Number" DataColumn="Tenant Number" DataType="Text" Caption="Tenant Number" />
+            <SqlColumn ID="Lease_Transactions_Type" DataColumn="Type" DataType="Text" Caption="Type" />
+            <SqlColumn ID="Lease_Transactions_Version Effective" DataColumn="Version Effective" DataType="Text" Caption="Version Effective" />
+          </DataLayer>
+        </DataTable>
+        <Division ShowModes="rdBrowser" Class="rdBookmarkLinkbackContainer">
+          <LineBreak LineCount="2" />
+          <Label Caption="">
+            <Action ID="actRunBookmark" Type="RunBookmark" Report="" BookmarkID="899a392b-fd64-40a2-90e2-d4e4d35efe7f" BookmarkCollection="3049goCollection">
+              <Target Type="RunBookmark" FrameID="" />
+            </Action>
+          </Label>
+        </Division>
+      </Division>
+      <HtmlStyle border-style="none" />
+    </Division>
+  </Body>
+  <StyleSheet StyleSheet="rdTemplate/rdReportAuthor/reportAuthor.css" />
+</Report>

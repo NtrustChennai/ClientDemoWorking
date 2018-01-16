@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DashboardDrill.StatusMetrics"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+			>
+			<Label
+				Caption="KPIs"
+				Class="breadcrumb-item"
+				HtmlTag="a"
+				>
+				<EventHandler
+					DhtmlEvent="href"
+					>
+					<Action
+						Javascript="void(0)"
+						Type="Javascript"
+					/>
+				</EventHandler>
+				<EventHandler
+					DhtmlEvent="onclick"
+					>
+					<Action
+						ID="arBackToTransaction"
+						Type="Report"
+						>
+						<Target
+							Report="Dashboard"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</EventHandler>
+			</Label>
+			<Division
+				Class="breadcrumb-item active"
+				>
+				<Label
+					Caption="Status Metrics - "
+				/>
+				<Label
+					Caption="@Request.Workflow_Description~"
+				/>
+			</Division>
+		</Division>
+		<Division
+			Class="container pt-2"
+			HtmlDiv="True"
+			>
+			<Division
+				Class="GridTopRow"
+				HtmlDiv="True"
+				ID="dvExport"
+				>
+				<Image
+					AltText="Export to Excel"
+					Caption="Images.Excel_Multi.png"
+					ID="ExportImage"
+					Tooltip="Export to Excel"
+					>
+					<Remark>
+						<Action
+							ID="ExportNativeExcel"
+							Type="NativeExcel"
+							>
+							<Target
+								ExportDataTableID="tenantTable"
+								ExportFilename="@Request.ddlUserName~ -Tenant"
+								Type="NativeExcel"
+								>
+								<WaitPage/>
+							</Target>
+							<LinkParams
+								DBAName="@Request.DBAName~"
+								ddlUserName="@Request.ddlUserName~"
+								txtFromDate="@Request.txtFromDate~"
+								txtToDate="@Request.txtToDate~"
+							/>
+						</Action>
+					</Remark>
+				</Image>
+			</Division>
+			<DataTable
+				AjaxPaging="True"
+				Class="table table-striped table-bordered"
+				ID="dtDrill"
+				>
+				<DataLayer
+					ConnectionID="con_DemoAnalytics"
+					ID="dlDrillInfo"
+					Source="SELECT Business_Unit
+      ,Business_Unit_Name
+      ,Unit_Number
+      ,Lease_Number
+      ,Tenant_Name
+      ,Workflow_Description
+      ,No_Of_Days
+  FROM Status_Metrics
+  WHERE (WORKFLOW_DESCRIPTION = &apos;&apos; OR WORKFLOW_DESCRIPTION = &apos;@Request.WORKFLOW_DESCRIPTION~&apos;)
+  "
+					Type="SQL"
+				/>
+				<InteractivePaging
+					CaptionType="Text"
+					HideShowPrevNextCaptions="True"
+					HideWhenOnePage="True"
+					Location="Bottom"
+					PageRowCount="15"
+					ShowPageNumber="Numbered"
+				/>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Business Unit"
+					ID="colBusiness_Unit"
+					>
+					<Label
+						Caption="@Data.Business_Unit~"
+						ID="lblBusiness_Unit"
+					/>
+					<DataColumnSort
+						DataColumn="Business_Unit"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Name"
+					ID="colBusiness_Unit_Name"
+					>
+					<Label
+						Caption="@Data.Business_Unit_Name~"
+						ID="lblBusiness_Unit_Name"
+					/>
+					<DataColumnSort
+						DataColumn="Business_Unit_Name"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Unit #"
+					ID="colUnit_Number"
+					>
+					<Label
+						Caption="@Data.Unit_Number~"
+						ID="lblUnit_Number"
+					/>
+					<DataColumnSort
+						DataColumn="Unit_Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Lease  #"
+					ID="colLease_Number"
+					>
+					<Label
+						Caption="@Data.Lease_Number~"
+						ID="lblLease_Number"
+					/>
+					<DataColumnSort
+						DataColumn="Lease_Number"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Tenant Name"
+					ID="colTenant_Name"
+					>
+					<Label
+						Caption="@Data.Tenant_Name~"
+						ID="lblTenant_Name"
+					/>
+					<DataColumnSort
+						DataColumn="Tenant_Name"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Condition="&apos;@Request.Workflow_Description~&apos; = &apos;&apos;"
+					Header="Workflow"
+					ID="colWorkflow_Description"
+					>
+					<Label
+						Caption="@Data.Workflow_Description~"
+						ID="lblWorkflow_Description"
+					/>
+					<DataColumnSort
+						DataColumn="Workflow_Description"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="# of Days"
+					ID="colNo_Of_Days"
+					>
+					<Label
+						Caption="@Data.No_Of_Days~"
+						ID="lblNo_Of_Days"
+					/>
+					<DataColumnSort
+						DataColumn="No_Of_Days"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<Remark>
+					<DataLayer
+						ConnectionID="con_DemoAnalytics"
+						ID="dlDrillInfo"
+						Source="SELECT Business_Unit
+      ,Business_Unit_Name
+      ,Unit_Number
+      ,Lease_Number
+      ,Tenant_Name
+      ,Workflow_Description
+      ,No_Of_Days
+  FROM Status_Metrics
+  WHERE (WORKFLOW_DESCRIPTION = &apos;&apos; OR WORKFLOW_DESCRIPTION = &apos;@Request.WORKFLOW_DESCRIPTION~&apos;)
+  AND (&apos;@Request.Category~&apos; = &apos;&apos; 
+  		OR 1=(CASE WHEN &apos;@Request.Category~&apos; = 1 AND No_Of_Days &lt; 30 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 2 AND No_Of_Days BETWEEN 31 AND 50 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 3 AND No_Of_Days BETWEEN 51 AND 95 THEN 1 
+				WHEN &apos;@Request.Category~&apos; = 4 AND No_Of_Days &gt; 95 THEN 1 
+  				ELSE 0 END)
+		)"
+						Type="SQL"
+					/>
+				</Remark>
+			</DataTable>
+		</Division>
+	</Body>
+	<ideTestParams
+		Workflow_Description=""
+		WORKFLOW_DESCRIPTION=""
+	/>
+</Report>

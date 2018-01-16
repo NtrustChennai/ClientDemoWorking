@@ -1,0 +1,53 @@
+<rdBookmarks>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-13T15:19:49+05:30" BookmarkID="01c68e37-a0af-4d55-9269-ccf779869dc5" ExtraFile="JayagoCollection_01c68e37-a0af-4d55-9269-ccf779869dc5.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Folders>
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Dashboard" SaveTime="2017-12-13T15:19:52+05:30" BookmarkID="beb6280d-631a-46e8-b038-521f02dfffa6" ExtraFile="JayagoCollection_beb6280d-631a-46e8-b038-521f02dfffa6.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-13T15:19:56+05:30" BookmarkID="a66a7a22-562e-4940-95ef-7363032f5acd" ExtraFile="JayagoCollection_a66a7a22-562e-4940-95ef-7363032f5acd.xml">
+    <RequestParameters rdAgLoadSaved="JayagoCollection_a66a7a22-562e-4940-95ef-7363032f5acd.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-13T15:19:56+05:30" BookmarkID="aecf84ba-a42f-4070-b231-84f16694eb70" ExtraFile="JayagoCollection_aecf84ba-a42f-4070-b231-84f16694eb70.xml">
+    <RequestParameters rdAgLoadSaved="JayagoCollection_aecf84ba-a42f-4070-b231-84f16694eb70.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-13T17:27:35+05:30" BookmarkID="bf94b82f-acf7-459e-b927-5fe0493b30ae" ExtraFile="JayagoCollection_bf94b82f-acf7-459e-b927-5fe0493b30ae.xml">
+    <RequestParameters rdAgLoadSaved="JayagoCollection_bf94b82f-acf7-459e-b927-5fe0493b30ae.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Dashboard" SaveTime="2017-12-13T17:27:36+05:30" BookmarkID="f2a5e62c-89bd-4a7d-8326-96b35c630200" ExtraFile="JayagoCollection_f2a5e62c-89bd-4a7d-8326-96b35c630200.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-13T17:27:36+05:30" BookmarkID="127b98df-6544-4719-925b-71aa598b88f9" ExtraFile="JayagoCollection_127b98df-6544-4719-925b-71aa598b88f9.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2017-12-13T17:27:46+05:30" BookmarkID="7aa3b0e6-6166-44d0-ab35-a842deb63b98" ExtraFile="JayagoCollection_7aa3b0e6-6166-44d0-ab35-a842deb63b98.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Dashboard" SaveTime="2017-12-13T17:27:48+05:30" BookmarkID="469e660f-ce03-47e4-8bc6-fe19213ca099" ExtraFile="JayagoCollection_469e660f-ce03-47e4-8bc6-fe19213ca099.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-13T17:27:53+05:30" BookmarkID="6540cf17-49c7-454e-a4c7-4f22e2d419bb" ExtraFile="JayagoCollection_6540cf17-49c7-454e-a4c7-4f22e2d419bb.xml">
+    <RequestParameters rdAgLoadSaved="JayagoCollection_6540cf17-49c7-454e-a4c7-4f22e2d419bb.xml" />
+    <SessionParameters />
+    <SharedWith BookmarkCollection="3035goCollection" BookmarkUserName="3035" />
+    <SharedWith BookmarkCollection="3050goCollection" BookmarkUserName="3050" />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2017-12-13T18:03:41+05:30" BookmarkID="7c76006b-21a8-48e2-a8a9-28dd4b7ec01d" ExtraFile="JayagoCollection_7c76006b-21a8-48e2-a8a9-28dd4b7ec01d.xml">
+    <RequestParameters rdAgLoadSaved="JayagoCollection_7c76006b-21a8-48e2-a8a9-28dd4b7ec01d.xml" />
+    <SessionParameters />
+    <SharedWith BookmarkCollection="Abirami kamarajgoCollection" BookmarkUserName="Abirami kamaraj" />
+    <SharedWith BookmarkCollection="AbiramigoCollection" BookmarkUserName="Abirami" />
+  </Bookmark>
+</rdBookmarks>

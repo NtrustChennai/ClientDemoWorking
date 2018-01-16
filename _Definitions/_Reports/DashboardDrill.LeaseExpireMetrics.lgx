@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DashboardDrill.LeaseExpireMetrics"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+			>
+			<Label
+				Caption="KPIs"
+				Class="breadcrumb-item"
+				HtmlTag="a"
+				>
+				<EventHandler
+					DhtmlEvent="href"
+					>
+					<Action
+						Javascript="void(0)"
+						Type="Javascript"
+					/>
+				</EventHandler>
+				<EventHandler
+					DhtmlEvent="onclick"
+					>
+					<Action
+						ID="arBackToTransaction"
+						Type="Report"
+						>
+						<Target
+							Report="Dashboard"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</EventHandler>
+			</Label>
+			<Division
+				Class="breadcrumb-item active"
+				Condition="&apos;@Request.EndDate~&apos; != &apos;2050-01-01&apos; "
+				>
+				<Label
+					Caption="Lease Expiration Metrics - "
+				/>
+				<Label
+					Caption="@Request.EndDate~"
+				/>
+			</Division>
+			<Division
+				Class="breadcrumb-item active"
+				Condition="&apos;@Request.EndDate~&apos; == &apos;&apos;  || &apos;@Request.EndDate~&apos; == &apos;2050-01-01&apos; "
+				>
+				<Label
+					Caption="All"
+				/>
+			</Division>
+		</Division>
+		<Division
+			Class="container pt-2"
+			HtmlDiv="True"
+			>
+			<Division
+				Class="GridTopRow"
+				HtmlDiv="True"
+				ID="dvExport"
+				>
+				<Image
+					AltText="Export to Excel"
+					Caption="Images.Excel_Multi.png"
+					ID="ExportImage"
+					Tooltip="Export to Excel"
+					>
+					<Remark>
+						<Action
+							ID="ExportNativeExcel"
+							Type="NativeExcel"
+							>
+							<Target
+								ExportDataTableID="tenantTable"
+								ExportFilename="@Request.ddlUserName~ -Tenant"
+								Type="NativeExcel"
+								>
+								<WaitPage/>
+							</Target>
+							<LinkParams
+								DBAName="@Request.DBAName~"
+								ddlUserName="@Request.ddlUserName~"
+								txtFromDate="@Request.txtFromDate~"
+								txtToDate="@Request.txtToDate~"
+							/>
+						</Action>
+					</Remark>
+				</Image>
+			</Division>
+			<DataTable
+				AjaxPaging="True"
+				Class="table table-striped table-bordered"
+				ID="DataTable1"
+				RememberSort="True"
+				SortArrows="True"
+				>
+				<DataLayer
+					ConnectionID="con_DemoAnalytics"
+					ID="SQLDataLayer1"
+					Source="SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      ,UNIT_NUMBER
+      ,LEASE_NUMBER
+      ,Tenant_Name
+      ,DBA_Name
+      ,COMMENCEMENT
+      ,END_DATE
+  FROM Lease_Expiration_Metrics"
+					Type="SQL"
+					>
+					<TimePeriodColumn
+						DataColumn="END_DATE"
+						ID="tpColEndMonth"
+						TimePeriod="FirstDayOfMonth"
+					/>
+					<CompareFilter
+						CompareType="="
+						CompareValue="@Request.EndDate~"
+						DataColumn="tpColEndMonth"
+						DataType="Date"
+						IncludeCondition="&apos;@Request.EndDate~&apos; != &apos;&apos; &amp;&amp; Year(&apos;@Request.EndDate~&apos;) &lt; 2030"
+					/>
+				</DataLayer>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Business Unit"
+					ID="colBusiness_Unit"
+					>
+					<Label
+						Caption="@Data.BUSINESS_UNIT~"
+						ID="lblBusiness_Unit"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="BUSINESS_UNIT"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Name"
+					ID="colBUSINESS_UNIT_NAME"
+					>
+					<Label
+						Caption="@Data.BUSINESS_UNIT_NAME~"
+						ID="lblBUSINESS_UNIT_NAME"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Business_Unit_Name"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Unit #"
+					ID="colUNIT_NUMBER"
+					>
+					<Label
+						Caption="@Data.UNIT_NUMBER~"
+						ID="lblUNIT_NUMBER"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="UNIT_NUMBER"
+						DataType="Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Lease #"
+					ID="colLEASE_NUMBER"
+					>
+					<Label
+						Caption="@Data.LEASE_NUMBER~"
+						ID="lblLEASE_NUMBER"
+					/>
+					<DataColumnSort
+						DataColumn="LEASE_NUMBER"
+						DataType="Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Tenant Name"
+					ID="colTenant_Name"
+					>
+					<Label
+						Caption="@Data.Tenant_Name~"
+						ID="lblTenant_Name"
+					/>
+					<DataColumnSort
+						DataColumn="Tenant_Name"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="DBA Name"
+					ID="colDBA_Name"
+					>
+					<Label
+						Caption="@Data.DBA_Name~"
+						ID="lblDBA_Name"
+					/>
+					<DataColumnSort
+						DataColumn="DBA_Name"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="Commencement Date"
+					ID="colCOMMENCEMENT"
+					>
+					<Label
+						Caption="@Data.COMMENCEMENT~"
+						Format="Short Date"
+						ID="lblCOMMENCEMENT"
+					/>
+					<DataColumnSort
+						DataColumn="COMMENCEMENT"
+						DataType="Date"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					ColumnHeaderClass="rdThemeDataTableHeader"
+					Header="End Date"
+					ID="colEND_DATE"
+					>
+					<Label
+						Caption="@Data.END_DATE~"
+						Format="Short Date"
+						ID="lblEND_DATE"
+					/>
+					<DataColumnSort
+						DataColumn="END_DATE"
+						DataType="Date"
+					/>
+				</DataTableColumn>
+				<InteractivePaging
+					CaptionType="Text"
+					HideShowPrevNextCaptions="True"
+					HideWhenOnePage="True"
+					Location="Bottom"
+					PageRowCount="15"
+					ShowPageNumber="Numbered"
+				/>
+			</DataTable>
+		</Division>
+	</Body>
+	<ideTestParams
+		EndDate=""
+	/>
+</Report>

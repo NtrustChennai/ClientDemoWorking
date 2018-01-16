@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdBookmarks>
+  <Folders>
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Dashboard" SaveTime="2017-12-27T21:13:48+05:30" BookmarkID="c0b51bc5-4280-4237-9953-539f753b6b66" ExtraFile="InfoGoGlobalgoCollection_c0b51bc5-4280-4237-9953-539f753b6b66.xml" FolderID="globalMenu">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+</rdBookmarks>

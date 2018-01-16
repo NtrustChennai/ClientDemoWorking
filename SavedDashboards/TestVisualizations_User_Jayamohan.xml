@@ -1,0 +1,10 @@
+<rdSavedDashboard>
+  <Panel ID="Panel1" InstanceID="ff7393ab532b4ecea238016569787f55" TabID="586c89d92cf7485a9edd3aeba32bf878" />
+  <Tabs ID="rdDashboardTabs" ActiveTabID="586c89d92cf7485a9edd3aeba32bf878">
+    <Tab ID="586c89d92cf7485a9edd3aeba32bf878" Caption="New Tab" ColumnCount="3">
+      <Column Width="55.43" />
+      <Column Width="10.69" />
+      <Column Width="33.06" />
+    </Tab>
+  </Tabs>
+</rdSavedDashboard>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="SelfService"
+	>
+	<Body>
+		<IncludeFrame
+			Height="700"
+			HeightScale="px"
+			ID="infoGoSubReport"
+			SubReportMode="IncludeFrame"
+			Width="100"
+			WidthScale="%"
+			>
+			<Target
+				ID="InfoGo"
+				Link="http://dev608/InfoGoForDemo/rdPage.aspx?rdReport=InfoGo.goHome"
+				Type="IncludeFrameLink"
+			/>
+		</IncludeFrame>
+	</Body>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<StyleSheet
+		StyleSheet="css.dashboard.css"
+	/>
+</Report>

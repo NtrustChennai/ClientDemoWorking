@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="goCustomizations.goBookmarkSharingUserlist"
+	>
+	<SharedElement
+		ID="sharedDataLayer"
+		>
+		<SharingList
+			SharingCollectionColumn="userID"
+			>
+			<IncludeSharedElement
+				DefinitionFile="goCustomizations.goBookmarkSharingUserlist"
+				SharedElementID="sharedUserList"
+			/>
+			<Remark>
+				<DataTableColumn
+					Class="NoRowOver rdThemeDataTableCell"
+					ID="colUsername"
+					>
+					<Label
+						Caption="@Data.userID~"
+					/>
+				</DataTableColumn>
+			</Remark>
+			<DataTableColumn
+				Class="NoRowOver rdThemeDataTableCell"
+				ID="colUsername"
+				>
+				<Label
+					Caption="@Data.userName~"
+				/>
+			</DataTableColumn>
+			<DataTableColumn
+				Class="NoRowOver rdThemeDataTableCell"
+				ID="colDepartment"
+				>
+				<Label
+					Caption="@Data.Department~"
+				/>
+			</DataTableColumn>
+		</SharingList>
+		<Note
+			Note="This DataLayer can be used to return a list of users in the Bookmark sharing screen, allowing the user to pick users instead of typing them in.  "
+		/>
+		<Note
+			Note="To use it, create a new DataLayer which returns the list of usernames.  Set the SharingList ShareNameColumn attribute to the column containing usernames."
+		/>
+		<Label
+			Caption="@Request.rdBookmarkCollection~"
+		/>
+	</SharedElement>
+	<SharedElement
+		ID="sharedUserList"
+		>
+		<Remark>
+			<DataLayer
+				ID="XMLFileDataLayer1"
+				Type="XMLFile"
+				XMLFile="C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps\InfoGoJava\_SupportFiles\getlogiusers_notauth_do.xml"
+			/>
+		</Remark>
+		<DataLayer
+			ConnectionID="con_DemoRemaapMaster"
+			ID="UserShareList"
+			Source=" 
+  SELECT UM.Pkey userID ,UM.user_name userName ,MIN(Ur.Role_Description) Department FROM users_master um
+INNER JOIN  users_details ud ON um.pkey=ud.fkey_user
+INNER JOIN user_role ur ON ur.fkey_project=ud.fkey_project AND ur.PKEY=ud.Role
+WHERE ur.fkey_project =&apos;900021&apos;  AND (UM.Pkey IN (2839) )
+
+UNION ALL 
+SELECT * FROM (
+ SELECT UM.Pkey userID ,UM.user_name userName ,MIN(Ur.Role_Description) Department FROM users_master um
+INNER JOIN  users_details ud ON um.pkey=ud.fkey_user
+INNER JOIN user_role ur ON ur.fkey_project=ud.fkey_project AND ur.PKEY=ud.Role
+WHERE ur.fkey_project =&apos;900021&apos;  AND (UM.Pkey IN (2836,3049,3050,2838,2968,2890,2941,2836,2942,2949,2933) OR UM.Pkey&gt;3000)
+GROUP BY UM.Pkey,UM.user_name,Ud.Fkey_Project
+ORDER BY Um.user_name)t
+
+GROUP BY userID,userName,Department"
+			Type="SQL"
+		/>
+	</SharedElement>
+	<ideTestParams
+		rdBookmarkCollection=""
+	/>
+</Report>

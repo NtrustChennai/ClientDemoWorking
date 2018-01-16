@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Process
+	ID="SetSession"
+	>
+	<Task
+		ID="taskShowSidebar"
+		>
+		<Procedure
+			ID="setSidebarState"
+			Type="SetSessionVars"
+			>
+			<SessionParams
+				ShowSidebar="=IIF(&apos;@Session.ShowSidebar~&apos; == &apos;False&apos;, &apos;True&apos;, &apos;False&apos;)"
+			/>
+		</Procedure>
+		<Response
+			ID="lnkReport"
+			Type="Report"
+			>
+			<Target
+				Report="@Request.rdReport~"
+				Type="Report"
+			/>
+			<LinkParams
+				Result="@Session.ShowSidebar~"
+			/>
+		</Response>
+	</Task>
+	<Task
+		ID="taskSetTheme"
+		>
+		<Procedure
+			ID="setTheme"
+			Type="SetSessionVars"
+			>
+			<SessionParams
+				Theme="@Request.Theme~"
+			/>
+		</Procedure>
+		<Response
+			ID="lnkReport"
+			Type="Report"
+			>
+			<Target
+				Report="=iif(&apos;@Request.rdReport~&apos; == &apos;&apos;, &apos;Default&apos;, &apos;@Request.rdReport~&apos;)"
+				Type="Report"
+			/>
+		</Response>
+	</Task>
+	<ideTestParams
+		rdTaskID="taskSidebarState"
+		Theme=""
+	/>
+</Process>

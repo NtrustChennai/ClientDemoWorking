@@ -1,0 +1,30 @@
+<TemplateModifier>
+
+<!-- Created By : Jithin George for NTrust PoC -->
+
+<SetAttribute ID="compareIsFind" DataColumn="userName"/>
+
+   <AppendChildElement ID="dlAllSharedWiths">
+        <NewElement>            
+            <Join ID="Join1" JoinType="InnerJoin">
+                <MatchCondition LeftDataColumn="BookmarkUserName" RightDataColumn="userID" DataType="Text" />
+                <IncludeSharedElement DefinitionFile="goCustomizations.goBookmarkSharingUserlist" SharedElementID="sharedUserList" />
+            </Join>
+        </NewElement>
+    </AppendChildElement>
+
+    <SetAttribute XPath="//DataTable[@ID='dtBookmarkSharedWith']/DataTableColumn[1]" Class="ThemeHidden" />
+    <SetAttribute XPath="//DataTable[@ID='dtBookmarkSharedWith']/DataTableColumn[1]/Label[@ID='lblSharedUserName']" Caption="@Data.BookmarkUserName~" />
+
+    <InsertAfterElement XPath="//DataTable[@ID='dtBookmarkSharedWith']/DataTableColumn[1]">
+        <NewElement>
+            <DataTableColumn Condition="True">
+                <Label Caption="@Data.userName~" ID="lblSharedUserID" />
+            </DataTableColumn>
+        </NewElement>
+    </InsertAfterElement>
+
+<!--<Label Caption="BookmarkCollection=&quot;@Request.rdBookmarkCollection~&quot; BookmarkID=&quot;@Request.rdBookmarkID~&quot; FolderID=&quot;@Request.rdFolderID~&quot; UnSharedWith=&quot;lblSharedUserID_Row@Function.RowNumber~&quot;" ID="testing" /> -->
+<!--    <SetAttribute ID="Unsharebookmark" UnSharedWith="lblSharedUserID_Row@Function.RowNumber~" />-->
+
+</TemplateModifier>

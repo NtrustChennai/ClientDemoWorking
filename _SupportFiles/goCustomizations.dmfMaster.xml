@@ -1,0 +1,140 @@
+<DefinitionModifier>
+	<SetAttribute XPath="/Report" Class="InfoGo" />
+	<PrependChildElement XPath="/Report">
+		<NewElement>
+			<StyleSheet StyleSheet="css.CustomStyles.css" />
+		</NewElement>
+	</PrependChildElement>
+	<PrependChildElement XPath="/Report">
+		<NewElement>
+			<StyleSheet StyleSheet="css.Layout.css" />
+		</NewElement>
+	</PrependChildElement>
+	<PrependChildElement XPath="/Report">
+		<NewElement>
+			<StyleSheet StyleSheet="css.AppStyles.css" />
+		</NewElement>
+	</PrependChildElement>
+	<PrependChildElement XPath="/Report">
+		<NewElement>
+			<StyleSheet StyleSheet="_Themes/NTrust/Theme.css" />
+		</NewElement>
+	</PrependChildElement>
+	
+	
+	<AppendChildElement XPath="/Report">
+		<NewElement>
+			<IncludeScriptFile IncludedScriptFile="js.Application.js" />
+		</NewElement>
+	</AppendChildElement>
+	<AppendChildElement XPath="/Report">
+		<NewElement>	
+			<IncludeHtmlFile IncludedHtmlFile="deferJS.htm" />
+		</NewElement>
+	</AppendChildElement>
+	
+	<AppendChildElement XPath=".//Rows/Row/Column[@Class='ThemeAlignTop']">
+		<NewElement>
+<Division HtmlDiv="True" ID="Header" ShowModes="rdBrowser">
+  <Division HtmlDiv="True" ID="Header-inner">
+    <Division Class="navbar navbar-dark bg-dark navbar-expand-md fixed-top navbar-inverse" HtmlDiv="True" ID="navigation" ShowModes="rdBrowser">
+      <Division Class="navbar-text" HtmlDiv="True" ID="navbar-brand">
+        <Label Caption="Analytics" Class="text-uppercase" />
+      </Division>
+      <Label Caption="&lt;i class=&quot;fa fa-caret-down&quot;&gt;&lt;/i&gt;" Class="navbar-toggler navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbar-collapse&quot; onclick=&quot;return false;" Format="HTML" HtmlTag="Button" />
+      <Division Class="navbar-collapse collapse" HtmlDiv="True" ID="navbar-collapse">
+        <Division Class="navbar-nav ml-auto" HtmlDiv="True">
+          
+          <Division Class="nav-item pull-xs-right" HtmlDiv="True">
+            <Label Caption="KPIs" Class="nav-link" Format="HTML" HtmlTag="a">
+              <EventHandler DhtmlEvent="href">
+                <Action Javascript="void(0)" Type="Javascript" />
+              </EventHandler>
+              <EventHandler DhtmlEvent="onclick">
+                <Action Type="Report">
+                  <Target Report="Dashboard" Type="Report" />
+                </Action>
+              </EventHandler>
+              <ConditionalClass Class="nav-link active" Condition="'@Request.rdReport~' == 'Dashboard'" />
+            </Label>
+          </Division>
+		  <Division Class="nav-item pull-xs-right" HtmlDiv="True">
+            <Label Caption="Transaction Status History" Class="nav-link" Format="HTML" HtmlTag="a">
+              <EventHandler DhtmlEvent="href">
+                <Action Javascript="void(0)" Type="Javascript" />
+              </EventHandler>
+              <EventHandler DhtmlEvent="onclick">
+                <Action Type="Report">
+                  <Target Report="DemoClient.DemoClientLeaseAbstractionTransAndTenatType" Type="Report" />
+                </Action>
+              </EventHandler>
+              <ConditionalClass Class="nav-link active" Condition="'@Request.rdReport~'.indexOf('DemoClient') &gt; -1" />
+            </Label>
+          </Division>
+          <Division Class="nav-item pull-xs-right dropdown" HtmlDiv="True">
+            <Label Caption="My Dashboard" Class="nav-link dropdown-toggle&quot; data-toggle=&quot;dropdown" Format="HTML" HtmlTag="a" ID="navbarTheme">
+              <EventHandler DhtmlEvent="href">
+                <Action Javascript="void(0)" Type="Javascript" />
+              </EventHandler>
+              <Remark>
+                <EventHandler DhtmlEvent="onclick">
+                  <Action Javascript="/*$(this).next().toggleClass('show');&#xD;&#xA;$(this).parent().toggleClass('open');*/" Type="Javascript" />
+                </EventHandler>
+              </Remark>
+              <ConditionalClass Class="nav-link dropdown-toggle active" Condition="'@Request.rdReport~'.indexOf('InfoGo') &gt; -1" />
+            </Label>
+            <Division Class="dropdown-menu float-right" HtmlDiv="True" ID="NavMenuDropdown">
+              <Label Caption="Self Service" Class="dropdown-item" HtmlTag="a">
+                <EventHandler DhtmlEvent="href">
+                  <Action Javascript="void(0);" Type="Javascript" />
+                </EventHandler>
+                <EventHandler DhtmlEvent="onclick">
+                  <Action Type="Report">
+                    <Target Report="InfoGo.goHome" Type="Report" />
+                  </Action>
+                </EventHandler>
+              </Label>
+              <DataList Class="list-unstyled mb-0" ID="lstNavDropdown">
+                <DataLayer DefinitionListFolder="_Reports" ID="rdDataLayer_rdReportCenterID" Type="DefinitionList">
+                  <ReportCenterFilter AllowScheduling="True" ID="rdReportCenterFilter" ReportCenterAllowSchedule="True">
+                    <Note Note="Get report bookmarks." />
+                  </ReportCenterFilter>
+                  <CompareFilter CompareType="&lt;&gt;" DataColumn="BookmarkID" DataType="Text" ID="compareIsBookmark" />
+                  <AggregateColumn AggregateColumn="BookmarkID" AggregateFunction="Count" ID="cntUserBookmarks">
+                    <Note Note="Use the count to show Help when there are no reports." />
+                  </AggregateColumn>
+                  <SortFilter DataType="Date" SortColumn="SaveTime" SortSequence="Descending" />
+                  <CompareFilter CompareType="=" CompareValue="InfoGo.goDashboard" DataColumn="rdReport" />
+                </DataLayer>
+                <ListItem>
+                  <Division Class="dropdown-item" Condition="'@Data.BookmarkUserName~' == '@Function.UserName~'" ID="divGoListItemTitle">
+                    <Label Caption="@Data.Caption~" ID="lblBookmarkCaption">
+                      <TooltipPanel Condition="'@Data.Name~' == 'custom_link'" ID="ifCustomLink">
+                        <Label Caption="@Data.CustomColumn1~" ID="customLinkURL" />
+                      </TooltipPanel>
+                    </Label>
+                    <Action BookmarkCollection="@Data.BookmarkCollection~" BookmarkID="@Data.BookmarkID~" BookmarkUserName="@Data.BookmarkUserName~" SharedBookmarkID="@Data.SharedBookmarkID~" Type="RunBookmark">
+                      <LinkParams goBookmarkCaption="@Data.Caption~" rdIsDefaultReportBookmark="@Data.rdIsDefaultReportBookmark~" />
+                    </Action>
+                  </Division>
+                  <Division Class="dropdown-item" Condition="'@Data.BookmarkUserName~' &lt;&gt; '@Function.UserName~'" ID="divGoListItemTitleShared">
+                    <Label Caption="@Data.Caption~" ID="lblSharedOwner" Tooltip="Owned by @Data.BookmarkUserName~" />
+                    <Action BookmarkCollection="@Data.BookmarkCollection~" BookmarkID="@Data.BookmarkID~" BookmarkUserName="@Data.BookmarkUserName~" SharedBookmarkID="@Data.SharedBookmarkID~" Type="RunBookmark">
+                      <LinkParams goBookmarkCaption="@Data.Caption~" rdIsDefaultReportBookmark="@Data.rdIsDefaultReportBookmark~" />
+                    </Action>
+                  </Division>
+                </ListItem>
+              </DataList>
+            </Division>
+          </Division>
+        </Division>
+      </Division>
+    </Division>
+  </Division>
+</Division>
+		</NewElement>
+	</AppendChildElement>
+		
+		
+	
+</DefinitionModifier>

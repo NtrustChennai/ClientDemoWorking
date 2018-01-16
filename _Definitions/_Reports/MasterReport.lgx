@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	Class="@Session.Theme~"
+	ID="MasterReport"
+	>
+	<DefinitionModifierFile
+		DefinitionModifierFile="MasterDMF.xml"
+	/>
+	<StyleSheet
+		StyleSheet="_Themes/NTrust/Theme.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.Layout.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.AppStyles.css"
+	/>
+	<StyleSheet
+		ShowModes="rdBrowser"
+		StyleSheet="css.CustomStyles.css"
+	/>
+	<Body>
+		<Division
+			HtmlDiv="True"
+			ID="masterContent"
+			>
+			<Remark>
+				<Division
+					HtmlDiv="True"
+					ID="Sidebar"
+					ShowModes="rdBrowser"
+					>
+					<ConditionalClass
+						Class="Closed"
+						Condition="&quot;@Session.ShowSidebar~&quot;!=&quot;True&quot;"
+						ID="Closed"
+					/>
+					<ConditionalClass
+						Class="Open"
+						Condition="&quot;@Session.ShowSidebar~&quot;==&quot;True&quot;"
+						ID="Open"
+					/>
+					<Division
+						HtmlDiv="True"
+						ID="SidebarMenu"
+						ShowModes="None"
+						>
+						<Division
+							Class="MenuWrapper"
+							HtmlDiv="True"
+							ID="MenuWrapper"
+							>
+							<RepeatElements
+								ID="reMainMenu"
+								>
+								<DataLayer
+									ID="dlFolders"
+									Type="Static"
+									>
+									<StaticDataRow
+										Caption="Home"
+										icon="fa fa-home"
+										Report="Default"
+										ReportID="Default"
+									/>
+									<StaticDataRow
+										Caption="Status Metrics"
+										icon="fa fa-check-square-o"
+										Report="StatusMetrics"
+										ReportID="StatusMetrics"
+									/>
+									<StaticDataRow
+										Caption="Error Metrics"
+										icon="fa fa-gears"
+										Report="ErrorMetrics"
+										ReportID="ErrorMetrics"
+									/>
+									<StaticDataRow
+										Caption="Occupancy Metrics"
+										icon="fa fa-cubes"
+										Report="OccupancyMetrics"
+										ReportID="OccupancyMetrics"
+									/>
+									<StaticDataRow
+										Caption="Lease Expiration"
+										icon="fa fa-wrench"
+										Report="LeaseExpirationMetrics"
+										ReportID="LeaseExpirationMetrics"
+									/>
+									<CalculatedColumn
+										Formula="if((&apos;@Request.rdReport~&apos; == &apos;&apos; &amp;&amp; &apos;@Data.ReportID~&apos; == &apos;Default&apos;) 
+	|| (&apos;@Data.Report~&apos; != &apos;&apos; &amp;&amp; &apos;@Request.rdReport~&apos; == &apos;@Data.Report~&apos;)) {
+	&apos;active&apos;;
+}
+else {
+	&apos;&apos;;
+}"
+										ID="ActiveClass"
+									/>
+								</DataLayer>
+								<Remark>
+									<Division
+										Class="custom-link dropdown"
+										Condition="&apos;@Repeat.Report~&apos; == &apos;&apos;"
+										HtmlDiv="True"
+										ID="DropDown"
+										>
+										<Division
+											Class="report-caption"
+											>
+											<Label
+												Class="@Repeat.icon~ fa-fw"
+												HtmlTag="I"
+												ID="icon"
+											/>
+											<Label
+												Caption="@Repeat.Caption~"
+											/>
+											<Label
+												Class="fa fa-angle-right expand-sub fa-fw"
+												HtmlTag="I"
+											/>
+											<Action
+												Javascript="void(0)"
+												Type="Javascript"
+											/>
+										</Division>
+										<DataList
+											ID="dlstSub@Repeat.ReportID~"
+											Ordered="False"
+											>
+											<DataLayer
+												ID="dl@Repeat.ReportID~"
+												Type="Static"
+												>
+												<StaticDataRow
+													Caption="Styled Dashboard"
+													icon=""
+													Parent="Dashboard"
+													Report="Dashboard.Styled"
+												/>
+												<StaticDataRow
+													Caption="PDF Export"
+													icon=""
+													Parent="Dashboard"
+													Report="Dashboard.Export"
+												/>
+												<StaticDataRow
+													Caption="Default"
+													icon=""
+													Parent="Forms"
+													Report="Default"
+												/>
+												<StaticDataRow
+													Caption="Layout"
+													icon=""
+													Parent="Forms"
+													Report="Forms.Forms"
+												/>
+												<StaticDataRow
+													Caption="Form Elements"
+													icon=""
+													Parent="Forms"
+													Report="Forms.FormElements"
+												/>
+												<StaticDataRow
+													Caption="Grid"
+													icon=""
+													Parent="Forms"
+													Report="Forms.Grid"
+												/>
+												<StaticDataRow
+													Caption="Input Groups"
+													icon=""
+													Parent="Forms"
+													Report="Forms.InputGroups"
+												/>
+												<StaticDataRow
+													Caption="Navigation"
+													icon=""
+													Parent="Forms"
+													Report="Forms.Navigation"
+												/>
+												<StaticDataRow
+													Caption="Validation"
+													icon=""
+													Parent="Forms"
+													Report="Forms.Validation"
+													>
+													<Note
+														Note="end forms"
+														Parent="UIKit"
+													/>
+												</StaticDataRow>
+												<StaticDataRow
+													Caption="Alerts"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Alerts"
+												/>
+												<StaticDataRow
+													Caption="Badges"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Badges"
+												/>
+												<StaticDataRow
+													Caption="Buttons"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Buttons"
+												/>
+												<StaticDataRow
+													Caption="Cards"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Cards"
+												/>
+												<StaticDataRow
+													Caption="Icons"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Icons"
+												/>
+												<StaticDataRow
+													Caption="Images and Figures"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Images"
+												/>
+												<StaticDataRow
+													Caption="Lists"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Lists"
+												/>
+												<StaticDataRow
+													Caption="Media"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Media"
+												/>
+												<StaticDataRow
+													Caption="Progress Bars"
+													icon=""
+													Parent="UIKit"
+													Report="UI.ProgressBars"
+												/>
+												<StaticDataRow
+													Caption="Tables"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Tables"
+												/>
+												<StaticDataRow
+													Caption="Typography"
+													icon=""
+													Parent="UIKit"
+													Report="UI.Typography"
+													>
+													<Note
+														Note="end ui kit"
+													/>
+												</StaticDataRow>
+												<StaticDataRow
+													Caption="Accordian &amp; Collapse"
+													icon=""
+													Parent="Components"
+													Report="Components.Collapse"
+												/>
+												<StaticDataRow
+													Caption="Breadcrumb"
+													icon=""
+													Parent="Components"
+													Report="Components.Breadcrumb"
+												/>
+												<StaticDataRow
+													Caption="Carousel"
+													icon=""
+													Parent="Components"
+													Report="Components.Carousel"
+												/>
+												<StaticDataRow
+													Caption="Google Map Skins"
+													icon=""
+													Parent="Components"
+													Report="Components.gMapSkins"
+												/>
+												<StaticDataRow
+													Caption="Modals"
+													icon=""
+													Parent="Components"
+													Report="Components.Modals"
+												/>
+												<StaticDataRow
+													Caption="KPIs"
+													icon=""
+													Parent="Components"
+													Report="Components.KPIs"
+												/>
+												<StaticDataRow
+													Caption="Slide Panel"
+													icon=""
+													Parent="Components"
+													Report="Components.SlidePanel"
+												/>
+												<StaticDataRow
+													Caption="Tabs"
+													icon=""
+													Parent="Components"
+													Report="Components.Tabs"
+												/>
+												<StaticDataRow
+													Caption="Wait Panel"
+													icon=""
+													Parent="Components"
+													Report="Components.WaitPanel"
+													>
+													<Note
+														Note="end components"
+													/>
+												</StaticDataRow>
+												<StaticDataRow
+													Caption="Borders"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Borders"
+												/>
+												<StaticDataRow
+													Caption="Display"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Display"
+												/>
+												<StaticDataRow
+													Caption="Flex"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Flex"
+												/>
+												<StaticDataRow
+													Caption="Position"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Position"
+												/>
+												<StaticDataRow
+													Caption="Sizing"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Sizing"
+												/>
+												<StaticDataRow
+													Caption="Spacing"
+													icon=""
+													Parent="Utilities"
+													Report="Utilities.Spacing"
+													>
+													<Note
+														Note="end utilities"
+													/>
+												</StaticDataRow>
+												<StaticDataRow
+													Caption="Animate Css"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.animate"
+												/>
+												<Remark>
+													<StaticDataRow
+														Caption="Bootstrap Date Picker"
+														icon=""
+														Parent="Plugins"
+														Report="Plugins.BootstrapDatePicker"
+													/>
+												</Remark>
+												<StaticDataRow
+													Caption="DateRange Picker"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.DateRangePicker"
+												/>
+												<StaticDataRow
+													Caption="FontAwesome Icon Picker"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.IconPicker"
+												/>
+												<StaticDataRow
+													Caption="jQuery Flipster"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.Flipster"
+												/>
+												<StaticDataRow
+													Caption="jQuery Select2"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.Select2"
+												/>
+												<StaticDataRow
+													Caption="jQuery TagIt"
+													icon=""
+													Parent="Plugins"
+													Report="Plugins.TagIt"
+												/>
+												<StaticDataRow
+													Caption="Data Tree Filter"
+													icon=""
+													Link="https://www.logianalytics.com/tips-tricks/set-up-recursive-cte-filtering-embedded-analytics/"
+													Parent="CoolFeatures"
+													Report=""
+												/>
+												<StaticDataRow
+													Caption="JavaScript Functions"
+													icon=""
+													Parent="Other"
+													Report="Other.jsFunctions"
+												/>
+												<StaticDataRow
+													Caption="Lazy Data Table"
+													icon=""
+													Parent="Other"
+													Report="Other.LazyDataTable"
+												/>
+												<StaticDataRow
+													Caption="Scrollbars"
+													icon=""
+													Parent="Other"
+													Report="UI.Scrollbars"
+												/>
+												<StaticDataRow
+													Caption="Shadow"
+													icon=""
+													Parent="Other"
+													Report="UI.Shadow"
+												/>
+												<CompareFilter
+													CompareType="="
+													CompareValue="@Repeat.ReportID~"
+													DataColumn="Parent"
+													ID="compReportParent"
+												/>
+												<CalculatedColumn
+													Formula="if((&apos;@Request.rdReport~&apos; == &apos;&apos; &amp;&amp; &apos;@Data.Report~&apos; == &apos;Default&apos;) || (&apos;@Data.Report~&apos; != &apos;&apos; &amp;&amp; &apos;@Request.rdReport~&apos; == &apos;@Data.Report~&apos;)) {
+	&apos;active&apos;;
+}
+else {
+	&apos;&apos;;
+}"
+													ID="ActiveClass"
+												/>
+											</DataLayer>
+											<ListItem
+												Class="report-caption @Data.ActiveClass~"
+												>
+												<Division
+													Condition="&apos;@Data.Report~&apos; != &apos;&apos;"
+													ID="Report"
+													>
+													<Label
+														Class="@Data.icon~"
+														HtmlTag="I"
+														ID="icon"
+													/>
+													<IncludeHtml
+														Html="@Data.Caption~"
+													/>
+													<Action
+														CrawlerFriendly="True"
+														Type="Report"
+														>
+														<Target
+															Report="@Data.Report~"
+															Type="Report"
+														/>
+													</Action>
+												</Division>
+												<Division
+													Condition="&apos;@Data.Link~&apos; != &apos;&apos;"
+													ID="LinkTo"
+													>
+													<Label
+														Class="@Data.icon~"
+														HtmlTag="I"
+														ID="icon"
+													/>
+													<IncludeHtml
+														Html="@Data.Caption~"
+													/>
+													<Action
+														Type="Link"
+														>
+														<Target
+															FrameID="NewWindow"
+															Link="@Data.Link~"
+															Type="Link"
+														/>
+													</Action>
+												</Division>
+											</ListItem>
+										</DataList>
+									</Division>
+								</Remark>
+								<Division
+									Class=" @Repeat.ActiveClass~"
+									Condition="&apos;@Repeat.Report~&apos; != &apos;&apos;"
+									HtmlDiv="True"
+									ID="LinkTo"
+									>
+									<Division
+										Class="report-caption"
+										>
+										<Label
+											Class="@Repeat.icon~ fa-fw"
+											HtmlTag="I"
+											ID="icon"
+										/>
+										<Label
+											Caption="@Repeat.Caption~"
+										/>
+										<Action
+											CrawlerFriendly="True"
+											Type="Report"
+											>
+											<Target
+												Report="@Repeat.Report~"
+												Type="Report"
+											/>
+										</Action>
+									</Division>
+								</Division>
+							</RepeatElements>
+						</Division>
+					</Division>
+				</Division>
+			</Remark>
+			<Remark>
+				<IncludeScript
+					ID="setActiveMenuItem"
+					IncludedScript="$(document).ready(function() {
+	$(&apos;#SidebarMenu div#MenuWrapper div.dropdown &gt; a&apos;).click(function(){
+		$(this).parent(&apos;.dropdown&apos;).toggleClass(&apos;open&apos;).find(&apos;.expand-sub&apos;).toggleClass(&apos;fa-angle-right fa-angle-down&apos;);
+	});
+	$(&apos;#SidebarMenu div#MenuWrapper ul&gt;li.active&apos;).closest(&apos;.dropdown&apos;).addClass(&apos;open&apos;).find(&quot;i.fa-angle-right&quot;).toggleClass(&apos;fa-angle-right fa-angle-down&apos;);
+	$(&quot;#SidebarMenu&quot;).show();
+	$(&apos;.sidebar-toggle&apos;).click(function() {
+		setTimeout(function() {
+			//Get all charts on the page
+			var chartsArray = Highcharts.charts.filter(function(n){ return n != undefined });
+			
+			//Loop through the array
+			$.each(chartsArray,function(i){
+				//Update the current chart
+				chartsArray[i].reflow();
+			});
+		}, 300);
+	});
+});"
+				/>
+			</Remark>
+			<IncludeSharedElement
+				DefinitionFile="_shared.Layout"
+				SharedElementID="_shrdHeader"
+			/>
+			<Remark>
+				<Division
+					HtmlDiv="True"
+					ID="Header"
+					ShowModes="rdBrowser"
+					>
+					<Division
+						HtmlDiv="True"
+						ID="Header-inner"
+						>
+						<Division
+							Class="navbar navbar-dark bg-dark navbar-expand-md fixed-top navbar-inverse"
+							HtmlDiv="True"
+							ID="navigation"
+							ShowModes="rdBrowser"
+							>
+							<Division
+								Class="navbar-text"
+								HtmlDiv="True"
+								ID="navbar-brand"
+								>
+								<Label
+									Caption="Analytics"
+									Class="text-uppercase"
+								/>
+							</Division>
+							<Label
+								Caption="&lt;i class=&quot;fa fa-caret-down&quot;&gt;&lt;/i&gt;"
+								Class="navbar-toggler navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbar-collapse&quot; onclick=&quot;return false;"
+								Format="HTML"
+								HtmlTag="Button"
+							/>
+							<Division
+								Class="navbar-collapse collapse"
+								HtmlDiv="True"
+								ID="navbar-collapse"
+								>
+								<Division
+									Class="navbar-nav ml-auto"
+									HtmlDiv="True"
+									>
+									<Division
+										Class="nav-item pull-xs-right"
+										HtmlDiv="True"
+										>
+										<Label
+											Caption="Transaction Status History"
+											Class="nav-link"
+											Format="HTML"
+											HtmlTag="a"
+											>
+											<EventHandler
+												DhtmlEvent="href"
+												>
+												<Action
+													Javascript="void(0)"
+													Type="Javascript"
+												/>
+											</EventHandler>
+											<EventHandler
+												DhtmlEvent="onclick"
+												>
+												<Action
+													Type="Report"
+													>
+													<Target
+														Report="DemoClient.DemoClientLeaseAbstractionTransAndTenatType"
+														Type="Report"
+													/>
+												</Action>
+											</EventHandler>
+											<ConditionalClass
+												Class="nav-link active"
+												Condition="&apos;@Request.rdReport~&apos;.indexOf(&apos;DemoClient&apos;) &gt; -1"
+											/>
+										</Label>
+									</Division>
+									<Division
+										Class="nav-item pull-xs-right"
+										HtmlDiv="True"
+										>
+										<Label
+											Caption="Dashboard 2"
+											Class="nav-link"
+											Format="HTML"
+											HtmlTag="a"
+											>
+											<EventHandler
+												DhtmlEvent="href"
+												>
+												<Action
+													Javascript="void(0)"
+													Type="Javascript"
+												/>
+											</EventHandler>
+											<EventHandler
+												DhtmlEvent="onclick"
+												>
+												<Action
+													Type="Report"
+													>
+													<Target
+														Report="Dashboard"
+														Type="Report"
+													/>
+												</Action>
+											</EventHandler>
+											<ConditionalClass
+												Class="nav-link active"
+												Condition="&apos;@Request.rdReport~&apos; == &apos;Dashboard&apos;"
+											/>
+										</Label>
+									</Division>
+									<Division
+										Class="nav-item pull-xs-right dropdown"
+										HtmlDiv="True"
+										>
+										<Label
+											Caption="My Dashboard"
+											Class="nav-link dropdown-toggle&quot; data-toggle=&quot;dropdown"
+											Format="HTML"
+											HtmlTag="a"
+											ID="navbarTheme"
+											>
+											<EventHandler
+												DhtmlEvent="href"
+												>
+												<Action
+													Javascript="void(0)"
+													Type="Javascript"
+												/>
+											</EventHandler>
+											<EventHandler
+												DhtmlEvent="onclick"
+												>
+												<Action
+													Javascript="$(this).next().toggleClass(&apos;show&apos;);
+$(this).parent().toggleClass(&apos;open&apos;);"
+													Type="Javascript"
+												/>
+											</EventHandler>
+											<ConditionalClass
+												Class="nav-link active"
+												Condition="&apos;@Request.rdReport~&apos;.indexOf(&apos;InfoGo&apos;) &gt; -1"
+											/>
+										</Label>
+										<Division
+											Class="dropdown-menu float-right"
+											HtmlDiv="True"
+											ID="NavMenuDropdown"
+											>
+											<Label
+												Caption="Self Service"
+												Class="dropdown-item"
+												HtmlTag="a"
+												>
+												<EventHandler
+													DhtmlEvent="href"
+													>
+													<Action
+														Javascript="void(0);"
+														Type="Javascript"
+													/>
+												</EventHandler>
+												<EventHandler
+													DhtmlEvent="onclick"
+													>
+													<Action
+														Type="Report"
+														>
+														<Target
+															Report="InfoGo.goHome"
+															Type="Report"
+														/>
+													</Action>
+												</EventHandler>
+											</Label>
+											<DataList
+												Class="list-unstyled mb-0"
+												ID="lstNavDropdown"
+												>
+												<DataLayer
+													DefinitionListFolder="_Reports"
+													ID="rdDataLayer_rdReportCenterID"
+													Type="DefinitionList"
+													>
+													<ReportCenterFilter
+														AllowScheduling="True"
+														ID="rdReportCenterFilter"
+														ReportCenterAllowSchedule="True"
+														>
+														<Note
+															Note="Get report bookmarks."
+														/>
+													</ReportCenterFilter>
+													<CompareFilter
+														CompareType="&lt;&gt;"
+														DataColumn="BookmarkID"
+														DataType="Text"
+														ID="compareIsBookmark"
+													/>
+													<AggregateColumn
+														AggregateColumn="BookmarkID"
+														AggregateFunction="Count"
+														ID="cntUserBookmarks"
+														>
+														<Note
+															Note="Use the count to show Help when there are no reports."
+														/>
+													</AggregateColumn>
+													<SortFilter
+														DataType="Date"
+														SortColumn="SaveTime"
+														SortSequence="Descending"
+													/>
+													<CompareFilter
+														CompareType="="
+														CompareValue="InfoGo.goDashboard"
+														DataColumn="rdReport"
+													/>
+												</DataLayer>
+												<ListItem>
+													<Division
+														Class="dropdown-item"
+														Condition="&apos;@Data.BookmarkUserName~&apos; == &apos;@Function.UserName~&apos;"
+														ID="divGoListItemTitle"
+														>
+														<Label
+															Caption="@Data.Caption~"
+															ID="lblBookmarkCaption"
+															>
+															<TooltipPanel
+																Condition="&apos;@Data.Name~&apos; == &apos;custom_link&apos;"
+																ID="ifCustomLink"
+																>
+																<Label
+																	Caption="@Data.CustomColumn1~"
+																	ID="customLinkURL"
+																/>
+															</TooltipPanel>
+														</Label>
+														<Action
+															BookmarkCollection="@Data.BookmarkCollection~"
+															BookmarkID="@Data.BookmarkID~"
+															BookmarkUserName="@Data.BookmarkUserName~"
+															SharedBookmarkID="@Data.SharedBookmarkID~"
+															Type="RunBookmark"
+															>
+															<LinkParams
+																goBookmarkCaption="@Data.Caption~"
+																rdIsDefaultReportBookmark="@Data.rdIsDefaultReportBookmark~"
+															/>
+														</Action>
+													</Division>
+													<Division
+														Class="dropdown-item"
+														Condition="&apos;@Data.BookmarkUserName~&apos; &lt;&gt; &apos;@Function.UserName~&apos;"
+														ID="divGoListItemTitleShared"
+														>
+														<Label
+															Caption="@Data.Caption~"
+															ID="lblSharedOwner"
+															Tooltip="Owned by @Data.BookmarkUserName~"
+														/>
+														<Action
+															BookmarkCollection="@Data.BookmarkCollection~"
+															BookmarkID="@Data.BookmarkID~"
+															BookmarkUserName="@Data.BookmarkUserName~"
+															SharedBookmarkID="@Data.SharedBookmarkID~"
+															Type="RunBookmark"
+															>
+															<LinkParams
+																goBookmarkCaption="@Data.Caption~"
+																rdIsDefaultReportBookmark="@Data.rdIsDefaultReportBookmark~"
+															/>
+														</Action>
+													</Division>
+												</ListItem>
+											</DataList>
+										</Division>
+									</Division>
+								</Division>
+							</Division>
+						</Division>
+					</Division>
+				</Division>
+			</Remark>
+			<Division
+				Class="contentWrapper @Session.Theme~"
+				HtmlDiv="True"
+				ID="mainContent"
+				>
+				<MasterReportContent/>
+			</Division>
+			<Remark>
+				<Division
+					HtmlDiv="True"
+					ID="FooterWrap"
+					ShowModes="rdBrowser"
+					>
+					<Division
+						HtmlDiv="True"
+						ID="Footer"
+						ShowModes="rdBrowser"
+						>
+						<Label
+							Caption="© Logi Analytics"
+							Format="HTML"
+						/>
+					</Division>
+				</Division>
+			</Remark>
+			<Remark>
+				<Division
+					HtmlDiv="True"
+					ID="divScrollToTop"
+					ShowModes="rdBrowser"
+					>
+					<Label
+						Caption=" "
+						Class="fa fa-chevron-circle-up"
+						ID="ScrollToTop"
+					/>
+				</Division>
+			</Remark>
+		</Division>
+		<Remark>
+			<IncludeScript
+				IncludedScript="$(document).ready(function() {
+	/*Check to see if the widow is top if not then display button*/
+	$(window).scroll(function(){
+		if ($(this).scrollTop() &gt; 50) 
+			$(&apos;#divScrollToTop&apos;).fadeIn();
+		 else 
+			$(&apos;#divScrollToTop&apos;).fadeOut();
+		
+	});
+	/*Click event to scroll to top*/
+	$(&apos;#ScrollToTop&apos;).click(function(){
+		$(&apos;html, body&apos;).animate({scrollTop : 0},150);
+		return false;
+	});	
+});"
+			/>
+		</Remark>
+		<IncludeScript
+			IncludedScript="$(document).ready(function() {
+	$(&apos;.popupPanelModal&apos;).each(function(e) {
+		$(this).click(function(e) {
+			e.preventDefault();
+			ShowElement($(this).attr(&apos;id&apos;),$(this).next().attr(&apos;id&apos;),&apos;Hide&apos;,&apos;&apos;);
+		});
+	});
+});"
+		/>
+		<IncludeScript/>
+	</Body>
+	<IncludeScriptFile
+		ID="AppJS"
+		IncludedScriptFile="js.Application.js"
+	/>
+	<IncludeHtmlFile
+		IncludedHtmlFile="deferJS.htm"
+	/>
+	<ideTestParams/>
+</Report>

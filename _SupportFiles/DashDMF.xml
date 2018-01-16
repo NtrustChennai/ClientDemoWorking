@@ -1,0 +1,40 @@
+<TemplateModifier>
+	<Remark>
+		<AppendChildElement ID="rdDashboardControl">
+			<NewElement>
+				<Label ID="btnRemove_rdDashboardPanelID" Caption="x" Class="close">
+					<Action Type="Javascript" Javascript="LogiXML.Dashboard.pageDashboard.rdRemoveDashboardPanel('rdDashboardPanelID');" />
+				</Label>	
+			</NewElement>
+		</AppendChildElement>	
+		<AppendChildElement ID="rdDashboardControl">
+			<NewElement>
+				<Label Caption="Rename" Class="close">
+					<Action Type="Javascript" Javascript="NavigateLink2('javascript: LogiXML.Dashboard.pageDashboard.rdShowRenamePanel(\'rdDashboardPanelID\', \'rdDashboardPanelID\'.replace(\'rdDashboardPanel-\',\'\'));','','false','','',null,null)" />
+				</Label>	
+			</NewElement>
+		</AppendChildElement>	
+		
+		<AppendChildElement ID="rdDashboardControl">
+			<NewElement>
+				<Label Caption="Edit" Class="close">
+					<Action Type="Javascript" Javascript="$('#hiddenCurrPanel').val('rdDashboardPanelID'); NavigateLink2('javascript: ShowElement(null, \'ppPanelParamsID\', \'Show\');LogiXML.Dashboard.pageDashboard.rdAddRefreshEventForPanelEditPopupCloseButton(\'rdDashboardPanelID\', \'\');','','false','','',null,null)" />
+				</Label>	
+			</NewElement>
+		</AppendChildElement>
+	</Remark>
+	
+	<InsertBeforeElement ID="rdDashboardPanelContainer">
+		<NewElement>
+			<Division Class="add-panels" HtmlDiv="True">
+				<Division Class="btn btn-sm btn-default" HtmlDiv="True" ID="btnAddPanels">
+					<Label Class="ti-panel" Format="i" ID="icon" />
+					<Spaces />
+					<Label Caption="Add Panels" />
+					<Action Type="Javascript" Javascript="LogiXML.Dashboard.pageDashboard.rdSetAddPanelsPopupSize(); ShowElement(this.id, 'ppChangeDashboard', 'Show');LogiXML.Dashboard.pageDashboard.rdAddRefreshEventForAddPanelsPopupCloseButton();" />
+				</Division>
+			</Division>
+		</NewElement>
+	</InsertBeforeElement>
+	
+</TemplateModifier>

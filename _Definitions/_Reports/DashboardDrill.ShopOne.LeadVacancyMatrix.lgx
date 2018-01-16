@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+	ID="DashboardDrill.ShopOne.LeadVacancyMatrix"
+	>
+	<MasterReport
+		Report="MasterReport"
+	/>
+	<Remark>
+		<LocalData>
+			<DataLayer
+				ConnectionID="ShopOne"
+				ID="dlPropertyName"
+				Source="SELECT 
+Fld_Field_2 AS `Property Name`,
+Fld_FKey_Field_1 AS `Lead`,  
+Fld_Field_5 AS `LL`,Fld_Field_3 AS `Suit ID`,
+Fld_Field_4 AS `Suit SqFt`,
+Fld_Field_6 AS `Suite Status`,Fld_Field_8 AS `Lease Status`,
+ Fld_Field_9 AS `Prospect`,
+Fld_FKey_Field_39 AS `Deal Type`,
+Fld_Field_40 AS `Deal SF`,Fld_Field_41 AS `LC Budget PSF`
+FROM V_XL_TBL_Section_1 a
+WHERE Fld_Field_2=&apos;@Request.Lead_Name~&apos;"
+				Type="SQL"
+				>
+				<DataLayerLink
+					ID="linkedDLVacancyMetrics"
+				/>
+				<AggregateColumn
+					AggregateColumn="Lead"
+					AggregateFunction="Count"
+					ID="cntRows"
+				/>
+			</DataLayer>
+		</LocalData>
+	</Remark>
+	<Body>
+		<Division
+			Class="breadcrumb"
+			HtmlDiv="True"
+			ID="dvBreadcrumb"
+			>
+			<Label
+				Caption="KPIs"
+				Class="breadcrumb-item"
+				HtmlTag="a"
+				>
+				<EventHandler
+					DhtmlEvent="href"
+					>
+					<Action
+						Javascript="void(0)"
+						Type="Javascript"
+					/>
+				</EventHandler>
+				<EventHandler
+					DhtmlEvent="onclick"
+					>
+					<Action
+						ID="arBackToTransaction"
+						Type="Report"
+						>
+						<Target
+							Report="Dashboard"
+							RequestForwarding="True"
+							Type="Report"
+						/>
+					</Action>
+				</EventHandler>
+			</Label>
+			<Division
+				Class="breadcrumb-item active"
+				>
+				<Label
+					Caption="Lead Vacancy Metrics - "
+				/>
+				<Label
+					Caption="@Request.Lead_Name~"
+				/>
+			</Division>
+		</Division>
+		<Division
+			Class="container pt-2"
+			HtmlDiv="True"
+			>
+			<Division
+				Class="GridTopRow"
+				HtmlDiv="True"
+				ID="dvExport"
+				>
+				<Remark>
+					<Label
+						Caption="Vacant Units - @Local.cntRows~ of @Local.TOTAL_UNITS~"
+						Class="GridTitle float-left"
+						ID="GridTitlelabel"
+					/>
+				</Remark>
+				<Image
+					AltText="Export to Excel"
+					Caption="Images.Excel_Multi.png"
+					ID="ExportImage"
+					Tooltip="Export to Excel"
+					>
+					<Remark>
+						<Action
+							ID="ExportNativeExcel"
+							Type="NativeExcel"
+							>
+							<Target
+								ExportDataTableID="tenantTable"
+								ExportFilename="@Request.ddlUserName~ -Tenant"
+								Type="NativeExcel"
+								>
+								<WaitPage/>
+							</Target>
+							<LinkParams
+								DBAName="@Request.DBAName~"
+								ddlUserName="@Request.ddlUserName~"
+								txtFromDate="@Request.txtFromDate~"
+								txtToDate="@Request.txtToDate~"
+							/>
+						</Action>
+					</Remark>
+				</Image>
+			</Division>
+			<DataTable
+				AccessibleHeaders="True"
+				AccessibleSummary="DataTable"
+				Class="table-bordered"
+				ID="dtLeadeVacanccyMatrix"
+				KeepScrollPosition="True"
+				RememberSort="True"
+				ResizableColumns="True"
+				SortArrows="True"
+				TableBorder="0"
+				Width="100"
+				WidthScale="%"
+				>
+				<DataLayer
+					ConnectionID="con_DemoShopOne_LeaseTracker"
+					ID="dlLeadeVacanccyMatrix"
+					Source="SELECT 
+Fld_Field_2 AS `Property_Name`,
+Fld_FKey_Field_1 AS `Lead`,  
+-- Fld_Field_5 AS `LL`,
+Fld_Field_3 AS `Suit ID`,
+-- Fld_Field_4 AS `Suit SqFt`,
+CONVERT(IFNULL(a.Fld_Field_4,&apos;0&apos;) , SIGNED) AS `SuitSqFt`,
+Fld_Field_6 AS `Suite Status`,Fld_Field_8 AS `Lease Status`,
+ Fld_Field_9 AS `Prospect`,
+Fld_FKey_Field_39 AS `Deal Type`,
+-- Fld_Field_40 AS `Deal SF`,
+CONVERT(IFNULL(a.Fld_Field_40,&apos;0&apos;) , SIGNED) AS `DealSF`,
+Fld_Field_41 AS `LC Budget PSF`
+FROM V_XL_TBL_Section_1 a
+WHERE Fld_FKey_Field_1=&apos;@Request.Lead_Name~&apos; AND  a.Fld_Field_6=&apos;VACANT&apos;"
+					Type="SQL"
+					>
+					<AggregateColumn
+						AggregateColumn="SuitSqFt"
+						AggregateFunction="SUM"
+						DataType="Number"
+						ID="rdAggr-SuitSqFt-sum"
+					/>
+					<AggregateColumn
+						AggregateColumn="DealSF"
+						AggregateFunction="SUM"
+						DataType="Number"
+						ID="rdAggr-DealSF-sum"
+					/>
+					<GroupFilter
+						DataType="Text"
+						GroupColumn="Property_Name"
+						ID="rdGroupFilter"
+						KeepGroupedRows="True"
+						>
+						<GroupAggregateColumn
+							AggregateColumn="SuitSqFt"
+							AggregateFunction="SUM"
+							DataType="Number"
+							ID="rdGrAggr-SuitSqFt-sum"
+						/>
+						<GroupAggregateColumn
+							AggregateColumn="DealSF"
+							AggregateFunction="SUM"
+							DataType="Number"
+							ID="rdGrAggr-DealSF-sum"
+						/>
+					</GroupFilter>
+				</DataLayer>
+				<DataTableColumn
+					ColumnHeaderManipulated="True"
+					Header="Property Name"
+					ID="colProperty_Name"
+					>
+					<Label
+						HiddenGroupCaption="@Data.Property_Name~"
+						ID="colProperty_Name"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,Property_Name"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<Remark>
+					<DataTableColumn
+						Header="Lead"
+						ID="colLead"
+						>
+						<Label
+							Caption="@Data.Lead~"
+							ID="lblLead"
+							rdForWizardSet="true"
+						/>
+						<DataColumnSort
+							DataColumn="Property_Name,Lead"
+							DataType="Text,Text"
+						/>
+					</DataTableColumn>
+				</Remark>
+				<DataTableColumn
+					Header="Suit ID"
+					ID="colSuitID"
+					>
+					<Label
+						Caption="@Data.Suit ID~"
+						ID="lblSuitID"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,Suit ID"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Class="ThemeAlignRight"
+					Header="SuitSqFt"
+					ID="colSuitSqFt"
+					>
+					<Label
+						Caption="@Data.SuitSqFt~"
+						ID="colSuitSqFt"
+					/>
+					<DataColumnSort
+						DataColumn="rdGrAggr-SuitSqFt-sum,Property_Name,SuitSqFt"
+						DataType="Number,Text,Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Suite Status"
+					ID="colSuiteStatus"
+					>
+					<Label
+						Caption="@Data.Suite Status~"
+						ID="lblSuiteStatus"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,Suite Status"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<Remark>
+					<DataTableColumn
+						Header="Lease Status"
+						ID="colLeaseStatus"
+						>
+						<Label
+							Caption="@Data.Lease Status~"
+							ID="lblLeaseStatus"
+							rdForWizardSet="true"
+						/>
+						<DataColumnSort
+							DataColumn="Property_Name,Lease Status"
+							DataType="Text,Text"
+						/>
+					</DataTableColumn>
+				</Remark>
+				<DataTableColumn
+					Header="Prospect"
+					ID="colProspect"
+					>
+					<Label
+						Caption="@Data.Prospect~"
+						ID="lblProspect"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,Prospect"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="Deal Type"
+					ID="colDealType"
+					>
+					<Label
+						Caption="@Data.Deal Type~"
+						ID="lblDealType"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,Deal Type"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Class="ThemeAlignRight"
+					Header="DealSF"
+					ID="colDealSF"
+					>
+					<Label
+						Caption="@Data.DealSF~"
+						ID="colDealSF"
+					/>
+					<DataColumnSort
+						DataColumn="rdGrAggr-DealSF-sum,Property_Name,DealSF"
+						DataType="Number,Text,Number"
+					/>
+				</DataTableColumn>
+				<DataTableColumn
+					Header="LC Budget PSF"
+					ID="colLCBudgetPSF"
+					>
+					<Label
+						Caption="@Data.LC Budget PSF~"
+						ID="lblLCBudgetPSF"
+						rdForWizardSet="true"
+					/>
+					<DataColumnSort
+						DataColumn="Property_Name,LC Budget PSF"
+						DataType="Text,Text"
+					/>
+				</DataTableColumn>
+				<GroupHeaderRow
+					Caption="Summary Header"
+					Class="ThemeContainerShadedAndBordered a"
+					GroupFilterID="rdGroupFilter"
+					>
+					<Column
+						ColumnNr="0"
+						DataColumn="Property_Name"
+						ID="colProperty_Name"
+						>
+						<Label
+							Caption="@Data.Property_Name~"
+							HiddenGroupCaption="@Data.Property_Name~"
+							ID="colProperty_Name"
+						/>
+						<LineBreak/>
+					</Column>
+					<Remark>
+						<Column
+							ColumnNr="1"
+							DataColumn="Lead"
+							ID="colLead"
+						/>
+					</Remark>
+					<Column
+						ColumnNr="2"
+						DataColumn="Suit ID"
+						ID="colSuitID"
+					/>
+					<Column
+						Class="ThemeAlignRight"
+						ColumnNr="3"
+						DataColumn="SuitSqFt"
+						ID="colSuitSqFt"
+						>
+						<Remark>
+							<Label
+								Caption="@Data.rdGrAggr-SuitSqFt-sum~"
+								ID="colSuitSqFt"
+							/>
+						</Remark>
+						<Remark>
+							<LineBreak/>
+						</Remark>
+					</Column>
+					<Column
+						ColumnNr="4"
+						DataColumn="Suite Status"
+						ID="colSuiteStatus"
+					/>
+					<Remark>
+						<Column
+							ColumnNr="5"
+							DataColumn="Lease Status"
+							ID="colLeaseStatus"
+						/>
+					</Remark>
+					<Column
+						ColumnNr="6"
+						DataColumn="Prospect"
+						ID="colProspect"
+					/>
+					<Column
+						ColumnNr="7"
+						DataColumn="Deal Type"
+						ID="colDealType"
+					/>
+					<Column
+						Class="ThemeAlignRight"
+						ColumnNr="8"
+						DataColumn="DealSF"
+						ID="colDealSF"
+						>
+						<Remark>
+							<Label
+								Caption="@Data.rdGrAggr-DealSF-sum~"
+								ID="colDealSF"
+							/>
+						</Remark>
+						<Remark>
+							<LineBreak/>
+						</Remark>
+					</Column>
+					<Column
+						ColumnNr="9"
+						DataColumn="LC Budget PSF"
+						ID="colLCBudgetPSF"
+					/>
+				</GroupHeaderRow>
+				<InteractivePaging
+					CaptionType="Text"
+					HideShowPrevNextCaptions="True"
+					HideWhenOnePage="True"
+					Location="Bottom"
+					PageRowCount="13"
+					ShowPageNumber="Numbered"
+				/>
+				<GroupSummaryRow
+					Caption="Summary"
+					Class="ThemeAlternatingRow"
+					GroupFilterID="rdGroupFilter"
+					>
+					<Column
+						ColumnNr="0"
+						DataColumn="Property_Name"
+						ID="colProperty_Name"
+						>
+						<Label
+							Caption="Total : "
+							Class="ThemeTextLarge"
+						/>
+					</Column>
+					<Remark>
+						<Column
+							ColumnNr="1"
+							DataColumn="Lead"
+							ID="colLead"
+						/>
+					</Remark>
+					<Column
+						ColumnNr="2"
+						DataColumn="Suit ID"
+						ID="colSuitID"
+					/>
+					<Column
+						Class="ThemeTopBorder ThemeAlignBottomRight ThemeBold"
+						ColumnNr="3"
+						DataColumn="SuitSqFt"
+						ID="colSuitSqFt"
+						>
+						<Remark>
+							<Label
+								Caption="Total Suit Square Feet : "
+								Class="ThemeBold"
+							/>
+						</Remark>
+						<Label
+							Caption="@Data.rdGrAggr-SuitSqFt-sum~"
+							Class="ThemeTextLarge"
+							ID="colSuitSqFt"
+						/>
+						<LineBreak/>
+					</Column>
+					<Column
+						ColumnNr="4"
+						DataColumn="Suite Status"
+						ID="colSuiteStatus"
+					/>
+					<Remark>
+						<Column
+							ColumnNr="5"
+							DataColumn="Lease Status"
+							ID="colLeaseStatus"
+						/>
+					</Remark>
+					<Column
+						ColumnNr="6"
+						DataColumn="Prospect"
+						ID="colProspect"
+					/>
+					<Column
+						ColumnNr="7"
+						DataColumn="Deal Type"
+						ID="colDealType"
+					/>
+					<Column
+						Class="ThemeTopBorder ThemeAlignBottomRight ThemeBold"
+						ColumnNr="8"
+						DataColumn="DealSF"
+						ID="colDealSF"
+						>
+						<Label
+							Caption="@Data.rdGrAggr-DealSF-sum~"
+							Class="ThemeTextLarge"
+							ID="colDealSF"
+						/>
+						<LineBreak/>
+					</Column>
+					<Column
+						ColumnNr="9"
+						DataColumn="LC Budget PSF"
+						ID="colLCBudgetPSF"
+					/>
+				</GroupSummaryRow>
+			</DataTable>
+		</Division>
+	</Body>
+	<ideTestParams
+		Lead_Name=""
+	/>
+</Report>
