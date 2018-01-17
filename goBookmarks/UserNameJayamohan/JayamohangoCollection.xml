@@ -1,0 +1,39 @@
+<rdBookmarks>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2018-01-17T12:21:59+05:30" BookmarkID="4437660c-9973-454f-9946-004d52f63d83" ExtraFile="JayamohangoCollection_4437660c-9973-454f-9946-004d52f63d83.xml">
+    <RequestParameters rdAgLoadSaved="JayamohangoCollection_4437660c-9973-454f-9946-004d52f63d83.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Folders>
+    <Folder ID="globalMenu" Name="Global Menu" IsGlobalMenuFolder="True" />
+  </Folders>
+  <Bookmark Report="InfoGo.goDashboard" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Dashboard" SaveTime="2017-12-27T21:13:48+05:30" BookmarkID="c0b51bc5-4280-4237-9953-539f753b6b66" ExtraFile="JayamohangoCollection_c0b51bc5-4280-4237-9953-539f753b6b66.xml" FolderID="globalMenu">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Lease Data" SaveTime="2018-01-17T12:27:32+05:30" BookmarkID="3032fce8-6c1e-4cb0-850f-6f702f05cd1f" ExtraFile="JayamohangoCollection_3032fce8-6c1e-4cb0-850f-6f702f05cd1f.xml">
+    <RequestParameters />
+    <SessionParameters />
+    <Schedule SchedulerTaskID="7" Description="At 8:00 AM on 01-17-2018" />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Report" SaveTime="2018-01-17T13:47:35+05:30" BookmarkID="5dffd589-6a2c-4cea-90dc-ebca785c5562" ExtraFile="JayamohangoCollection_5dffd589-6a2c-4cea-90dc-ebca785c5562.xml">
+    <RequestParameters />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2018-01-17T13:47:36+05:30" BookmarkID="40ccbefd-0fa2-4eaf-b6d6-48a587466ff5" ExtraFile="JayamohangoCollection_40ccbefd-0fa2-4eaf-b6d6-48a587466ff5.xml">
+    <RequestParameters rdAgLoadSaved="JayamohangoCollection_40ccbefd-0fa2-4eaf-b6d6-48a587466ff5.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2018-01-17T13:47:38+05:30" BookmarkID="4daf9ef8-86ad-4d60-a4e0-3f8b79e39d50" ExtraFile="JayamohangoCollection_4daf9ef8-86ad-4d60-a4e0-3f8b79e39d50.xml">
+    <RequestParameters rdAgLoadSaved="JayamohangoCollection_4daf9ef8-86ad-4d60-a4e0-3f8b79e39d50.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goAnalysisGrid" Name="" CustomColumn1="" CustomColumn2="" Description="Untitled Analysis" SaveTime="2018-01-17T13:48:03+05:30" BookmarkID="df331224-d7d2-4121-901b-d139d299956a" ExtraFile="JayamohangoCollection_df331224-d7d2-4121-901b-d139d299956a.xml">
+    <RequestParameters rdAgLoadSaved="JayamohangoCollection_df331224-d7d2-4121-901b-d139d299956a.xml" />
+    <SessionParameters />
+  </Bookmark>
+  <Bookmark Report="InfoGo.goReport" Name="" CustomColumn1="" CustomColumn2="" Description="Information Schema Report" SaveTime="2018-01-17T13:49:44+05:30" BookmarkID="eec19b2b-9315-4f43-b659-ac46f4551c6d" ExtraFile="JayamohangoCollection_eec19b2b-9315-4f43-b659-ac46f4551c6d.xml">
+    <RequestParameters />
+    <SessionParameters />
+    <Schedule SchedulerTaskID="8" Description="At 1:50 PM on 01-17-2018" />
+  </Bookmark>
+</rdBookmarks>

@@ -1,0 +1,57 @@
+<rdSavedDashboard>
+  <Panel ID="rdCustomDashboardPanel_70b1828780ec4f81ab1aa09e4e19f89b" InstanceID="24a33e4cefbd461a8158f2d7438c08e2" TabID="d82f5bfbd18b49afbfcb70b49afbb207" DashboardColumn="0" />
+  <Panel ID="rdCustomDashboardPanel_a5b67e3acc914c64a9d4264abcc9a403" InstanceID="5fb6c5b72afb430eb90c8ac9231f89ec" TabID="d82f5bfbd18b49afbfcb70b49afbb207" DashboardColumn="0" />
+  <Tabs ID="rdDashboardTabs" ActiveTabID="d82f5bfbd18b49afbfcb70b49afbb207" DashboardColumnCount="3">
+    <Tab ID="d82f5bfbd18b49afbfcb70b49afbb207" Caption="New Tab" />
+  </Tabs>
+  <ExtraPanelDefinition>
+    <Panel Caption="Lease Data" PanelDescription="" SaveTime="2018-01-17T12:22:37+05:30" ID="rdCustomDashboardPanel_a5b67e3acc914c64a9d4264abcc9a403" rdUniqueIdentifier="a5b67e3acc914c64a9d4264abcc9a403" rdCustomDashboardPanel="True" MultipleInstances="False" Image="../rdTemplate/rdAnalysisGrid/rdAgDataTable.png" rdMakeIdsUnique="True">
+      <PanelContent Height="">
+        <DataTable ID="dtAnalysisGrid_636517885575484620" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Lease Number" rdAgGeneratedColumn="True" ID="agCol_Lease_Data_Lease_Number" DataColumn="Lease_Data_Lease Number" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Data_Lease_Number" Caption="@Data.Lease_Data_Lease Number~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Data_Lease Number" />
+            <DataColumnSort DataColumn="Lease_Data_Lease Number" DataType="Text" OriginalDataColumn="Lease_Data_Lease Number" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Tenant Name" rdAgGeneratedColumn="True" ID="agCol_Lease_Data_Tenant_Name" DataColumn="Lease_Data_Tenant Name" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_Lease_Data_Tenant_Name" Caption="@Data.Lease_Data_Tenant Name~" Format="" />
+            <SpaceForBorders DataColumn="Lease_Data_Tenant Name" />
+            <DataColumnSort DataColumn="Lease_Data_Tenant Name" DataType="Text" OriginalDataColumn="Lease_Data_Tenant Name" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT P.pkey AS 'PKEY', PMKEY.PROPKEY AS 'FKEY_PARENT', IFNULL(Fld_Field_4,'') AS 'Lease Number', &#xA;IFNULL(Fld_Field_33,'') AS 'Tenant Number',IFNULL(Fld_Field_32,'') AS 'Tenant Name',&#xA;IFNULL(Fld_Field_34,'') AS 'DBA Name',LT.Commencement,LT.`Expiration Date`&#xA;FROM V_XL_TBL_SECTION_1  P&#xA;INNER JOIN (SELECT pkey, Fld_Field_21 AS 'PropKey' FROM TBL_SECTION_1) PMKEY ON PMKEY.pkey = P.pkey&#xA;INNER JOIN (SELECT FKEY_PARENT AS 'FKEY_PARENT',IFNULL(CONVERT(DATE_FORMAT(MIN(STR_TO_DATE(Fld_Field_3,'%m/%d/%Y')),'%m/%d/%Y') USING utf8),'') AS 'Commencement',IFNULL(CONVERT(DATE_FORMAT(MAX(STR_TO_DATE(Fld_Field_12,'%m/%d/%Y')),'%m/%d/%Y') USING utf8),'')  AS 'Expiration Date'   FROM V_XL_TBL_SECTION_14&#xA;&#xA;WHERE Fld_Field_3 IS NOT NULL AND Fld_Field_12 IS NOT NULL&#xA;GROUP BY FKEY_PARENT) LT ON P.PKEY = LT.FKEY_PARENT&#xA;WHERE IFNULL(P.Fld_FKey_Field_36,'') &lt;&gt; ''" QueryBuilderTableID="Lease_Data" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="Lease_Data_Lease Number" DataColumn="Lease Number" DataType="Text" Caption="Lease Number" />
+            <SqlColumn ID="Lease_Data_Tenant Name" DataColumn="Tenant Name" DataType="Text" Caption="Tenant Name" />
+          </DataLayer>
+        </DataTable>
+      </PanelContent>
+    </Panel>
+    <Panel Caption="InformationSchema" PanelDescription="" SaveTime="2018-01-17T13:48:28+05:30" ID="rdCustomDashboardPanel_70b1828780ec4f81ab1aa09e4e19f89b" rdUniqueIdentifier="70b1828780ec4f81ab1aa09e4e19f89b" rdCustomDashboardPanel="True" MultipleInstances="False" Image="../rdTemplate/rdAnalysisGrid/rdAgDataTable.png" rdMakeIdsUnique="True">
+      <PanelContent Height="">
+        <DataTable ID="dtAnalysisGrid_636517937089525755" CellSpacing="1" Class="rdThemeDataTable rdAgDataTable" TableBorder="0" DraggableColumns="True" ResizableColumns="True" RememberSort="True" AccessibleHeaders="True" AccessibleSummary="AnalysisGrid DataTable" ColumnHeaderClass="rdThemeDataTableHeader" CaptionClass="rdThemeDataTableMainHeader" AjaxPaging="True" ParentAGSortArrows="True">
+          <InteractivePaging ShowPageNumber="True" Class="rdThemePaging rdAgPaging" IDnotSupportedHere="pagingTable" PageRowCount="20" HideWhenOnePage="True" Location="Top" CaptionType="Image" CurrentPageClass="rdThemePagingCurrent" FirstPageCaption="_Themes/NTrust/images/rdPageFirstDark.png" PreviousPageCaption="_Themes/NTrust/images/rdPagePreviousDark.png" NextPageCaption="_Themes/NTrust/images/rdPageNextDark.png" LastPageCaption="_Themes/NTrust/images/rdPageLastDark.png" NumberedPageCount="" />
+          <DataTableColumn Header="Table Name" rdAgGeneratedColumn="True" ID="agCol_NewTable1_Table_Name" DataColumn="NewTable1_Table_Name" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_NewTable1_Table_Name" Caption="@Data.NewTable1_Table_Name~" Format="" />
+            <SpaceForBorders DataColumn="NewTable1_Table_Name" />
+            <DataColumnSort DataColumn="NewTable1_Table_Name" DataType="Text" OriginalDataColumn="NewTable1_Table_Name" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Table Type" rdAgGeneratedColumn="True" ID="agCol_NewTable1_Table_Type" DataColumn="NewTable1_Table_Type" ColumnHeaderClass="rdAgQbColor1" Class="rdThemeDataTableCell">
+            <Label ID="agCol_NewTable1_Table_Type" Caption="@Data.NewTable1_Table_Type~" Format="" />
+            <SpaceForBorders DataColumn="NewTable1_Table_Type" />
+            <DataColumnSort DataColumn="NewTable1_Table_Type" DataType="Text" OriginalDataColumn="NewTable1_Table_Type" OriginalDataType="Text" />
+          </DataTableColumn>
+          <DataTableColumn Header="Create Time" rdAgGeneratedColumn="True" ID="agCol_NewTable1_Create_Time" DataColumn="NewTable1_Create_Time" Class="rdThemeDataTableCell" ColumnHeaderClass="rdAgQbColor1">
+            <Label ID="agCol_NewTable1_Create_Time" Caption="@Data.NewTable1_Create_Time~" Format="General Date" />
+            <SpaceForBorders DataColumn="NewTable1_Create_Time" />
+            <DataColumnSort DataColumn="NewTable1_Create_Time" DataType="DateTime" OriginalDataColumn="NewTable1_Create_Time" OriginalDataType="DateTime" />
+          </DataTableColumn>
+          <DataLayer Type="ActiveSQL" ConnectionID="DemoDataSource" MetadataID="nttestMetadata" SourceType="Query" Source="SELECT Table_Name,Table_Type,Create_Time&#xA;       FROM information_schema.tables&#xA;       WHERE table_schema = 'remaap_900021'&#xA;       ORDER BY table_name" QueryBuilderTableID="NewTable1" ErrorSessionVar="rdActiveSqlErrorMsg">
+            <SqlColumn ID="NewTable1_Table_Name" DataColumn="Table_Name" DataType="Text" Caption="Table Name" />
+            <SqlColumn ID="NewTable1_Table_Type" DataColumn="Table_Type" DataType="Text" Caption="Table Type" />
+            <SqlColumn ID="NewTable1_Create_Time" DataColumn="Create_Time" DataType="DateTime" Caption="Create Time" />
+          </DataLayer>
+        </DataTable>
+      </PanelContent>
+    </Panel>
+  </ExtraPanelDefinition>
+</rdSavedDashboard>

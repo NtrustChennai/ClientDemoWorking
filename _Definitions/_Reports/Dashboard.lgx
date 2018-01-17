@@ -586,385 +586,387 @@ ORDER BY BUSINESS_UNIT_NAME"
 			HtmlDiv="True"
 			ID="divDashboard"
 			>
-			<Dashboard2
-				AllowFreeformLayout="False"
-				DashboardColumns="2"
-				ID="VisualizationsDashboard"
-				SaveFile="@Function.AppPhysicalPath~\SavedDashboards\Visualizations_User_@Function.UserName~.xml"
-				TemplateModifierFile="DashDMF.xml"
-				>
-				<Panel
-					ID="pnlReconcilation"
+			<Remark>
+				<Dashboard2
+					AllowFreeformLayout="False"
+					DashboardColumns="2"
+					DashboardTabs="True"
+					ID="VisualizationsDashboard"
+					SaveFile="@Function.AppPhysicalPath~\SavedDashboards\Visualizations_User_@Function.UserName~.xml"
+					TemplateModifierFile="DashDMF.xml"
 					>
-					<PanelContent>
-						<Remark>
+					<Panel
+						ID="pnlReconcilation"
+						>
+						<PanelContent>
+							<Remark>
+								<DataTable
+									AccessibleHeaders="True"
+									AccessibleSummary="DataTable"
+									ID="dtReconcilation"
+									KeepScrollPosition="True"
+									RememberSort="True"
+									ResizableColumns="True"
+									SortArrows="True"
+									TableBorder="0"
+									>
+									<DataLayer
+										ConnectionID="con_DemoAnalytics"
+										ID="dlReconcilation"
+										Source="select * from reconcilation"
+										Type="SQL"
+									/>
+									<InteractivePaging
+										CaptionType="Image"
+										HideShowPrevNextCaptions="False"
+										HideWhenOnePage="True"
+										IDnotSupportedHere="pagingTableNumbered"
+										Location="Top"
+										PageRowCount="20"
+										ShowPageNumber="Numbered"
+									/>
+									<DataTableColumn
+										Header="Bucket"
+										ID="colBucket"
+										>
+										<Label
+											Caption="@Data.Bucket~"
+											ID="lblBucket"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="Bucket"
+											DataType="Text"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="Year"
+										ID="colYear"
+										>
+										<Label
+											Caption="@Data.Year~"
+											ID="lblYear"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="Year"
+											DataType="Text"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="Lease Counts"
+										ID="colLeaseCount"
+										>
+										<Remark>
+											<Gauge
+												AnimationDuration="0"
+												BulletColor="#85D0F5"
+												ChartHeight="70"
+												ChartWidth="100%"
+												Tooltip="@Data.Property_Count~"
+												Type="BulletBar"
+												Value="@Data.Property_Count~"
+												>
+												<GaugeRange
+													Color="#b84026"
+													RangeEndValue="30"
+												/>
+												<GaugeRange
+													Color="#dcd440"
+													RangeEndValue="60"
+												/>
+												<GaugeRange
+													Color="#85b74d"
+													RangeEndValue="100"
+												/>
+											</Gauge>
+										</Remark>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="Property_Count"
+											ID="pp"
+											Tooltip="@Data.Property_Count~"
+										/>
+										<Label
+											Caption="@Data.Property_Count~"
+											ID="lbl"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="Amount"
+										ID="colAmount"
+										>
+										<DataColumnSort
+											DataColumn="Amount"
+											DataType="Text"
+										/>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="Amount"
+											ID="pp"
+											Tooltip="@Data.Amount~"
+										/>
+										<Label
+											Caption="@Data.Amount~"
+											ID="lblAmount"
+											rdForWizardSet="true"
+										/>
+									</DataTableColumn>
+								</DataTable>
+							</Remark>
+							<Remark>
+								<DataTable
+									AccessibleHeaders="True"
+									AccessibleSummary="DataTable"
+									ID="dtCount"
+									KeepScrollPosition="True"
+									RememberSort="True"
+									ResizableColumns="True"
+									SortArrows="True"
+									TableBorder="0"
+									>
+									<DataLayer
+										ColumnNamesRow="1"
+										ExcelFile="D:\ReconcilationRowDatas.xls"
+										ExcelWorksheet="Count"
+										ID="ExcelDataLayer1"
+										Type="Excel"
+									/>
+									<InteractivePaging
+										CaptionType="Image"
+										HideShowPrevNextCaptions="False"
+										HideWhenOnePage="True"
+										IDnotSupportedHere="pagingTableNumbered"
+										Location="Top"
+										PageRowCount="20"
+										ShowPageNumber="Numbered"
+									/>
+									<DataTableColumn
+										Header="Bucket"
+										ID="colBucket"
+										>
+										<Label
+											Caption="@Data.Bucket~"
+											ID="lblBucket"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="Bucket"
+											DataType="Date"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="2015"
+										ID="col2015"
+										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2015"
+											ID="pp"
+											Tooltip="@Data.2015~"
+										/>
+										<Spaces/>
+										<Label
+											Caption="@Data.2015~"
+											ID="lbl2015"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2015"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="2014"
+										ID="col2014"
+										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2014"
+											ID="pp"
+											Tooltip="@Data.2014~"
+										/>
+										<Spaces/>
+										<Label
+											Caption="@Data.2014~"
+											ID="lbl2014"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2014"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="2013"
+										ID="col2013"
+										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2013"
+											ID="pp"
+											Tooltip="@Data.2013~"
+										/>
+										<Spaces/>
+										<Label
+											Caption="@Data.2013~"
+											ID="lbl2013"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2013"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="2012"
+										ID="col2012"
+										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2012"
+											ID="pp"
+											Tooltip="@Data.2012~"
+										/>
+										<Spaces/>
+										<Label
+											Caption="@Data.2012~"
+											ID="lbl2012"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2012"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+									<Remark>
+										<DataTableColumn
+											Header="2011"
+											ID="col2011"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2011"
+												ID="pp"
+												Tooltip="@Data.2011~"
+											/>
+											<Label
+												Caption="@Data.2011~"
+												ID="lbl2011"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2011"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2010"
+											ID="col2010"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2010"
+												ID="pp"
+												Tooltip="@Data.2010~"
+											/>
+											<Label
+												Caption="@Data.2010~"
+												ID="lbl2010"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2010"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2009"
+											ID="col2009"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2009"
+												ID="pp"
+												Tooltip="@Data.2009~"
+											/>
+											<Label
+												Caption="@Data.2009~"
+												ID="lbl2009"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2009"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2008"
+											ID="col2008"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2008"
+												ID="pp"
+												Tooltip="@Data.2008~"
+											/>
+											<Label
+												Caption="@Data.2008~"
+												ID="lbl2008"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2008"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2007"
+											ID="col2007"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2007"
+												ID="pp"
+												Tooltip="@Data.2007~"
+											/>
+											<Label
+												Caption="@Data.2007~"
+												ID="lbl2007"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2007"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+								</DataTable>
+							</Remark>
 							<DataTable
 								AccessibleHeaders="True"
 								AccessibleSummary="DataTable"
-								ID="dtReconcilation"
+								ID="dtCountNew"
 								KeepScrollPosition="True"
 								RememberSort="True"
 								ResizableColumns="True"
 								SortArrows="True"
 								TableBorder="0"
+								Width="100"
+								WidthScale="%"
 								>
 								<DataLayer
 									ConnectionID="con_DemoAnalytics"
-									ID="dlReconcilation"
-									Source="select * from reconcilation"
-									Type="SQL"
-								/>
-								<InteractivePaging
-									CaptionType="Image"
-									HideShowPrevNextCaptions="False"
-									HideWhenOnePage="True"
-									IDnotSupportedHere="pagingTableNumbered"
-									Location="Top"
-									PageRowCount="20"
-									ShowPageNumber="Numbered"
-								/>
-								<DataTableColumn
-									Header="Bucket"
-									ID="colBucket"
-									>
-									<Label
-										Caption="@Data.Bucket~"
-										ID="lblBucket"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="Bucket"
-										DataType="Text"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="Year"
-									ID="colYear"
-									>
-									<Label
-										Caption="@Data.Year~"
-										ID="lblYear"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="Year"
-										DataType="Text"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="Lease Counts"
-									ID="colLeaseCount"
-									>
-									<Remark>
-										<Gauge
-											AnimationDuration="0"
-											BulletColor="#85D0F5"
-											ChartHeight="70"
-											ChartWidth="100%"
-											Tooltip="@Data.Property_Count~"
-											Type="BulletBar"
-											Value="@Data.Property_Count~"
-											>
-											<GaugeRange
-												Color="#b84026"
-												RangeEndValue="30"
-											/>
-											<GaugeRange
-												Color="#dcd440"
-												RangeEndValue="60"
-											/>
-											<GaugeRange
-												Color="#85b74d"
-												RangeEndValue="100"
-											/>
-										</Gauge>
-									</Remark>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="Property_Count"
-										ID="pp"
-										Tooltip="@Data.Property_Count~"
-									/>
-									<Label
-										Caption="@Data.Property_Count~"
-										ID="lbl"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="Amount"
-									ID="colAmount"
-									>
-									<DataColumnSort
-										DataColumn="Amount"
-										DataType="Text"
-									/>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="Amount"
-										ID="pp"
-										Tooltip="@Data.Amount~"
-									/>
-									<Label
-										Caption="@Data.Amount~"
-										ID="lblAmount"
-										rdForWizardSet="true"
-									/>
-								</DataTableColumn>
-							</DataTable>
-						</Remark>
-						<Remark>
-							<DataTable
-								AccessibleHeaders="True"
-								AccessibleSummary="DataTable"
-								ID="dtCount"
-								KeepScrollPosition="True"
-								RememberSort="True"
-								ResizableColumns="True"
-								SortArrows="True"
-								TableBorder="0"
-								>
-								<DataLayer
-									ColumnNamesRow="1"
-									ExcelFile="D:\ReconcilationRowDatas.xls"
-									ExcelWorksheet="Count"
-									ID="ExcelDataLayer1"
-									Type="Excel"
-								/>
-								<InteractivePaging
-									CaptionType="Image"
-									HideShowPrevNextCaptions="False"
-									HideWhenOnePage="True"
-									IDnotSupportedHere="pagingTableNumbered"
-									Location="Top"
-									PageRowCount="20"
-									ShowPageNumber="Numbered"
-								/>
-								<DataTableColumn
-									Header="Bucket"
-									ID="colBucket"
-									>
-									<Label
-										Caption="@Data.Bucket~"
-										ID="lblBucket"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="Bucket"
-										DataType="Date"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="2015"
-									ID="col2015"
-									>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="2015"
-										ID="pp"
-										Tooltip="@Data.2015~"
-									/>
-									<Spaces/>
-									<Label
-										Caption="@Data.2015~"
-										ID="lbl2015"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2015"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="2014"
-									ID="col2014"
-									>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="2014"
-										ID="pp"
-										Tooltip="@Data.2014~"
-									/>
-									<Spaces/>
-									<Label
-										Caption="@Data.2014~"
-										ID="lbl2014"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2014"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="2013"
-									ID="col2013"
-									>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="2013"
-										ID="pp"
-										Tooltip="@Data.2013~"
-									/>
-									<Spaces/>
-									<Label
-										Caption="@Data.2013~"
-										ID="lbl2013"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2013"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-								<DataTableColumn
-									Header="2012"
-									ID="col2012"
-									>
-									<CellBar
-										Color="#799FCD"
-										DataColumn="2012"
-										ID="pp"
-										Tooltip="@Data.2012~"
-									/>
-									<Spaces/>
-									<Label
-										Caption="@Data.2012~"
-										ID="lbl2012"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2012"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-								<Remark>
-									<DataTableColumn
-										Header="2011"
-										ID="col2011"
-										>
-										<CellBar
-											Color="#799FCD"
-											DataColumn="2011"
-											ID="pp"
-											Tooltip="@Data.2011~"
-										/>
-										<Label
-											Caption="@Data.2011~"
-											ID="lbl2011"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2011"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-								<Remark>
-									<DataTableColumn
-										Header="2010"
-										ID="col2010"
-										>
-										<CellBar
-											Color="#799FCD"
-											DataColumn="2010"
-											ID="pp"
-											Tooltip="@Data.2010~"
-										/>
-										<Label
-											Caption="@Data.2010~"
-											ID="lbl2010"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2010"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-								<Remark>
-									<DataTableColumn
-										Header="2009"
-										ID="col2009"
-										>
-										<CellBar
-											Color="#799FCD"
-											DataColumn="2009"
-											ID="pp"
-											Tooltip="@Data.2009~"
-										/>
-										<Label
-											Caption="@Data.2009~"
-											ID="lbl2009"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2009"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-								<Remark>
-									<DataTableColumn
-										Header="2008"
-										ID="col2008"
-										>
-										<CellBar
-											Color="#799FCD"
-											DataColumn="2008"
-											ID="pp"
-											Tooltip="@Data.2008~"
-										/>
-										<Label
-											Caption="@Data.2008~"
-											ID="lbl2008"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2008"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-								<Remark>
-									<DataTableColumn
-										Header="2007"
-										ID="col2007"
-										>
-										<CellBar
-											Color="#799FCD"
-											DataColumn="2007"
-											ID="pp"
-											Tooltip="@Data.2007~"
-										/>
-										<Label
-											Caption="@Data.2007~"
-											ID="lbl2007"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2007"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-							</DataTable>
-						</Remark>
-						<DataTable
-							AccessibleHeaders="True"
-							AccessibleSummary="DataTable"
-							ID="dtCountNew"
-							KeepScrollPosition="True"
-							RememberSort="True"
-							ResizableColumns="True"
-							SortArrows="True"
-							TableBorder="0"
-							Width="100"
-							WidthScale="%"
-							>
-							<DataLayer
-								ConnectionID="con_DemoAnalytics"
-								ID="SQLDataLayer5"
-								Source="SELECT bucket AS Bucket, 
+									ID="SQLDataLayer5"
+									Source="SELECT bucket AS Bucket, 
 [2015], [2014], [2013], [2012]
 FROM
 (SELECT bucket,year, CONVERT(DECIMAL(18,2),replace(Property_Count, &apos;,&apos;, &apos;&apos;)) as Property_Count
@@ -975,217 +977,7 @@ sum(Property_Count)
 FOR year IN ([2015], [2014], [2013], [2012])
 ) AS PivotTable
 order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos;/&apos;,&apos;&apos;));"
-								Type="SQL"
-							/>
-							<InteractivePaging
-								CaptionType="Image"
-								HideShowPrevNextCaptions="False"
-								HideWhenOnePage="True"
-								IDnotSupportedHere="pagingTableNumbered"
-								Location="Top"
-								PageRowCount="20"
-								ShowPageNumber="Numbered"
-							/>
-							<DataTableColumn
-								Header="Bucket"
-								ID="colbucket"
-								Width="20"
-								WidthScale="%"
-								>
-								<Label
-									Caption="@Data.Bucket~"
-									ID="lblbucket"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="bucket"
-									DataType="Text"
-								/>
-							</DataTableColumn>
-							<Remark>
-								<DataTableColumn
-									Header="2015"
-									ID="col2015"
-									>
-									<Label
-										Caption="@Data.2015~"
-										ID="lbl2015"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2015"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2015"
-								ID="col2015"
-								Width="20"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2015"
-									ID="pp"
-									Tooltip="@Data.2015~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2015~"
-									Format="###,###,##0"
-									ID="lbl2015"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2015"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
-								<DataTableColumn
-									Header="2014"
-									ID="col2014"
-									>
-									<Label
-										Caption="@Data.2014~"
-										ID="lbl2014"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2014"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2014"
-								ID="col2014"
-								Width="20"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2014"
-									ID="pp"
-									Tooltip="@Data.2014~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2014~"
-									Format="###,###,##0"
-									ID="lbl2014"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2014"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
-								<DataTableColumn
-									Header="2013"
-									ID="col2013"
-									>
-									<Label
-										Caption="@Data.2013~"
-										ID="lbl2013"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2013"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2013"
-								ID="col2013"
-								Width="20"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2013"
-									ID="pp"
-									Tooltip="@Data.2013~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2013~"
-									Format="###,###,##0"
-									ID="lbl2013"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2013"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
-								<DataTableColumn
-									Header="2012"
-									ID="col2012"
-									>
-									<Label
-										Caption="@Data.2012~"
-										ID="lbl2012"
-										rdForWizardSet="true"
-									/>
-									<DataColumnSort
-										DataColumn="2012"
-										DataType="Number"
-									/>
-								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2012"
-								ID="col2012"
-								Width="20"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2012"
-									ID="pp"
-									Tooltip="@Data.2012~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2012~"
-									Format="###,###,##0"
-									ID="lbl2012"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2012"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-						</DataTable>
-					</PanelContent>
-				</Panel>
-				<Panel
-					ID="pnlAmount"
-					>
-					<PanelContent>
-						<Remark>
-							<DataTable
-								AccessibleHeaders="True"
-								AccessibleSummary="DataTable"
-								ID="dtAmount"
-								KeepScrollPosition="True"
-								RememberSort="True"
-								ResizableColumns="True"
-								SortArrows="True"
-								TableBorder="0"
-								>
-								<DataLayer
-									ColumnNamesRow="1"
-									ExcelFile="D:\ReconcilationRowDatas.xls"
-									ExcelWorksheet="Amount"
-									ID="ExcelDataLayer2"
-									Type="Excel"
+									Type="SQL"
 								/>
 								<InteractivePaging
 									CaptionType="Image"
@@ -1198,21 +990,41 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 								/>
 								<DataTableColumn
 									Header="Bucket"
-									ID="colBucket"
+									ID="colbucket"
+									Width="20"
+									WidthScale="%"
 									>
 									<Label
 										Caption="@Data.Bucket~"
-										ID="lblBucket"
+										ID="lblbucket"
 										rdForWizardSet="true"
 									/>
 									<DataColumnSort
-										DataColumn="Bucket"
-										DataType="Date"
+										DataColumn="bucket"
+										DataType="Text"
 									/>
 								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										Header="2015"
+										ID="col2015"
+										>
+										<Label
+											Caption="@Data.2015~"
+											ID="lbl2015"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2015"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2015"
 									ID="col2015"
+									Width="20"
+									WidthScale="%"
 									>
 									<CellBar
 										Color="#799FCD"
@@ -1223,7 +1035,7 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 									<Spaces/>
 									<Label
 										Caption="@Data.2015~"
-										Format="###,###,##0 $"
+										Format="###,###,##0"
 										ID="lbl2015"
 										rdForWizardSet="true"
 									/>
@@ -1232,9 +1044,27 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										Header="2014"
+										ID="col2014"
+										>
+										<Label
+											Caption="@Data.2014~"
+											ID="lbl2014"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2014"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2014"
 									ID="col2014"
+									Width="20"
+									WidthScale="%"
 									>
 									<CellBar
 										Color="#799FCD"
@@ -1245,7 +1075,7 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 									<Spaces/>
 									<Label
 										Caption="@Data.2014~"
-										Format="###,###,##0 $"
+										Format="###,###,##0"
 										ID="lbl2014"
 										rdForWizardSet="true"
 									/>
@@ -1254,9 +1084,27 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										Header="2013"
+										ID="col2013"
+										>
+										<Label
+											Caption="@Data.2013~"
+											ID="lbl2013"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2013"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2013"
 									ID="col2013"
+									Width="20"
+									WidthScale="%"
 									>
 									<CellBar
 										Color="#799FCD"
@@ -1267,7 +1115,7 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 									<Spaces/>
 									<Label
 										Caption="@Data.2013~"
-										Format="###,###,##0 $"
+										Format="###,###,##0"
 										ID="lbl2013"
 										rdForWizardSet="true"
 									/>
@@ -1276,9 +1124,27 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										Header="2012"
+										ID="col2012"
+										>
+										<Label
+											Caption="@Data.2012~"
+											ID="lbl2012"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2012"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2012"
 									ID="col2012"
+									Width="20"
+									WidthScale="%"
 									>
 									<CellBar
 										Color="#799FCD"
@@ -1289,7 +1155,7 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 									<Spaces/>
 									<Label
 										Caption="@Data.2012~"
-										Format="###,###,##0 $"
+										Format="###,###,##0"
 										ID="lbl2012"
 										rdForWizardSet="true"
 									/>
@@ -1298,123 +1164,259 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
-								<Remark>
+							</DataTable>
+						</PanelContent>
+					</Panel>
+					<Panel
+						ID="pnlAmount"
+						>
+						<PanelContent>
+							<Remark>
+								<DataTable
+									AccessibleHeaders="True"
+									AccessibleSummary="DataTable"
+									ID="dtAmount"
+									KeepScrollPosition="True"
+									RememberSort="True"
+									ResizableColumns="True"
+									SortArrows="True"
+									TableBorder="0"
+									>
+									<DataLayer
+										ColumnNamesRow="1"
+										ExcelFile="D:\ReconcilationRowDatas.xls"
+										ExcelWorksheet="Amount"
+										ID="ExcelDataLayer2"
+										Type="Excel"
+									/>
+									<InteractivePaging
+										CaptionType="Image"
+										HideShowPrevNextCaptions="False"
+										HideWhenOnePage="True"
+										IDnotSupportedHere="pagingTableNumbered"
+										Location="Top"
+										PageRowCount="20"
+										ShowPageNumber="Numbered"
+									/>
 									<DataTableColumn
-										Header="2011"
-										ID="col2011"
+										Header="Bucket"
+										ID="colBucket"
+										>
+										<Label
+											Caption="@Data.Bucket~"
+											ID="lblBucket"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="Bucket"
+											DataType="Date"
+										/>
+									</DataTableColumn>
+									<DataTableColumn
+										Header="2015"
+										ID="col2015"
 										>
 										<CellBar
 											Color="#799FCD"
-											DataColumn="2011"
+											DataColumn="2015"
 											ID="pp"
-											Tooltip="@Data.2011~"
+											Tooltip="@Data.2015~"
 										/>
+										<Spaces/>
 										<Label
-											Caption="@Data.2011~"
-											Format="###,###,##0$"
-											ID="lbl2011"
+											Caption="@Data.2015~"
+											Format="###,###,##0 $"
+											ID="lbl2015"
 											rdForWizardSet="true"
 										/>
 										<DataColumnSort
-											DataColumn="2011"
+											DataColumn="2015"
 											DataType="Number"
 										/>
 									</DataTableColumn>
-								</Remark>
-								<Remark>
 									<DataTableColumn
-										Header="2010"
-										ID="col2010"
+										Header="2014"
+										ID="col2014"
 										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2014"
+											ID="pp"
+											Tooltip="@Data.2014~"
+										/>
+										<Spaces/>
 										<Label
-											Caption="@Data.2010~"
-											ID="lbl2010"
+											Caption="@Data.2014~"
+											Format="###,###,##0 $"
+											ID="lbl2014"
 											rdForWizardSet="true"
 										/>
 										<DataColumnSort
-											DataColumn="2010"
+											DataColumn="2014"
 											DataType="Number"
 										/>
 									</DataTableColumn>
-								</Remark>
-								<Remark>
 									<DataTableColumn
-										Header="2009"
-										ID="col2009"
+										Header="2013"
+										ID="col2013"
 										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2013"
+											ID="pp"
+											Tooltip="@Data.2013~"
+										/>
+										<Spaces/>
 										<Label
-											Caption="@Data.2009~"
-											ID="lbl2009"
+											Caption="@Data.2013~"
+											Format="###,###,##0 $"
+											ID="lbl2013"
 											rdForWizardSet="true"
 										/>
 										<DataColumnSort
-											DataColumn="2009"
+											DataColumn="2013"
 											DataType="Number"
 										/>
 									</DataTableColumn>
-								</Remark>
-								<Remark>
 									<DataTableColumn
-										Header="2008"
-										ID="col2008"
+										Header="2012"
+										ID="col2012"
 										>
+										<CellBar
+											Color="#799FCD"
+											DataColumn="2012"
+											ID="pp"
+											Tooltip="@Data.2012~"
+										/>
+										<Spaces/>
 										<Label
-											Caption="@Data.2008~"
-											ID="lbl2008"
+											Caption="@Data.2012~"
+											Format="###,###,##0 $"
+											ID="lbl2012"
 											rdForWizardSet="true"
 										/>
 										<DataColumnSort
-											DataColumn="2008"
+											DataColumn="2012"
 											DataType="Number"
 										/>
 									</DataTableColumn>
-								</Remark>
-								<Remark>
-									<DataTableColumn
-										Header="2007"
-										ID="col2007"
-										>
-										<Label
-											Caption="@Data.2007~"
-											ID="lbl2007"
-											rdForWizardSet="true"
-										/>
-										<DataColumnSort
-											DataColumn="2007"
-											DataType="Number"
-										/>
-									</DataTableColumn>
-								</Remark>
-							</DataTable>
-						</Remark>
-						<Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2011"
+											ID="col2011"
+											>
+											<CellBar
+												Color="#799FCD"
+												DataColumn="2011"
+												ID="pp"
+												Tooltip="@Data.2011~"
+											/>
+											<Label
+												Caption="@Data.2011~"
+												Format="###,###,##0$"
+												ID="lbl2011"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2011"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2010"
+											ID="col2010"
+											>
+											<Label
+												Caption="@Data.2010~"
+												ID="lbl2010"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2010"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2009"
+											ID="col2009"
+											>
+											<Label
+												Caption="@Data.2009~"
+												ID="lbl2009"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2009"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2008"
+											ID="col2008"
+											>
+											<Label
+												Caption="@Data.2008~"
+												ID="lbl2008"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2008"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+									<Remark>
+										<DataTableColumn
+											Header="2007"
+											ID="col2007"
+											>
+											<Label
+												Caption="@Data.2007~"
+												ID="lbl2007"
+												rdForWizardSet="true"
+											/>
+											<DataColumnSort
+												DataColumn="2007"
+												DataType="Number"
+											/>
+										</DataTableColumn>
+									</Remark>
+								</DataTable>
+							</Remark>
+							<Remark>
+								<DataTable
+									ID="DataTable1"
+									SortArrows="True"
+									>
+									<DataLayer
+										ConnectionID="con_DemoAnalytics"
+										ID="SQLDataLayer3"
+										Type="SQL"
+									/>
+								</DataTable>
+							</Remark>
 							<DataTable
-								ID="DataTable1"
+								AccessibleHeaders="True"
+								AccessibleSummary="DataTable"
+								ID="dtAmountNew"
+								KeepScrollPosition="True"
+								RememberSort="True"
+								ResizableColumns="True"
 								SortArrows="True"
+								TableBorder="0"
+								Width="100"
+								WidthScale="%"
 								>
 								<DataLayer
 									ConnectionID="con_DemoAnalytics"
-									ID="SQLDataLayer3"
-									Type="SQL"
-								/>
-							</DataTable>
-						</Remark>
-						<DataTable
-							AccessibleHeaders="True"
-							AccessibleSummary="DataTable"
-							ID="dtAmountNew"
-							KeepScrollPosition="True"
-							RememberSort="True"
-							ResizableColumns="True"
-							SortArrows="True"
-							TableBorder="0"
-							Width="100"
-							WidthScale="%"
-							>
-							<DataLayer
-								ConnectionID="con_DemoAnalytics"
-								ID="SQLDataLayer4"
-								Source="SELECT bucket AS Bucket, 
+									ID="SQLDataLayer4"
+									Source="SELECT bucket AS Bucket, 
 [2015], [2014], [2013], [2012]
 FROM
 (SELECT bucket,year, CONVERT(DECIMAL(18,2),replace(Amount, &apos;,&apos;, &apos;&apos;)) as Amount
@@ -1425,35 +1427,60 @@ sum(Amount)
 FOR year IN ([2015], [2014], [2013], [2012])
 ) AS PivotTable
 order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos;/&apos;,&apos;&apos;));"
-								Type="SQL"
-							/>
-							<InteractivePaging
-								CaptionType="Image"
-								HideShowPrevNextCaptions="False"
-								HideWhenOnePage="True"
-								IDnotSupportedHere="pagingTableNumbered"
-								Location="Top"
-								PageRowCount="20"
-								ShowPageNumber="Numbered"
-							/>
-							<DataTableColumn
-								Header="Bucket"
-								ID="colbucket"
-								Width="12"
-								WidthScale="%"
-								>
-								<Label
-									Caption="@Data.Bucket~"
-									ID="colbucket"
+									Type="SQL"
 								/>
-							</DataTableColumn>
-							<Remark>
+								<InteractivePaging
+									CaptionType="Image"
+									HideShowPrevNextCaptions="False"
+									HideWhenOnePage="True"
+									IDnotSupportedHere="pagingTableNumbered"
+									Location="Top"
+									PageRowCount="20"
+									ShowPageNumber="Numbered"
+								/>
+								<DataTableColumn
+									Header="Bucket"
+									ID="colbucket"
+									Width="12"
+									WidthScale="%"
+									>
+									<Label
+										Caption="@Data.Bucket~"
+										ID="colbucket"
+									/>
+								</DataTableColumn>
+								<Remark>
+									<DataTableColumn
+										Header="2015"
+										ID="col2015"
+										>
+										<Label
+											Caption="@Data.2015~"
+											ID="lbl2015"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2015"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2015"
 									ID="col2015"
+									Width="22"
+									WidthScale="%"
 									>
+									<CellBar
+										Color="#799FCD"
+										DataColumn="2015"
+										ID="pp"
+										Tooltip="@Data.2015~"
+									/>
+									<Spaces/>
 									<Label
 										Caption="@Data.2015~"
+										Format="$###,###,##0"
 										ID="lbl2015"
 										rdForWizardSet="true"
 									/>
@@ -1462,38 +1489,38 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2015"
-								ID="col2015"
-								Width="22"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2015"
-									ID="pp"
-									Tooltip="@Data.2015~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2015~"
-									Format="$###,###,##0"
-									ID="lbl2015"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2015"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
+								<Remark>
+									<DataTableColumn
+										Header="2014"
+										ID="col2014"
+										>
+										<Label
+											Caption="@Data.2014~"
+											ID="lbl2014"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2014"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2014"
 									ID="col2014"
+									Width="22"
+									WidthScale="%"
 									>
+									<CellBar
+										Color="#799FCD"
+										DataColumn="2014"
+										ID="pp"
+										Tooltip="@Data.2014~"
+									/>
+									<Spaces/>
 									<Label
 										Caption="@Data.2014~"
+										Format="$###,###,##0"
 										ID="lbl2014"
 										rdForWizardSet="true"
 									/>
@@ -1502,38 +1529,38 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2014"
-								ID="col2014"
-								Width="22"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2014"
-									ID="pp"
-									Tooltip="@Data.2014~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2014~"
-									Format="$###,###,##0"
-									ID="lbl2014"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2014"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
+								<Remark>
+									<DataTableColumn
+										Header="2013"
+										ID="col2013"
+										>
+										<Label
+											Caption="@Data.2013~"
+											ID="lbl2013"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2013"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2013"
 									ID="col2013"
+									Width="22"
+									WidthScale="%"
 									>
+									<CellBar
+										Color="#799FCD"
+										DataColumn="2013"
+										ID="pp"
+										Tooltip="@Data.2013~"
+									/>
+									<Spaces/>
 									<Label
 										Caption="@Data.2013~"
+										Format="$###,###,##0"
 										ID="lbl2013"
 										rdForWizardSet="true"
 									/>
@@ -1542,38 +1569,38 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2013"
-								ID="col2013"
-								Width="22"
-								WidthScale="%"
-								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2013"
-									ID="pp"
-									Tooltip="@Data.2013~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2013~"
-									Format="$###,###,##0"
-									ID="lbl2013"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2013"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-							<Remark>
+								<Remark>
+									<DataTableColumn
+										Header="2012"
+										ID="col2012"
+										>
+										<Label
+											Caption="@Data.2012~"
+											ID="lbl2012"
+											rdForWizardSet="true"
+										/>
+										<DataColumnSort
+											DataColumn="2012"
+											DataType="Number"
+										/>
+									</DataTableColumn>
+								</Remark>
 								<DataTableColumn
 									Header="2012"
 									ID="col2012"
+									Width="22"
+									WidthScale="%"
 									>
+									<CellBar
+										Color="#799FCD"
+										DataColumn="2012"
+										ID="pp"
+										Tooltip="@Data.2012~"
+									/>
+									<Spaces/>
 									<Label
 										Caption="@Data.2012~"
+										Format="$###,###,##0"
 										ID="lbl2012"
 										rdForWizardSet="true"
 									/>
@@ -1582,108 +1609,83 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 										DataType="Number"
 									/>
 								</DataTableColumn>
-							</Remark>
-							<DataTableColumn
-								Header="2012"
-								ID="col2012"
-								Width="22"
-								WidthScale="%"
+							</DataTable>
+						</PanelContent>
+					</Panel>
+					<Panel
+						Caption="Workflow Status Metrics"
+						ID="pnlWorkflowStatusMetrics"
+						Image="dash.Workflow.png"
+						>
+						<PanelContent>
+							<ChartCanvas
+								ChartOrientation="SwapAxes"
+								ID="barWorkflowStatusMetrics"
+								rdAutoSortingSeries="True"
 								>
-								<CellBar
-									Color="#799FCD"
-									DataColumn="2012"
-									ID="pp"
-									Tooltip="@Data.2012~"
-								/>
-								<Spaces/>
-								<Label
-									Caption="@Data.2012~"
-									Format="$###,###,##0"
-									ID="lbl2012"
-									rdForWizardSet="true"
-								/>
-								<DataColumnSort
-									DataColumn="2012"
-									DataType="Number"
-								/>
-							</DataTableColumn>
-						</DataTable>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Workflow Status Metrics"
-					ID="pnlWorkflowStatusMetrics"
-					Image="dash.Workflow.png"
-					>
-					<PanelContent>
-						<ChartCanvas
-							ChartOrientation="SwapAxes"
-							ID="barWorkflowStatusMetrics"
-							rdAutoSortingSeries="True"
-							>
-							<Series
-								BarStacking="Stacked"
-								ChartYDataColumn="rdCrosstabValue"
-								Color="#4373AD,#c0504d,#9bbb59,#8064a2"
-								LinkedToYAxisID="y-Axix"
-								PointPadding="0"
-								Type="Bar"
-								>
-								<Quicktip
-									ID="qtWorkFlow"
-									Title="@Chart.Workflow_Description~"
+								<Series
+									BarStacking="Stacked"
+									ChartYDataColumn="rdCrosstabValue"
+									Color="#4373AD,#c0504d,#9bbb59,#8064a2"
+									LinkedToYAxisID="y-Axix"
+									PointPadding="0"
+									Type="Bar"
 									>
-									<Remark>
+									<Quicktip
+										ID="qtWorkFlow"
+										Title="@Chart.Workflow_Description~"
+										>
+										<Remark>
+											<QuicktipRow
+												Caption="Workflow"
+												Value="@Chart.Workflow_Description~"
+											/>
+										</Remark>
 										<QuicktipRow
-											Caption="Workflow"
-											Value="@Chart.Workflow_Description~"
+											Caption="Category"
+											Value="@Chart.rdCrosstabColumn~"
 										/>
-									</Remark>
-									<QuicktipRow
-										Caption="Category"
-										Value="@Chart.rdCrosstabColumn~"
-									/>
-									<QuicktipRow
-										Caption="Count:"
-										Value="@Chart.rdCrosstabValue~"
-									/>
-									<Remark>
 										<QuicktipRow
-											Caption="# of Days:"
-											Value="@Chart.colCategoryFilter~"
+											Caption="Count:"
+											Value="@Chart.rdCrosstabValue~"
 										/>
-									</Remark>
-								</Quicktip>
-								<DataLabels
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Middle"
-									FontColor="#ffffff"
-									FontSize="10px"
-									Format="###,###"
-								/>
-								<Action
-									Type="Report"
-									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.StatusMetrics"
+										<Remark>
+											<QuicktipRow
+												Caption="# of Days:"
+												Value="@Chart.colCategoryFilter~"
+											/>
+										</Remark>
+									</Quicktip>
+									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Middle"
+										FontColor="#ffffff"
+										FontSize="10px"
+										Format="###,###"
+									/>
+									<Action
 										Type="Report"
-									/>
-									<LinkParams
-										WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
-									/>
-									<Remark>
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.StatusMetrics"
+											Type="Report"
+										/>
 										<LinkParams
-											Category="@Chart.colCategoryFilter~"
 											WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
 										/>
-									</Remark>
-								</Action>
-							</Series>
-							<DataLayer
-								ConnectionID="con_DemoAnalytics"
-								ID="dlWorkflowStatusMetrics"
-								Source="SELECT ID,SM.Workflow_Description
+										<Remark>
+											<LinkParams
+												Category="@Chart.colCategoryFilter~"
+												WORKFLOW_DESCRIPTION="@Chart.Workflow_Description~"
+											/>
+										</Remark>
+									</Action>
+								</Series>
+								<DataLayer
+									ConnectionID="con_DemoAnalytics"
+									ID="dlWorkflowStatusMetrics"
+									Source="SELECT ID,SM.Workflow_Description
       ,sum(No_Of_Days) as &apos;SumNumberOfDays&apos;
 	  , count(1) as &apos;COUNT&apos;
 	  , BUSINESS_UNIT_NAME
@@ -1692,10 +1694,10 @@ order by CONVERT(int,replace(replace(bucket,&apos;&gt;&apos;,&apos;&apos;),&apos
 
   Group By SM.Workflow_Description, BUSINESS_UNIT_NAME,ID
     order by ID desc"
-								Type="SQL"
-								>
-								<CalculatedColumn
-									Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+									Type="SQL"
+									>
+									<CalculatedColumn
+										Formula="if (@Data.SumNumberOfDays~ &lt; 30)
 	&apos;0-30&apos;;
 else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
 	&apos;31-50&apos;;
@@ -1703,10 +1705,10 @@ else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 
 	&apos;51-95&apos;;
 else 
 	&apos;&gt;95&apos;;"
-									ID="colCategory"
-								/>
-								<CalculatedColumn
-									Formula="if (@Data.SumNumberOfDays~ &lt; 30)
+										ID="colCategory"
+									/>
+									<CalculatedColumn
+										Formula="if (@Data.SumNumberOfDays~ &lt; 30)
 	1;
 else if (@Data.SumNumberOfDays~ &gt; 31 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 50)
 	2;
@@ -1714,85 +1716,202 @@ else if (@Data.SumNumberOfDays~ &gt; 51 &amp;&amp; @Data.SumNumberOfDays~ &lt;= 
 	3;
 else 
 	4;"
-									ID="colSortBy"
-								/>
-								<Remark>
-									<SortFilter
-										SortColumn="rdCrosstabColumn"
-										SortSequence="Descending"
+										ID="colSortBy"
 									/>
-								</Remark>
-								<CrosstabFilter
-									CrosstabColumn="colCategory"
-									CrosstabLabelColumn="Workflow_Description"
-									CrosstabValueColumn="COUNT"
-									CrosstabValueFunction="Sum"
+									<Remark>
+										<SortFilter
+											SortColumn="rdCrosstabColumn"
+											SortSequence="Descending"
+										/>
+									</Remark>
+									<CrosstabFilter
+										CrosstabColumn="colCategory"
+										CrosstabLabelColumn="Workflow_Description"
+										CrosstabValueColumn="COUNT"
+										CrosstabValueFunction="Sum"
+										>
+										<ExtraCrosstabLabelColumn
+											CrosstabLabelColumn="SumNumberOfDays"
+											ID="colSumNumberOfDays"
+										/>
+										<ExtraCrosstabLabelColumn
+											CrosstabLabelColumn="colSortBy"
+											ID="colCategoryFilter"
+										/>
+									</CrosstabFilter>
+								</DataLayer>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ReversedItemOrder="True"
+									ShowAllThreshold="99999"
+								/>
+								<ChartYAxis
+									ID="y-Axix"
 									>
-									<ExtraCrosstabLabelColumn
-										CrosstabLabelColumn="SumNumberOfDays"
-										ID="colSumNumberOfDays"
+									<AxisLabelStyle
+										FontAngle="45"
+										FontColor="transparent"
+										FontSize="10"
 									/>
-									<ExtraCrosstabLabelColumn
-										CrosstabLabelColumn="colSortBy"
-										ID="colCategoryFilter"
+								</ChartYAxis>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontSize="10"
 									/>
-								</CrosstabFilter>
-							</DataLayer>
-							<ChartCanvasLegend
-								AlignmentHorizontal="Right"
-								AlignmentVertical="Middle"
-								LegendOrientation="Vertical"
-								LegendSpacing=" "
-								ReversedItemOrder="True"
-								ShowAllThreshold="99999"
+								</ChartXAxis>
+							</ChartCanvas>
+						</PanelContent>
+						<PanelParameters>
+							<Label
+								Caption="MyParameter:"
+								ID="lblMyParameter"
 							/>
-							<ChartYAxis
-								ID="y-Axix"
+							<InputText
+								DefaultValue="@Request.MyParameter~"
+								ID="MyParameter"
+							/>
+						</PanelParameters>
+					</Panel>
+					<Panel
+						Caption="Error Metrics"
+						ID="pnlErrorMetrics"
+						Image="dash.ErrorMetrics.PNG"
+						>
+						<PanelContent>
+							<ChartCanvas
+								ID="barErrorMetrics"
+								rdAutoSortingSeries="True"
 								>
-								<AxisLabelStyle
-									FontAngle="45"
-									FontColor="transparent"
-									FontSize="10"
+								<Remark>
+									<Series
+										BarStacking="Stacked"
+										ChartXDataColumn="BUSINESS_UNIT_NAME"
+										ChartXDataColumnType="Text"
+										ChartYDataColumn="No_Of_Errors"
+										Color="#4373AD"
+										LinkedToYAxisID="y-Axix"
+										PointPadding="0"
+										Type="Bar"
+										>
+										<DataLabels
+											AlignmentHorizontal="Center"
+											AlignmentVertical="Bottom"
+											Format="###,###"
+											OffsetY="-20"
+										/>
+										<Action
+											Type="Report"
+											>
+											<Target
+												FrameID="Self"
+												Report="DashboardDrill.ErrorMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+											/>
+										</Action>
+										<Quicktip
+											Title="@Chart.BUSINESS_UNIT_NAME~"
+											>
+											<Remark>
+												<QuicktipRow
+													Caption="Name: "
+												/>
+											</Remark>
+											<QuicktipRow
+												Caption="Errors:"
+												Format="###,###,##0"
+												Value="@Chart.No_Of_Errors~"
+											/>
+											<QuicktipRow
+												Caption="Transactions:"
+												Format="###,###,##0"
+												Value="@Chart.No_Of_Transactions~"
+											/>
+										</Quicktip>
+									</Series>
+								</Remark>
+								<DataLayer
+									ConnectionID="con_DemoAnalytics"
+									ID="dlErrorMetrics"
+									Source="
+select User_Name Processed_By
+,sum(case when TransType=&apos;Transacation&apos; then 1 else 0 end) as No_Of_Transactions
+,sum(case when TransType=&apos;Error&apos; then 1 else 0 end) as No_Of_Errors
+from 
+(
+select User_Name,&apos;Transacation&apos; as TransType from error_Metrics_Header
+union all 
+select User_Name,&apos;Error&apos; as TransType from error_Metrics_Detail)t
+
+group by User_Name
+"
+									Type="SQL"
 								/>
-							</ChartYAxis>
-							<ChartXAxis>
-								<AxisLabelStyle
-									FontSize="10"
+								<ChartCanvasLegend
+									AlignmentHorizontal="Right"
+									AlignmentVertical="Middle"
+									LegendOrientation="Vertical"
+									LegendSpacing=" "
+									ShowAllCaption=" "
 								/>
-							</ChartXAxis>
-						</ChartCanvas>
-					</PanelContent>
-					<PanelParameters>
-						<Label
-							Caption="MyParameter:"
-							ID="lblMyParameter"
-						/>
-						<InputText
-							DefaultValue="@Request.MyParameter~"
-							ID="MyParameter"
-						/>
-					</PanelParameters>
-				</Panel>
-				<Panel
-					Caption="Error Metrics"
-					ID="pnlErrorMetrics"
-					Image="dash.ErrorMetrics.PNG"
-					>
-					<PanelContent>
-						<ChartCanvas
-							ID="barErrorMetrics"
-							rdAutoSortingSeries="True"
-							>
-							<Remark>
+								<ChartYAxis
+									ID="y-Axix"
+									>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartYAxis>
+								<ChartXAxis>
+									<AxisLabelStyle
+										FontAngle="45"
+										FontSize="10"
+									/>
+								</ChartXAxis>
+								<Remark>
+									<Series
+										ChartXDataColumn="BUSINESS_UNIT_NAME"
+										ChartXDataColumnType="Text"
+										ChartYDataColumn="No_Of_Transactions"
+										Color="#c0504d"
+										Type="Spline"
+										>
+										<DataLabels
+											Format="###,###"
+										/>
+										<MarkerPoints/>
+										<Quicktip
+											Title="Error Metrics"
+											>
+											<QuicktipRow
+												Caption="Name: "
+												Value="@Chart.BUSINESS_UNIT_NAME~"
+											/>
+											<QuicktipRow
+												Caption="Errors:"
+												Format="###,###,##0"
+												Value="@Chart.No_Of_Errors~"
+											/>
+											<QuicktipRow
+												Caption="Transactions:"
+												Format="###,###,##0"
+												Value="@Chart.No_Of_Transactions~"
+											/>
+										</Quicktip>
+									</Series>
+								</Remark>
 								<Series
-									BarStacking="Stacked"
-									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumn="Processed_By"
 									ChartXDataColumnType="Text"
-									ChartYDataColumn="No_Of_Errors"
+									ChartYDataColumn="No_Of_Transactions"
 									Color="#4373AD"
 									LinkedToYAxisID="y-Axix"
-									PointPadding="0"
-									Type="Bar"
+									Type="Area"
 									>
 									<DataLabels
 										AlignmentHorizontal="Center"
@@ -1805,15 +1924,15 @@ else
 										>
 										<Target
 											FrameID="Self"
-											Report="DashboardDrill.ErrorMetrics"
+											Report="DashboardDrill.TransactionMetrics"
 											Type="Report"
 										/>
 										<LinkParams
-											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+											BUSINESS_UNIT="@Chart.Processed_By~"
 										/>
 									</Action>
 									<Quicktip
-										Title="@Chart.BUSINESS_UNIT_NAME~"
+										Title="@Chart.Processed_by~"
 										>
 										<Remark>
 											<QuicktipRow
@@ -1832,64 +1951,40 @@ else
 										/>
 									</Quicktip>
 								</Series>
-							</Remark>
-							<DataLayer
-								ConnectionID="con_DemoAnalytics"
-								ID="dlErrorMetrics"
-								Source="
-select User_Name Processed_By
-,sum(case when TransType=&apos;Transacation&apos; then 1 else 0 end) as No_Of_Transactions
-,sum(case when TransType=&apos;Error&apos; then 1 else 0 end) as No_Of_Errors
-from 
-(
-select User_Name,&apos;Transacation&apos; as TransType from error_Metrics_Header
-union all 
-select User_Name,&apos;Error&apos; as TransType from error_Metrics_Detail)t
-
-group by User_Name
-"
-								Type="SQL"
-							/>
-							<ChartCanvasLegend
-								AlignmentHorizontal="Right"
-								AlignmentVertical="Middle"
-								LegendOrientation="Vertical"
-								LegendSpacing=" "
-								ShowAllCaption=" "
-							/>
-							<ChartYAxis
-								ID="y-Axix"
-								>
-								<AxisLabelStyle
-									FontAngle="45"
-									FontSize="10"
-								/>
-							</ChartYAxis>
-							<ChartXAxis>
-								<AxisLabelStyle
-									FontAngle="45"
-									FontSize="10"
-								/>
-							</ChartXAxis>
-							<Remark>
 								<Series
-									ChartXDataColumn="BUSINESS_UNIT_NAME"
+									ChartXDataColumn="Processed_By"
 									ChartXDataColumnType="Text"
-									ChartYDataColumn="No_Of_Transactions"
-									Color="#c0504d"
-									Type="Spline"
+									ChartYDataColumn="No_Of_Errors"
+									Color="#FE0000"
+									LinkedToYAxisID="y-Axix"
+									Type="Area"
 									>
 									<DataLabels
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Bottom"
 										Format="###,###"
+										OffsetY="-20"
 									/>
-									<MarkerPoints/>
-									<Quicktip
-										Title="Error Metrics"
+									<Action
+										Type="Report"
 										>
-										<QuicktipRow
-											Caption="Name: "
-											Value="@Chart.BUSINESS_UNIT_NAME~"
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ErrorMetrics"
+											Type="Report"
 										/>
+										<LinkParams
+											BUSINESS_UNIT="@Chart.Processed_By~"
+										/>
+									</Action>
+									<Quicktip
+										Title="@Chart.Processed_By~"
+										>
+										<Remark>
+											<QuicktipRow
+												Caption="Name: "
+											/>
+										</Remark>
 										<QuicktipRow
 											Caption="Errors:"
 											Format="###,###,##0"
@@ -1902,137 +1997,44 @@ group by User_Name
 										/>
 									</Quicktip>
 								</Series>
-							</Remark>
-							<Series
-								ChartXDataColumn="Processed_By"
-								ChartXDataColumnType="Text"
-								ChartYDataColumn="No_Of_Transactions"
-								Color="#4373AD"
-								LinkedToYAxisID="y-Axix"
-								Type="Area"
+							</ChartCanvas>
+						</PanelContent>
+					</Panel>
+					<Panel
+						Caption="Vacancy Metrics"
+						ID="pnlVacantPercent"
+						Image="dash.VacantPercent.PNG"
+						>
+						<PanelContent>
+							<Division
+								Class="bg-gradent-light p-0"
+								HtmlDiv="True"
 								>
-								<DataLabels
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Bottom"
-									Format="###,###"
-									OffsetY="-20"
-								/>
-								<Action
-									Type="Report"
-									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.TransactionMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										BUSINESS_UNIT="@Chart.Processed_By~"
-									/>
-								</Action>
-								<Quicktip
-									Title="@Chart.Processed_by~"
-									>
-									<Remark>
-										<QuicktipRow
-											Caption="Name: "
-										/>
-									</Remark>
-									<QuicktipRow
-										Caption="Errors:"
-										Format="###,###,##0"
-										Value="@Chart.No_Of_Errors~"
-									/>
-									<QuicktipRow
-										Caption="Transactions:"
-										Format="###,###,##0"
-										Value="@Chart.No_Of_Transactions~"
-									/>
-								</Quicktip>
-							</Series>
-							<Series
-								ChartXDataColumn="Processed_By"
-								ChartXDataColumnType="Text"
-								ChartYDataColumn="No_Of_Errors"
-								Color="#FE0000"
-								LinkedToYAxisID="y-Axix"
-								Type="Area"
-								>
-								<DataLabels
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Bottom"
-									Format="###,###"
-									OffsetY="-20"
-								/>
-								<Action
-									Type="Report"
-									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.ErrorMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										BUSINESS_UNIT="@Chart.Processed_By~"
-									/>
-								</Action>
-								<Quicktip
-									Title="@Chart.Processed_By~"
-									>
-									<Remark>
-										<QuicktipRow
-											Caption="Name: "
-										/>
-									</Remark>
-									<QuicktipRow
-										Caption="Errors:"
-										Format="###,###,##0"
-										Value="@Chart.No_Of_Errors~"
-									/>
-									<QuicktipRow
-										Caption="Transactions:"
-										Format="###,###,##0"
-										Value="@Chart.No_Of_Transactions~"
-									/>
-								</Quicktip>
-							</Series>
-						</ChartCanvas>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Vacancy Metrics"
-					ID="pnlVacantPercent"
-					Image="dash.VacantPercent.PNG"
-					>
-					<PanelContent>
-						<Division
-							Class="bg-gradent-light p-0"
-							HtmlDiv="True"
-							>
-							<Remark>
-								<ChartCanvas
-									ID="PieChartCanvas1"
-									>
-									<Series
-										ChartLabelColumn="BUSINESS_UNIT_NAME"
-										ChartYDataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
-										Type="Pie"
+								<Remark>
+									<ChartCanvas
+										ID="PieChartCanvas1"
 										>
-										<Quicktip>
-											<QuicktipRow
-												Caption="BUSINESS_UNIT_NAME: "
-												Value="@Chart.BUSINESS_UNIT_NAME~"
-											/>
-											<QuicktipRow
-												Caption="BUSINESS_UNIT: "
-												Format="mps9"
-												Value="@Chart.rdGrgrBUSINESS-BUSINESS_UNIT-sum~"
-											/>
-										</Quicktip>
-									</Series>
-									<DataLayer
-										ConnectionID="con_DemoAnalytics"
-										ID="SQLDataLayer1"
-										Source="
+										<Series
+											ChartLabelColumn="BUSINESS_UNIT_NAME"
+											ChartYDataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+											Type="Pie"
+											>
+											<Quicktip>
+												<QuicktipRow
+													Caption="BUSINESS_UNIT_NAME: "
+													Value="@Chart.BUSINESS_UNIT_NAME~"
+												/>
+												<QuicktipRow
+													Caption="BUSINESS_UNIT: "
+													Format="mps9"
+													Value="@Chart.rdGrgrBUSINESS-BUSINESS_UNIT-sum~"
+												/>
+											</Quicktip>
+										</Series>
+										<DataLayer
+											ConnectionID="con_DemoAnalytics"
+											ID="SQLDataLayer1"
+											Source="
 SELECT BUSINESS_UNIT
       ,BUSINESS_UNIT_NAME
       /*,UNIT_NUMBER*/
@@ -2057,38 +2059,160 @@ SELECT BUSINESS_UNIT
       ,188329
       ,38
 "
-										Type="SQL"
-										>
-										<GroupFilter
-											DataType="Text"
-											GroupColumn="BUSINESS_UNIT_NAME"
-											KeepGroupedRows="False"
+											Type="SQL"
 											>
-											<GroupAggregateColumn
-												AggregateColumn="BUSINESS_UNIT"
-												AggregateFunction="SUM"
+											<GroupFilter
+												DataType="Text"
+												GroupColumn="BUSINESS_UNIT_NAME"
+												KeepGroupedRows="False"
+												>
+												<GroupAggregateColumn
+													AggregateColumn="BUSINESS_UNIT"
+													AggregateFunction="SUM"
+													DataType="Number"
+													ID="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+												/>
+											</GroupFilter>
+											<SortFilter
 												DataType="Number"
-												ID="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+												SortColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+												SortSequence="Descending"
 											/>
-										</GroupFilter>
-										<SortFilter
-											DataType="Number"
-											SortColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
-											SortSequence="Descending"
+											<RelevanceFilter
+												DataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
+												IrrelevanceLabel="Other"
+												LabelColumn="BUSINESS_UNIT_NAME"
+												RelevanceType="NumberOfRows"
+												RelevanceValue="0"
+											/>
+											<CalculatedColumn
+												Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+												ID="colPercentVacant"
+											/>
+										</DataLayer>
+										<Remark>
+											<DataLayer
+												ConnectionID="con_DemoAnalytics"
+												ID="dlVacantPercent"
+												Source="
+SELECT BUSINESS_UNIT
+      ,BUSINESS_UNIT_NAME
+      /*,UNIT_NUMBER*/
+	  , count(1) as cntOccupied
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,TOTAL_AREA
+      ,TOTAL_UNITS
+  FROM Occupancy_Metrics
+  GROUP BY BUSINESS_UNIT
+	,BUSINESS_UNIT_NAME
+	,TOTAL_AREA
+	,TOTAL_UNITS
+
+	UNION ALL 
+	SELECT 188329
+      ,&apos;Others&apos;
+      /*,UNIT_NUMBER*/
+	  , 4
+      /*,UNIT_TYPE
+      ,SQUARE_FEET*/
+      ,188329
+      ,38
+  "
+												Type="SQL"
+												>
+												<CalculatedColumn
+													Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
+													ID="colPercentVacant"
+												/>
+											</DataLayer>
+										</Remark>
+										<ChartCanvasLegend
+											AlignmentHorizontal="Right"
+											AlignmentVertical="Middle"
+											LegendOrientation="Vertical"
+											LegendSpacing=" "
+											ShowAllCaption=" "
 										/>
-										<RelevanceFilter
-											DataColumn="rdGrgrBUSINESS-BUSINESS_UNIT-sum"
-											IrrelevanceLabel="Other"
-											LabelColumn="BUSINESS_UNIT_NAME"
-											RelevanceType="NumberOfRows"
-											RelevanceValue="0"
+										<ChartYAxis
+											HideAxis="True"
+											ID="y-Axix"
 										/>
-										<CalculatedColumn
-											Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
-											ID="colPercentVacant"
-										/>
-									</DataLayer>
-									<Remark>
+										<ChartXAxis>
+											<AxisLabelStyle
+												FontAngle="45"
+												FontSize="10"
+											/>
+											<ChartTicksAndGrid
+												AlternateGridColor="Transparent"
+												AlternateGridColorTransparency="15"
+												GridLineColor="Transparent"
+												GridLineColorTransparency="15"
+												GridLineThickness="0"
+												TickLineColor="Transparent"
+												TickLineColorTransparency="15"
+												TickLineLength="0"
+												TickLineThickness="0"
+											/>
+										</ChartXAxis>
+									</ChartCanvas>
+								</Remark>
+								<Remark>
+									<ChartCanvas
+										ID="barVacantPercent"
+										rdAutoSortingSeries="True"
+										SpacingLeft="20"
+										>
+										<Remark>
+											<Series
+												BarStacking="Stacked"
+												ChartXDataColumn="BUSINESS_UNIT_NAME"
+												ChartXDataColumnType="Text"
+												ChartYDataColumn="colPercentVacant"
+												Color="#4373AD"
+												LinkedToYAxisID="y-Axix"
+												PointPadding="0"
+												Type="Bar"
+												>
+												<DataLabels
+													AlignmentHorizontal="Center"
+													AlignmentVertical="Bottom"
+													FontColor="#ffffff"
+													Format="##\%"
+												/>
+												<Action
+													Type="Report"
+													>
+													<Target
+														FrameID="Self"
+														Report="DashboardDrill.OccupancyMetrics"
+														Type="Report"
+													/>
+													<LinkParams
+														BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+													/>
+												</Action>
+												<Quicktip
+													Title="@Chart.BUSINESS_UNIT_NAME~"
+													>
+													<QuicktipRow
+														Caption="Occupied:"
+														Format="###,##0"
+														Value="@Chart.cntOccupied~"
+													/>
+													<QuicktipRow
+														Caption="Total:"
+														Format="###,##0"
+														Value="@Chart.TOTAL_UNITS~"
+													/>
+													<QuicktipRow
+														Caption="Vacant:"
+														Format="##\%"
+														Value="@Chart.colPercentVacant~"
+													/>
+												</Quicktip>
+											</Series>
+										</Remark>
 										<DataLayer
 											ConnectionID="con_DemoAnalytics"
 											ID="dlVacantPercent"
@@ -2124,96 +2248,94 @@ SELECT BUSINESS_UNIT
 												ID="colPercentVacant"
 											/>
 										</DataLayer>
-									</Remark>
-									<ChartCanvasLegend
-										AlignmentHorizontal="Right"
-										AlignmentVertical="Middle"
-										LegendOrientation="Vertical"
-										LegendSpacing=" "
-										ShowAllCaption=" "
-									/>
-									<ChartYAxis
-										HideAxis="True"
-										ID="y-Axix"
-									/>
-									<ChartXAxis>
-										<AxisLabelStyle
-											FontAngle="45"
-											FontSize="10"
+										<ChartCanvasLegend
+											AlignmentHorizontal="Right"
+											AlignmentVertical="Middle"
+											LegendOrientation="Vertical"
+											LegendSpacing=" "
+											ShowAllCaption=" "
 										/>
-										<ChartTicksAndGrid
-											AlternateGridColor="Transparent"
-											AlternateGridColorTransparency="15"
-											GridLineColor="Transparent"
-											GridLineColorTransparency="15"
-											GridLineThickness="0"
-											TickLineColor="Transparent"
-											TickLineColorTransparency="15"
-											TickLineLength="0"
-											TickLineThickness="0"
+										<ChartYAxis
+											HideAxis="True"
+											ID="y-Axix"
 										/>
-									</ChartXAxis>
-								</ChartCanvas>
-							</Remark>
-							<Remark>
-								<ChartCanvas
-									ID="barVacantPercent"
-									rdAutoSortingSeries="True"
-									SpacingLeft="20"
-									>
-									<Remark>
-										<Series
-											BarStacking="Stacked"
-											ChartXDataColumn="BUSINESS_UNIT_NAME"
-											ChartXDataColumnType="Text"
-											ChartYDataColumn="colPercentVacant"
-											Color="#4373AD"
-											LinkedToYAxisID="y-Axix"
-											PointPadding="0"
-											Type="Bar"
-											>
-											<DataLabels
-												AlignmentHorizontal="Center"
-												AlignmentVertical="Bottom"
-												FontColor="#ffffff"
-												Format="##\%"
+										<ChartXAxis>
+											<AxisLabelStyle
+												FontAngle="45"
+												FontSize="10"
 											/>
-											<Action
-												Type="Report"
-												>
-												<Target
-													FrameID="Self"
-													Report="DashboardDrill.OccupancyMetrics"
-													Type="Report"
-												/>
-												<LinkParams
-													BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
-												/>
-											</Action>
-											<Quicktip
-												Title="@Chart.BUSINESS_UNIT_NAME~"
-												>
+											<ChartTicksAndGrid
+												AlternateGridColor="Transparent"
+												AlternateGridColorTransparency="15"
+												GridLineColor="Transparent"
+												GridLineColorTransparency="15"
+												GridLineThickness="0"
+												TickLineColor="Transparent"
+												TickLineColorTransparency="15"
+												TickLineLength="0"
+												TickLineThickness="0"
+											/>
+										</ChartXAxis>
+									</ChartCanvas>
+								</Remark>
+								<ChartCanvas
+									ID="PieChartCanvas2"
+									>
+									<Series
+										ChartLabelColumn="BUSINESS_UNIT_NAME"
+										ChartYDataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+										ShowDataValues="True"
+										ShowDataValuesFormat="#%"
+										Type="Pie"
+										>
+										<Remark>
+											<Quicktip>
 												<QuicktipRow
-													Caption="Occupied:"
-													Format="###,##0"
-													Value="@Chart.cntOccupied~"
+													Caption="BUSINESS_UNIT_NAME: "
+													Value="@Chart.BUSINESS_UNIT_NAME~"
 												/>
 												<QuicktipRow
-													Caption="Total:"
-													Format="###,##0"
-													Value="@Chart.TOTAL_UNITS~"
-												/>
-												<QuicktipRow
-													Caption="Vacant:"
-													Format="##\%"
-													Value="@Chart.colPercentVacant~"
+													Caption="TOTAL_UNITS: "
+													Format="mps9"
+													Value="@Chart.rdGrgrTOTAL-TOTAL_UNITS-sum~"
 												/>
 											</Quicktip>
-										</Series>
-									</Remark>
+										</Remark>
+										<Action
+											Type="Report"
+											>
+											<Target
+												FrameID="Self"
+												Report="DashboardDrill.OccupancyMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
+											/>
+										</Action>
+										<Quicktip
+											Title="@Chart.BUSINESS_UNIT_NAME~"
+											>
+											<QuicktipRow
+												Caption="Occupied:"
+												Format="###,##0"
+												Value="@Chart.cntOccupied~"
+											/>
+											<QuicktipRow
+												Caption="Total:"
+												Format="###,##0"
+												Value="@Chart.TOTAL_UNITS~"
+											/>
+											<QuicktipRow
+												Caption="Vacant:"
+												Format="##\%"
+												Value="@Chart.colPercentVacant~"
+											/>
+										</Quicktip>
+									</Series>
 									<DataLayer
 										ConnectionID="con_DemoAnalytics"
-										ID="dlVacantPercent"
+										ID="SQLDataLayer2"
 										Source="
 SELECT BUSINESS_UNIT
       ,BUSINESS_UNIT_NAME
@@ -2233,14 +2355,38 @@ SELECT BUSINESS_UNIT
 	SELECT 188329
       ,&apos;Others&apos;
       /*,UNIT_NUMBER*/
-	  , 4
+	  , 95
       /*,UNIT_TYPE
       ,SQUARE_FEET*/
       ,188329
-      ,38
-  "
+      ,110
+"
 										Type="SQL"
 										>
+										<GroupFilter
+											DataType="Text"
+											GroupColumn="BUSINESS_UNIT_NAME"
+											KeepGroupedRows="False"
+											>
+											<GroupAggregateColumn
+												AggregateColumn="TOTAL_UNITS"
+												AggregateFunction="SUM"
+												DataType="Number"
+												ID="rdGrgrTOTAL-TOTAL_UNITS-sum"
+											/>
+										</GroupFilter>
+										<SortFilter
+											DataType="Number"
+											SortColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+											SortSequence="Descending"
+										/>
+										<RelevanceFilter
+											DataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
+											IrrelevanceLabel="Other"
+											LabelColumn="BUSINESS_UNIT_NAME"
+											RelevanceType="NumberOfRows"
+											RelevanceValue="0"
+										/>
 										<CalculatedColumn
 											Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
 											ID="colPercentVacant"
@@ -2275,284 +2421,32 @@ SELECT BUSINESS_UNIT
 										/>
 									</ChartXAxis>
 								</ChartCanvas>
-							</Remark>
-							<ChartCanvas
-								ID="PieChartCanvas2"
+							</Division>
+						</PanelContent>
+					</Panel>
+					<Panel
+						Caption="Lease Expiration Metrics"
+						ID="pnlLeaseExpirationMetrics"
+						Image="dash.LeaseExpiration.PNG"
+						>
+						<PanelContent>
+							<Division
+								Class="bg-gradent-light p-0"
+								HtmlDiv="True"
 								>
-								<Series
-									ChartLabelColumn="BUSINESS_UNIT_NAME"
-									ChartYDataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
-									ShowDataValues="True"
-									ShowDataValuesFormat="#%"
-									Type="Pie"
-									>
-									<Remark>
-										<Quicktip>
-											<QuicktipRow
-												Caption="BUSINESS_UNIT_NAME: "
-												Value="@Chart.BUSINESS_UNIT_NAME~"
-											/>
-											<QuicktipRow
-												Caption="TOTAL_UNITS: "
-												Format="mps9"
-												Value="@Chart.rdGrgrTOTAL-TOTAL_UNITS-sum~"
-											/>
-										</Quicktip>
-									</Remark>
-									<Action
-										Type="Report"
-										>
-										<Target
-											FrameID="Self"
-											Report="DashboardDrill.OccupancyMetrics"
-											Type="Report"
-										/>
-										<LinkParams
-											BUSINESS_UNIT="@Chart.BUSINESS_UNIT~"
-										/>
-									</Action>
-									<Quicktip
-										Title="@Chart.BUSINESS_UNIT_NAME~"
-										>
-										<QuicktipRow
-											Caption="Occupied:"
-											Format="###,##0"
-											Value="@Chart.cntOccupied~"
-										/>
-										<QuicktipRow
-											Caption="Total:"
-											Format="###,##0"
-											Value="@Chart.TOTAL_UNITS~"
-										/>
-										<QuicktipRow
-											Caption="Vacant:"
-											Format="##\%"
-											Value="@Chart.colPercentVacant~"
-										/>
-									</Quicktip>
-								</Series>
-								<DataLayer
-									ConnectionID="con_DemoAnalytics"
-									ID="SQLDataLayer2"
-									Source="
-SELECT BUSINESS_UNIT
-      ,BUSINESS_UNIT_NAME
-      /*,UNIT_NUMBER*/
-	  , count(1) as cntOccupied
-      /*,UNIT_TYPE
-      ,SQUARE_FEET*/
-      ,TOTAL_AREA
-      ,TOTAL_UNITS
-  FROM Occupancy_Metrics
-  GROUP BY BUSINESS_UNIT
-	,BUSINESS_UNIT_NAME
-	,TOTAL_AREA
-	,TOTAL_UNITS
-
-	UNION ALL 
-	SELECT 188329
-      ,&apos;Others&apos;
-      /*,UNIT_NUMBER*/
-	  , 95
-      /*,UNIT_TYPE
-      ,SQUARE_FEET*/
-      ,188329
-      ,110
-"
-									Type="SQL"
-									>
-									<GroupFilter
-										DataType="Text"
-										GroupColumn="BUSINESS_UNIT_NAME"
-										KeepGroupedRows="False"
-										>
-										<GroupAggregateColumn
-											AggregateColumn="TOTAL_UNITS"
-											AggregateFunction="SUM"
-											DataType="Number"
-											ID="rdGrgrTOTAL-TOTAL_UNITS-sum"
-										/>
-									</GroupFilter>
-									<SortFilter
-										DataType="Number"
-										SortColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
-										SortSequence="Descending"
-									/>
-									<RelevanceFilter
-										DataColumn="rdGrgrTOTAL-TOTAL_UNITS-sum"
-										IrrelevanceLabel="Other"
-										LabelColumn="BUSINESS_UNIT_NAME"
-										RelevanceType="NumberOfRows"
-										RelevanceValue="0"
-									/>
-									<CalculatedColumn
-										Formula="100-((@Data.cntOccupied~/@Data.TOTAL_UNITS~)*100)"
-										ID="colPercentVacant"
-									/>
-								</DataLayer>
-								<ChartCanvasLegend
-									AlignmentHorizontal="Right"
-									AlignmentVertical="Middle"
-									LegendOrientation="Vertical"
-									LegendSpacing=" "
-									ShowAllCaption=" "
-								/>
-								<ChartYAxis
-									HideAxis="True"
-									ID="y-Axix"
-								/>
-								<ChartXAxis>
-									<AxisLabelStyle
-										FontAngle="45"
-										FontSize="10"
-									/>
-									<ChartTicksAndGrid
-										AlternateGridColor="Transparent"
-										AlternateGridColorTransparency="15"
-										GridLineColor="Transparent"
-										GridLineColorTransparency="15"
-										GridLineThickness="0"
-										TickLineColor="Transparent"
-										TickLineColorTransparency="15"
-										TickLineLength="0"
-										TickLineThickness="0"
-									/>
-								</ChartXAxis>
-							</ChartCanvas>
-						</Division>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Lease Expiration Metrics"
-					ID="pnlLeaseExpirationMetrics"
-					Image="dash.LeaseExpiration.PNG"
-					>
-					<PanelContent>
-						<Division
-							Class="bg-gradent-light p-0"
-							HtmlDiv="True"
-							>
-							<ChartCanvas
-								ID="barLeaseExpirationMetrics"
-								rdAutoSortingSeries="True"
-								>
-								<Series
-									ChartXDataColumn="colCategory"
-									ChartYDataColumn="aggColCntExires"
-									Color="#4373AD"
-									LinkedToYAxisID="y-Axix"
-									Type="Bar"
-									>
-									<DataLabels
-										FontSize="10"
-									/>
-									<Action
-										Type="Report"
-										>
-										<Target
-											FrameID="Self"
-											Report="DashboardDrill.LeaseExpireMetrics"
-											Type="Report"
-										/>
-										<LinkParams
-											EndDate="@Chart.colExpiresIn~"
-										/>
-									</Action>
-									<Quicktip
-										Title="@Chart.colCategory~"
-										>
-										<QuicktipRow
-											Caption="Count Expires:"
-											Format="###,###,##0"
-											Value="@Chart.aggColCntExires~"
-										/>
-									</Quicktip>
-								</Series>
-								<DataLayer
-									ConnectionID="con_DemoAnalytics"
-									ID="dlLeaseExpirationMetrics"
-									Source="SELECT count(1) as cntRows
-	, END_DATE
-  FROM Lease_Expiration_Metrics
-  group by END_DATE
-
-ORDER BY END_DATE"
-									Type="SQL"
-									>
-									<TimePeriodColumn
-										DataColumn="END_DATE"
-										ID="colExpiresIn"
-										TimePeriod="FirstDayOfMonth"
-									/>
-									<CalculatedColumn
-										Formula="if (Year(&apos;@Data.colExpiresIn~&apos;) &lt; 2030)
-	MonthName(Month(&apos;@Data.colExpiresIn~&apos;), true) + &apos;, &apos; + Year(&apos;@Data.colExpiresIn~&apos;);
-else 
-	&apos;Total&apos;;"
-										ID="colCategory"
-									/>
-									<GroupFilter
-										GroupColumn="colCategory"
-										ID="grpLeaseExpiration"
-										>
-										<GroupAggregateColumn
-											AggregateColumn="cntRows"
-											AggregateFunction="Sum"
-											ID="aggColCntExires"
-										/>
-									</GroupFilter>
-								</DataLayer>
-								<ChartCanvasLegend
-									AlignmentHorizontal="Right"
-									AlignmentVertical="Middle"
-									LegendOrientation="Vertical"
-									LegendSpacing=" "
-									ShowAllCaption=" "
-								/>
-								<ChartYAxis
-									HideAxis="True"
-									ID="y-Axix"
-									>
-									<AxisLabelStyle
-										FontAngle="45"
-										FontSize="10"
-									/>
-								</ChartYAxis>
-								<ChartXAxis
-									AxisLineColorTransparency="15"
-									>
-									<AxisLabelStyle
-										FontAngle="45"
-										FontSize="10"
-									/>
-									<ChartTicksAndGrid
-										AlternateGridColor="Transparent"
-										AlternateGridColorTransparency="15"
-										GridLineColor="Transparent"
-										GridLineColorTransparency="15"
-										GridLineThickness="0"
-										TickLineColor="Transparent"
-										TickLineColorTransparency="15"
-										TickLineLength="0"
-										TickLineThickness="0"
-									/>
-								</ChartXAxis>
-							</ChartCanvas>
-							<Remark>
 								<ChartCanvas
 									ID="barLeaseExpirationMetrics"
 									rdAutoSortingSeries="True"
 									>
 									<Series
-										ChartXDataColumn="XAxis"
-										ChartYDataColumn="YAxis"
-										Color="#4f81bd"
+										ChartXDataColumn="colCategory"
+										ChartYDataColumn="aggColCntExires"
+										Color="#4373AD"
 										LinkedToYAxisID="y-Axix"
 										Type="Bar"
 										>
 										<DataLabels
-											AlignmentHorizontal="Center"
-											AlignmentVertical="Bottom"
+											FontSize="10"
 										/>
 										<Action
 											Type="Report"
@@ -2566,11 +2460,119 @@ else
 												EndDate="@Chart.colExpiresIn~"
 											/>
 										</Action>
+										<Quicktip
+											Title="@Chart.colCategory~"
+											>
+											<QuicktipRow
+												Caption="Count Expires:"
+												Format="###,###,##0"
+												Value="@Chart.aggColCntExires~"
+											/>
+										</Quicktip>
 									</Series>
 									<DataLayer
 										ConnectionID="con_DemoAnalytics"
 										ID="dlLeaseExpirationMetrics"
-										Source="SELECT count(1) as &apos;YAxis&apos;
+										Source="SELECT count(1) as cntRows
+	, END_DATE
+  FROM Lease_Expiration_Metrics
+  group by END_DATE
+
+ORDER BY END_DATE"
+										Type="SQL"
+										>
+										<TimePeriodColumn
+											DataColumn="END_DATE"
+											ID="colExpiresIn"
+											TimePeriod="FirstDayOfMonth"
+										/>
+										<CalculatedColumn
+											Formula="if (Year(&apos;@Data.colExpiresIn~&apos;) &lt; 2030)
+	MonthName(Month(&apos;@Data.colExpiresIn~&apos;), true) + &apos;, &apos; + Year(&apos;@Data.colExpiresIn~&apos;);
+else 
+	&apos;Total&apos;;"
+											ID="colCategory"
+										/>
+										<GroupFilter
+											GroupColumn="colCategory"
+											ID="grpLeaseExpiration"
+											>
+											<GroupAggregateColumn
+												AggregateColumn="cntRows"
+												AggregateFunction="Sum"
+												ID="aggColCntExires"
+											/>
+										</GroupFilter>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Right"
+										AlignmentVertical="Middle"
+										LegendOrientation="Vertical"
+										LegendSpacing=" "
+										ShowAllCaption=" "
+									/>
+									<ChartYAxis
+										HideAxis="True"
+										ID="y-Axix"
+										>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+									</ChartYAxis>
+									<ChartXAxis
+										AxisLineColorTransparency="15"
+										>
+										<AxisLabelStyle
+											FontAngle="45"
+											FontSize="10"
+										/>
+										<ChartTicksAndGrid
+											AlternateGridColor="Transparent"
+											AlternateGridColorTransparency="15"
+											GridLineColor="Transparent"
+											GridLineColorTransparency="15"
+											GridLineThickness="0"
+											TickLineColor="Transparent"
+											TickLineColorTransparency="15"
+											TickLineLength="0"
+											TickLineThickness="0"
+										/>
+									</ChartXAxis>
+								</ChartCanvas>
+								<Remark>
+									<ChartCanvas
+										ID="barLeaseExpirationMetrics"
+										rdAutoSortingSeries="True"
+										>
+										<Series
+											ChartXDataColumn="XAxis"
+											ChartYDataColumn="YAxis"
+											Color="#4f81bd"
+											LinkedToYAxisID="y-Axix"
+											Type="Bar"
+											>
+											<DataLabels
+												AlignmentHorizontal="Center"
+												AlignmentVertical="Bottom"
+											/>
+											<Action
+												Type="Report"
+												>
+												<Target
+													FrameID="Self"
+													Report="DashboardDrill.LeaseExpireMetrics"
+													Type="Report"
+												/>
+												<LinkParams
+													EndDate="@Chart.colExpiresIn~"
+												/>
+											</Action>
+										</Series>
+										<DataLayer
+											ConnectionID="con_DemoAnalytics"
+											ID="dlLeaseExpirationMetrics"
+											Source="SELECT count(1) as &apos;YAxis&apos;
       , convert(char(3), END_DATE, 0) + &apos;, &apos; + datename(year, END_DATE) as &apos;XAxis&apos;
       , DATEADD(month, DATEDIFF(month, 0, END_DATE), 0) as sortBy
   FROM Lease_Expiration_Metrics
@@ -2581,239 +2583,478 @@ UNION
 	  , DATEADD(year, 10, getdate()) as sortBy
   FROM Lease_Expiration_Metrics
 order by sortBy"
-										Type="SQL"
-										>
-										<Remark>
-											<TimePeriodColumn
-												DataColumn="END_DATE"
-												ID="colExpiresIn"
-												TimePeriod="FirstDayOfMonth"
-											/>
-										</Remark>
-										<Remark>
-											<TimePeriodColumn
-												ID="colExpiresSort"
-												TimePeriod="Date"
-											/>
-										</Remark>
-										<Remark>
-											<AggregateColumn
-												AggregateColumn="BUSINESS_UNIT"
-												AggregateFunction="Count"
-												ID="total"
-											/>
-										</Remark>
-										<Remark>
-											<GroupFilter
-												GroupColumn="colExpiresIn"
-												ID="grpLeaseExpiration"
-												>
-												<GroupAggregateColumn
-													AggregateColumn="colExpiresIn"
-													AggregateFunction="Count"
-													ID="aggColCntExires"
-												/>
-											</GroupFilter>
-										</Remark>
-										<Join
-											ID="unionTotal"
-											JoinType="Union"
+											Type="SQL"
 											>
-											<DataLayer
-												ConnectionID="con_DemoAnalytics"
-												Source="SELECT count(1) as &apos;YAxis&apos;
+											<Remark>
+												<TimePeriodColumn
+													DataColumn="END_DATE"
+													ID="colExpiresIn"
+													TimePeriod="FirstDayOfMonth"
+												/>
+											</Remark>
+											<Remark>
+												<TimePeriodColumn
+													ID="colExpiresSort"
+													TimePeriod="Date"
+												/>
+											</Remark>
+											<Remark>
+												<AggregateColumn
+													AggregateColumn="BUSINESS_UNIT"
+													AggregateFunction="Count"
+													ID="total"
+												/>
+											</Remark>
+											<Remark>
+												<GroupFilter
+													GroupColumn="colExpiresIn"
+													ID="grpLeaseExpiration"
+													>
+													<GroupAggregateColumn
+														AggregateColumn="colExpiresIn"
+														AggregateFunction="Count"
+														ID="aggColCntExires"
+													/>
+												</GroupFilter>
+											</Remark>
+											<Join
+												ID="unionTotal"
+												JoinType="Union"
+												>
+												<DataLayer
+													ConnectionID="con_DemoAnalytics"
+													Source="SELECT count(1) as &apos;YAxis&apos;
       , &apos;TOTAL&apos; as &apos;XAxis&apos;
   FROM Lease_Expiration_Metrics"
-												Type="SQL"
-											/>
-										</Join>
-									</DataLayer>
-									<ChartCanvasLegend
-										AlignmentHorizontal="Right"
-										AlignmentVertical="Middle"
-										LegendOrientation="Vertical"
-										LegendSpacing=" "
-										ShowAllCaption=" "
-									/>
-									<ChartYAxis
-										ID="y-Axix"
-									/>
-									<ChartXAxis>
-										<AxisLabelStyle
-											FontAngle="45"
-											FontSize="10"
+													Type="SQL"
+												/>
+											</Join>
+										</DataLayer>
+										<ChartCanvasLegend
+											AlignmentHorizontal="Right"
+											AlignmentVertical="Middle"
+											LegendOrientation="Vertical"
+											LegendSpacing=" "
+											ShowAllCaption=" "
 										/>
-									</ChartXAxis>
-								</ChartCanvas>
-							</Remark>
-						</Division>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Vacancy Metrics - Property wise"
-					ID="pnlPropertyPieChart_ShopOne"
-					>
-					<PanelContent>
-						<ChartCanvas
-							ChartHeight="300"
-							ChartWidth="500"
-							ID="PieChartCanvas5"
-							>
-							<Series
-								ChartLabelColumn="Property_Name"
-								ChartYDataColumn="rdGrAggr-cnt-sum"
-								Type="Pie"
+										<ChartYAxis
+											ID="y-Axix"
+										/>
+										<ChartXAxis>
+											<AxisLabelStyle
+												FontAngle="45"
+												FontSize="10"
+											/>
+										</ChartXAxis>
+									</ChartCanvas>
+								</Remark>
+							</Division>
+						</PanelContent>
+					</Panel>
+					<Panel
+						Caption="Vacancy Metrics - Property wise"
+						ID="pnlPropertyPieChart_ShopOne"
+						>
+						<PanelContent>
+							<ChartCanvas
+								ChartHeight="300"
+								ChartWidth="500"
+								ID="PieChartCanvas5"
 								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="Property Name: "
-										Value="@Chart.Property_Name~"
-									/>
-									<QuicktipRow
-										Caption="Count: "
-										Format="mps9"
-										Value="@Chart.rdGrAggr-cnt-sum~"
-									/>
-								</Quicktip>
-								<Action
-									Type="Report"
+								<Series
+									ChartLabelColumn="Property_Name"
+									ChartYDataColumn="rdGrAggr-cnt-sum"
+									Type="Pie"
 									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.ShopOne.VacancyMatrix"
+									<Quicktip>
+										<QuicktipRow
+											Caption="Property Name: "
+											Value="@Chart.Property_Name~"
+										/>
+										<QuicktipRow
+											Caption="Count: "
+											Format="mps9"
+											Value="@Chart.rdGrAggr-cnt-sum~"
+										/>
+									</Quicktip>
+									<Action
 										Type="Report"
-									/>
-									<LinkParams
-										Property_Name="@Chart.Property_Name~"
-									/>
-								</Action>
-							</Series>
-							<Resizer
-								MinHeight="150"
-								MinWidth="250"
-							/>
-							<DataLayer
-								ConnectionID="con_DemoShopOne_LeaseTracker"
-								ID="SQLDataLayer8"
-								Source="SELECT COUNT(b2.Fld_Field_2) AS cnt, b2.Fld_Field_2 AS Property_Name
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ShopOne.VacancyMatrix"
+											Type="Report"
+										/>
+										<LinkParams
+											Property_Name="@Chart.Property_Name~"
+										/>
+									</Action>
+								</Series>
+								<Resizer
+									MinHeight="150"
+									MinWidth="250"
+								/>
+								<DataLayer
+									ConnectionID="con_DemoShopOne_LeaseTracker"
+									ID="SQLDataLayer8"
+									Source="SELECT COUNT(b2.Fld_Field_2) AS cnt, b2.Fld_Field_2 AS Property_Name
 FROM v_xl_TBL_Section_1 a
 LEFT JOIN v_xl_TBL_Section_2 b2
 ON b2.Fld_Field_2 = a.Fld_Field_2
 WHERE a.Fld_Field_6=&apos;VACANT&apos;
 GROUP BY b2.Fld_Field_2"
-								Type="SQL"
-								>
-								<GroupFilter
-									DataType="Text"
-									GroupColumn="Property_Name"
-									KeepGroupedRows="False"
+									Type="SQL"
 									>
-									<GroupAggregateColumn
-										AggregateColumn="cnt"
-										AggregateFunction="SUM"
+									<GroupFilter
+										DataType="Text"
+										GroupColumn="Property_Name"
+										KeepGroupedRows="False"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="cnt"
+											AggregateFunction="SUM"
+											DataType="Number"
+											ID="rdGrAggr-cnt-sum"
+										/>
+									</GroupFilter>
+									<SortFilter
 										DataType="Number"
-										ID="rdGrAggr-cnt-sum"
+										SortColumn="rdGrAggr-cnt-sum"
+										SortSequence="Descending"
 									/>
-								</GroupFilter>
-								<SortFilter
-									DataType="Number"
-									SortColumn="rdGrAggr-cnt-sum"
-									SortSequence="Descending"
-								/>
-								<RelevanceFilter
-									DataColumn="rdGrAggr-cnt-sum"
-									IrrelevanceLabel="Other"
-									LabelColumn="Property_Name"
-									RelevanceType="NumberOfRows"
-									RelevanceValue="0"
-								/>
-							</DataLayer>
-						</ChartCanvas>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Vacancy Metrics - Lead wise"
-					ID="pnlLeadPieChart_ShopOne"
-					>
-					<PanelContent>
-						<ChartCanvas
-							ChartHeight="300"
-							ChartWidth="500"
-							ID="PieChartCanvas4"
-							>
-							<Series
-								ChartLabelColumn="Lead_Name"
-								ChartYDataColumn="rdGrAggr-Pkey-sum"
-								Type="Pie"
+									<RelevanceFilter
+										DataColumn="rdGrAggr-cnt-sum"
+										IrrelevanceLabel="Other"
+										LabelColumn="Property_Name"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="0"
+									/>
+								</DataLayer>
+							</ChartCanvas>
+						</PanelContent>
+					</Panel>
+					<Panel
+						Caption="Vacancy Metrics - Lead wise"
+						ID="pnlLeadPieChart_ShopOne"
+						>
+						<PanelContent>
+							<ChartCanvas
+								ChartHeight="300"
+								ChartWidth="500"
+								ID="PieChartCanvas4"
 								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="Lead Name: "
-										Value="@Chart.Lead_Name~"
-									/>
-									<QuicktipRow
-										Caption="Count: "
-										Format="mps9"
-										Value="@Chart.rdGrAggr-Pkey-sum~"
-									/>
-								</Quicktip>
-								<Action
-									Type="Report"
+								<Series
+									ChartLabelColumn="Lead_Name"
+									ChartYDataColumn="rdGrAggr-Pkey-sum"
+									Type="Pie"
 									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.ShopOne.LeadVacancyMatrix"
+									<Quicktip>
+										<QuicktipRow
+											Caption="Lead Name: "
+											Value="@Chart.Lead_Name~"
+										/>
+										<QuicktipRow
+											Caption="Count: "
+											Format="mps9"
+											Value="@Chart.rdGrAggr-Pkey-sum~"
+										/>
+									</Quicktip>
+									<Action
 										Type="Report"
-									/>
-									<LinkParams
-										Lead_Name="@Chart.Lead_Name~"
-									/>
-								</Action>
-							</Series>
-							<Resizer
-								MinHeight="150"
-								MinWidth="250"
-							/>
-							<DataLayer
-								ConnectionID="con_DemoShopOne_LeaseTracker"
-								ID="SQLDataLayer7"
-								Source="SELECT
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ShopOne.LeadVacancyMatrix"
+											Type="Report"
+										/>
+										<LinkParams
+											Lead_Name="@Chart.Lead_Name~"
+										/>
+									</Action>
+								</Series>
+								<Resizer
+									MinHeight="150"
+									MinWidth="250"
+								/>
+								<DataLayer
+									ConnectionID="con_DemoShopOne_LeaseTracker"
+									ID="SQLDataLayer7"
+									Source="SELECT
 b2.Fld_FKEY_Field_1 AS Lead_Name,
 COUNT(b2.Fld_FKEY_Field_1) AS Pkey
 FROM v_xl_TBL_Section_1 b2
 WHERE b2.Fld_Field_6=&apos;VACANT&apos;
 GROUP BY b2.Fld_FKEY_Field_1"
-								Type="SQL"
-								>
-								<GroupFilter
-									DataType="Text"
-									GroupColumn="Lead_Name"
-									KeepGroupedRows="False"
+									Type="SQL"
 									>
-									<GroupAggregateColumn
-										AggregateColumn="Pkey"
-										AggregateFunction="SUM"
+									<GroupFilter
+										DataType="Text"
+										GroupColumn="Lead_Name"
+										KeepGroupedRows="False"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="Pkey"
+											AggregateFunction="SUM"
+											DataType="Number"
+											ID="rdGrAggr-Pkey-sum"
+										/>
+									</GroupFilter>
+									<SortFilter
 										DataType="Number"
-										ID="rdGrAggr-Pkey-sum"
+										SortColumn="rdGrAggr-Pkey-sum"
+										SortSequence="Descending"
 									/>
-								</GroupFilter>
-								<SortFilter
-									DataType="Number"
-									SortColumn="rdGrAggr-Pkey-sum"
-									SortSequence="Descending"
-								/>
-								<RelevanceFilter
-									DataColumn="rdGrAggr-Pkey-sum"
-									IrrelevanceLabel="Other"
-									LabelColumn="Lead_Name"
-									RelevanceType="NumberOfRows"
-									RelevanceValue="0"
-								/>
-							</DataLayer>
-						</ChartCanvas>
-					</PanelContent>
-				</Panel>
-				<Remark>
+									<RelevanceFilter
+										DataColumn="rdGrAggr-Pkey-sum"
+										IrrelevanceLabel="Other"
+										LabelColumn="Lead_Name"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="0"
+									/>
+								</DataLayer>
+							</ChartCanvas>
+						</PanelContent>
+					</Panel>
+					<Remark>
+						<Panel
+							Caption="Lease Notice Metrics"
+							ID="pnlLeaseNoticeMetrics_ShopOne"
+							PanelDescription="Lease Notice Methrics in Next six months"
+							>
+							<PanelContent>
+								<ChartCanvas
+									ChartOrientation="Default"
+									ID="barLeaseNotice"
+									>
+									<Series
+										BarStacking="Stacked"
+										ChartXDataColumn="NoticeDate"
+										ChartXDataColumnType="Text"
+										ChartYDataColumn="rdAggrLead"
+										Color="#8d99a6,#c0504d,#689ad6,#8064a2,#f89609,#4dbf28"
+										Type="Bar"
+										>
+										<Quicktip>
+											<QuicktipRow
+												Caption="NoticeDate: "
+												Value="@Chart.NoticeDate~"
+											/>
+											<QuicktipRow
+												Caption="# of Lease: "
+												Format="#,##0."
+												Value="@Chart.rdCrosstabValue~"
+											/>
+											<QuicktipRow
+												Caption="Lead: "
+												Value="@Chart.rdCrosstabColumn~"
+											/>
+										</Quicktip>
+										<Action
+											ID="ar_leaseExpirationMetrics"
+											Type="Report"
+											>
+											<Target
+												Report="DashboardDrill.ShopOne.LeaseNoticeMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												LeaseExpiration_Lead="@Chart.rdCrosstabColumn~"
+												LeaseExpiration_Month="@Chart.NoticeDate~"
+											/>
+										</Action>
+										<DataLabels
+											AlignmentHorizontal="Center"
+											AlignmentVertical="Middle"
+											FontColor="#ffffff"
+											FontSize="10px"
+											Format="###,###"
+										/>
+									</Series>
+									<RelevanceFilter
+										IrrelevanceLabel="Other"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="8"
+									/>
+									<ChartXAxis
+										AxisType="Category"
+										>
+										<AxisLabelStyle
+											FontAngle="0"
+											FontSize="10"
+										/>
+									</ChartXAxis>
+									<ChartYAxis
+										AxisCaption="# of Leases"
+										>
+										<AxisLabelStyle
+											FontAngle="0"
+											FontSize="10"
+										/>
+									</ChartYAxis>
+									<DataLayer
+										ConnectionID="con_DemoShopOne_LeaseTracker"
+										ID="SQLDataLayer3"
+										Source="SELECT  Lead , DATE_FORMAT(noticeDate,&apos;%M-%Y&apos;) AS NoticeDate  FROM (
+SELECT pkey,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
+,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,STR_TO_DATE(Fld_Field_12,&apos;%m/%d/%Y&apos;) AS NoticeDate
+,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
+FROM v_xl_tbl_section_1 ps 
+)t
+WHERE 
+-- (ExpireDate  between now() and date_Add(Now(), interval 6 month)) and 
+NoticeDate BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
+and SuiteStatus &lt;&gt; &apos;VACANT&apos;
+ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
+										Type="SQL"
+										>
+										<CrosstabFilter
+											CrosstabColumn="Lead"
+											CrosstabLabelColumn="NoticeDate"
+											CrosstabValueColumn="Lead"
+											CrosstabValueFunction="COUNT"
+											>
+											<CrosstabRowSummaryColumn
+												Function="Sum"
+												ID="rdCrosstabSummary"
+											/>
+										</CrosstabFilter>
+										<Remark>
+											<SortFilter
+												DataType="Number"
+												SortColumn="rdCrosstabSummary"
+												SortSequence="Descending"
+											/>
+										</Remark>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Top"
+									/>
+								</ChartCanvas>
+							</PanelContent>
+						</Panel>
+					</Remark>
+					<Remark>
+						<Panel
+							Caption="Lease Expiration Metrics"
+							ID="pnlExpirationMetrics_ShopOne"
+							PanelDescription="Lease Notice Methrics in Next six months"
+							>
+							<PanelContent>
+								<ChartCanvas
+									ChartOrientation="Default"
+									ID="barLeaseExpiration"
+									>
+									<Series
+										BarStacking="Stacked"
+										ChartXDataColumn="ExpireDate"
+										ChartXDataColumnType="Text"
+										ChartYDataColumn="rdAggrLead"
+										Color="#8d99a6,#c0504d,#689ad6,#8064a2,#f89609,#5fba7d"
+										Type="Bar"
+										>
+										<Quicktip>
+											<QuicktipRow
+												Caption="ExpireDate: "
+												Value="@Chart.ExpireDate~"
+											/>
+											<QuicktipRow
+												Caption="Lead: "
+												Format="#,##0."
+												Value="@Chart.rdCrosstabValue~"
+											/>
+											<QuicktipRow
+												Caption="Lead: "
+												Value="@Chart.rdCrosstabColumn~"
+											/>
+										</Quicktip>
+										<Action
+											ID="ar_leaseExpirationMetrics"
+											Type="Report"
+											>
+											<Target
+												Report="DashboardDrill.ShopOne.LeaseExpirationMetrics"
+												Type="Report"
+											/>
+											<LinkParams
+												LeaseExpiration_Lead="@Chart.rdCrosstabColumn~"
+												LeaseExpiration_Month="@Chart.ExpireDate~"
+											/>
+										</Action>
+										<DataLabels
+											AlignmentHorizontal="Center"
+											AlignmentVertical="Middle"
+											FontColor="#ffffff"
+											FontSize="10px"
+											Format="###,###"
+										/>
+									</Series>
+									<RelevanceFilter
+										IrrelevanceLabel="Other"
+										RelevanceType="NumberOfRows"
+										RelevanceValue="8"
+									/>
+									<ChartXAxis
+										AxisType="Category"
+										>
+										<AxisLabelStyle
+											FontAngle="0"
+											FontSize="10"
+										/>
+									</ChartXAxis>
+									<ChartYAxis
+										AxisCaption="#of Leases"
+										>
+										<AxisLabelStyle
+											FontAngle="0"
+											FontSize="10"
+										/>
+									</ChartYAxis>
+									<DataLayer
+										ConnectionID="con_DemoShopOne_LeaseTracker"
+										ID="SQLDataLayer1"
+										Source="SELECT  Lead , DATE_FORMAT(ExpireDate,&apos;%M-%Y&apos;) AS ExpireDate  FROM 
+
+
+(
+SELECT pkey
+,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
+,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,Fld_Field_12 AS NoticeDate
+,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
+FROM v_xl_tbl_section_1 ps 
+
+)t
+WHERE ExpireDate  BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
+and SuiteStatus &lt;&gt; &apos;VACANT&apos;
+ORDER BY DATE_FORMAT(`ExpireDate`,&apos;%m&apos;)
+"
+										Type="SQL"
+										>
+										<CrosstabFilter
+											CrosstabColumn="Lead"
+											CrosstabLabelColumn="ExpireDate"
+											CrosstabValueColumn="Lead"
+											CrosstabValueFunction="COUNT"
+											>
+											<CrosstabRowSummaryColumn
+												Function="Sum"
+												ID="rdCrosstabSummary"
+											/>
+										</CrosstabFilter>
+										<SortFilter
+											DataType="Date"
+											SortColumn="Id"
+											SortSequence="Ascending"
+										/>
+									</DataLayer>
+									<ChartCanvasLegend
+										AlignmentHorizontal="Center"
+										AlignmentVertical="Top"
+									/>
+								</ChartCanvas>
+							</PanelContent>
+						</Panel>
+					</Remark>
 					<Panel
 						Caption="Lease Notice Metrics"
 						ID="pnlLeaseNoticeMetrics_ShopOne"
@@ -2821,6 +3062,7 @@ GROUP BY b2.Fld_FKEY_Field_1"
 						>
 						<PanelContent>
 							<ChartCanvas
+								AutoQuicktip="False"
 								ChartOrientation="Default"
 								ID="barLeaseNotice"
 								>
@@ -2868,6 +3110,10 @@ GROUP BY b2.Fld_FKEY_Field_1"
 										Format="###,###"
 									/>
 								</Series>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Center"
+									AlignmentVertical="Top"
+								/>
 								<RelevanceFilter
 									IrrelevanceLabel="Other"
 									RelevanceType="NumberOfRows"
@@ -2901,7 +3147,6 @@ FROM v_xl_tbl_section_1 ps
 WHERE 
 -- (ExpireDate  between now() and date_Add(Now(), interval 6 month)) and 
 NoticeDate BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
-and SuiteStatus &lt;&gt; &apos;VACANT&apos;
 ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
 									Type="SQL"
 									>
@@ -2924,15 +3169,46 @@ ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
 										/>
 									</Remark>
 								</DataLayer>
-								<ChartCanvasLegend
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Top"
-								/>
+								<Series
+									ChartXDataColumn="NoticeDate"
+									ChartYDataColumn="rdCrosstabSummary"
+									LegendLabel="  "
+									Transparency="15"
+									Type="Spline"
+									>
+									<DataLabels
+										OffsetY="2"
+									/>
+									<Action
+										ID="ar_leaseExpirationMetrics"
+										Type="Report"
+										>
+										<Target
+											Report="DashboardDrill.ShopOne.LeaseNoticeMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											LeaseExpiration_Lead=""
+											LeaseExpiration_Month="@Chart.NoticeDate~"
+										/>
+									</Action>
+									<Remark>
+										<Quicktip>
+											<QuicktipRow
+												Caption="Notice Date: "
+												Value="@Chart.NoticeDate~"
+											/>
+											<QuicktipRow
+												Caption="# of Lease: "
+												Format="#,##0."
+												Value="@Chart.rdCrosstabSummary~"
+											/>
+										</Quicktip>
+									</Remark>
+								</Series>
 							</ChartCanvas>
 						</PanelContent>
 					</Panel>
-				</Remark>
-				<Remark>
 					<Panel
 						Caption="Lease Expiration Metrics"
 						ID="pnlExpirationMetrics_ShopOne"
@@ -2940,6 +3216,7 @@ ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
 						>
 						<PanelContent>
 							<ChartCanvas
+								AutoQuicktip="False"
 								ChartOrientation="Default"
 								ID="barLeaseExpiration"
 								>
@@ -2992,6 +3269,10 @@ ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
 									RelevanceType="NumberOfRows"
 									RelevanceValue="8"
 								/>
+								<ChartCanvasLegend
+									AlignmentHorizontal="Center"
+									AlignmentVertical="Top"
+								/>
 								<ChartXAxis
 									AxisType="Category"
 									>
@@ -3006,6 +3287,9 @@ ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
 									<AxisLabelStyle
 										FontAngle="0"
 										FontSize="10"
+									/>
+									<ChartTicksAndGrid
+										TickInterval="3"
 									/>
 								</ChartYAxis>
 								<DataLayer
@@ -3023,7 +3307,6 @@ FROM v_xl_tbl_section_1 ps
 
 )t
 WHERE ExpireDate  BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
-and SuiteStatus &lt;&gt; &apos;VACANT&apos;
 ORDER BY DATE_FORMAT(`ExpireDate`,&apos;%m&apos;)
 "
 									Type="SQL"
@@ -3039,423 +3322,142 @@ ORDER BY DATE_FORMAT(`ExpireDate`,&apos;%m&apos;)
 											ID="rdCrosstabSummary"
 										/>
 									</CrosstabFilter>
-									<SortFilter
-										DataType="Date"
-										SortColumn="Id"
-										SortSequence="Ascending"
-									/>
 								</DataLayer>
-								<ChartCanvasLegend
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Top"
-								/>
+								<Series
+									ChartXDataColumn="NoticeDate"
+									ChartYDataColumn="rdCrosstabSummary"
+									LegendLabel="  "
+									Transparency="15"
+									Type="Spline"
+									>
+									<DataLabels
+										OffsetY="2"
+									/>
+									<Action
+										ID="ar_leaseExpirationMetrics"
+										Type="Report"
+										>
+										<Target
+											Report="DashboardDrill.ShopOne.LeaseExpirationMetrics"
+											Type="Report"
+										/>
+										<LinkParams
+											LeaseExpiration_Lead=""
+											LeaseExpiration_Month="@Chart.ExpireDate~"
+										/>
+									</Action>
+									<Remark>
+										<Quicktip>
+											<QuicktipRow
+												Caption="Expiration Date: "
+												Value="@Chart.ExpireDate~"
+											/>
+											<QuicktipRow
+												Caption="# of Lease: "
+												Format="#,##0."
+												Value="@Chart.rdCrosstabSummary~"
+											/>
+										</Quicktip>
+									</Remark>
+								</Series>
 							</ChartCanvas>
 						</PanelContent>
 					</Panel>
-				</Remark>
-				<Panel
-					Caption="Lease Notice Metrics"
-					ID="pnlLeaseNoticeMetrics_ShopOne"
-					PanelDescription="Lease Notice Methrics in Next six months"
-					>
-					<PanelContent>
-						<ChartCanvas
-							AutoQuicktip="False"
-							ChartOrientation="Default"
-							ID="barLeaseNotice"
+					<Remark>
+						<Panel
+							Caption="Vacancy Metrics - Property Wise with Square Feet"
+							ID="pnlShopOnePropertyCombineChart"
 							>
-							<Series
-								BarStacking="Stacked"
-								ChartXDataColumn="NoticeDate"
-								ChartXDataColumnType="Text"
-								ChartYDataColumn="rdAggrLead"
-								Color="#8d99a6,#c0504d,#689ad6,#8064a2,#f89609,#4dbf28"
-								Type="Bar"
-								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="NoticeDate: "
-										Value="@Chart.NoticeDate~"
-									/>
-									<QuicktipRow
-										Caption="# of Lease: "
-										Format="#,##0."
-										Value="@Chart.rdCrosstabValue~"
-									/>
-									<QuicktipRow
-										Caption="Lead: "
-										Value="@Chart.rdCrosstabColumn~"
-									/>
-								</Quicktip>
-								<Action
-									ID="ar_leaseExpirationMetrics"
-									Type="Report"
+							<PanelContent>
+								<Tabs
+									ID="Tab"
+									TabbingStyle="Static"
+									TabLocation="top"
+									Width="100"
+									WidthScale="%"
 									>
-									<Target
-										Report="DashboardDrill.ShopOne.LeaseNoticeMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										LeaseExpiration_Lead="@Chart.rdCrosstabColumn~"
-										LeaseExpiration_Month="@Chart.NoticeDate~"
-									/>
-								</Action>
-								<DataLabels
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Middle"
-									FontColor="#ffffff"
-									FontSize="10px"
-									Format="###,###"
-								/>
-							</Series>
-							<ChartCanvasLegend
-								AlignmentHorizontal="Center"
-								AlignmentVertical="Top"
-							/>
-							<RelevanceFilter
-								IrrelevanceLabel="Other"
-								RelevanceType="NumberOfRows"
-								RelevanceValue="8"
-							/>
-							<ChartXAxis
-								AxisType="Category"
-								>
-								<AxisLabelStyle
-									FontAngle="0"
-									FontSize="10"
-								/>
-							</ChartXAxis>
-							<ChartYAxis
-								AxisCaption="# of Leases"
-								>
-								<AxisLabelStyle
-									FontAngle="0"
-									FontSize="10"
-								/>
-							</ChartYAxis>
-							<DataLayer
-								ConnectionID="con_DemoShopOne_LeaseTracker"
-								ID="SQLDataLayer3"
-								Source="SELECT  Lead , DATE_FORMAT(noticeDate,&apos;%M-%Y&apos;) AS NoticeDate  FROM (
-SELECT pkey,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
-,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,STR_TO_DATE(Fld_Field_12,&apos;%m/%d/%Y&apos;) AS NoticeDate
-,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
-FROM v_xl_tbl_section_1 ps 
-)t
-WHERE 
--- (ExpireDate  between now() and date_Add(Now(), interval 6 month)) and 
-NoticeDate BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
-ORDER BY DATE_FORMAT(noticeDate,&apos;%m&apos;)"
-								Type="SQL"
-								>
-								<CrosstabFilter
-									CrosstabColumn="Lead"
-									CrosstabLabelColumn="NoticeDate"
-									CrosstabValueColumn="Lead"
-									CrosstabValueFunction="COUNT"
-									>
-									<CrosstabRowSummaryColumn
-										Function="Sum"
-										ID="rdCrosstabSummary"
-									/>
-								</CrosstabFilter>
-								<Remark>
-									<SortFilter
-										DataType="Number"
-										SortColumn="rdCrosstabSummary"
-										SortSequence="Descending"
-									/>
-								</Remark>
-							</DataLayer>
-							<Series
-								ChartXDataColumn="NoticeDate"
-								ChartYDataColumn="rdCrosstabSummary"
-								LegendLabel="  "
-								Transparency="15"
-								Type="Spline"
-								>
-								<DataLabels
-									OffsetY="2"
-								/>
-								<Action
-									ID="ar_leaseExpirationMetrics"
-									Type="Report"
-									>
-									<Target
-										Report="DashboardDrill.ShopOne.LeaseNoticeMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										LeaseExpiration_Lead=""
-										LeaseExpiration_Month="@Chart.NoticeDate~"
-									/>
-								</Action>
-								<Remark>
-									<Quicktip>
-										<QuicktipRow
-											Caption="Notice Date: "
-											Value="@Chart.NoticeDate~"
-										/>
-										<QuicktipRow
-											Caption="# of Lease: "
-											Format="#,##0."
-											Value="@Chart.rdCrosstabSummary~"
-										/>
-									</Quicktip>
-								</Remark>
-							</Series>
-						</ChartCanvas>
-					</PanelContent>
-				</Panel>
-				<Panel
-					Caption="Lease Expiration Metrics"
-					ID="pnlExpirationMetrics_ShopOne"
-					PanelDescription="Lease Notice Methrics in Next six months"
-					>
-					<PanelContent>
-						<ChartCanvas
-							AutoQuicktip="False"
-							ChartOrientation="Default"
-							ID="barLeaseExpiration"
-							>
-							<Series
-								BarStacking="Stacked"
-								ChartXDataColumn="ExpireDate"
-								ChartXDataColumnType="Text"
-								ChartYDataColumn="rdAggrLead"
-								Color="#8d99a6,#c0504d,#689ad6,#8064a2,#f89609,#5fba7d"
-								Type="Bar"
-								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="ExpireDate: "
-										Value="@Chart.ExpireDate~"
-									/>
-									<QuicktipRow
-										Caption="Lead: "
-										Format="#,##0."
-										Value="@Chart.rdCrosstabValue~"
-									/>
-									<QuicktipRow
-										Caption="Lead: "
-										Value="@Chart.rdCrosstabColumn~"
-									/>
-								</Quicktip>
-								<Action
-									ID="ar_leaseExpirationMetrics"
-									Type="Report"
-									>
-									<Target
-										Report="DashboardDrill.ShopOne.LeaseExpirationMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										LeaseExpiration_Lead="@Chart.rdCrosstabColumn~"
-										LeaseExpiration_Month="@Chart.ExpireDate~"
-									/>
-								</Action>
-								<DataLabels
-									AlignmentHorizontal="Center"
-									AlignmentVertical="Middle"
-									FontColor="#ffffff"
-									FontSize="10px"
-									Format="###,###"
-								/>
-							</Series>
-							<RelevanceFilter
-								IrrelevanceLabel="Other"
-								RelevanceType="NumberOfRows"
-								RelevanceValue="8"
-							/>
-							<ChartCanvasLegend
-								AlignmentHorizontal="Center"
-								AlignmentVertical="Top"
-							/>
-							<ChartXAxis
-								AxisType="Category"
-								>
-								<AxisLabelStyle
-									FontAngle="0"
-									FontSize="10"
-								/>
-							</ChartXAxis>
-							<ChartYAxis
-								AxisCaption="#of Leases"
-								>
-								<AxisLabelStyle
-									FontAngle="0"
-									FontSize="10"
-								/>
-								<ChartTicksAndGrid
-									TickInterval="3"
-								/>
-							</ChartYAxis>
-							<DataLayer
-								ConnectionID="con_DemoShopOne_LeaseTracker"
-								ID="SQLDataLayer1"
-								Source="SELECT  Lead , DATE_FORMAT(ExpireDate,&apos;%M-%Y&apos;) AS ExpireDate  FROM 
-
-
-(
-SELECT pkey
-,Fld_FKey_Field_1 AS Lead , ps.Fld_Field_2 AS BuildingName , Fld_Field_4 AS SuitSqFt,Fld_Field_5 AS LL , Fld_Field_6 AS SuiteStatus
-,Fld_Field_7 AS Occupant , Fld_Field_8 AS LeaseStatus , Fld_Field_10 AS commencement ,STR_TO_DATE(Fld_Field_11,&apos;%m/%d/%Y&apos;)  AS ExpireDate ,Fld_Field_12 AS NoticeDate
-,Fld_Field_27 AS R_Status ,Fld_Field_34 AS CompletionDate , ps.Fld_Field_25 AS CurrentCondition
-FROM v_xl_tbl_section_1 ps 
-
-)t
-WHERE ExpireDate  BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 6 MONTH)
-ORDER BY DATE_FORMAT(`ExpireDate`,&apos;%m&apos;)
-"
-								Type="SQL"
-								>
-								<CrosstabFilter
-									CrosstabColumn="Lead"
-									CrosstabLabelColumn="ExpireDate"
-									CrosstabValueColumn="Lead"
-									CrosstabValueFunction="COUNT"
-									>
-									<CrosstabRowSummaryColumn
-										Function="Sum"
-										ID="rdCrosstabSummary"
-									/>
-								</CrosstabFilter>
-							</DataLayer>
-							<Series
-								ChartXDataColumn="NoticeDate"
-								ChartYDataColumn="rdCrosstabSummary"
-								LegendLabel="  "
-								Transparency="15"
-								Type="Spline"
-								>
-								<DataLabels
-									OffsetY="2"
-								/>
-								<Action
-									ID="ar_leaseExpirationMetrics"
-									Type="Report"
-									>
-									<Target
-										Report="DashboardDrill.ShopOne.LeaseExpirationMetrics"
-										Type="Report"
-									/>
-									<LinkParams
-										LeaseExpiration_Lead=""
-										LeaseExpiration_Month="@Chart.ExpireDate~"
-									/>
-								</Action>
-								<Remark>
-									<Quicktip>
-										<QuicktipRow
-											Caption="Expiration Date: "
-											Value="@Chart.ExpireDate~"
-										/>
-										<QuicktipRow
-											Caption="# of Lease: "
-											Format="#,##0."
-											Value="@Chart.rdCrosstabSummary~"
-										/>
-									</Quicktip>
-								</Remark>
-							</Series>
-						</ChartCanvas>
-					</PanelContent>
-				</Panel>
-				<Remark>
-					<Panel
-						Caption="Vacancy Metrics - Property Wise with Square Feet"
-						ID="pnlShopOnePropertyCombineChart"
-						>
-						<PanelContent>
-							<Tabs
-								ID="Tab"
-								TabbingStyle="Static"
-								TabLocation="top"
-								Width="100"
-								WidthScale="%"
-								>
-								<TabPanel
-									Caption="Top 10 Property"
-									ID="tab1"
-									>
-									<ChartCanvas
-										ChartHeight="300"
-										ChartOrientation="Default"
-										ChartWidth="500"
-										ID="BarChartCanvas2"
+									<TabPanel
+										Caption="Top 10 Property"
+										ID="tab1"
 										>
-										<Series
-											BarBorderColorTransparency="0"
-											BarBorderRadius="1"
-											ChartXDataColumn="Property_Name"
-											ChartXDataColumnType="Text"
-											ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-											Color="#6bb20e"
-											LinkedToYAxisID="ID_Y_Vacant"
-											Type="Bar"
+										<ChartCanvas
+											ChartHeight="300"
+											ChartOrientation="Default"
+											ChartWidth="500"
+											ID="BarChartCanvas2"
 											>
-											<Quicktip>
-												<QuicktipRow
-													Caption="Property Name: "
-													Value="@Chart.Property_Name~"
-												/>
-												<QuicktipRow
-													Caption="Sum Suit SqFt: "
-													Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
-												/>
-											</Quicktip>
-											<Remark>
-												<Action
-													ID="PopUPID"
-													Type="Popup"
-													>
-													<ConditionalClass
-														Class="hideelement"
-														Condition="@Chart.Property_Name~=&apos;Other&apos;"
+											<Series
+												BarBorderColorTransparency="0"
+												BarBorderRadius="1"
+												ChartXDataColumn="Property_Name"
+												ChartXDataColumnType="Text"
+												ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+												Color="#6bb20e"
+												LinkedToYAxisID="ID_Y_Vacant"
+												Type="Bar"
+												>
+												<Quicktip>
+													<QuicktipRow
+														Caption="Property Name: "
+														Value="@Chart.Property_Name~"
 													/>
-													<PopupOption
-														Caption="View all"
-														ID="popUpOption"
+													<QuicktipRow
+														Caption="Sum Suit SqFt: "
+														Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
+													/>
+												</Quicktip>
+												<Remark>
+													<Action
+														ID="PopUPID"
+														Type="Popup"
 														>
-														<Action
-															ElementID="BarChartCanvas2"
-															ID="refreshBar"
-															Type="RefreshElement"
+														<ConditionalClass
+															Class="hideelement"
+															Condition="@Chart.Property_Name~=&apos;Other&apos;"
+														/>
+														<PopupOption
+															Caption="View all"
+															ID="popUpOption"
 															>
-															<LinkParams/>
-														</Action>
-													</PopupOption>
-												</Action>
-											</Remark>
-										</Series>
-										<ChartXAxis
-											AxisType="Category"
-											ID="ID_X_SQFT"
-											>
-											<AxisLabelStyle
-												FontAngle="30"
-												FontFamily="Verdana,sans-serif"
-												FontSize="10"
+															<Action
+																ElementID="BarChartCanvas2"
+																ID="refreshBar"
+																Type="RefreshElement"
+																>
+																<LinkParams/>
+															</Action>
+														</PopupOption>
+													</Action>
+												</Remark>
+											</Series>
+											<ChartXAxis
+												AxisType="Category"
+												ID="ID_X_SQFT"
+												>
+												<AxisLabelStyle
+													FontAngle="30"
+													FontFamily="Verdana,sans-serif"
+													FontSize="10"
+												/>
+											</ChartXAxis>
+											<ChartYAxis
+												AxisCaption="Vacant"
+												ID="ID_Y_SQFT"
+												OppositeSide="True"
+												OppositeSideAlignment="True"
+												>
+												<ChartTicksAndGrid
+													TickInterval="2"
+												/>
+											</ChartYAxis>
+											<Resizer
+												MinHeight="150"
+												MinWidth="250"
 											/>
-										</ChartXAxis>
-										<ChartYAxis
-											AxisCaption="Vacant"
-											ID="ID_Y_SQFT"
-											OppositeSide="True"
-											OppositeSideAlignment="True"
-											>
-											<ChartTicksAndGrid
-												TickInterval="2"
-											/>
-										</ChartYAxis>
-										<Resizer
-											MinHeight="150"
-											MinWidth="250"
-										/>
-										<DataLayer
-											ConnectionID="con_DemoShopOne_LeaseTracker"
-											ID="SQLDataLayer10"
-											Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
+											<DataLayer
+												ConnectionID="con_DemoShopOne_LeaseTracker"
+												ID="SQLDataLayer10"
+												Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
 COUNT(b2.Fld_Field_2) AS Count_Vacant, 
 b2.Fld_Field_2 AS Property_Name
 FROM v_xl_TBL_Section_1 a
@@ -3465,152 +3467,152 @@ WHERE a.Fld_Field_6=&apos;VACANT&apos;
 AND a.Fld_Field_4 IS NOT NULL
 GROUP BY b2.Fld_Field_2
 Limit 10"
-											Type="SQL"
-											>
-											<GroupFilter
-												DataType="Text"
-												GroupColumn="Property_Name"
-												KeepGroupedRows="False"
+												Type="SQL"
 												>
-												<GroupAggregateColumn
-													AggregateColumn="Sum_Suit_SqFt"
-													AggregateFunction="SUM"
-													DataType="Number"
-													ID="rdGrgrSum-Sum_Suit_SqFt-sum"
-												/>
-											</GroupFilter>
-											<RelevanceFilter
-												DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-												IrrelevanceLabel="Other"
-												LabelColumn="Property_Name"
-												RelevanceType="NumberOfRows"
-												RelevanceValue="0"
-											/>
-											<SortFilter
-												DataType="Number"
-												SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-												SortSequence="Descending"
-											/>
-										</DataLayer>
-										<Series
-											ChartXDataColumn="Property_Name"
-											ChartYDataColumn="Count_Vacant"
-											Color="#c60a05"
-											LinkedToYAxisID="ID_Y_SQFT"
-											Type="Line"
-											>
-											<Quicktip>
-												<QuicktipRow
-													Caption="Property Name: "
-													Value="@Chart.Property_Name~"
-												/>
-												<QuicktipRow
-													Caption="Vacant: "
-													Format="mps9"
-													Value="@Chart.Count_Vacant~"
-												/>
-											</Quicktip>
-											<Action
-												Type="Report"
-												>
-												<Target
-													FrameID="Self"
-													Report="DashboardDrill.ShopOne.VacancyMatrix"
-													Type="Report"
-												/>
-												<LinkParams
-													Property_Name="@Chart.Property_Name~"
-												/>
-											</Action>
-										</Series>
-										<ChartYAxis
-											AxisCaption="Suit SqFt"
-											ID="ID_Y_Vacant"
-										/>
-									</ChartCanvas>
-								</TabPanel>
-								<TabPanel
-									Caption="All Property"
-									ID="Tab2"
-									>
-									<ChartCanvas
-										ChartHeight="300"
-										ChartOrientation="Default"
-										ChartWidth="500"
-										ID="BarChartCanvas2"
-										>
-										<Series
-											BarBorderColorTransparency="0"
-											BarBorderRadius="1"
-											ChartXDataColumn="Property_Name"
-											ChartXDataColumnType="Text"
-											ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-											Color="#6bb20e"
-											LinkedToYAxisID="ID_Y_Vacant"
-											Type="Bar"
-											>
-											<Quicktip>
-												<QuicktipRow
-													Caption="Property Name: "
-													Value="@Chart.Property_Name~"
-												/>
-												<QuicktipRow
-													Caption="Sum Suit SqFt: "
-													Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
-												/>
-											</Quicktip>
-											<Remark>
-												<Action
-													ID="PopUPID"
-													Type="Popup"
+												<GroupFilter
+													DataType="Text"
+													GroupColumn="Property_Name"
+													KeepGroupedRows="False"
 													>
-													<ConditionalClass
-														Class="hideelement"
-														Condition="@Chart.Property_Name~=&apos;Other&apos;"
+													<GroupAggregateColumn
+														AggregateColumn="Sum_Suit_SqFt"
+														AggregateFunction="SUM"
+														DataType="Number"
+														ID="rdGrgrSum-Sum_Suit_SqFt-sum"
 													/>
-													<PopupOption
-														Caption="View all"
-														ID="popUpOption"
-														>
-														<Action
-															ElementID="BarChartCanvas2"
-															ID="refreshBar"
-															Type="RefreshElement"
-															>
-															<LinkParams/>
-														</Action>
-													</PopupOption>
+												</GroupFilter>
+												<RelevanceFilter
+													DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+													IrrelevanceLabel="Other"
+													LabelColumn="Property_Name"
+													RelevanceType="NumberOfRows"
+													RelevanceValue="0"
+												/>
+												<SortFilter
+													DataType="Number"
+													SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+													SortSequence="Descending"
+												/>
+											</DataLayer>
+											<Series
+												ChartXDataColumn="Property_Name"
+												ChartYDataColumn="Count_Vacant"
+												Color="#c60a05"
+												LinkedToYAxisID="ID_Y_SQFT"
+												Type="Line"
+												>
+												<Quicktip>
+													<QuicktipRow
+														Caption="Property Name: "
+														Value="@Chart.Property_Name~"
+													/>
+													<QuicktipRow
+														Caption="Vacant: "
+														Format="mps9"
+														Value="@Chart.Count_Vacant~"
+													/>
+												</Quicktip>
+												<Action
+													Type="Report"
+													>
+													<Target
+														FrameID="Self"
+														Report="DashboardDrill.ShopOne.VacancyMatrix"
+														Type="Report"
+													/>
+													<LinkParams
+														Property_Name="@Chart.Property_Name~"
+													/>
 												</Action>
-											</Remark>
-										</Series>
-										<ChartXAxis
-											AxisType="Category"
-											ID="ID_X_SQFT"
-											>
-											<AxisLabelStyle
-												FontAngle="30"
-												FontFamily="Verdana,sans-serif"
-												FontSize="10"
+											</Series>
+											<ChartYAxis
+												AxisCaption="Suit SqFt"
+												ID="ID_Y_Vacant"
 											/>
-										</ChartXAxis>
-										<ChartYAxis
-											AxisCaption="Vacant"
-											ID="ID_Y_SQFT"
-											OppositeSide="True"
-											OppositeSideAlignment="True"
+										</ChartCanvas>
+									</TabPanel>
+									<TabPanel
+										Caption="All Property"
+										ID="Tab2"
+										>
+										<ChartCanvas
+											ChartHeight="300"
+											ChartOrientation="Default"
+											ChartWidth="500"
+											ID="BarChartCanvas2"
 											>
-											<ChartTicksAndGrid
-												TickInterval="2"
+											<Series
+												BarBorderColorTransparency="0"
+												BarBorderRadius="1"
+												ChartXDataColumn="Property_Name"
+												ChartXDataColumnType="Text"
+												ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+												Color="#6bb20e"
+												LinkedToYAxisID="ID_Y_Vacant"
+												Type="Bar"
+												>
+												<Quicktip>
+													<QuicktipRow
+														Caption="Property Name: "
+														Value="@Chart.Property_Name~"
+													/>
+													<QuicktipRow
+														Caption="Sum Suit SqFt: "
+														Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
+													/>
+												</Quicktip>
+												<Remark>
+													<Action
+														ID="PopUPID"
+														Type="Popup"
+														>
+														<ConditionalClass
+															Class="hideelement"
+															Condition="@Chart.Property_Name~=&apos;Other&apos;"
+														/>
+														<PopupOption
+															Caption="View all"
+															ID="popUpOption"
+															>
+															<Action
+																ElementID="BarChartCanvas2"
+																ID="refreshBar"
+																Type="RefreshElement"
+																>
+																<LinkParams/>
+															</Action>
+														</PopupOption>
+													</Action>
+												</Remark>
+											</Series>
+											<ChartXAxis
+												AxisType="Category"
+												ID="ID_X_SQFT"
+												>
+												<AxisLabelStyle
+													FontAngle="30"
+													FontFamily="Verdana,sans-serif"
+													FontSize="10"
+												/>
+											</ChartXAxis>
+											<ChartYAxis
+												AxisCaption="Vacant"
+												ID="ID_Y_SQFT"
+												OppositeSide="True"
+												OppositeSideAlignment="True"
+												>
+												<ChartTicksAndGrid
+													TickInterval="2"
+												/>
+											</ChartYAxis>
+											<Resizer
+												MinHeight="150"
+												MinWidth="250"
 											/>
-										</ChartYAxis>
-										<Resizer
-											MinHeight="150"
-											MinWidth="250"
-										/>
-										<DataLayer
-											ConnectionID="con_DemoShopOne_LeaseTracker"
-											ID="SQLDataLayer10"
-											Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
+											<DataLayer
+												ConnectionID="con_DemoShopOne_LeaseTracker"
+												ID="SQLDataLayer10"
+												Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
 COUNT(b2.Fld_Field_2) AS Count_Vacant, 
 b2.Fld_Field_2 AS Property_Name
 FROM v_xl_TBL_Section_1 a
@@ -3620,139 +3622,139 @@ WHERE a.Fld_Field_6=&apos;VACANT&apos;
 AND a.Fld_Field_4 IS NOT NULL
 GROUP BY b2.Fld_Field_2
 "
-											Type="SQL"
-											>
-											<GroupFilter
-												DataType="Text"
-												GroupColumn="Property_Name"
-												KeepGroupedRows="False"
+												Type="SQL"
 												>
-												<GroupAggregateColumn
-													AggregateColumn="Sum_Suit_SqFt"
-													AggregateFunction="SUM"
+												<GroupFilter
+													DataType="Text"
+													GroupColumn="Property_Name"
+													KeepGroupedRows="False"
+													>
+													<GroupAggregateColumn
+														AggregateColumn="Sum_Suit_SqFt"
+														AggregateFunction="SUM"
+														DataType="Number"
+														ID="rdGrgrSum-Sum_Suit_SqFt-sum"
+													/>
+												</GroupFilter>
+												<Remark>
+													<RelevanceFilter
+														DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+														IrrelevanceLabel="Other"
+														LabelColumn="Property_Name"
+														RelevanceType="NumberOfRows"
+														RelevanceValue="0"
+													/>
+												</Remark>
+												<SortFilter
 													DataType="Number"
-													ID="rdGrgrSum-Sum_Suit_SqFt-sum"
+													SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+													SortSequence="Descending"
 												/>
-											</GroupFilter>
-											<Remark>
-												<RelevanceFilter
-													DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-													IrrelevanceLabel="Other"
-													LabelColumn="Property_Name"
-													RelevanceType="NumberOfRows"
-													RelevanceValue="0"
-												/>
-											</Remark>
-											<SortFilter
-												DataType="Number"
-												SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-												SortSequence="Descending"
-											/>
-										</DataLayer>
-										<Series
-											ChartXDataColumn="Property_Name"
-											ChartYDataColumn="Count_Vacant"
-											Color="#c60a05"
-											LinkedToYAxisID="ID_Y_SQFT"
-											Type="Line"
-											>
-											<Quicktip>
-												<QuicktipRow
-													Caption="Property Name: "
-													Value="@Chart.Property_Name~"
-												/>
-												<QuicktipRow
-													Caption="Vacant: "
-													Format="mps9"
-													Value="@Chart.Count_Vacant~"
-												/>
-											</Quicktip>
-											<Action
-												Type="Report"
+											</DataLayer>
+											<Series
+												ChartXDataColumn="Property_Name"
+												ChartYDataColumn="Count_Vacant"
+												Color="#c60a05"
+												LinkedToYAxisID="ID_Y_SQFT"
+												Type="Line"
 												>
-												<Target
-													FrameID="Self"
-													Report="DashboardDrill.ShopOne.VacancyMatrix"
+												<Quicktip>
+													<QuicktipRow
+														Caption="Property Name: "
+														Value="@Chart.Property_Name~"
+													/>
+													<QuicktipRow
+														Caption="Vacant: "
+														Format="mps9"
+														Value="@Chart.Count_Vacant~"
+													/>
+												</Quicktip>
+												<Action
 													Type="Report"
-												/>
-												<LinkParams
-													Property_Name="@Chart.Property_Name~"
-												/>
-											</Action>
-										</Series>
-										<ChartYAxis
-											AxisCaption="Suit SqFt"
-											ID="ID_Y_Vacant"
+													>
+													<Target
+														FrameID="Self"
+														Report="DashboardDrill.ShopOne.VacancyMatrix"
+														Type="Report"
+													/>
+													<LinkParams
+														Property_Name="@Chart.Property_Name~"
+													/>
+												</Action>
+											</Series>
+											<ChartYAxis
+												AxisCaption="Suit SqFt"
+												ID="ID_Y_Vacant"
+											/>
+											<ZoomControl
+												ZoomControlType="AreaXAxis"
+											/>
+										</ChartCanvas>
+									</TabPanel>
+								</Tabs>
+							</PanelContent>
+						</Panel>
+					</Remark>
+					<Panel
+						Caption="Vacancy Metrics - Property Wise with Square Feet"
+						ID="pnlShopOnePropertyCombineChart"
+						>
+						<PanelContent>
+							<ChartCanvas
+								ChartHeight="300"
+								ChartOrientation="Default"
+								ChartWidth="500"
+								ID="BarChartCanvas2"
+								>
+								<Series
+									BarBorderColorTransparency="0"
+									BarBorderRadius="1"
+									ChartXDataColumn="Property_Name"
+									ChartXDataColumnType="Text"
+									ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+									Color="#6bb20e"
+									LinkedToYAxisID="ID_Y_Vacant"
+									Type="Bar"
+									>
+									<Quicktip>
+										<QuicktipRow
+											Caption="Property Name: "
+											Value="@Chart.Property_Name~"
 										/>
-										<ZoomControl
-											ZoomControlType="AreaXAxis"
+										<QuicktipRow
+											Caption="Sum Suit SqFt: "
+											Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
 										/>
-									</ChartCanvas>
-								</TabPanel>
-							</Tabs>
-						</PanelContent>
-					</Panel>
-				</Remark>
-				<Panel
-					Caption="Vacancy Metrics - Property Wise with Square Feet"
-					ID="pnlShopOnePropertyCombineChart"
-					>
-					<PanelContent>
-						<ChartCanvas
-							ChartHeight="300"
-							ChartOrientation="Default"
-							ChartWidth="500"
-							ID="BarChartCanvas2"
-							>
-							<Series
-								BarBorderColorTransparency="0"
-								BarBorderRadius="1"
-								ChartXDataColumn="Property_Name"
-								ChartXDataColumnType="Text"
-								ChartYDataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-								Color="#6bb20e"
-								LinkedToYAxisID="ID_Y_Vacant"
-								Type="Bar"
-								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="Property Name: "
-										Value="@Chart.Property_Name~"
+									</Quicktip>
+								</Series>
+								<ChartXAxis
+									AxisType="Category"
+									ID="ID_X_SQFT"
+									>
+									<AxisLabelStyle
+										FontAngle="30"
+										FontFamily="Verdana,sans-serif"
+										FontSize="10"
 									/>
-									<QuicktipRow
-										Caption="Sum Suit SqFt: "
-										Value="@Chart.rdGrgrSum-Sum_Suit_SqFt-sum~"
+								</ChartXAxis>
+								<ChartYAxis
+									AxisCaption="Vacant"
+									ID="ID_Y_SQFT"
+									OppositeSide="True"
+									OppositeSideAlignment="True"
+									>
+									<ChartTicksAndGrid
+										TickInterval="2"
 									/>
-								</Quicktip>
-							</Series>
-							<ChartXAxis
-								AxisType="Category"
-								ID="ID_X_SQFT"
-								>
-								<AxisLabelStyle
-									FontAngle="30"
-									FontFamily="Verdana,sans-serif"
-									FontSize="10"
+								</ChartYAxis>
+								<Resizer
+									MinHeight="150"
+									MinWidth="250"
 								/>
-							</ChartXAxis>
-							<ChartYAxis
-								AxisCaption="Vacant"
-								ID="ID_Y_SQFT"
-								OppositeSide="True"
-								OppositeSideAlignment="True"
-								>
-								<ChartTicksAndGrid
-									TickInterval="2"
-								/>
-							</ChartYAxis>
-							<Resizer
-								MinHeight="150"
-								MinWidth="250"
-							/>
-							<DataLayer
-								ConnectionID="con_DemoShopOne_LeaseTracker"
-								ID="SQLDataLayer10"
-								Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
+								<DataLayer
+									ConnectionID="con_DemoShopOne_LeaseTracker"
+									ID="SQLDataLayer10"
+									Source="SELECT SUM(a.Fld_Field_4) AS Sum_Suit_SqFt, 
 COUNT(b2.Fld_Field_2) AS Count_Vacant, 
 b2.Fld_Field_2 AS Property_Name
 FROM v_xl_TBL_Section_1 a
@@ -3762,130 +3764,165 @@ WHERE a.Fld_Field_6=&apos;VACANT&apos;
 GROUP BY b2.Fld_Field_2
 order by SUM(a.Fld_Field_4)  desc
  "
-								Type="SQL"
-								>
-								<GroupFilter
-									DataType="Text"
-									GroupColumn="Property_Name"
-									KeepGroupedRows="False"
+									Type="SQL"
 									>
-									<GroupAggregateColumn
-										AggregateColumn="Sum_Suit_SqFt"
-										AggregateFunction="SUM"
+									<GroupFilter
+										DataType="Text"
+										GroupColumn="Property_Name"
+										KeepGroupedRows="False"
+										>
+										<GroupAggregateColumn
+											AggregateColumn="Sum_Suit_SqFt"
+											AggregateFunction="SUM"
+											DataType="Number"
+											ID="rdGrgrSum-Sum_Suit_SqFt-sum"
+										/>
+									</GroupFilter>
+									<SortFilter
 										DataType="Number"
-										ID="rdGrgrSum-Sum_Suit_SqFt-sum"
+										SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+										SortSequence="Descending"
 									/>
-								</GroupFilter>
-								<SortFilter
-									DataType="Number"
-									SortColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-									SortSequence="Descending"
-								/>
-								<Remark>
-									<RelevanceFilter
-										DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
-										IrrelevanceLabel="Other"
-										LabelColumn="Property_Name"
-										RelevanceType="NumberOfRows"
-										RelevanceValue="0"
+									<Remark>
+										<RelevanceFilter
+											DataColumn="rdGrgrSum-Sum_Suit_SqFt-sum"
+											IrrelevanceLabel="Other"
+											LabelColumn="Property_Name"
+											RelevanceType="NumberOfRows"
+											RelevanceValue="0"
+										/>
+									</Remark>
+									<SequenceColumn
+										ID="sequence"
 									/>
-								</Remark>
-								<SequenceColumn
-									ID="sequence"
-								/>
-								<ConditionFilter
-									Condition="@Data.sequence~&lt;11"
-									IncludeCondition="&apos;@Request.chartFilter~&apos;&lt;&gt;&apos;Top 10&apos;"
-								/>
-							</DataLayer>
-							<Series
-								ChartXDataColumn="Property_Name"
-								ChartYDataColumn="Count_Vacant"
-								Color="#c60a05"
-								LinkedToYAxisID="ID_Y_SQFT"
-								Type="Line"
-								>
-								<Quicktip>
-									<QuicktipRow
-										Caption="Property Name: "
-										Value="@Chart.Property_Name~"
+									<ConditionFilter
+										Condition="@Data.sequence~&lt;11"
+										IncludeCondition="&apos;@Request.chartFilter~&apos;&lt;&gt;&apos;Top 10&apos;"
 									/>
-									<QuicktipRow
-										Caption="Vacant: "
-										Format="mps9"
-										Value="@Chart.Count_Vacant~"
-									/>
-								</Quicktip>
-								<Action
-									Type="Report"
+								</DataLayer>
+								<Series
+									ChartXDataColumn="Property_Name"
+									ChartYDataColumn="Count_Vacant"
+									Color="#c60a05"
+									LinkedToYAxisID="ID_Y_SQFT"
+									Type="Line"
 									>
-									<Target
-										FrameID="Self"
-										Report="DashboardDrill.ShopOne.VacancyMatrix"
+									<Quicktip>
+										<QuicktipRow
+											Caption="Property Name: "
+											Value="@Chart.Property_Name~"
+										/>
+										<QuicktipRow
+											Caption="Vacant: "
+											Format="mps9"
+											Value="@Chart.Count_Vacant~"
+										/>
+									</Quicktip>
+									<Action
 										Type="Report"
+										>
+										<Target
+											FrameID="Self"
+											Report="DashboardDrill.ShopOne.VacancyMatrix"
+											Type="Report"
+										/>
+										<LinkParams
+											Property_Name="@Chart.Property_Name~"
+										/>
+									</Action>
+								</Series>
+								<ChartYAxis
+									AxisCaption="Suit SqFt"
+									ID="ID_Y_Vacant"
+								/>
+								<ZoomControl
+									ZoomControlType="AreaXAxis"
+									>
+									<ResetZoomButton
+										AlignmentVertical="Bottom"
 									/>
+								</ZoomControl>
+							</ChartCanvas>
+							<Label
+								Caption="View all Property"
+								Class="yuimenu ul li a"
+								ID="lblViewAll"
+								>
+								<Action
+									ElementID="BarChartCanvas2,lblViewAll,lblTop10"
+									ID="RefreshElement"
+									Type="RefreshElement"
+									>
 									<LinkParams
-										Property_Name="@Chart.Property_Name~"
+										chartFilter="Top 10"
 									/>
 								</Action>
-							</Series>
-							<ChartYAxis
-								AxisCaption="Suit SqFt"
-								ID="ID_Y_Vacant"
-							/>
-							<ZoomControl
-								ZoomControlType="AreaXAxis"
-								>
-								<ResetZoomButton
-									AlignmentVertical="Bottom"
+								<ConditionalClass
+									Class="hideelement"
+									Condition="&apos;@Request.chartFilter~&apos;=&apos;Top 10&apos;"
 								/>
-							</ZoomControl>
-						</ChartCanvas>
+							</Label>
+							<Label
+								Caption="View Top 10"
+								Class="yuimenu ul li a"
+								ID="lblTop10"
+								>
+								<Action
+									ElementID="BarChartCanvas2,lblViewAll,lblTop10"
+									ID="RefreshElement"
+									Type="RefreshElement"
+									>
+									<LinkParams
+										chartFilter=""
+									/>
+								</Action>
+								<ConditionalClass
+									Class="hideelement"
+									Condition="&apos;@Request.chartFilter~&apos;&lt;&gt; &apos;Top 10&apos;"
+								/>
+							</Label>
+						</PanelContent>
+					</Panel>
+				</Dashboard2>
+			</Remark>
+			<Dashboard2
+				DashboardColumns="3"
+				DashboardTabs="True"
+				ID="Dashboard1"
+				SaveFile="@Function.AppPhysicalPath~\SavedDashboards\Dashboard_User_@Function.UserName~.xml"
+				>
+				<Panel
+					Caption="Panel 1"
+					ID="pnl1"
+					>
+					<PanelContent>
 						<Label
-							Caption="View all Property"
-							Class="yuimenu ul li a"
-							ID="lblViewAll"
-							>
-							<Action
-								ElementID="BarChartCanvas2,lblViewAll,lblTop10"
-								ID="RefreshElement"
-								Type="RefreshElement"
-								>
-								<LinkParams
-									chartFilter="Top 10"
-								/>
-							</Action>
-							<ConditionalClass
-								Class="hideelement"
-								Condition="&apos;@Request.chartFilter~&apos;=&apos;Top 10&apos;"
-							/>
-						</Label>
+							Caption="[Place content here]"
+						/>
+					</PanelContent>
+				</Panel>
+				<Panel
+					Caption="Panel 2"
+					ID="pnl2"
+					>
+					<PanelContent>
 						<Label
-							Caption="View Top 10"
-							Class="yuimenu ul li a"
-							ID="lblTop10"
-							>
-							<Action
-								ElementID="BarChartCanvas2,lblViewAll,lblTop10"
-								ID="RefreshElement"
-								Type="RefreshElement"
-								>
-								<LinkParams
-									chartFilter=""
-								/>
-							</Action>
-							<ConditionalClass
-								Class="hideelement"
-								Condition="&apos;@Request.chartFilter~&apos;&lt;&gt; &apos;Top 10&apos;"
-							/>
-						</Label>
+							Caption="[Place content here]"
+						/>
+					</PanelContent>
+				</Panel>
+				<Panel
+					Caption="Panel 3"
+					ID="pnl3"
+					>
+					<PanelContent>
+						<Label
+							Caption="[Place content here]"
+						/>
 					</PanelContent>
 				</Panel>
 			</Dashboard2>
 		</Division>
 	</Body>
-	<ideTestParams
-		chartFilter=""
-		MyParameter=""
-	/>
+	<ideTestParams/>
 </Report>

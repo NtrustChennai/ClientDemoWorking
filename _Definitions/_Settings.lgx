@@ -67,7 +67,11 @@
 		/>
 		<Connection
 			ID="goMail"
-			SmtpServer="localhost"
+			SmtpAuthenticationAccount="remaapadmin@entrustsoft.in"
+			SmtpAuthenticationMethod="3"
+			SmtpAuthenticationPassword="Donotshare@123"
+			SmtpPort="587"
+			SmtpServer="smtp.gmail.com"
 			Type="Smtp"
 		/>
 		<Connection
@@ -152,7 +156,10 @@ Host &apos;192.168.11.87&apos; is blocked because of many connection errors; unb
 			Type="MySql"
 		/>
 	</Connections>
-	<TeamDevelopment/>
+	<TeamDevelopment
+		FileHistory="True"
+		FileLocking="True"
+	/>
 	<SessionTimeout
 		SessionAutoKeepAlive="True"
 	/>

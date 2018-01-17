@@ -1,0 +1,8 @@
+<rdSavedDashboard>
+  <Panel ID="pnl1" InstanceID="44268933c52c4000a36182e4b04e2ad9" TabID="bc532a5d061b4293ba2f7d318234e2ec" />
+  <Panel ID="pnl1" InstanceID="44e2e3e63e4d4258bf62ab2fae382c83" TabID="2f18e2e1338a44c59aa4dd0b3c2e8693" />
+  <Tabs ID="rdDashboardTabs" ActiveTabID="2f18e2e1338a44c59aa4dd0b3c2e8693" DashboardColumnCount="3">
+    <Tab ID="2f18e2e1338a44c59aa4dd0b3c2e8693" Caption="New Tab" ColumnCount="3" rdFreeformLayoutStyle="Width:1352px;" />
+    <Tab ID="bc532a5d061b4293ba2f7d318234e2ec" Caption="New Tab" ColumnCount="3" rdFreeformLayoutStyle="Width:1352px;" />
+  </Tabs>
+</rdSavedDashboard>

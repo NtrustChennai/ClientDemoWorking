@@ -1122,6 +1122,69 @@ FROM V_XL_TBL_SECTION_1"
 			ValuesForFilter=""
 		/>
 	</Table>
+	<Table
+		FriendlyName="Information"
+		HideTable="False"
+		SecurityRightID=""
+		SqlSource="SELECT Table_Name,Table_Type,Create_Time
+       FROM information_schema.tables
+       WHERE table_schema = &apos;remaap_900021&apos;
+       ORDER BY table_name"
+		TableName="NewTable1"
+		TableType="U"
+		>
+		<Column
+			Alignment=""
+			ColumnName="Table_Name"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Table Name"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Table_Type"
+			DataType="Text"
+			Format=""
+			FrameID=""
+			FriendlyName="Table Type"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+		<Column
+			Alignment=""
+			ColumnName="Create_Time"
+			DataType="DateTime"
+			Format="General Date"
+			FrameID=""
+			FriendlyName="Create Time"
+			HideColumn="False"
+			InitiallyVisible="True"
+			LinkURL=""
+			NoAggregation="False"
+			NoFiltering="False"
+			NoGrouping="False"
+			NoSorting="False"
+			SecurityRightID=""
+			ValuesForFilter=""
+		/>
+	</Table>
 	<JoinRelation
 		Explanation=""
 		FriendlyName="Property  - Lease Data"
